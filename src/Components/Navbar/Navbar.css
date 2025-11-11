@@ -1,0 +1,220 @@
+/* Prevent horizontal scroll on page */
+* { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+
+/* Top green strip (now taller, contains action buttons) */
+.top-strip {
+  background: #15a052;
+  width: 100%;
+  min-height: 0px;
+  padding: 2px 80px 2px 12px; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.navbar { max-width: 100%; overflow-x: hidden; }
+
+.top-strip .quick-actions {
+  display: flex;
+  gap: 8px;
+}
+/*nút gọi tổng đài*/
+.top-strip .btn {
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 14px;
+  }
+
+.top-strip .btn-outline {
+  border-color: #ffffff;
+  color: #ffffff;
+  background: transparent;
+}
+
+.top-strip .btn-outline:hover {
+  background: #ffffff;
+  color: #15a052;
+}
+
+/* Top section */
+.navbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  position: relative;
+}
+
+.logo-wrap img {
+  height: 205px;
+  width: 160px;
+  object-fit: contain;
+  transform: translate(250px, -50px);
+}
+
+.title-wrap {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.2;
+    font-family: 'Taviraj', serif;
+    z-index: 1;             /* stay behind interactive elements */
+    pointer-events: none;   /* don't block clicks to elements below */
+  }
+  
+  .title-vi {
+    color: #d11f1f;
+    font-weight: 700; /* Taviraj Bold */
+    letter-spacing: 4px;
+    font-size: 30px;
+  }
+  
+  .title-en {
+    color: #118c46;
+    font-weight: 700; /* Taviraj Bold */
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-top: 4px;
+  }
+  
+
+.actions-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 280px;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+.btn-outline:hover {
+  border-color: #15a052;
+  color: #15a052;
+}
+
+.search-box {
+  position: absolute;
+  top: 25%;    /* kéo lên: giảm số % để lên cao hơn */
+  left: 80%;   /* dịch sang trái: giảm số % để sát trái */
+  width: 260px;
+  z-index: 2;  /* above title */
+
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 32px 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 18px;
+  outline: none;
+}
+
+.search-box .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Menu row */
+.navbar-menu {
+  display: flex;
+  justify-content: center;   /* ✅ Căn toàn bộ menu vào giữa */
+  align-items: center;       /* ✅ Căn chữ giữa theo chiều dọc */
+  
+  flex-wrap: wrap;
+  gap: 28px;                 /* ✅ Khoảng cách giữa các mục giống ảnh */
+  
+  width: 100%;
+  padding: 12px 16px;
+
+  margin-top: -103px;        /* ✅ Bạn đã kéo menu lên, giữ nguyên */
+  
+  border-top: 0.5px solid #c9c4c4;
+  border-bottom: 0.5px solid#c9c4c4;
+  background-color: #fcfcfc; /* ✅ Nếu bạn muốn nền xanh giống hình */
+      position: relative;
+  z-index: 3;                /* ensure menu is above overlays */
+}
+
+.navbar-menu a {
+  color: #080202;            /* ✅ Mặc định */
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.navbar-menu a:hover {
+  color: #15a052;            /* ✅ Màu xanh khi hover */
+}
+
+/* Active/clicked state */
+.navbar-menu a:focus,
+.navbar-menu a:active,
+.navbar-menu a.active {
+  color: #15a052;
+  outline: none;
+}
+
+
+/* Basic responsiveness */
+@media (max-width: 900px) {
+  .actions-wrap {
+    min-width: unset;
+    align-items: stretch;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .title-wrap {
+    order: 3;
+    position: static;
+    transform: none;
+  }
+
+  .actions-wrap {
+    order: 2;
+    width: 100%;
+    align-items: center;
+  }
+}
+
