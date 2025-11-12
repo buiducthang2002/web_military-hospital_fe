@@ -5,10 +5,18 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.doctors-header {
+.doctors-content-wrapper {
   max-width: 1200px;
-  margin: 0 auto 40px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.doctors-header {
+  flex: 1;
   text-align: left;
+  min-width: 0;
 }
 
 .doctors-label {
@@ -35,18 +43,18 @@
   color: #333;
   line-height: 1.6;
   margin: 0;
-  max-width: 800px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .doctors-carousel {
-  max-width: 1200px;
-  margin: 0 auto;
+  flex: 1;
   position: relative;
   display: flex;
   align-items: center;
   gap: 20px;
   padding: 0 50px;
+  min-width: 0;
+  margin-top: 40px;
 }
 
 .carousel-btn {
@@ -83,8 +91,8 @@
 
 .doctors-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   width: 100%;
   overflow: hidden;
 }
@@ -175,8 +183,14 @@
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
+  .doctors-content-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
   .doctors-carousel {
     padding: 0 40px;
+    width: 100%;
   }
 
   .doctors-grid {
@@ -195,6 +209,11 @@
     padding: 40px 15px;
   }
 
+  .doctors-content-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .doctors-title {
     font-size: 24px;
   }
@@ -205,6 +224,7 @@
 
   .doctors-carousel {
     padding: 0 30px;
+    width: 100%;
   }
 
   .doctors-grid {

@@ -25,10 +25,8 @@ import doctor20 from './Images/doctor20.png'
 
 const Doctors = () => {
   const [currentPage, setCurrentPage] = useState(0)
-  const doctorsPerPage = 4
-  const totalPages = 5
+  const doctorsPerPage = 3
 
-  // Danh sách thông tin 20 bác sĩ - Bạn có thể chỉnh sửa position và name ở đây
   const allDoctors = [
     { image: doctor1, position: 'Giám đốc Bệnh Viện', name: 'Bác sỹ CKII: Nguyễn Văn A' },
     { image: doctor2, position: 'Phó khoa', name: 'Trần Thị B' },
@@ -52,6 +50,8 @@ const Doctors = () => {
     { image: doctor20, position: 'Trưởng khoa', name: 'Hồ Thị U' }
   ]
 
+  const totalPages = Math.ceil(allDoctors.length / doctorsPerPage)
+
   // Lấy bác sĩ cho page hiện tại (4 bác sĩ mỗi page)
   const startIndex = currentPage * doctorsPerPage
   const endIndex = startIndex + doctorsPerPage
@@ -71,15 +71,16 @@ const Doctors = () => {
 
   return (
     <div className="doctors-section">
-      <div className="doctors-header">
-        <h3 className="doctors-label">BÁC SỸ</h3>
-        <h2 className="doctors-title">Đội ngũ bác sỹ & chuyên gia</h2>
-        <p className="doctors-description">
-          Hơn 100 bác sĩ, đội ngũ hàng đầu cùng với hơn 200 nhân viên y tế tận tâm, sẵn sàng phục vụ và chăm sóc sức khỏe cho mỗi bệnh nhân
-        </p>
-      </div>
+      <div className="doctors-content-wrapper">
+        <div className="doctors-header">
+          <h3 className="doctors-label">BÁC SỸ</h3>
+          <h2 className="doctors-title">Đội ngũ bác sỹ & chuyên gia y tế</h2>
+          <p className="doctors-description">
+          Với hơn 100 bác sĩ giàu kinh nghiệm, là những chuyên gia hàng đầu trong nhiều lĩnh vực chuyên khoa khác nhau, cùng đội ngũ hơn 200 nhân viên y tế tận tâm, được đào tạo bài bản và luôn đặt sức khỏe của người bệnh lên hàng đầu, chúng tôi tự hào mang đến dịch vụ khám chữa bệnh toàn diện, tận tình và chất lượng cao. Từng thành viên trong đội ngũ luôn sẵn sàng phục vụ, đồng hành và chăm sóc sức khỏe cho mỗi bệnh nhân bằng cả chuyên môn, y đức và lòng nhân ái......
+          </p>
+        </div>
 
-      <div className="doctors-carousel">
+        <div className="doctors-carousel">
         <button className="carousel-btn carousel-btn-left" onClick={handlePrev}>
           <ChevronLeft size={20} />
         </button>
@@ -112,6 +113,7 @@ const Doctors = () => {
         <button className="carousel-btn carousel-btn-right" onClick={handleNext}>
           <ChevronRight size={20} />
         </button>
+        </div>
       </div>
 
       <div className="carousel-indicators">

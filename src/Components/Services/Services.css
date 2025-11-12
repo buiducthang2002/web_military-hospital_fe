@@ -20,6 +20,15 @@
   display: flex;
   align-items: flex-start;
   gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.service-item:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
 }
 
 .service-icon {
