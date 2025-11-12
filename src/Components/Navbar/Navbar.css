@@ -1,135 +1,135 @@
-/* Prevent horizontal scroll on page */
-* { box-sizing: border-box; }
-html, body { overflow-x: hidden; }
+/* reset box model */
+* {
+  box-sizing: border-box;
+}
 
-/* Top green strip (now taller, contains action buttons) */
+/* Top green strip */
 .top-strip {
-  background: #15a052;
+  background: #0b7439;
   width: 100%;
-  min-height: 0px;
-  padding: 2px 80px 2px 12px; 
+  padding: 6px 20px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
 }
 
-.navbar { max-width: 100%; overflow-x: hidden; }
-
+/* quick action buttons */
 .top-strip .quick-actions {
   display: flex;
   gap: 8px;
 }
-/*nút gọi tổng đài*/
 .top-strip .btn {
-    padding: 4px 10px;
-    font-size: 12px;
-    border-radius: 14px;
-  }
-
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 14px;
+  cursor: pointer;
+}
 .top-strip .btn-outline {
-  border-color: #ffffff;
-  color: #ffffff;
+  border: 1px solid #fff;
+  border-color: #fff;
+  color: #fff;
   background: transparent;
 }
-
 .top-strip .btn-outline:hover {
-  background: #ffffff;
+  border: 1px solid #fff;
+  border-color: #fff;
+  background: #fff;
   color: #15a052;
 }
 
-/* Top section */
+/* NAVBAR WRAPPER */
+.navbar {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #ffffff;
+}
+
+/* Use CSS Grid for the top row: logo | centered title | actions */
 .navbar-top {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  padding: 12px 16px;
+  gap: 20px;
+  padding: 0px 20px 19px 20px;
+  width: 100%;
   position: relative;
 }
 
-.logo-wrap img {
-  height: 205px;
-  width: 160px;
-  object-fit: contain;
-  transform: translate(250px, -50px);
+/* Logo: keep it responsive, remove absolute transforms */
+.logo-wrap {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: flex-start;
+  padding: 4px 16px;
+  overflow: visible;
+  min-width: fit-content;
+  background: transparent;
 }
 
-.title-wrap {
-    position: absolute;
-    top: 33%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    line-height: 1.2;
-    font-family: 'Taviraj', serif;
-    z-index: 1;             /* stay behind interactive elements */
-    pointer-events: none;   /* don't block clicks to elements below */
-  }
-  
-  .title-vi {
-    color: #d11f1f;
-    font-weight: 700; /* Taviraj Bold */
-    letter-spacing: 4px;
-    font-size: 30px;
-  }
-  
-  .title-en {
-    color: #118c46;
-    font-weight: 700; /* Taviraj Bold */
-    letter-spacing: 2px;
-    font-size: 30px;
-    margin-top: 4px;
-  }
-  
+.logo-wrap img {
+  height: 140px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  max-width: 100%;
+  transform: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  mix-blend-mode: multiply;
+}
 
-.actions-wrap {
+/* Title: center inside the middle grid column */
+.title-wrap {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
-  min-width: 0;
-  flex: 1 1 280px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  z-index: 2;
+  pointer-events: none;
+  padding: 0 10px;
 }
 
-.quick-actions {
+.title-vi {
+  color: #d11f1f;
+  font-weight: 700;
+  letter-spacing: 4px;
+  font-size: 28px;
+}
+.title-en {
+  color: #118c46;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 20px;
+  margin-top: 4px;
+}
+
+/* Actions area (search + maybe buttons) */
+.actions-wrap {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
   gap: 8px;
+  padding-right: 8px;
+  min-width: 0;
 }
 
-.btn {
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.btn-outline {
-  background: #ffffff;
-  border: 1px solid #cccccc;
-}
-
-.btn-outline:hover {
-  border-color: #15a052;
-  color: #15a052;
-}
-
+/* Search box: make it part of actions-wrap, not absolute */
 .search-box {
-  position: absolute;
-  top: 25%;    /* kéo lên: giảm số % để lên cao hơn */
-  left: 80%;   /* dịch sang trái: giảm số % để sát trái */
+  position: relative;
   width: 260px;
-  z-index: 2;  /* above title */
-
+  min-width: 160px;
 }
 
 .search-box input {
   width: 100%;
-  padding: 8px 32px 8px 12px;
+  padding: 8px 36px 8px 12px;
   border: 1px solid #e0e0e0;
   border-radius: 18px;
   outline: none;
@@ -140,81 +140,96 @@ html, body { overflow-x: hidden; }
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 18px;
-  opacity: 0.9;
+  font-size: 16px;
   pointer-events: none;
+  opacity: 0.9;
 }
 
 /* Menu row */
 .navbar-menu {
   display: flex;
-  justify-content: center;   /* ✅ Căn toàn bộ menu vào giữa */
-  align-items: center;       /* ✅ Căn chữ giữa theo chiều dọc */
-  
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 28px;                 /* ✅ Khoảng cách giữa các mục giống ảnh */
-  
+  gap: 28px;
   width: 100%;
   padding: 12px 16px;
-
-  margin-top: -103px;        /* ✅ Bạn đã kéo menu lên, giữ nguyên */
-  
+  margin-top: -30px; /* điều chỉnh nhẹ để kéo menu lên (nếu muốn) */
+  overflow: visible;
   border-top: 0.5px solid #c9c4c4;
-  border-bottom: 0.5px solid#c9c4c4;
-  background-color: #fcfcfc; /* ✅ Nếu bạn muốn nền xanh giống hình */
-      position: relative;
-  z-index: 3;                /* ensure menu is above overlays */
+  border-bottom: 0.5px solid #c9c4c4;
+  background-color: #0b7439;
+  position: relative;
+  z-index: 3;
+}
+
+/* Fixed menu when scrolled */
+.navbar-menu.fixed-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  margin-top: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-menu a {
-  color: #080202;            /* ✅ Mặc định */
+  color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 14px;
   white-space: nowrap;
 }
-
 .navbar-menu a:hover {
-  color: #15a052;            /* ✅ Màu xanh khi hover */
+  color: #ffeb3b;
 }
-
-/* Active/clicked state */
-.navbar-menu a:focus,
-.navbar-menu a:active,
 .navbar-menu a.active {
-  color: #15a052;
-  outline: none;
+  color: #ffeb3b;
 }
 
-
-/* Basic responsiveness */
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .actions-wrap {
-    min-width: unset;
-    align-items: stretch;
+  .navbar-top {
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
   }
-
+  .logo-wrap img {
+    height: 110px;
+    width: auto;
+  }
   .search-box {
-    width: 100%;
+    width: 200px;
+    min-width: 140px;
   }
 }
 
 @media (max-width: 700px) {
+  /* stack vertically on small devices */
   .navbar-top {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
-
   .title-wrap {
-    order: 3;
-    position: static;
-    transform: none;
-  }
-
+    pointer-events: auto;
+  } /* allow interaction if needed */
   .actions-wrap {
-    order: 2;
     width: 100%;
-    align-items: center;
+    justify-content: center;
+  }
+  .search-box {
+    width: 90%;
+    max-width: 360px;
+  }
+  .logo-wrap img {
+    height: 90px;
+    width: auto;
+  }
+  .navbar-menu {
+    margin-top: 0;
+    gap: 12px;
+    padding: 10px;
   }
 }
-
