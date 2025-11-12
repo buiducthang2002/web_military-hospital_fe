@@ -1,10 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden !important;
+  overflow-y: auto;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  width: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden !important;
+  overflow-y: auto;
+  position: relative;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  height: auto; /* ✅ Cho phép mở rộng theo nội dung */
+  overflow-x: hidden !important;
+  position: relative;
 }
 
 code {
