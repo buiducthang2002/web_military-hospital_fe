@@ -1,12 +1,93 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Organization.css'
-import OrganizationStructure from './OrganizationStructure'
 import doctor1 from './Images/doctor1.png'
 import doctor2 from './Images/doctor2.png'
 import doctor3 from './Images/doctor3.png'
 import doctor4 from './Images/doctor4.png'
 import doctor05 from './Images/doctor05.png'
+
+// OrganizationStructure component (gộp từ OrganizationStructure.jsx)
+const OrganizationStructure = ({ director, viceDirectors }) => {
+  return (
+    <div className="organization-structure">
+      <div className="org-structure-container">
+        {/* Leadership Section */}
+        <div className="org-leadership-section">
+          <div className="org-leadership-title">LÃNH ĐẠO BỆNH VIỆN</div>
+        </div>
+        
+        {/* Director Section */}
+        <div className="org-director-wrapper">
+          <div className="org-connector-vertical org-connector-top"></div>
+          <div className="org-director-item">
+            <div className="org-director-image-wrapper">
+              <img src={director.image} alt={director.name} className="org-director-image" />
+            </div>
+            <div className="org-deputy-label">{director.position}</div>
+            <div className="org-director-name">{director.name}</div>
+          </div>
+          <div className="org-connector-vertical org-connector-director-bottom"></div>
+        </div>
+
+        {/* Horizontal connector from director to deputies */}
+        <div className="org-connector-horizontal"></div>
+
+        {/* Deputy Directors Section */}
+        <div className="org-deputy-section">
+          {viceDirectors.map((vice, index) => (
+            <div key={`vice-${index}`} className="org-deputy-item-wrapper">
+              <div className="org-connector-vertical org-connector-deputy"></div>
+              <div className="org-deputy-item">
+                <div className="org-deputy-image-wrapper">
+                  <img src={vice.image} alt={vice.name || vice.position} className="org-deputy-image" />
+                </div>
+                <div className="org-deputy-label">{vice.position}</div>
+                <div className="org-deputy-name">{vice.name}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Board of Directors Section */}
+        <div className="org-board-section">
+          <div className="org-connector-vertical org-connector-board-top"></div>
+          <div className="org-board-title">BAN GIÁM ĐỐC BỆNH VIỆN</div>
+          <div className="org-connector-vertical org-connector-board-bottom"></div>
+        </div>
+
+        {/* Functional Blocks Section */}
+        <div className="org-functional-section">
+          <div className="org-connector-horizontal org-connector-functional"></div>
+          <div className="org-functional-block">
+            <div className="org-connector-vertical org-connector-block"></div>
+            <div className="org-functional-label">Khối nội</div>
+            <div className="org-connector-vertical org-connector-content"></div>
+            <div className="org-functional-content"></div>
+          </div>
+          <div className="org-functional-block">
+            <div className="org-connector-vertical org-connector-block"></div>
+            <div className="org-functional-label">Khối ngoại</div>
+            <div className="org-connector-vertical org-connector-content"></div>
+            <div className="org-functional-content"></div>
+          </div>
+          <div className="org-functional-block">
+            <div className="org-connector-vertical org-connector-block"></div>
+            <div className="org-functional-label">Khối cận lâm sàng</div>
+            <div className="org-connector-vertical org-connector-content"></div>
+            <div className="org-functional-content"></div>
+          </div>
+          <div className="org-functional-block">
+            <div className="org-connector-vertical org-connector-block"></div>
+            <div className="org-functional-label">Khối văn phòng</div>
+            <div className="org-connector-vertical org-connector-content"></div>
+            <div className="org-functional-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const Organization = () => {
   const director = {
@@ -49,52 +130,18 @@ const Organization = () => {
         </div>
       </div>
 
-      {/* Board of Directors Section */}
-      <section className="board-directors-section">
-        <div className="board-directors-container">
-          <h2 className="board-directors-title">BAN GIÁM ĐỐC BỆNH VIỆN</h2>
-
-          <div className="director-section">
-            <div className="director-card">
-              <div className="director-image-wrapper">
-                <img src={director.image} alt={director.name} className="director-image" />
-              </div>
-              <div className="director-info">
-                <p className="director-position">{director.position}</p>
-                <p className="director-name">{director.name}</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="vice-directors-section">
-            {viceDirectors.map((vice, index) => (
-              <div key={`vice-${vice.name || vice.position}-${index}`} className="vice-director-card">
-                <div className="vice-director-image-wrapper">
-                  <img src={vice.image} alt={vice.name || vice.position} className="vice-director-image" />
-                </div>
-                <div className="vice-director-info">
-                  <p className="vice-director-position">{vice.position}</p>
-                  {vice.name && <p className="vice-director-name">{vice.name}</p>}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="organization-section">
         <div className="organization-container">
           <header className="organization-header">
-            <h1 className="organization-heading">Cơ cấu tổ chức</h1>
             <p className="organization-description">
-              Thông tin giới thiệu tổng quan về mô hình tổ chức, chức năng nhiệm vụ của các khoa phòng
-              thuộc Bệnh viện Quân y 4. Các nội dung bên dưới có thể được cập nhật chi tiết hơn theo nhu cầu.
+              Thông tin giới thiệu tổng quan về mô hình tổ chức, chức năng nhiệm vụ của các khoa
+               phòng thuộc Bệnh viện Quân y 4. Các nội dung bên dưới có thể được cập nhật chi tiết hơn theo nhu cầu.
             </p>
           </header>
 
           {/* Organization Structure Chart */}
           <div className="organization-structure-wrapper">
-            <OrganizationStructure />
+            <OrganizationStructure director={director} viceDirectors={viceDirectors} />
           </div>
 
           <article className="organization-card">

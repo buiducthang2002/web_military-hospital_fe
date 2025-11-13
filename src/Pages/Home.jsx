@@ -7,6 +7,7 @@ import Features from '../Components/Features/Features'
 import NewsEvents from '../Components/NewsEvents/NewsEvents'
 import FeaturedEvents from '../Components/FeaturedEvents/FeaturedEvents'
 import Video from '../Components/Video/Video'
+import BannerGrid from '../Components/BannerGrid/BannerGrid'
 import Footer from '../Components/Footer/Footer'
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
       <NewsEvents />
       <FeaturedEvents />
       <Video />
+      <BannerGrid />
       <Footer />
     </div>
   )
