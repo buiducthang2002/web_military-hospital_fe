@@ -14,8 +14,8 @@ const Navbar = () => {
     { href: '/organization', label: 'Cơ cấu tổ chức', isRoute: true },
     { href: '#news', label: 'Tin tức, Sự kiện', isRoute: false },
     { href: '#services', label: 'Khám chữa bệnh', isRoute: false },
-    { href: '#party', label: 'Công tác Đảng- Chính trị', isRoute: false },
-    { href: '#research', label: 'Nghiên cứu khoa học-Hợp tác', isRoute: false },
+    { href: '#party', label: 'Công tác Đảng - Chính trị', isRoute: false },
+    { href: '#research', label: 'Nghiên cứu khoa học - Hợp tác', isRoute: false },
     { href: '#guide', label: 'Hướng dẫn khách hàng', isRoute: false },
     { href: '#info', label: 'Thông tin chung', isRoute: false },
   ]

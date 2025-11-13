@@ -7,10 +7,19 @@
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .banner-container:active {
   cursor: grabbing;
+  outline: none;
+}
+
+.banner-container:focus {
+  outline: none;
+  border: none;
 }
 
 .banner-container::-webkit-scrollbar {
@@ -29,18 +38,29 @@
 
 .banner-slide {
   width: 100vw;
+  height: 350px;
   flex-shrink: 0;
   scroll-snap-align: start;
   position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .banner-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center;
   user-select: none;
   pointer-events: none;
+  border: none;
+  outline: none;
 }
 
 .banner-dots {
@@ -54,11 +74,11 @@
 }
 
 .dot {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  border: 1px solid #fff;
-  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
@@ -70,17 +90,23 @@
 
 .dot::before {
   content: '';
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
   transition: all 0.3s ease;
+}
+
+.dot.active {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .dot.active::before {
   background-color: #fff;
   width: 10px;
   height: 10px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
 .dot:hover {
@@ -89,5 +115,27 @@
 
 .dot:hover::before {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-slide {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-slide {
+    height: 180px;
+  }
+
+  .banner-dots {
+    bottom: 10px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
 }
 
