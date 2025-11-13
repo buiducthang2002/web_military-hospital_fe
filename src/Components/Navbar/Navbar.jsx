@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './Navbar.css'
 import Logo from '../Assets/Logo.jpg'
 
@@ -6,17 +7,49 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState('#home')
   const [isScrolled, setIsScrolled] = useState(false)
   const navbarRef = useRef(null)
+  const location = useLocation()
 
   const menuItems = [
-    { href: '#home', label: 'Trang chủ' },
-    { href: '#org', label: 'Cơ cấu tổ chức' },
-    { href: '#news', label: 'Tin tức, Sự kiện' },
-    { href: '#services', label: 'Khám chữa bệnh' },
-    { href: '#party', label: 'Công tác Đảng- Chính trị' },
-    { href: '#research', label: 'Nghiên cứu khoa học-Hợp tác' },
-    { href: '#guide', label: 'Hướng dẫn khách hàng' },
-    { href: '#info', label: 'Thông tin chung' },
+    { href: '/', label: 'Trang chủ', isRoute: true },
+    { href: '/organization', label: 'Cơ cấu tổ chức', isRoute: true },
+    { href: '#news', label: 'Tin tức, Sự kiện', isRoute: false },
+    { href: '#services', label: 'Khám chữa bệnh', isRoute: false },
+    { href: '#party', label: 'Công tác Đảng- Chính trị', isRoute: false },
+    { href: '#research', label: 'Nghiên cứu khoa học-Hợp tác', isRoute: false },
+    { href: '#guide', label: 'Hướng dẫn khách hàng', isRoute: false },
+    { href: '#info', label: 'Thông tin chung', isRoute: false },
   ]
+
+  // Cập nhật activeMenu dựa trên location
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setActiveMenu('/')
+    }
+  }, [location])
+//Bấm vào menu là cuộn về đầu trang
+  useEffect(() => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }, [location.pathname])
+
+  const handleMenuClick = (event, item) => {
+    setActiveMenu(item.href)
+
+    if (item.isRoute) {
+      if (item.href === '/' && location.pathname === '/') {
+        event.preventDefault()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+      return
+    }
+
+    event.preventDefault()
+    const targetElement = document.querySelector(item.href)
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +75,9 @@ const Navbar = () => {
 
         <div className="navbar-top">
           <div className="logo-wrap">
-            <img src={Logo} alt="Logo" />
+            <Link to="/">
+              <img src={Logo} alt="Logo" />
+            </Link>
           </div>
 
           <div className="title-wrap">
@@ -60,28 +95,50 @@ const Navbar = () => {
 
         <div className="navbar-menu">
           {menuItems.map(item => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={activeMenu === item.href ? 'active' : ''}
-              onClick={() => setActiveMenu(item.href)}
-            >
-              {item.label}
-            </a>
+            item.isRoute ? (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={location.pathname === item.href ? 'active' : ''}
+                onClick={event => handleMenuClick(event, item)}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className={activeMenu === item.href ? 'active' : ''}
+                onClick={event => handleMenuClick(event, item)}
+              >
+                {item.label}
+              </a>
+            )
           ))}
         </div>
       </div>
       {isScrolled && (
         <div className="navbar-menu fixed-menu">
           {menuItems.map(item => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={activeMenu === item.href ? 'active' : ''}
-              onClick={() => setActiveMenu(item.href)}
-            >
-              {item.label}
-            </a>
+            item.isRoute ? (
+              <Link
+                key={item.href}
+                to={item.href}
+                className={location.pathname === item.href ? 'active' : ''}
+                onClick={event => handleMenuClick(event, item)}
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className={activeMenu === item.href ? 'active' : ''}
+                onClick={event => handleMenuClick(event, item)}
+              >
+                {item.label}
+              </a>
+            )
           ))}
         </div>
       )}

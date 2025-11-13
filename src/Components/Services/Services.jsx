@@ -1,4 +1,5 @@
 import { PhoneCall, CalendarClock, Users, MailSearch } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import './Services.css'
 
 const Services = () => {
@@ -6,22 +7,26 @@ const Services = () => {
     {
       icon: <PhoneCall size={38} color="#109832" strokeWidth={0.75} />,
       title: 'Gọi tổng đài',
-      subtitle: 'Đặt lịch khám qua tổng đài 1900.****'
+      subtitle: 'Đặt lịch khám qua tổng đài 1900.****',
+      path: '/call-center'
     },
     {
       icon: <CalendarClock size={48} color="#109832" strokeWidth={0.5} />,
       title: 'Đặt lịch khám',
-      subtitle: 'Đặt lịch khám online tại website'
+      subtitle: 'Đặt lịch khám online tại website',
+      path: '/book-appointment'
     },
     {
       icon: <Users size={48} color="#109832" strokeWidth={0.5} />,
       title: 'Hỏi đáp cùng chuyên gia',
-      subtitle: 'Giải đáp thắc mắc về sức khoẻ'
+      subtitle: 'Giải đáp thắc mắc về sức khoẻ',
+      path: '/expert-consultation'
     },
     {
       icon: <MailSearch size={48} color="#109832" strokeWidth={0.5} />,
       title: 'Kết quả khám',
-      subtitle: 'Tra cứu kết quả xét nghiệm'
+      subtitle: 'Tra cứu kết quả xét nghiệm',
+      path: '/check-results'
     }
   ]
 
@@ -29,13 +34,18 @@ const Services = () => {
     <div className="services-section">
       <div className="services-container">
         {services.map((service, index) => (
-          <div key={service.title} className={`service-item ${index === 0 ? 'service-item-phone' : ''}`}>
+          <Link 
+            key={service.title} 
+            to={service.path}
+            className={`service-item ${index === 0 ? 'service-item-phone' : ''}`}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
             <div className="service-icon">{service.icon}</div>
             <div className="service-content">
               <h3 className="service-title">{service.title}</h3>
               <p className="service-subtitle">{service.subtitle}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
