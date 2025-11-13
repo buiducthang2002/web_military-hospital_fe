@@ -1,0 +1,290 @@
+.organization-main {
+  padding-top: 0;
+  padding-bottom: 60px;
+  background: #d6f2d6;
+}
+
+/* Breadcrumb */
+.organization-breadcrumb {
+  width: 100%;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.breadcrumb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.breadcrumb-link {
+  color: #0f5e33;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+  color: #15a052;
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: #6b7280;
+}
+
+.breadcrumb-current {
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Board of Directors Section */
+.board-directors-section {
+  width: 100%;
+  padding: 40px 20px;
+  background: ##00A86B;
+}
+
+.board-directors-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.board-directors-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.director-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.director-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 300px;
+}
+
+.director-image-wrapper {
+  width: 200px;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+.director-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.director-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.director-position {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.director-name {
+  font-size: 15px;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.vice-directors-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.vice-director-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 180px;
+}
+
+.vice-director-image-wrapper {
+  width: 150px;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+}
+
+.vice-director-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vice-director-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vice-director-position {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.vice-director-name {
+  font-size: 13px;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.organization-section {
+  width: 100%;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.organization-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.organization-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.organization-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #136f3f;
+  margin: 0;
+}
+
+.organization-description {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #4b5563;
+  max-width: 780px;
+  margin: 0;
+}
+
+.organization-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 14px 38px -24px rgba(15, 94, 51, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.organization-subheading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f5e33;
+  margin: 0;
+}
+
+.organization-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #1f2937;
+  margin: 0;
+}
+
+.organization-structure-wrapper {
+  width: 100%;
+  margin: 40px 0;
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(15, 94, 51, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .organization-section {
+    padding: 40px 16px;
+  }
+
+  .organization-heading {
+    font-size: 28px;
+  }
+
+  .organization-card {
+    padding: 20px 24px;
+  }
+
+  .organization-subheading {
+    font-size: 18px;
+  }
+
+  .organization-text {
+    font-size: 15px;
+  }
+
+  .board-directors-section {
+    padding: 30px 16px;
+  }
+
+  .board-directors-title {
+    font-size: 24px;
+  }
+
+  .director-image-wrapper {
+    width: 160px;
+    height: 200px;
+  }
+
+  .vice-director-image-wrapper {
+    width: 120px;
+    height: 150px;
+  }
+
+  .vice-directors-section {
+    gap: 20px;
+  }
+
+  .vice-director-card {
+    max-width: 140px;
+  }
+}
+
