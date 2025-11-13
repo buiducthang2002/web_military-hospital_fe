@@ -12,7 +12,7 @@ const Navbar = () => {
   const menuItems = [
     { href: '/', label: 'Trang chủ', isRoute: true },
     { href: '/organization', label: 'Cơ cấu tổ chức', isRoute: true },
-    { href: '#news', label: 'Tin tức, Sự kiện', isRoute: false },
+    { href: '/news-events', label: 'Tin tức, Sự kiện', isRoute: true },
     { href: '#services', label: 'Khám chữa bệnh', isRoute: false },
     { href: '#party', label: 'Công tác Đảng - Chính trị', isRoute: false },
     { href: '#research', label: 'Nghiên cứu khoa học - Hợp tác', isRoute: false },
@@ -28,23 +28,28 @@ const Navbar = () => {
   }, [location])
 //Bấm vào menu là cuộn về đầu trang
   useEffect(() => {
-    if (location.pathname === '/') {
+    if (location.pathname === '/' || location.pathname === '/organization' || location.pathname === '/news-events') {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [location.pathname])
 
   const handleMenuClick = (event, item) => {
-    setActiveMenu(item.href)
-
     if (item.isRoute) {
-      if (item.href === '/' && location.pathname === '/') {
+      // Nếu đang ở cùng trang, prevent navigation và scroll to top
+      if (item.href === location.pathname) {
         event.preventDefault()
+        event.stopPropagation()
+        setActiveMenu(item.href)
         window.scrollTo({ top: 0, behavior: 'smooth' })
+        return false
       }
+      // Nếu navigate sang trang khác, để React Router xử lý
+      setActiveMenu(item.href)
       return
     }
 
     event.preventDefault()
+    setActiveMenu(item.href)
     const targetElement = document.querySelector(item.href)
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })

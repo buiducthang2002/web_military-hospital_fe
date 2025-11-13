@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './Video.css'
 import anh6 from './Images/anh6.jpg'
 import anh7 from './Images/anh7.jpg'
@@ -83,6 +84,8 @@ const Video = () => {
   const [activeTab, setActiveTab] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedVideoUrl, setSelectedVideoUrl] = useState(null)
+  const location = useLocation()
+  const isNewsEventsPage = location.pathname === '/news-events'
 
   const tabs = VIDEO_CATEGORIES.map((category) => category.name)
   const activeVideos = VIDEO_CATEGORIES[activeTab]?.videos ?? []
@@ -183,15 +186,21 @@ const Video = () => {
           </div>
 
           <div className="news-pagination">
-            {Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index}
-                className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
-                onClick={() => handlePageChange(index + 1)}
-              >
-                {index + 1}
-              </button>
-            ))}
+            {isNewsEventsPage ? (
+              Array.from({ length: totalPages }, (_, index) => (
+                <button
+                  key={index}
+                  className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
+                  onClick={() => handlePageChange(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              ))
+            ) : (
+              <Link to="/news-events" className="view-more-text">
+                Xem thêm
+              </Link>
+            )}
           </div>
         </div>
       </div>

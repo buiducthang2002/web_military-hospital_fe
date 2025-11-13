@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './NewsEvents.css'
 import anh1 from './Images/anh1.jpg'
 import anh2 from './Images/anh2.jpg'
@@ -17,6 +18,8 @@ import anh13 from './Images/anh13.jpg'
 const NewsEvents = () => {
   const [activeTab, setActiveTab] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
+  const location = useLocation()
+  const isNewsEventsPage = location.pathname === '/news-events'
 
   const tabs = [
     'Tin tức y học thế giới',
@@ -253,16 +256,21 @@ const NewsEvents = () => {
         </div>
 
         <div className="news-pagination">
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              key={index}
-              className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
-              onClick={() => setCurrentPage(index + 1)}
-            >
-              {index + 1}
-            </button>
-          ))}
-
+          {isNewsEventsPage ? (
+            Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index}
+                className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
+                onClick={() => setCurrentPage(index + 1)}
+              >
+                {index + 1}
+              </button>
+            ))
+          ) : (
+            <Link to="/news-events" className="view-more-text">
+              Xem thêm
+            </Link>
+          )}
         </div>
       </div>
     </div>

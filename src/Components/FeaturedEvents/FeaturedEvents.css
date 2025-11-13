@@ -171,6 +171,20 @@
     margin-left: 5px;
     letter-spacing: 2px;
   }
+
+  .view-more-text {
+    font-size: 16px;
+    color: #0f5e33;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .view-more-text:hover {
+    color: #15a052;
+    text-decoration: underline;
+  }
   
   /* RESPONSIVE */
   @media (max-width: 1024px) {

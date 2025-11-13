@@ -5,7 +5,8 @@ import CallCenter from './Pages/CallCenter';
 import BookAppointment from './Pages/BookAppointment';
 import ExpertConsultation from './Pages/ExpertConsultation';
 import CheckResults from './Pages/CheckResults';
-import Organization from './Pages/Organization';
+import Organization from './Sections/Organization/Organization';
+import NewsEventsPage from './Tintuc/NewsEventsPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/organization" element={<Organization />} />
+        <Route path="/news-events" element={<NewsEventsPage />} />
         <Route path="/call-center" element={<CallCenter />} />
         <Route path="/book-appointment" element={<BookAppointment />} />
         <Route path="/expert-consultation" element={<ExpertConsultation />} />
