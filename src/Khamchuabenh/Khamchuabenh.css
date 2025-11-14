@@ -1,0 +1,288 @@
+.khamchuabenh-page {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.khamchuabenh-main {
+  flex: 1;
+  padding: 10px 20px 60px;
+  background: #ffffff;
+}
+
+.khamchuabenh-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.khamchuabenh-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 5px;
+  color: #000000;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.intro-section {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #15a053;
+}
+
+.intro-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.time-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.time-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.clock-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.transition-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin-top: 24px;
+  font-weight: 500;
+}
+
+.arrow-down {
+  text-align: center;
+  font-size: 32px;
+  color: #15a053;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.step-section {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #15a053;
+}
+
+.step-1 {
+  border-left-color: #15a053;
+}
+
+.step-2 {
+  border-left-color: #8b6914;
+}
+
+.step-3 {
+  border-left-color: #a0825d;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.step-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.step-content {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step-content > li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 16px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.step-content > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #15a053;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.sub-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 20px;
+}
+
+.sub-list > li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.sub-list > li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #15a053;
+  font-weight: bold;
+}
+
+.documents-list {
+  margin-top: 16px;
+}
+
+.documents-list > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-left: 0;
+}
+
+.documents-list > li::before {
+  display: none;
+}
+
+.document-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.note-section {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: #fff9e6;
+  border-radius: 8px;
+  border-left: 4px solid #ffa500;
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.warning-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.note-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.note-content {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-content > li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 16px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.note-content > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffa500;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.closing-message {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #15a053;
+  margin-top: 40px;
+  padding: 20px;
+  background: #f3faf6;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .khamchuabenh-title {
+    font-size: 22px;
+  }
+
+  .step-title,
+  .note-title {
+    font-size: 18px;
+  }
+
+  .intro-section,
+  .step-section,
+  .note-section {
+    padding: 20px;
+  }
+
+  .intro-text,
+  .transition-text,
+  .step-content > li,
+  .note-content > li {
+    font-size: 15px;
+  }
+
+  .sub-list > li {
+    font-size: 14px;
+  }
+}
+

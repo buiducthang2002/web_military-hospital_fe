@@ -12,8 +12,16 @@ const Banner = () => {
   const [scrollLeft, setScrollLeft] = useState(0)
   const bannerRef = useRef(null)
   const isTransitioning = useRef(false)
+  const dragStartPosition = useRef({ x: 0, y: 0 })
 
   const banners = [bannerImage1, bannerImage2, bannerImage3, bannerImage4]
+  // Mảng links cho từng banner - có thể thay đổi theo nhu cầu
+  const bannerLinks = [
+    'https://www.qdnd.vn/', 
+    'https://chinhphu.vn/', 
+    'https://suckhoedoisong.vn/', 
+    'https://www.mod.gov.vn/', 
+  ]
   // Tạo mảng với clone: [banner cuối, ...banners, banner đầu]
   const infiniteBanners = [banners[banners.length - 1], ...banners, banners[0]]
 
@@ -21,6 +29,7 @@ const Banner = () => {
     setIsDragging(true)
     setStartX(e.pageX - bannerRef.current.offsetLeft)
     setScrollLeft(bannerRef.current.scrollLeft)
+    dragStartPosition.current = { x: e.pageX, y: e.pageY }
   }
 
   const handleMouseMove = (e) => {
@@ -31,7 +40,8 @@ const Banner = () => {
     bannerRef.current.scrollLeft = scrollLeft - walk
   }
 
-  const handleDragEnd = () => {
+  const handleDragEnd = (e) => {
+    const wasDragging = isDragging
     setIsDragging(false)
     const banner = bannerRef.current
     if (!banner) return
@@ -39,6 +49,19 @@ const Banner = () => {
     const scrollPosition = banner.scrollLeft
     const bannerWidth = banner.offsetWidth
     let newIndex = Math.round(scrollPosition / bannerWidth)
+    
+    // Kiểm tra xem có phải là click (không phải drag) không
+    if (wasDragging && e) {
+      const dragDistance = Math.abs(e.pageX - dragStartPosition.current.x) + Math.abs(e.pageY - dragStartPosition.current.y)
+      // Nếu khoảng cách di chuyển < 5px, coi như là click
+      if (dragDistance < 5) {
+        const realIndex = newIndex - 1
+        if (realIndex >= 0 && realIndex < banners.length && bannerLinks[realIndex]) {
+          window.open(bannerLinks[realIndex], '_blank', 'noopener,noreferrer')
+          return
+        }
+      }
+    }
     
     // Xử lý vòng lặp
     if (newIndex === 0) {
@@ -72,14 +95,15 @@ const Banner = () => {
     }
   }
 
-  const handleMouseUp = () => {
-    handleDragEnd()
+  const handleMouseUp = (e) => {
+    handleDragEnd(e)
   }
 
   const handleTouchStart = (e) => {
     setIsDragging(true)
     setStartX(e.touches[0].pageX - bannerRef.current.offsetLeft)
     setScrollLeft(bannerRef.current.scrollLeft)
+    dragStartPosition.current = { x: e.touches[0].pageX, y: e.touches[0].pageY }
   }
 
   const handleTouchMove = (e) => {
@@ -89,8 +113,13 @@ const Banner = () => {
     bannerRef.current.scrollLeft = scrollLeft - walk
   }
 
-  const handleTouchEnd = () => {
-    handleDragEnd()
+  const handleTouchEnd = (e) => {
+    const touch = e.changedTouches[0]
+    const syntheticEvent = {
+      pageX: touch.pageX,
+      pageY: touch.pageY
+    }
+    handleDragEnd(syntheticEvent)
   }
 
   // Khởi tạo scroll về vị trí banner đầu tiên (index 1)

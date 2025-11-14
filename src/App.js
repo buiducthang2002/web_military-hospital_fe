@@ -7,6 +7,7 @@ import ExpertConsultation from './Pages/ExpertConsultation';
 import CheckResults from './Pages/CheckResults';
 import Organization from './Sections/Organization/Organization';
 import NewsEventsPage from './Tintuc/NewsEventsPage';
+import Khamchuabenh from './Khamchuabenh/Khamchuabenh';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/organization" element={<Organization />} />
         <Route path="/news-events" element={<NewsEventsPage />} />
+        <Route path="/kham-chua-benh" element={<Khamchuabenh />} />
         <Route path="/call-center" element={<CallCenter />} />
         <Route path="/book-appointment" element={<BookAppointment />} />
         <Route path="/expert-consultation" element={<ExpertConsultation />} />
