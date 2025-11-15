@@ -4,42 +4,6 @@
   background: #ffffff;
 }
 
-/* Breadcrumb */
-.organization-breadcrumb {
-  width: 100%;
-  padding: 16px 20px;
-  background: #ffffff;
-}
-
-.breadcrumb-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-}
-
-.breadcrumb-link {
-  color: #0f5e33;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.breadcrumb-link:hover {
-  color: #15a052;
-  text-decoration: underline;
-}
-
-.breadcrumb-separator {
-  color: #6b7280;
-}
-
-.breadcrumb-current {
-  color: #1f2937;
-  font-weight: 500;
-}
-
 /* Board of Directors Section */
 .board-directors-section {
   width: 100%;
@@ -319,8 +283,8 @@
 .org-leadership-title {
   background: #0b7439;
   color: #ffffff;
-  padding: 12px 32px;
-  border-radius: 8px;
+  padding: 12px 102px;
+  border-radius: 12px;
   font-size: 13px;
   font-weight: 600;
   text-align: center;
@@ -401,8 +365,8 @@
 .org-connector-horizontal {
   height: 3px;
   background: #6b7280;
-  width: calc(4 * 180px + 3 * 20px + 120px); /* Kéo dài hơn */
-  max-width: 828px;
+  width: calc(4 * 180px + 3 * 20px + 150px); /* Kéo dài hơn */
+  max-width: 850px;
   margin: 0 auto;
   position: relative;
   flex-shrink: 0;
@@ -411,10 +375,16 @@
 .org-connector-functional {
   grid-column: 1 / -1;
   width: calc(4 * 180px + 3 * 20px + 200px); /* Kéo dài sát các thanh dọc của 3 khối cuối */
-  max-width: 858px;
+  max-width: 868px;
   margin: 0 auto;
   height: 3px;
   background: #6b7280;
+}
+/* thanh ngang phía trên trưởng khoa bệnh viện */
+.org-connector-horizontal-5 {
+  width: calc(8 * 180px + 7 * 20px + 40px) !important; /* Kéo dài bằng với chiều rộng scrollable (8 items + 7 gaps + padding 20px mỗi bên) */
+  max-width: 100% !important;
+  margin: 0 auto;
 }
 
 /* Director Wrapper */
@@ -480,6 +450,47 @@
   max-width: 1200px;
 }
 
+/* Additional Directors Section - Khoảng cách giữa các ảnh */
+.org-deputy-section.org-deputy-section-5 {
+  display: flex !important;
+  gap: 20px !important; /* Khoảng cách giữa các ảnh */
+  padding: 0 20px !important; /* Padding */
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin; /* Giảm kích thước thanh cuộn cho Firefox */
+  scrollbar-color: #b3bac9 #f3f4f6;
+  grid-template-columns: none !important; /* Override grid từ org-deputy-section */
+  margin: 0 !important;
+}
+
+.org-deputy-section-5::-webkit-scrollbar {
+  height: 1px; /* Giảm kích thước thanh cuộn */
+}
+
+.org-deputy-section-5::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 1px;
+}
+
+.org-deputy-section-5::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 1px;
+}
+
+.org-deputy-section-5::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+.org-deputy-section-5 .org-deputy-item-wrapper {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 180px;
+  margin: 0;
+}
+
 .org-deputy-item {
   display: flex;
   flex-direction: column;
@@ -540,15 +551,17 @@
 
 /* Khối chức năng (Khối nội, ngoại, cận lâm sàng, văn phòng) - Đã chỉnh: màu chữ trắng, font-size 12px */
 .org-functional-label {
-  background: #0b7439;
-  color: #ffffff;
+  background: #adb65d;
+  color: #fff0f0;
   padding: 12px 20px;
   border-radius: 8px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   width: 100%;
+  border: 1px solid #000000;
 }
+/* đổi phông màu và màu phông chữ của khối văn phòng */
 
 .org-functional-content {
   background: #ffffff;
@@ -556,6 +569,22 @@
   border-radius: 8px;
   min-height: 200px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.org-office-item {
+  background: #5eaa80;
+  border: 1px solid ;
+  border-radius: 8px;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #000000;
+  font-weight: 500;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Organization Structure Responsive */

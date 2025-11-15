@@ -82,12 +82,12 @@ const Footer = () => (
       </div>
 
       <div className="footer__column footer__column--links">
-        <p className="footer__connect-title">Kết nối với chúng tôi qua:</p>
+        <p className="footer__connect-title">Kết nối với chúng tôi qua các nền tảng sau:</p>
         <div className="footer__socials">
-          <a href="/" className="footer__social footer__social--facebook" aria-label="Facebook">
+          <a href="https://www.facebook.com/benhvienquany4.vn" target="_blank" rel="noopener noreferrer" className="footer__social footer__social--facebook" aria-label="Facebook">
             <Facebook size={20} />
           </a>
-          <a href="/" className="footer__social footer__social--youtube" aria-label="YouTube">
+          <a href="https://www.youtube.com/watch?v=sJ5ZZt1005E" target="_blank" rel="noopener noreferrer" className="footer__social footer__social--youtube" aria-label="YouTube">
             <Youtube size={20} />
           </a>
           <a href="/" className="footer__social footer__social--zalo" aria-label="Zalo">
