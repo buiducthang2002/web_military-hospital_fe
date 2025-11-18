@@ -26,7 +26,6 @@ const Navbar = () => {
     { href: '/kham-chua-benh', label: 'Quy trình khám chữa bệnh' },
     { href: '/kham-chua-benh/loai-hinh', label: 'Loại hình khám chữa bệnh' },
     { href: '/kham-chua-benh/thanh-toan', label: 'Quy trình thanh toán' },
-    { href: '/kham-chua-benh/huong-dan', label: 'Hướng dẫn thủ tục' },
     { href: '/kham-chua-benh/bang-gia', label: 'Bảng giá khám, chữa bệnh' },
   ]
 

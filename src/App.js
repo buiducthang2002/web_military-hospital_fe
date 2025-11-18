@@ -10,6 +10,7 @@ import NewsEventsPage from './modules/tintuc/pages/NewsEventsPage';
 import ArticleDetailPage from './modules/tintuc/pages/ArticleDetailPage';
 import Khamchuabenh from './Khamchuabenh/Khamchuabenh';
 import Thutucxuatvien from './Khamchuabenh/Thutucxuatvien';
+import Quytrinhthanhtoan from './Khamchuabenh/Quytrinhthanhtoan';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/news-events/:slug" element={<ArticleDetailPage />} />
         <Route path="/kham-chua-benh" element={<Khamchuabenh />} />
         <Route path="/kham-chua-benh/loai-hinh" element={<Thutucxuatvien />} />
+        <Route path="/kham-chua-benh/thanh-toan" element={<Quytrinhthanhtoan />} />
         <Route path="/call-center" element={<CallCenter />} />
         <Route path="/book-appointment" element={<BookAppointment />} />
         <Route path="/expert-consultation" element={<ExpertConsultation />} />

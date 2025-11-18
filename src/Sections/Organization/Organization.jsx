@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import "./Organization.css";
+import "../../Components/NewsEvents/NewsEvents.css";
 import doctor1 from "./Images/doctor1.png";
 import doctor2 from "./Images/doctor2.png";
 import doctor3 from "./Images/doctor3.png";
@@ -265,16 +265,14 @@ const Organization = () => {
     >
       <Navbar />
       <main className="organization-main">
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[
-            { label: "Trang chủ", path: "/" },
-            { label: "Cơ cấu tổ chức", path: "" },
-          ]}
-        />
-
         <section className="organization-section">
           <div className="organization-container">
+            <div className="news-header">
+              <div className="news-header-left">
+                <p className="news-label">Cơ cấu tổ chức</p>
+                <h2 className="news-main-title">|   Giới thiệu chung</h2>
+              </div>
+            </div>
             <header className="organization-header">
               <p className="organization-description">
                 Thông tin giới thiệu tổng quan về mô hình tổ chức, chức năng

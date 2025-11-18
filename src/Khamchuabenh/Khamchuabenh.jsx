@@ -1,21 +1,21 @@
 import React from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
-import Breadcrumb from '../Components/Breadcrumb/Breadcrumb'
 import './Khamchuabenh.css'
+import '../Components/NewsEvents/NewsEvents.css'
 
 const Khamchuabenh = () => {
   return (
     <div className="khamchuabenh-page">
       <Navbar />
-      <Breadcrumb
-        items={[
-          { label: 'Trang chủ', path: '/' },
-          { label: 'Quy trình khám bệnh', path: '' },
-        ]}
-      />
       <main className="khamchuabenh-main">
         <div className="khamchuabenh-container">
+          <div className="news-header">
+            <div className="news-header-left">
+              <p className="news-label">Khám chữa bệnh</p>
+              <h2 className="news-main-title">|   Quy trình khám bệnh</h2>
+            </div>
+          </div>
           <h1 className="khamchuabenh-title">
           🏥 HƯỚNG DẪN LẤY SỐ VÀ ĐĂNG KÝ KHÁM BỆNH
           </h1>
