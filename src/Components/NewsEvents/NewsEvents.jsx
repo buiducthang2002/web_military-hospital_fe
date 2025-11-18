@@ -14,6 +14,8 @@ import anh11 from './Images/anh11.jpg'
 import anh12 from './Images/anh12.jpg'
 import anh13 from './Images/anh13.jpg'
 import anhqh1 from './Images/anhqh1.jpg'
+import anhqh3 from './Images/anhqh3.jpg'
+import anhbonoivu from './Images/anhbonoivu.png'
 
 
 
