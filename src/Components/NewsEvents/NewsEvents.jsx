@@ -13,6 +13,8 @@ import anh10 from './Images/anh10.jpg'
 import anh11 from './Images/anh11.jpg'
 import anh12 from './Images/anh12.jpg'
 import anh13 from './Images/anh13.jpg'
+import anhqh1 from './Images/anhqh1.jpg'
+
 
 
 const NewsEvents = () => {
@@ -74,7 +76,7 @@ const NewsEvents = () => {
     ],
     1: [ // Tin tức y học trong nước
       {
-        image: anh10,
+        image: anhqh1,
         title: 'Tin tức y học trong nước 1',
         date: '11/4/2025'
       },
@@ -240,13 +242,13 @@ const NewsEvents = () => {
         <div className="news-grid">
           {newsItems.map((item, index) => (
             <div key={index} className="news-card">
-              <div className="news-image-wrapper">
+              <Link to="/news-events" className="news-image-wrapper">
                 <img 
                   src={item.image} 
                   alt={item.title}
                   className="news-image"
                 />
-              </div>
+              </Link>
               <div className="news-content">
                 <h4 className="news-title">{item.title}</h4>
                 <p className="news-date">{item.date}</p>

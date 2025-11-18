@@ -13,7 +13,7 @@ import anh10 from './Images/anh10.jpg'
 import anh11 from './Images/anh11.jpg'
 import anh12 from './Images/anh12.jpg'
 import anh13 from './Images/anh13.jpg'
-
+import anhqh1 from './Images/anhqh1.jpg'
 
 const FeaturedEvents = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -93,7 +93,7 @@ const FeaturedEvents = () => {
     ],
     1: [ // Tin tức y học trong nước
       {
-        image: anh10,
+        image: anhqh1,
         title: 'Tin tức y học trong nước 1',
         date: '11/4/2025'
       },
