@@ -6,8 +6,10 @@ import BookAppointment from './Pages/BookAppointment';
 import ExpertConsultation from './Pages/ExpertConsultation';
 import CheckResults from './Pages/CheckResults';
 import Organization from './Sections/Organization/Organization';
-import NewsEventsPage from './Tintuc/NewsEventsPage';
+import NewsEventsPage from './modules/tintuc/pages/NewsEventsPage';
+import ArticleDetailPage from './modules/tintuc/pages/ArticleDetailPage';
 import Khamchuabenh from './Khamchuabenh/Khamchuabenh';
+import Thutucxuatvien from './Khamchuabenh/Thutucxuatvien';
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/organization" element={<Organization />} />
         <Route path="/news-events" element={<NewsEventsPage />} />
+        <Route path="/news-events/:slug" element={<ArticleDetailPage />} />
         <Route path="/kham-chua-benh" element={<Khamchuabenh />} />
+        <Route path="/kham-chua-benh/loai-hinh" element={<Thutucxuatvien />} />
         <Route path="/call-center" element={<CallCenter />} />
         <Route path="/book-appointment" element={<BookAppointment />} />
         <Route path="/expert-consultation" element={<ExpertConsultation />} />
