@@ -1,0 +1,35 @@
+/**
+ * Index file để export tất cả các file nội dung bài viết
+ * Khi tạo file nội dung mới, cần import và export ở đây
+ */
+
+import contentParty1 from './hoi-nghi-tong-ket-cong-tac-dang-2024.js'
+
+// Mapping slug -> content
+const articleContents = {
+
+  'hoi-nghi-tong-ket-cong-tac-dang-2024': contentParty1,
+  // Thêm các bài viết khác ở đây khi tạo file mới
+}
+
+/**
+ * Lấy nội dung bài viết theo slug
+ * @param {string} slug - Slug của bài viết
+ * @param {string} defaultContent - Nội dung mặc định từ JSON (fallback)
+ * @returns {string} - Nội dung bài viết
+ */
+export const getArticleContent = (slug, defaultContent = '') => {
+  return articleContents[slug] || defaultContent
+}
+
+/**
+ * Kiểm tra xem có file nội dung riêng cho slug không
+ * @param {string} slug - Slug của bài viết
+ * @returns {boolean}
+ */
+export const hasArticleContent = (slug) => {
+  return slug in articleContents
+}
+
+export default articleContents
+

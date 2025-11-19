@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
-import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import "./Organization.css";
-import doctor1 from "./Images/doctor1.png";
-import doctor2 from "./Images/doctor2.png";
-import doctor3 from "./Images/doctor3.png";
-import doctor4 from "./Images/doctor4.png";
-import doctor05 from "./Images/doctor05.png";
+import "../../Components/NewsEvents/NewsEvents.css";
+import gd1a from "./Images/gd1a.png";
+import gd2a from "./Images/gd2a.png";
+import gd3 from "./Images/gd3.jpg";
+import anhgd4vip from "./Images/anhgd4vip.png";
 
 // OrganizationStructure component (gộp từ OrganizationStructure.jsx)
 const OrganizationStructure = ({ director, viceDirectors, additionalDirectors }) => {
@@ -180,74 +179,69 @@ const Organization = () => {
   const director = {
     name: "Đại Tá, BS.CK II Nguyễn An Giang",
     position: "Giám đốc bệnh viện",
-    image: doctor1,
+    image: gd1a,
   };
 
   const viceDirectors = [
     {
       name: "BS.CK II Trương Quang Thắng",
       position: "Phó giám đốc bệnh viện",
-      image: doctor2,
+      image: gd2a,
     },
     {
       name: "Tiến sĩ. Bác sĩ Phan Quốc Khánh",
       position: "Phó giám đốc bệnh viện",
-      image: doctor3,
+      image: gd3,
     },
     {
       name: "BS.CK II Nguyễn Huy Thắng",
       position: "Phó giám đốc bệnh viện",
-      image: doctor4,
-    },
-    {
-      name: "BS.CK II Nguyễn Văn Thắng",
-      position: "Phó giám đốc bệnh viện",
-      image: doctor05,
+      image: anhgd4vip,
     },
   ];
 
   const additionalDirectors = [
     {
-      name: "BS.CK II Trương Quang Thắng",
+      name: "BS.CK II",
       position: "Trưởng khoa",
-      image: doctor2,
+      
     },
     {
-      name: "Tiến sĩ. Bác sĩ Phan Quốc Khánh",
+      name: "BS.CK II",
       position: "Trưởng khoa",
-      image: doctor3,
+      
     },
     {
-      name: "BS.CK II Nguyễn Huy Thắng",
+      name: "BS.CK II ",
       position: "Trưởng khoa",
-      image: doctor4,
+      
     },
     {
-      name: "BS.CK II Nguyễn Văn Thắng",
+      name: "BS.CK II",
       position: "Trưởng khoa",
-      image: doctor05,
+     
     },
     {
-      name: "BS.CK II Nguyễn Văn Thắng",
+      name: "BS.CK II ",
       position: "Trưởng khoa",
-      image: doctor05,
+     
     },
     {
-      name: "BS.CK II Nguyễn Văn Thắng",
+      name: "BS.CK II ",
       position: "Trưởng khoa",
-      image: doctor05,
-    },
-  
-    {
-      name: "BS.CK II Nguyễn Văn Thắng",
-      position: "Trưởng khoa",
-      image: doctor05,
+      
     },
   
     {
-      name: "BS.CK II Nguyễn Văn Thắng",
+      name: "BS.CK II ",
       position: "Trưởng khoa",
-      image: doctor05,
+      
+    },
+  
+    {
+      name: "BS.CK II ",
+      position: "Trưởng khoa",
+      
     },
   
   
@@ -265,16 +259,14 @@ const Organization = () => {
     >
       <Navbar />
       <main className="organization-main">
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[
-            { label: "Trang chủ", path: "/" },
-            { label: "Cơ cấu tổ chức", path: "" },
-          ]}
-        />
-
         <section className="organization-section">
           <div className="organization-container">
+            <div className="news-header">
+              <div className="news-header-left">
+                <p className="news-label">Cơ cấu tổ chức</p>
+                <h2 className="news-main-title">|   Giới thiệu chung</h2>
+              </div>
+            </div>
             <header className="organization-header">
               <p className="organization-description">
                 Thông tin giới thiệu tổng quan về mô hình tổ chức, chức năng

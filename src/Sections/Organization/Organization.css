@@ -143,9 +143,14 @@
 .organization-container {
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.organization-container .news-header {
+  margin-bottom: 30px;
 }
 
 .organization-header {
@@ -365,8 +370,8 @@
 .org-connector-horizontal {
   height: 3px;
   background: #6b7280;
-  width: calc(4 * 180px + 3 * 20px + 150px); /* Kéo dài hơn */
-  max-width: 850px;
+  width: calc(3 * 280px + 2 * 50px); /* Kéo dài từ đầu ảnh đầu tiên đến cuối ảnh cuối cùng */
+  max-width: 737px;
   margin: 0 auto;
   position: relative;
   flex-shrink: 0;
@@ -443,11 +448,12 @@
 .org-deputy-section {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin: 0;
   padding: 0 20px;
   max-width: 1200px;
+  justify-items: center;
 }
 
 /* Additional Directors Section - Khoảng cách giữa các ảnh */
@@ -590,7 +596,7 @@
 /* Organization Structure Responsive */
 @media (max-width: 1024px) {
   .org-deputy-section {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .org-functional-section {
@@ -624,7 +630,7 @@
 
   .org-deputy-section {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 20px;
   }
 
   .org-functional-section {
