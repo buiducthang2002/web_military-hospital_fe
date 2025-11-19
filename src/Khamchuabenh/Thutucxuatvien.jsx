@@ -103,6 +103,9 @@ const Thutucxuatvien = () => {
               <li>Người bệnh hoàn tất toàn bộ thủ tục và ra viện.</li>
             </ul>
           </section>
+          <div className="closing-message">
+            Trân trọng cảm ơn và chúc Quý bệnh nhân sức khỏe! ❤️
+          </div>
         </div>
       </main>
       <Footer />

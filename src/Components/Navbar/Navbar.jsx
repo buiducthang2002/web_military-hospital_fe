@@ -17,16 +17,17 @@ const Navbar = () => {
     { href: '/news-events', label: 'Tin tức, Sự kiện', isRoute: true },
     { href: '/kham-chua-benh', label: 'Khám chữa bệnh', isRoute: true, isDropdown: true },
     { href: '/party-politics', label: 'Công tác Đảng - Chính trị', isRoute: true },
-    { href: '#research', label: 'Nghiên cứu khoa học - Hợp tác', isRoute: false },
+    { href: '/nghiencuu-hoptac', label: 'Nghiên cứu khoa học - Hợp tác', isRoute: true },
     { href: '#guide', label: 'Hướng dẫn khách hàng', isRoute: false },
     { href: '#info', label: 'Thông tin chung', isRoute: false },
   ]
 
   const khamChuaBenhItems = [
     { href: '/kham-chua-benh', label: 'Quy trình khám chữa bệnh' },
-    { href: '/kham-chua-benh/loai-hinh', label: 'Loại hình khám chữa bệnh' },
+    { href: '/kham-chua-benh/loai-hinh', label: 'Thủ tục xuất viện' },
     { href: '/kham-chua-benh/thanh-toan', label: 'Quy trình thanh toán' },
-    { href: '/kham-chua-benh/bang-gia', label: 'Bảng giá khám, chữa bệnh' },
+    { href: '/kham-chua-benh/trang-thiet-bi', label: 'Trang thiết bị' },
+    { href: '/kham-chua-benh/cac-don-vi', label: 'Giới thiệu các đơn vị' },
   ]
 
   // Cập nhật activeMenu dựa trên location
@@ -42,6 +43,23 @@ const Navbar = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [location.pathname])
+
+  const getScrollTarget = (href) => {
+    if (!href) return null
+
+    if (href.startsWith('#')) {
+      try {
+        return document.querySelector(href)
+      } catch (error) {
+        console.warn(`Invalid selector ${href}`, error)
+        return null
+      }
+    }
+
+    const normalizedId = href.replace(/^[#\\/]+/, '')
+    if (!normalizedId) return null
+    return document.getElementById(normalizedId)
+  }
 
   const handleMenuClick = (event, item) => {
     if (item.isRoute) {
@@ -60,7 +78,7 @@ const Navbar = () => {
 
     event.preventDefault()
     setActiveMenu(item.href)
-    const targetElement = document.querySelector(item.href)
+    const targetElement = getScrollTarget(item.href)
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }

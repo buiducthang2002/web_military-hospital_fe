@@ -1,27 +1,27 @@
 /**
- * Cấu hình categories cho module Công tác Đảng - Chính trị
+ * Cấu hình categories cho module Nghiên cứu khoa học - Hợp tác
  */
 
 export const PARTY_CATEGORIES = {
   PARTY_WORK: {
     id: 'party-work',
-    displayName: 'Công tác Đảng',
+    displayName: 'Hợp tác khoa học, bệnh viện',
     apiEndpoint: '/api/party/party-work',
-    slug: 'cong-tac-dang',
+    slug: 'hop-tac-khoa-hoc',
     icon: '🏛️',
   },
   POLITICS: {
     id: 'politics',
-    displayName: 'Hoạt động kỷ niệm, tổ chức',
+    displayName: 'Các cuộc thi',
     apiEndpoint: '/api/party/politics',
-    slug: 'cong-tac-chinh-tri',
+    slug: 'cac-cuoc-thi',
     icon: '📜',
   },
   YOUTH_UNION: {
     id: 'youth-union',
-    displayName: 'Lịch sử đổi mới',
+    displayName: 'Đơn vị đồng hành',
     apiEndpoint: '/api/party/youth-union',
-    slug: 'lich-su-doi-moi',
+    slug: 'don-vi-dong-hanh',
     icon: '👥',
   },
 }
