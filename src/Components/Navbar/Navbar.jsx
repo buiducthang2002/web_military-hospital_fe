@@ -7,7 +7,7 @@ import Logo from '../Assets/Logo.jpg'
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState('#home')
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(null) // 'kcb' | 'info' | null
   const navbarRef = useRef(null)
   const location = useLocation()
 
@@ -15,11 +15,11 @@ const Navbar = () => {
     { href: '/', label: 'Trang chủ', isRoute: true },
     { href: '/organization', label: 'Cơ cấu tổ chức', isRoute: true },
     { href: '/news-events', label: 'Tin tức, Sự kiện', isRoute: true },
-    { href: '/kham-chua-benh', label: 'Khám chữa bệnh', isRoute: true, isDropdown: true },
+    { href: '/kham-chua-benh', label: 'Khám chữa bệnh', isRoute: true, isDropdown: true, dropdownKey: 'kcb' },
     { href: '/party-politics', label: 'Công tác Đảng - Chính trị', isRoute: true },
     { href: '/nghiencuu-hoptac', label: 'Nghiên cứu khoa học - Hợp tác', isRoute: true },
-    { href: '#guide', label: 'Hướng dẫn khách hàng', isRoute: false },
-    { href: '#info', label: 'Thông tin chung', isRoute: false },
+    { href: '/customer-guide', label: 'Hướng dẫn khách hàng', isRoute: true },
+    { href: '/thong-tin-chung', label: 'Thông tin chung', isRoute: false, isDropdown: true, dropdownKey: 'info' },
   ]
 
   const khamChuaBenhItems = [
@@ -27,8 +27,29 @@ const Navbar = () => {
     { href: '/kham-chua-benh/loai-hinh', label: 'Thủ tục xuất viện' },
     { href: '/kham-chua-benh/thanh-toan', label: 'Quy trình thanh toán' },
     { href: '/kham-chua-benh/trang-thiet-bi', label: 'Trang thiết bị' },
-    { href: '/kham-chua-benh/cac-don-vi', label: 'Giới thiệu các đơn vị' },
   ]
+
+  const infoItems = [
+    { href: '/thong-tin-chung/cac-don-vi', label: 'Giới thiệu các đơn vị' },
+    { href: '/thong-tin-chung/thong-tin-duoc', label: 'Thông tin dược' },
+    { href: '/thong-tin-chung/bao-hiem-y-te', label: 'Thông tin bảo hiểm y tế' },
+    { href: '/thong-tin-chung/thu-chao-moi-san-pham', label: 'Thư chào mời sản phẩm' },
+  ]
+
+  const scrollToTopPaths = new Set([
+    '/',
+    '/organization',
+    '/news-events',
+    '/kham-chua-benh',
+    '/kham-chua-benh/loai-hinh',
+    '/kham-chua-benh/thanh-toan',
+    '/kham-chua-benh/trang-thiet-bi',
+    '/kham-chua-benh/cac-don-vi',
+    '/thong-tin-chung/cac-don-vi',
+    '/thong-tin-chung/thong-tin-duoc',
+    '/thong-tin-chung/bao-hiem-y-te',
+    '/thong-tin-chung/thu-chao-moi-san-pham',
+  ])
 
   // Cập nhật activeMenu dựa trên location
   useEffect(() => {
@@ -39,10 +60,16 @@ const Navbar = () => {
 
   // Bấm vào menu là cuộn về đầu trang
   useEffect(() => {
-    if (location.pathname === '/' || location.pathname === '/organization' || location.pathname === '/news-events') {
+    if (scrollToTopPaths.has(location.pathname)) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [location.pathname])
+
+  const handleDropdownItemClick = () => {
+    // Close dropdown and scroll to top immediately
+    setOpenDropdown(null)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   const getScrollTarget = (href) => {
     if (!href) return null
@@ -121,16 +148,16 @@ const Navbar = () => {
       }
       
       // Close if clicking outside
-      setIsDropdownOpen(false)
+      setOpenDropdown(null)
     }
 
-    if (isDropdownOpen) {
+    if (openDropdown) {
       document.addEventListener('mousedown', handleClickOutside)
       return () => {
         document.removeEventListener('mousedown', handleClickOutside)
       }
     }
-  }, [isDropdownOpen])
+  }, [openDropdown])
 
   // Keep dropdown open when hovering over dropdown menu
   useEffect(() => {
@@ -141,20 +168,20 @@ const Navbar = () => {
       const dropdownMenu = target.closest('.dropdown-menu')
       if (dropdownMenu) {
         const hasCustomItems = dropdownMenu.querySelector('.custom-dropdown-item')
-        if (hasCustomItems && isDropdownOpen) {
+        if (hasCustomItems && openDropdown) {
           // Keep it open when hovering over menu
-          setIsDropdownOpen(true)
+          setOpenDropdown(openDropdown)
         }
       }
     }
 
-    if (isDropdownOpen) {
+    if (openDropdown) {
       document.addEventListener('mouseenter', handleDropdownMenuHover, true)
       return () => {
         document.removeEventListener('mouseenter', handleDropdownMenuHover, true)
       }
     }
-  }, [isDropdownOpen])
+  }, [openDropdown])
 
   return (
     <>
@@ -191,12 +218,12 @@ const Navbar = () => {
             item.isDropdown ? (
               <NavDropdown
                 key={item.href}
-                title="Khám chữa bệnh"
-                id="kham-chua-benh-dropdown"
+                title={item.label}
+                id={`${item.dropdownKey}-dropdown`}
                 menuVariant="dark"
                 className="custom-nav-dropdown"
-                show={isDropdownOpen}
-                onToggle={(isOpen) => setIsDropdownOpen(isOpen)}
+                show={openDropdown === item.dropdownKey}
+                onToggle={(isOpen) => setOpenDropdown(isOpen ? item.dropdownKey : null)}
                 popperConfig={{
                   modifiers: [
                     {
@@ -212,12 +239,13 @@ const Navbar = () => {
                   ],
                 }}
               >
-                {khamChuaBenhItems.map(dropdownItem => (
+                {(item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => (
                   <NavDropdown.Item
                     key={dropdownItem.href}
                     as={Link}
                     to={dropdownItem.href}
                     className="custom-dropdown-item"
+                    onClick={handleDropdownItemClick}
                   >
                     {dropdownItem.label}
                   </NavDropdown.Item>
@@ -251,12 +279,12 @@ const Navbar = () => {
             item.isDropdown ? (
               <NavDropdown
                 key={item.href}
-                title="Khám chữa bệnh"
-                id="kham-chua-benh-dropdown-fixed"
+                title={item.label}
+                id={`${item.dropdownKey}-dropdown-fixed`}
                 menuVariant="dark"
                 className="custom-nav-dropdown"
-                show={isDropdownOpen}
-                onToggle={(isOpen) => setIsDropdownOpen(isOpen)}
+                show={openDropdown === item.dropdownKey}
+                onToggle={(isOpen) => setOpenDropdown(isOpen ? item.dropdownKey : null)}
                 popperConfig={{
                   modifiers: [
                     {
@@ -272,12 +300,13 @@ const Navbar = () => {
                   ],
                 }}
               >
-                {khamChuaBenhItems.map(dropdownItem => (
+                {(item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => (
                   <NavDropdown.Item
                     key={dropdownItem.href}
                     as={Link}
                     to={dropdownItem.href}
                     className="custom-dropdown-item"
+                    onClick={handleDropdownItemClick}
                   >
                     {dropdownItem.label}
                   </NavDropdown.Item>

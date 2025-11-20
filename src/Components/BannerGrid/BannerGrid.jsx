@@ -1,16 +1,16 @@
 import React from 'react'
 import './BannerGrid.css'
-import bannerBQP from './Images/banneBQP.png'
-import bannerQK4 from './Images/Banner QK4.png'
+import Banner_CTTDT_BQP1 from './Images/Banner_CTTDT_BQP1.jpg'
+import Banner_CDVC_BQP1 from './Images/Banner_CDVC_BQP1.jpg'
 import bannerBYT from './Images/bannerBYT.png'
 import bannerCP from './Images/BannerCP.png'  
 
 const BannerGrid = () => {
   const banners = [
-    { id: 1, image: bannerBQP, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
-    { id: 2, image: bannerCP, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
+    { id: 1, image: Banner_CTTDT_BQP1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
+    { id: 2, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
     { id: 3, image: bannerBYT, alt: 'Banner 3', link: 'https://suckhoedoisong.vn/' },
-    { id: 4, image: bannerQK4, alt: 'Banner 4', link: 'https://www.mod.gov.vn/' },
+    { id: 4, image: bannerCP, alt: 'Banner 4', link: 'https://www.mod.gov.vn/' },
   ]
 
   const handleBannerClick = (link) => {

@@ -1,9 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './Banner.css'
-import bannerImage1 from './Images/logo11.jpg'
-import bannerImage2 from './Images/logobanner1.jpg'
-import bannerImage3 from './Images/logobanner2.jpg'
-import bannerImage4 from './Images/logobanner3.jpg'
+import bannerImage1 from './Images/bannerHome.png'
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0) // Index của banner thật (0-3)
@@ -14,7 +11,7 @@ const Banner = () => {
   const isTransitioning = useRef(false)
   const dragStartPosition = useRef({ x: 0, y: 0 })
 
-  const banners = [bannerImage1, bannerImage2, bannerImage3, bannerImage4]
+  const banners = [bannerImage1]
   // Mảng links cho từng banner - có thể thay đổi theo nhu cầu
   const bannerLinks = [
     'https://www.qdnd.vn/', 

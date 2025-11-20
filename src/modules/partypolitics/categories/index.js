@@ -22,7 +22,7 @@ export const PARTY_CATEGORIES = {
     displayName: 'Lịch sử đổi mới',
     apiEndpoint: '/api/party/youth-union',
     slug: 'lich-su-doi-moi',
-    icon: '👥',
+    icon: '🕰️',
   },
 }
 

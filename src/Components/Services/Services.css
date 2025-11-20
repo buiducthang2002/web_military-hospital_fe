@@ -6,7 +6,7 @@
 
 .services-container {
   max-width: 1200px;
-  margin: 0 auto 40px;
+  margin: -90px auto 40px; /* pull up to overlap banner */
   background-color: #ffffff;
   border: 1px solid #d0d0d0;
   border-radius: 20px;
@@ -14,6 +14,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  position: relative;
+  z-index: 2; /* appear above banner */
+  box-shadow: 0 16px 32px rgba(0,0,0,0.15);
 }
 
 .service-item {
@@ -131,6 +134,7 @@
   .services-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
+    margin-top: -90px; /* lessen overlap on tablets */
   }
   
   .services-info {
@@ -148,6 +152,7 @@
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px 15px;
+    margin-top: -70px; /* smaller overlap on mobile */
   }
   
   .service-item {

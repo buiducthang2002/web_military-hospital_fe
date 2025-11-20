@@ -5,17 +5,17 @@
 export const PARTY_CATEGORIES = {
   PARTY_WORK: {
     id: 'party-work',
-    displayName: 'Hợp tác khoa học, bệnh viện',
+    displayName: 'Hợp tác khoa học',
     apiEndpoint: '/api/party/party-work',
     slug: 'hop-tac-khoa-hoc',
-    icon: '🏛️',
+    icon: '🤝',
   },
   POLITICS: {
     id: 'politics',
     displayName: 'Các cuộc thi',
     apiEndpoint: '/api/party/politics',
     slug: 'cac-cuoc-thi',
-    icon: '📜',
+    icon: '🏆',
   },
   YOUTH_UNION: {
     id: 'youth-union',
