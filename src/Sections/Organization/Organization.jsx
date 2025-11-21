@@ -284,36 +284,7 @@ const Organization = () => {
               />
             </div>
 
-            <article className="organization-card">
-              <h2 className="organization-subheading">Ban giám đốc</h2>
-              <p className="organization-text">
-                - Giám đốc bệnh viện chịu trách nhiệm điều hành chung, hoạch
-                định chiến lược phát triển và bảo đảm chất lượng khám chữa bệnh.
-                <br />- Các Phó Giám đốc phụ trách từng lĩnh vực chuyên môn,
-                chính trị và hậu cần, phối hợp triển khai nhiệm vụ trong toàn
-                bệnh viện.
-              </p>
-            </article>
-
-            <article className="organization-card">
-              <h2 className="organization-subheading">Khối chuyên môn</h2>
-              <p className="organization-text">
-                Bao gồm các khoa lâm sàng, cận lâm sàng và các trung tâm hỗ trợ
-                chuyên sâu. Mỗi khoa phòng có trưởng khoa phụ trách chuyên môn,
-                chịu trách nhiệm trực tiếp về hoạt động chuyên môn, đào tạo và
-                nghiên cứu khoa học.
-              </p>
-            </article>
-
-            <article className="organization-card">
-              <h2 className="organization-subheading">Khối chức năng</h2>
-              <p className="organization-text">
-                Gồm các phòng ban làm nhiệm vụ tham mưu, hậu cần, tài chính,
-                chính trị và chăm sóc khách hàng. Khối chức năng bảo đảm vận
-                hành hiệu quả, nâng cao trải nghiệm người bệnh và phối hợp với
-                khối chuyên môn trong mọi hoạt động.
-              </p>
-            </article>
+           
           </div>
         </section>
       </main>
