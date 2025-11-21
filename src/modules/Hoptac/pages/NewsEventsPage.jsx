@@ -1,19 +1,19 @@
 import React, { useState, useMemo } from 'react'
-import Navbar from '../Components/Navbar/Navbar'
-import Footer from '../Components/Footer/Footer'
-import CategoryTabs from '../modules/partypolitics/components/CategoryTabs'
-import NewsGrid from '../modules/partypolitics/components/NewsGrid'
-import Pagination from '../modules/partypolitics/components/Pagination'
-import { getAllPartyCategories, PARTY_CATEGORIES } from '../modules/partypolitics/categories'
-import { getNewsByCategory } from '../modules/partypolitics/utils/getNewsByCategory'
-import { mapArticlesImages } from '../modules/partypolitics/utils/imageMapper'
-import partyNewsData from '../modules/partypolitics/data/allNews.json'
-import '../modules/tintuc/pages/NewsEventsPage.css'
+import Navbar from '../../../Components/Navbar/Navbar'
+import Footer from '../../../Components/Footer/Footer'
+import CategoryTabs from '../components/CategoryTabs'
+import NewsGrid from '../components/NewsGrid'
+import Pagination from '../components/Pagination'
+import { getAllPartyCategories, PARTY_CATEGORIES } from '../categories'
+import { getNewsByCategory } from '../utils/getNewsByCategory'
+import { mapArticlesImages } from '../utils/imageMapper'
+import allNewsData from '../data/allNews.json'
+import './NewsEventsPage.css'
 
 /**
- * Trang Công tác Đảng - Chính trị
+ * Trang Nghiên cứu khoa học - Hợp tác
  */
-const PartyPoliticsPage = () => {
+const NewsEventsPage = () => {
   const categories = getAllPartyCategories()
   const defaultCategoryId = categories[0]?.id || PARTY_CATEGORIES.PARTY_WORK.id
   
@@ -24,7 +24,7 @@ const PartyPoliticsPage = () => {
 
   // Map images và filter news theo category
   const filteredNews = useMemo(() => {
-    const news = mapArticlesImages(partyNewsData)
+    const news = mapArticlesImages(allNewsData)
     return getNewsByCategory(news, activeCategoryId)
   }, [activeCategoryId])
 
@@ -54,7 +54,7 @@ const PartyPoliticsPage = () => {
         <div className="news-events-container">
           <div className="news-header">
             <div className="news-header-left">
-              <p className="news-label">Công tác Đảng - Chính trị</p>
+              <p className="news-label">Nghiên cứu khoa học - Hợp tác</p>
               <h2 className="news-main-title">|   Tin tức nổi bật</h2>
             </div>
             <CategoryTabs
@@ -77,4 +77,4 @@ const PartyPoliticsPage = () => {
   )
 }
 
-export default PartyPoliticsPage
+export default NewsEventsPage

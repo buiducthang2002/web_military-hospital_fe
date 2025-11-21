@@ -16,7 +16,7 @@ export const CATEGORIES = {
     displayName: 'Tin tức y học trong nước',
     apiEndpoint: '/api/news/domestic-medical',
     slug: 'tin-tuc-y-hoc-trong-nuoc',
-    icon: '🇻🇳',
+    icon: '⭐',
   },
   HOSPITAL_ACTIVITIES: {
     id: 'hospital-activities',

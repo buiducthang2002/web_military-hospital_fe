@@ -1,5 +1,9 @@
 .banner-container {
   width: 100%;
+  margin: 0 !important;
+  margin-top: -1px !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
   overflow-x: auto;
   overflow-y: hidden;
   position: relative;
@@ -10,6 +14,10 @@
   border: none;
   outline: none;
   box-shadow: none;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  display: block;
+  vertical-align: top;
 }
 
 .banner-container:active {
@@ -34,11 +42,14 @@
 .banner-wrapper {
   display: flex;
   width: max-content;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
 }
 
 .banner-slide {
   width: 100vw;
-  height: 350px;
+  height: 500px;
   flex-shrink: 0;
   scroll-snap-align: start;
   position: relative;
@@ -49,6 +60,9 @@
   border: none;
   outline: none;
   box-shadow: none;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
 }
 
 .banner-image {
@@ -61,6 +75,9 @@
   pointer-events: none;
   border: none;
   outline: none;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
 }
 
 .banner-dots {

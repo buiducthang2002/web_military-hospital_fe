@@ -1,28 +1,28 @@
 .banner-grid-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 30px 0;
+  padding: 0;
   border-top: 1px solid #e5e5e5;
 }
 
 .banner-grid-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 0;
 }
 
 .banner-grid-item {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  /* Let content (image) define height to avoid letterboxing */
   overflow: hidden;
   border-radius: 6px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #f0f0f0;
-  border: 1px solid #e0e0e0;
+  background-color: transparent;
+  border: none;
 }
 
 .banner-grid-item:hover {
@@ -33,14 +33,8 @@
 
 .banner-grid-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
-  transition: transform 0.3s ease;
-}
-
-.banner-grid-item:hover .banner-grid-image {
-  transform: scale(1.03);
 }
 
 /* Responsive */

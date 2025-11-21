@@ -16,8 +16,8 @@ const FeaturedEvents = () => {
 
   // Các tab sự kiện
   const eventTabs = [
-    { id: 'events-world', label: 'Sự kiện nổi bật thế giới' },
-    { id: 'events-domestic', label: 'Sự kiện nổi bật trong nước' }
+    { id: 'events-world', label: '🌍 Sự kiện nổi bật thế giới' },
+    { id: 'events-domestic', label: '⭐ Sự kiện nổi bật trong nước' }
   ]
 
   // Lấy tất cả sự kiện theo tab

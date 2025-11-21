@@ -1,0 +1,166 @@
+.customer-guide {
+  width: 100%;
+  padding: 80px 20px;
+  background: #f5fbf7;
+}
+
+.customer-guide__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.customer-guide__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.customer-guide__eyebrow {
+  color: #0b7439;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.customer-guide__header h2 {
+  font-size: 28px;
+  margin: 0 0 12px;
+  color: #0b2d19;
+}
+
+.customer-guide__subtitle {
+  color: #4f5a55;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.customer-guide__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.customer-guide__card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e4efe7;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+}
+
+.customer-guide__card h3 {
+  margin: 0;
+  color: #0b7439;
+  font-size: 18px;
+}
+
+.customer-guide__card p {
+  margin: 0;
+  color: #4f5a55;
+  flex: 1;
+}
+
+.customer-guide__link {
+  align-self: flex-start;
+  color: #0b7439;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.customer-guide__link:hover {
+  color: #094f27;
+  border-color: #094f27;
+}
+
+.customer-guide-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #ffffff;
+}
+
+.customer-guide-page__hero {
+  background: #ffffff;
+  color: #000000;
+  padding: 30px 20px 20px;
+}
+
+.customer-guide-page__hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.customer-guide-page__hero-content h1 {
+  font-size: 32px;
+  margin: 16px 0 8px;
+  color: #0b2d19;
+  text-align: center;
+}
+
+.customer-guide-page__hero-content p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+  max-width: 700px;
+}
+
+.customer-guide-shortcuts {
+  max-width: 1000px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 0 20px;
+}
+
+.customer-guide-shortcut {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  background: #fff;
+  color: #0b2d19;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.customer-guide-shortcut p {
+  font-weight: 400;
+  color: #4f5a55;
+  margin: 4px 0 0;
+}
+
+.customer-guide-shortcut:hover {
+  border-color: #0b7439;
+  box-shadow: 0 10px 20px rgba(25, 235, 116, 0.1);
+}
+
+
+.hero-news-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.hero-news-header p {
+  margin: 0;
+}
+
+/* Keep description gray, breadcrumb label green */
+.hero-news-header p:not(.news-label) {
+  color: #4f5a55;
+}
+
+.hero-news-header .news-label {
+  color: #109832; /* green */
+}

@@ -12,10 +12,10 @@ const Doctors = () => {
   const doctorsPerPage = 4
 
   const allDoctors = [
-    { image: gd1a, position: 'GĐ Bệnh Viện', name: 'Bác sỹ CKII: Nguyễn An Giang' },
-    { image: gd2a, position: 'PGĐ Bệnh Viện', name: 'Bác sỹ CKII: Truong Quang Thắng' },
-    { image: gd3, position: 'PGĐ Bệnh Viện', name: 'Bác sỹ CKII: Phan Quoc Khanh' },
-    { image: anhgd4vip, position: 'PGĐ Bệnh Viện', name: 'Bác sỹ CKII: Nguyễn Huy Thắng' },
+    { image: gd1a                              , position: 'GĐ Bệnh Viện', name: 'Đại tá, Bác sỹ CKII: Nguyễn An Giang' },
+    { image: gd2a, position: 'PGĐ Bệnh Viện', name: ' Đại tá, Bác sỹ CKII: Truong Quang Thắng' },
+    { image: gd3, position: 'PGĐ Bệnh Viện', name: 'Thượng tá, Bác sỹ CKII: Phan Quoc Khanh' },
+    { image: anhgd4vip, position: 'PGĐ Bệnh Viện', name: 'Thượng tá, Bác sỹ CKII: Nguyễn Huy Thắng' },
   
    
   ]

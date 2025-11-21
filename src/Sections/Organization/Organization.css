@@ -150,8 +150,8 @@
 }
 
 .organization-container .news-header {
-  margin-bottom: 30px;
-}
+  margin-bottom: -20px;
+} 
 
 .organization-header {
   display: flex;
@@ -557,15 +557,15 @@
 
 /* Khối chức năng (Khối nội, ngoại, cận lâm sàng, văn phòng) - Đã chỉnh: màu chữ trắng, font-size 12px */
 .org-functional-label {
-  background: #adb65d;
-  color: #fff0f0;
+  background: #edfc6c;
+  color: #000000;
   padding: 12px 20px;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 700;
   text-align: center;
   width: 100%;
-  border: 1px solid #000000;
+  border: 1px solid #dad3d3;
 }
 /* đổi phông màu và màu phông chữ của khối văn phòng */
 

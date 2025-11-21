@@ -21,8 +21,8 @@ export const PARTY_CATEGORIES = {
     id: 'youth-union',
     displayName: 'Lịch sử đổi mới',
     apiEndpoint: '/api/party/youth-union',
-    slug: 'cong-tac-doan',
-    icon: '👥',
+    slug: 'lich-su-doi-moi',
+    icon: '🕰️',
   },
 }
 

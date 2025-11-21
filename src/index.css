@@ -28,6 +28,14 @@ body {
   height: auto; /* ✅ Cho phép mở rộng theo nội dung */
   overflow-x: hidden !important;
   position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* Loại bỏ margin mặc định của section */
+section {
+  margin: 0;
+  padding: 0;
 }
 
 code {

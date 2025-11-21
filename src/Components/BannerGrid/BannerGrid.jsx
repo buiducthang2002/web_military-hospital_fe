@@ -1,16 +1,16 @@
 import React from 'react'
 import './BannerGrid.css'
-import banner1 from '../Banner/Images/logo11.jpg'
-import banner2 from '../Banner/Images/logobanner1.jpg'
-import banner3 from '../Banner/Images/logobanner2.jpg'
-import banner4 from '../Banner/Images/logobanner3.jpg'
+import Banner_CTTDT_BQP1 from './Images/Banner_CTTDT_BQP1.jpg'
+import Banner_CDVC_BQP1 from './Images/Banner_CDVC_BQP1.jpg'
+import bannerBYT from './Images/bannerBYT.png'
+import bannerCP from './Images/BannerCP.png'  
 
 const BannerGrid = () => {
   const banners = [
-    { id: 1, image: banner1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
-    { id: 2, image: banner2, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
-    { id: 3, image: banner3, alt: 'Banner 3', link: 'https://suckhoedoisong.vn/' },
-    { id: 4, image: banner4, alt: 'Banner 4', link: 'https://www.mod.gov.vn/' },
+    { id: 1, image: Banner_CTTDT_BQP1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
+    { id: 2, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
+    { id: 3, image: bannerBYT, alt: 'Banner 3', link: 'https://suckhoedoisong.vn/' },
+    { id: 4, image: bannerCP, alt: 'Banner 4', link: 'https://www.mod.gov.vn/' },
   ]
 
   const handleBannerClick = (link) => {
