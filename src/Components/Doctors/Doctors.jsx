@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
-import { UserCheck, ClipboardCheck, Ambulance, HeartHandshake } from 'lucide-react'
-import './Doctors.css'
+
 import Doctor1 from './Images/Doctor1.png'
 import Doctor2 from './Images/Doctor2.png'
 
 const Doctors = () => {
-  const images = [Doctor1, Doctor2]
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
 
   const features = [
     {
@@ -36,6 +33,7 @@ const Doctors = () => {
   ]
 
   return (
+
     <section className="doctors-section">
       <div className="doctors-intro">
         <h2 className="intro-title">Military Hospital - Bệnh viện Quân y 4</h2>
@@ -43,6 +41,7 @@ const Doctors = () => {
           Tại Bệnh viện Quân y 4, chúng tôi cam kết mang đến cho bệnh nhân những dịch vụ chăm sóc sức khỏe chất lượng cao. Với tầm nhìn trở thành một trong những bệnh viện hàng đầu trong khu vực, chúng tôi không ngừng cải tiến chất lượng dịch vụ và đầu tư công nghệ hiện đại.
         </p>
       </div>
+
 
       <div className="doctors-layout">
         <div className="hospital-image-wrapper">
@@ -75,6 +74,7 @@ const Doctors = () => {
           ))}
         </div>
       </div>
+
     </section>
   )
 }
