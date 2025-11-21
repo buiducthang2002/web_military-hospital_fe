@@ -20,7 +20,7 @@ const Doctors = () => {
       icon: <ClipboardCheck size={48} />,
       title: 'Quy trình chuyên nghiệp',
       desc:
-        'Tại Bệnh viện Đa Khoa Happy Health, chúng tôi tiêu chuẩn hóa quy trình khám chữa bệnh, tối ưu thời gian chờ và nâng cao trải nghiệm người bệnh.',
+        'Tại Bệnh viện quân y 4, chúng tôi tiêu chuẩn hóa quy trình khám chữa bệnh, tối ưu thời gian chờ và nâng cao trải nghiệm người bệnh.',
     },
     {
       icon: <Ambulance size={48} />,
