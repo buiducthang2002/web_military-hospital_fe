@@ -1,7 +1,9 @@
+.doctors-section {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .doctors-intro {
+
   max-width: 1200px;
   margin: 0 auto 40px auto;
   text-align: left;
@@ -102,7 +104,7 @@
   justify-content: center;
   color: #4FC3F7;
   background-color: transparent;
-  margin-left: 95px;
+  margin-left: 0;
 }
 
 .feature-content {
@@ -128,23 +130,16 @@
   text-align: left;
 }
 
-.doctors-content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-
-    width: 32px;
-    height: 32px;
-  }
-
+@media (max-width: 1024px) {
   .doctors-layout {
     flex-direction: column;
   }
-  .hospital-image { 
-    height: 300px; 
+  .hospital-image {
+    height: 300px;
     object-fit: cover;
   }
-  .features-grid { 
-    grid-template-columns: 1fr 1fr; 
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -152,40 +147,9 @@
   .doctors-section {
     padding: 40px 15px;
   }
-
-
-  .intro-title {
-    font-size: 28px;
-  }
-
-
-  .intro-desc {
-    font-size: 14px;
-  }
-
-
-  .doctors-layout {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-
   .hospital-image {
     height: 250px;
   }
-
-
-  .features-grid {
-    grid-template-columns: 1fr;
-
-    gap: 25px;
-  }
-
-
-  .feature-title {
-    font-size: 16px;
-  }
-
   .feature-desc {
     font-size: 13px;
   }

@@ -60,3 +60,59 @@
   line-height: 1.65;
   color: #111827;
 }
+
+/* Horizontal department menu */
+.donvi-menu {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: min(1100px, 94%);
+  margin: 10px auto 18px;
+  padding: 6px 4px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  position: relative;
+  transform: translateX(-46px); /* shift a bit to the left */
+}
+
+.donvi-menu::-webkit-scrollbar {
+  height: 8px;
+}
+.donvi-menu::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 8px;
+}
+
+.donvi-menu-item {
+  white-space: nowrap;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.donvi-menu-item:hover {
+  background: #f3f4f6;
+}
+
+.donvi-menu-item.active {
+  background: #069242;
+  color: #ffffff;
+  border-color: #069242;
+}
+
+@media (max-width: 768px) {
+  .donvi-menu {
+    gap: 8px;
+    padding: 6px 2px;
+    transform: translateX(-16px);
+  }
+  .donvi-menu-item {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+}

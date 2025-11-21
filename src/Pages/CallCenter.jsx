@@ -10,7 +10,7 @@ const CallCenter = () => {
           Gọi tổng đài
         </h1>
         <p style={{ fontSize: '16px', lineHeight: '1.6', color: '#333' }}>
-          Đặt lịch khám qua tổng đài 1900.****
+          Đặt lịch khám qua tổng đài 0974.225.225
         </p>
         <div style={{ marginTop: '40px', padding: '30px', backgroundColor: '#f5f5f5', borderRadius: '12px' }}>
           <h2 style={{ fontSize: '24px', marginBottom: '20px' }}>Thông tin liên hệ</h2>
