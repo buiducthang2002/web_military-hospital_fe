@@ -2,6 +2,7 @@
 }
 
 .doctors-intro {
+
   max-width: 1200px;
   margin: 0 auto 40px auto;
   text-align: left;
@@ -146,6 +147,17 @@
   .features-grid { 
     grid-template-columns: 1fr 1fr; 
   }
+
+  .doctors-layout {
+    flex-direction: column;
+  }
+  .hospital-image { 
+    height: 300px; 
+    object-fit: cover;
+  }
+  .features-grid { 
+    grid-template-columns: 1fr 1fr; 
+  }
 }
 
 @media (max-width: 768px) {
@@ -154,36 +166,11 @@
   }
 
 
-  .intro-title {
-    font-size: 28px;
-  }
-
-
-  .intro-desc {
-    font-size: 14px;
-  }
-
-
-  .doctors-layout {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-
   .hospital-image {
     height: 250px;
   }
 
 
-  .features-grid {
-    grid-template-columns: 1fr;
-
-    gap: 25px;
-  }
-
-
-  .feature-title {
-    font-size: 16px;
   }
 
   .feature-desc {
