@@ -17,7 +17,6 @@
   line-height: 0 !important;
   font-size: 0 !important;
   display: block;
-  vertical-align: top;
 }
 
 .banner-container:active {
@@ -49,7 +48,7 @@
 
 .banner-slide {
   width: 100vw;
-  height: 500px;
+  height: 350px;
   flex-shrink: 0;
   scroll-snap-align: start;
   position: relative;
@@ -77,14 +76,13 @@
   outline: none;
   margin: 0;
   padding: 0;
-  vertical-align: top;
 }
 
 .banner-dots {
   position: absolute;
-  bottom: 20px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   display: flex;
   gap: 10px;
   z-index: 10;
@@ -137,17 +135,13 @@
 /* Responsive */
 @media (max-width: 768px) {
   .banner-slide {
-    height: 220px;
+    height: 180px;
   }
 }
 
 @media (max-width: 480px) {
   .banner-slide {
-    height: 180px;
-  }
-
-  .banner-dots {
-    bottom: 10px;
+    height: 150px;
   }
 
   .dot {

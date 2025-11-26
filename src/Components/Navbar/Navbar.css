@@ -10,8 +10,16 @@
   padding: 6px 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 8px;
+}
+
+/* Location text on the left */
+.top-strip .location-text {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* quick action buttons */
@@ -19,18 +27,21 @@
   display: flex;
   gap: 8px;
 }
+
 .top-strip .btn {
   padding: 4px 10px;
   font-size: 12px;
   border-radius: 14px;
   cursor: pointer;
 }
+
 .top-strip .btn-outline {
   border: 1px solid #fff;
   border-color: #fff;
   color: #fff;
   background: #069242;
 }
+
 .top-strip .btn-outline:hover {
   border: 1px solid #fff;
   border-color: #fff;
@@ -59,7 +70,7 @@
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 20px;
-  padding: 0px 20px 19px 20px;
+  padding: 0px 20px 12px 20px;
   width: 100%;
   position: relative;
 }
@@ -67,11 +78,11 @@
 /* Logo: keep it responsive, remove absolute transforms */
 .logo-wrap {
   display: flex;
-  align-items: flex-start; 
+  align-items: flex-start;
   justify-content: flex-start;
   padding: 4px 16px;
   overflow: visible;
-  min-width: fit-content;
+
   background: transparent;
 }
 
@@ -108,6 +119,7 @@
   letter-spacing: 4px;
   font-size: 28px;
 }
+
 .title-en {
   color: #069242;
   font-weight: 700;
@@ -160,12 +172,15 @@
   gap: 28px;
   width: 100%;
   padding: 12px 16px;
-  margin-top: -30px; /* điều chỉnh nhẹ để kéo menu lên (nếu muốn) */
+  margin-top: -18px;
+  /* giảm âm để khung không bị quá chồng */
   margin-bottom: 0 !important;
-  padding-bottom: 12px; /* remove bottom space */
+  padding-bottom: 12px;
+  /* remove bottom space */
   overflow: visible !important;
-  border-top: none ;
-  border-bottom: none; /* remove tiny line creating a gap */
+  border-top: none;
+  border-bottom: none;
+  /* remove tiny line creating a gap */
   background-color: #069242;
   position: relative;
   z-index: 9998;
@@ -190,9 +205,11 @@
   font-size: 14px;
   white-space: nowrap;
 }
+
 .navbar-menu a:hover {
   color: #ffeb3b;
 }
+
 .navbar-menu a.active {
   color: #ffeb3b;
 }
@@ -288,13 +305,13 @@
 
 /* Ensure parent containers don't clip */
 .navbar-menu .custom-nav-dropdown,
-.navbar-menu .custom-nav-dropdown > * {
+.navbar-menu .custom-nav-dropdown>* {
   overflow: visible !important;
 }
 
 /* Global styles to ensure dropdown overlays correctly */
-body > .dropdown-menu,
-#root > .dropdown-menu {
+body>.dropdown-menu,
+#root>.dropdown-menu {
   z-index: 10001 !important;
 }
 
@@ -331,16 +348,133 @@ body > .dropdown-menu,
   text-decoration: none !important;
 }
 
+/* ---------- SERVICE PANEL (new) ---------- */
+/* Main wrapper */
+.service-panel {
+  max-width: 1100px;
+  /* giới hạn chiều rộng của khung */
+  margin: -48px auto 28px;
+  /* kéo khung lên đè nhẹ lên hero, tùy chỉnh nếu cần */
+  padding: 18px 22px;
+  /* giảm padding để khung nhỏ gọn */
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 28px;
+  /* bo tròn rõ rệt */
+  background: #ffffff;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.06);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: center;
+  z-index: 9997;
+}
+
+/* Each item */
+.service-panel .item {
+  text-align: center;
+  padding: 10px 8px;
+  min-height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* icon */
+.service-panel .item .icon {
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 4px;
+  color: #19A94B;
+}
+
+/* title + desc */
+.service-panel .item .title {
+  font-weight: 700;
+  font-size: 15px;
+  color: #111;
+}
+
+.service-panel .item .desc {
+  font-size: 13px;
+  color: #666;
+}
+
+/* variant: compact (if you want smaller) */
+.service-panel.compact {
+  max-width: 980px;
+  padding: 14px 16px;
+  border-radius: 32px;
+  gap: 14px;
+}
+
+/* very round style */
+.service-panel.rounder {
+  border-radius: 40px;
+}
+
+/* ---------- RESPONSIVE for SERVICE PANEL ---------- */
+@media (max-width: 991px) {
+  .service-panel {
+    max-width: 1000px;
+    grid-template-columns: repeat(2, 1fr);
+    margin: -24px auto 20px;
+    padding: 16px 18px;
+    border-radius: 22px;
+  }
+
+  .service-panel .item {
+    min-height: 64px;
+  }
+
+  .service-panel .item .icon {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .service-panel {
+    width: calc(100% - 32px);
+    margin: 12px auto;
+    padding: 14px 14px;
+    border-radius: 18px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .service-panel .item {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    min-height: auto;
+    background: transparent;
+  }
+
+  .service-panel .item .icon {
+    font-size: 34px;
+    margin-bottom: 8px;
+  }
+
+  /* reduce navbar menu spacing on mobile */
+  .navbar-menu {
+    margin-top: 0;
+    gap: 12px;
+    padding: 10px;
+  }
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .navbar-top {
     grid-template-columns: auto 1fr auto;
     gap: 10px;
   }
+
   .logo-wrap img {
     height: 110px;
     width: auto;
   }
+
   .search-box {
     width: 200px;
     min-width: 140px;
@@ -348,6 +482,7 @@ body > .dropdown-menu,
 }
 
 @media (max-width: 700px) {
+
   /* stack vertically on small devices */
   .navbar-top {
     display: flex;
@@ -355,24 +490,37 @@ body > .dropdown-menu,
     align-items: center;
     gap: 8px;
   }
+
   .title-wrap {
     pointer-events: auto;
-  } /* allow interaction if needed */
+  }
+
+  /* allow interaction if needed */
   .actions-wrap {
     width: 100%;
     justify-content: center;
   }
+
   .search-box {
     width: 90%;
     max-width: 360px;
   }
+
   .logo-wrap img {
     height: 90px;
     width: auto;
   }
+
   .navbar-menu {
     margin-top: 0;
     gap: 12px;
     padding: 10px;
   }
+
+
+
+
+
+
+
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
+import Navbar from '../../Components/Navbar/Navbar'
 
 const ExpertConsultation = () => {
   return (
@@ -18,29 +18,34 @@ const ExpertConsultation = () => {
             Vui lòng điền thông tin và câu hỏi của bạn, các chuyên gia sẽ trả lời trong thời gian sớm nhất.
           </p>
           <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <input 
-              type="text" 
-              placeholder="Họ và tên" 
+            <input
+              type="text"
+              placeholder="Họ và tên"
               style={{ padding: '12px', fontSize: '16px', borderRadius: '8px', border: '1px solid #ddd' }}
             />
-            <input 
-              type="email" 
-              placeholder="Email" 
+            <input
+              type="number"
+              placeholder="Số điện thoại"
               style={{ padding: '12px', fontSize: '16px', borderRadius: '8px', border: '1px solid #ddd' }}
             />
-            <textarea 
-              placeholder="Câu hỏi của bạn..." 
+            <input
+              type="email"
+              placeholder="Email"
+              style={{ padding: '12px', fontSize: '16px', borderRadius: '8px', border: '1px solid #ddd' }}
+            />
+            <textarea
+              placeholder="Câu hỏi của bạn..."
               rows="6"
               style={{ padding: '12px', fontSize: '16px', borderRadius: '8px', border: '1px solid #ddd', resize: 'vertical' }}
             />
-            <button 
+            <button
               type="submit"
-              style={{ 
-                padding: '12px 30px', 
-                fontSize: '16px', 
-                backgroundColor: '#109832', 
-                color: 'white', 
-                border: 'none', 
+              style={{
+                padding: '12px 30px',
+                fontSize: '16px',
+                backgroundColor: '#109832',
+                color: 'white',
+                border: 'none',
                 borderRadius: '8px',
                 cursor: 'pointer',
                 fontWeight: '600'

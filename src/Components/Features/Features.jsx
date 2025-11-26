@@ -21,7 +21,7 @@ const Features = () => {
     {
       image: anh3,
       title: 'Giới thiệu các đơn vị',
-      path: '/kham-chua-benh/cac-don-vi'
+      path: '/thong-tin-chung/cac-don-vi'
     },
     {
       image: anh4,

@@ -30,6 +30,7 @@ const Navbar = () => {
   ]
 
   const infoItems = [
+    { href: '/thong-tin-chung/thong-tin-benh-vien', label: 'Giới thiệu bệnh viện' },
     { href: '/thong-tin-chung/cac-don-vi', label: 'Giới thiệu các đơn vị' },
     { href: '/thong-tin-chung/thong-tin-duoc', label: 'Thông tin dược' },
     { href: '/thong-tin-chung/bao-hiem-y-te', label: 'Thông tin bảo hiểm y tế' },
@@ -51,14 +52,14 @@ const Navbar = () => {
     '/thong-tin-chung/thu-chao-moi-san-pham',
   ])
 
-  // Cập nhật activeMenu dựa trên location
+
   useEffect(() => {
     if (location.pathname === '/') {
       setActiveMenu('/')
     }
   }, [location])
 
-  // Bấm vào menu là cuộn về đầu trang
+
   useEffect(() => {
     if (scrollToTopPaths.has(location.pathname)) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -66,7 +67,7 @@ const Navbar = () => {
   }, [location.pathname])
 
   const handleDropdownItemClick = () => {
-    // Close dropdown and scroll to top immediately
+
     setOpenDropdown(null)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -90,7 +91,7 @@ const Navbar = () => {
 
   const handleMenuClick = (event, item) => {
     if (item.isRoute) {
-      // Nếu đang ở cùng trang, prevent navigation và scroll to top
+
       if (item.href === location.pathname) {
         event.preventDefault()
         event.stopPropagation()
@@ -98,7 +99,7 @@ const Navbar = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
         return false
       }
-      // Nếu navigate sang trang khác, để React Router xử lý
+
       setActiveMenu(item.href)
       return
     }
@@ -123,19 +124,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Handle click outside to close dropdown
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       const target = event.target
       if (!target || typeof target.closest !== 'function') return
-      
-      // Check if click is on dropdown toggle (will be handled by onToggle)
+
       const isClickOnDropdownToggle = target.closest('.custom-nav-dropdown .dropdown-toggle')
       if (isClickOnDropdownToggle) {
-        // Let onToggle handle it
+
         return
       }
-      
+
       // Check if click is on dropdown menu or its items
       const isClickOnDropdownMenu = target.closest('.dropdown-menu')
       if (isClickOnDropdownMenu) {
@@ -146,7 +146,7 @@ const Navbar = () => {
           return
         }
       }
-      
+
       // Close if clicking outside
       setOpenDropdown(null)
     }
@@ -164,7 +164,7 @@ const Navbar = () => {
     const handleDropdownMenuHover = (e) => {
       const target = e.target
       if (!target || typeof target.closest !== 'function') return
-      
+
       const dropdownMenu = target.closest('.dropdown-menu')
       if (dropdownMenu) {
         const hasCustomItems = dropdownMenu.querySelector('.custom-dropdown-item')
@@ -187,6 +187,7 @@ const Navbar = () => {
     <>
       <div className="navbar" ref={navbarRef}>
         <div className="top-strip">
+          <div className="location-text">Đường Lê Viết Thuật, Phường Vinh Lộc, Tỉnh Nghệ An</div>
           <div className="quick-actions">
             <button className="btn btn-outline">Gọi tổng đài</button>
             <button className="btn btn-outline">Đặt lịch khám</button>
@@ -201,7 +202,7 @@ const Navbar = () => {
           </div>
 
           <div className="title-wrap">
-            <div className="title-vi">BỆNH VIỆN QUÂN Y 4</div>
+            <div className="title-vi">BỆNH VIỆN QUÂN Y 4 - CỤC HẬU CẦN KỸ THUẬT QUÂN KHU 4</div>
             <div className="title-en">MILITARY HOSPITAL</div>
           </div>
 

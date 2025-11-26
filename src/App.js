@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
-import CallCenter from './Pages/CallCenter';
-import BookAppointment from './Components/dichvukcb/BookAppointment';
-import ExpertConsultation from './Pages/ExpertConsultation';
-import CheckResults from './Pages/CheckResults';
+import CallCenter from './Dangkykhamchuabenh/Tongdai/CallCenter';
+import BookAppointment from './Dangkykhamchuabenh/dichvukcb/BookAppointment';
+import ExpertConsultation from './Dangkykhamchuabenh/Hopdapcungchuyengia/ExpertConsultation';
+import CheckResults from './Dangkykhamchuabenh/Tracuuketquakcb/CheckResults';
 import Organization from './Sections/Organization/Organization';
 import NewsEventsPage from './modules/tintuc/pages/NewsEventsPage';
 import ArticleDetailPage from './modules/tintuc/pages/ArticleDetailPage';
@@ -39,7 +39,7 @@ function App() {
         <Route path="/book-appointment" element={<BookAppointment />} />
         <Route path="/expert-consultation" element={<ExpertConsultation />} />
         <Route path="/check-results" element={<CheckResults />} />
-        
+
       </Routes>
     </Router>
   );

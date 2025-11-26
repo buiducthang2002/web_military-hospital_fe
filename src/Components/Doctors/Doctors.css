@@ -142,11 +142,15 @@
   .features-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .doctors-section {
+    margin-top: 0; /* reset negative margin on tablet */
+  }
 }
 
 @media (max-width: 768px) {
   .doctors-section {
     padding: 40px 15px;
+    margin-top: 0; /* reset negative margin on mobile */
   }
   .hospital-image {
     height: 250px;

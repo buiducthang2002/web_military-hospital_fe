@@ -1,7 +1,13 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
+import Navbar from '../../Components/Navbar/Navbar'
 
 const CheckResults = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Chuyển hướng đến trang tra cứu kết quả trong cùng tab
+    window.open('https://40026.byt.vn/kcb/tra-cuu/', '_blank')
+  }
+
   return (
     <div style={{ minHeight: '100vh', width: '100%', overflowX: 'hidden' }}>
       <Navbar />
@@ -17,25 +23,25 @@ const CheckResults = () => {
           <p style={{ fontSize: '16px', color: '#666', marginBottom: '20px' }}>
             Vui lòng nhập mã số khám bệnh hoặc số CMND/CCCD để tra cứu kết quả.
           </p>
-          <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <input 
-              type="text" 
-              placeholder="Mã số khám bệnh hoặc CMND/CCCD" 
+          <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Mã số khám bệnh hoặc CMND/CCCD"
               style={{ padding: '12px', fontSize: '16px', borderRadius: '8px', border: '1px solid #ddd' }}
             />
-            <input 
-              type="date" 
-              placeholder="Ngày khám" 
+            <input
+              type="date"
+              placeholder="Ngày khám"
               style={{ padding: '12px', fontSize: '16px', borderRadius: '8px', border: '1px solid #ddd' }}
             />
-            <button 
+            <button
               type="submit"
-              style={{ 
-                padding: '12px 30px', 
-                fontSize: '16px', 
-                backgroundColor: '#109832', 
-                color: 'white', 
-                border: 'none', 
+              style={{
+                padding: '12px 30px',
+                fontSize: '16px',
+                backgroundColor: '#109832',
+                color: 'white',
+                border: 'none',
                 borderRadius: '8px',
                 cursor: 'pointer',
                 fontWeight: '600'

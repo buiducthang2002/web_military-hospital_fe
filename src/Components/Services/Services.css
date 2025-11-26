@@ -1,11 +1,12 @@
-.services-section {
+.services-section{
   width: 100%;
   background-color: #f5f5e6;
   padding: 0 20px 0 20px;
   display: flex;
   flex-direction: column;
 }
-/*kéo lên*/
+
+
 .services-container {
   max-width: 1200px;
   width: 100%;
@@ -71,7 +72,8 @@
 .services-info {
   max-width: 1200px;
   width: 100%;
-  margin: 0px auto 0; /* kéo khung nội dung phía dưới lên sát hơn */
+  margin: 0px auto 0;
+  /* kéo khung nội dung phía dưới lên sát hơn */
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
@@ -141,7 +143,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
-  
+
   .services-info {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -153,31 +155,32 @@
     padding: 20px 15px 20px 15px;
     margin-top: 0;
   }
-  
+
   .services-container {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 15px;
+    gap: 14px;
+    padding: 16px 14px;
+    margin: 10px auto 16px;
   }
-  
+
   .services-info {
-    margin: -10px auto 0;
+    margin: 0 auto 0;
   }
-  
+
   .service-item {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  
+
   .info-title {
     font-size: 16px;
   }
-  
+
   .info-slogan {
     font-size: 14px;
   }
-  
+
   .info-description {
     font-size: 13px;
   }
