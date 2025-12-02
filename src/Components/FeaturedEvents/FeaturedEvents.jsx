@@ -1,19 +1,16 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './FeaturedEvents.css'
-import anh1 from './Images/anh1.jpg'
-import anh2 from './Images/anh2.jpg'
-import anh3 from './Images/anh3.jpg'
-import anh4 from './Images/anh4.jpg'
-import anh6 from './Images/anh6.jpg'
-import anh7 from './Images/anh7.jpg'
-import anh8 from './Images/anh8.jpg'
-import anh9 from './Images/anh9.jpg'
-import anh10 from './Images/anh10.jpg'
+
 import anh11 from './Images/anh11.jpg'
 import anh12 from './Images/anh12.jpg'
 import anh13 from './Images/anh13.jpg'
 import anhqh1 from './Images/anhqh1.jpg'
+import sktg1 from './Images/sktg1.jpg'
+import sktg2 from './Images/sktg2.jpg'
+import sktg3 from './Images/sktg3.jpg'
+import sktg4 from './Images/sktg4.png'
+
 
 const FeaturedEvents = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -24,77 +21,40 @@ const FeaturedEvents = () => {
   const tabs = [
     'Sự kiện nổi bật thế giới',
     'Sự kiện nổi bật trong nước',
-   
+
   ]
 
   // Dữ liệu tin tức cho từng tab
   const newsDataByTab = {
     0: [ // Tin tức y học thế giới
       {
-        image: anh1,
-        title: 'Tin tức y học thế giới 1',
-        date: '11/4/2025'
-      }, 
-      {
-        image: anh2,
-        title: 'Tin tức y học thế giới 2',
+        image: sktg1,
+        title: 'Sự cân bằng mong manh',
+        
         date: '11/4/2025'
       },
       {
-        image: anh3,
-        title: 'Tin tức y học thế giới 3',
+        image: sktg2,
+        title: 'Đợi chờ những hành động cụ thể',
         date: '11/4/2025'
       },
       {
-        image: anh4,
-        title: 'Tin tức y học thế giới 4',
+        image: sktg3,
+        title: 'Mở rộng thêm những cánh cửa',
         date: '11/4/2025'
       },
       {
-        image: anh6,
-        title: 'Tin tức y học thế giới 5',
-        date: '12/4/2025'
-      },
-      {
-        image: anh7,
-        title: 'Tin tức y học thế giới 6',
-        date: '12/4/2025'
-      },
-      {
-        image: anh8,
-        title: 'Tin tức y học thế giới 7',
-        date: '12/4/2025'
-      },
-      {
-        image: anh9,
-        title: 'Tin tức y học thế giới 8',
-        date: '12/4/2025'
-      },
-      {
-        image: anh10,
-        title: 'Tin tức y học trong nước 1',
+        image: sktg4,
+        title: 'Hướng về phía tương lai',
         date: '11/4/2025'
       },
-      {
-        image: anh11,
-        title: 'Tin tức y học trong nước 2',
-        date: '11/4/2025'
-      },
-      {
-        image: anh12,
-        title: 'Tin tức y học trong nước 3',
-        date: '11/4/2025'
-      },
-      {
-        image: anh13,
-        title: 'Tin tức y học trong nước 4',
-        date: '11/4/2025'
-      },
+
+
     ],
     1: [ // Tin tức y học trong nước
       {
         image: anhqh1,
-        title: 'Tin tức y học trong nước 1',
+        title: 'Cứu sống bệnh nhân ngừng tim 30 phút nhờ can thiệp mạch vành khẩn cấp',
         date: '11/4/2025'
       },
       {
@@ -112,36 +72,17 @@ const FeaturedEvents = () => {
         title: 'Tin tức y học trong nước 4',
         date: '11/4/2025'
       },
-      {
-        image: anh6,
-        title: 'Tin tức y học trong nước 5',
-        date: '12/4/2025'
-      },
-      {
-        image: anh7,
-        title: 'Tin tức y học trong nước 6',
-        date: '12/4/2025'
-      },
-      {
-        image: anh8,
-        title: 'Tin tức y học trong nước 7',
-        date: '12/4/2025'
-      },
-      {
-        image: anh9,
-        title: 'Tin tức y học trong nước 8',
-        date: '12/4/2025'
-      },
+
     ],
-   
-    
+
+
   }
 
   // Lấy dữ liệu cho tab hiện tại
   const allNewsItems = newsDataByTab[activeTab] || []
   const itemsPerPage = 4
   const totalPages = Math.ceil(allNewsItems.length / itemsPerPage)
-  
+
   // Tính toán các items hiển thị dựa trên trang hiện tại
   const startIndex = (currentPage - 1) * itemsPerPage
   const endIndex = startIndex + itemsPerPage
@@ -177,13 +118,13 @@ const FeaturedEvents = () => {
         <div className="news-grid">
           {newsItems.map((item, index) => (
             <div key={index} className="news-card">
-              <div className="news-image-wrapper">
-                <img 
-                  src={item.image} 
+              <Link to="/news-events" className="news-image-wrapper">
+                <img
+                  src={item.image}
                   alt={item.title}
                   className="news-image"
                 />
-              </div>
+              </Link>
               <div className="news-content">
                 <h4 className="news-title">{item.title}</h4>
                 <p className="news-date">{item.date}</p>

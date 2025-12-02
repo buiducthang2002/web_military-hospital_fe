@@ -5,7 +5,7 @@ const contactItems = [
   {
     id: 'intro',
     icon: <HeartPulse size={20} />,
-    label: 'Trang thông tin điện tử Bệnh viện quân y 4',
+    label: 'Trang thông tin điện tử Bệnh viện Quân y 4',
   },
   {
     id: 'address',
@@ -15,12 +15,12 @@ const contactItems = [
   {
     id: 'hotline',
     icon: <Phone size={20} />,
-    label: 'Hotline: *********',
+    label: 'Điện thoại: 0965 331 414  - CSKH: 0974 225 225',
   },
   {
     id: 'email',
     icon: <Mail size={20} />,
-    label: 'Benhvienquany4@gmail.com',
+    label: 'bv4.qk4@gmail.com',
   },
 ]
 

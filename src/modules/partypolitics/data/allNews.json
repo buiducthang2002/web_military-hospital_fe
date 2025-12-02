@@ -1,17 +1,20 @@
 [
- 
   {
     "id": "41",
     "categoryId": "party-work",
-    "title": "Hội nghị tổng kết công tác Đảng năm 2024 và phương hướng nhiệm vụ năm 2025",
+    "title": "KHAI MẠC TRỌNG THỂ ĐẠI HỘI ĐẠI BIỂU ĐẢNG BỘ QUÂN ĐỘI NHIỆM KỲ 2025-2030",
     "slug": "hoi-nghi-tong-ket-cong-tac-dang-2024",
-    "excerpt": "Ngày 20/12/2024,tổ chức Hội nghị tổng kết công tác Đảng năm 2024 và triển khai phương hướng nhiệm vụ năm 2025. Hội nghị đánh giá những thành tựu đạt được trong năm qua và đề ra các giải pháp cụ thể để tiếp tục nâng cao chất lượng công tác Đảng...",
+    "excerpt": " Sáng 30/9, Đại hội đại biểu Đảng bộ Quân đội lần thứ XII, nhiệm kỳ 2025 - 2030 đã khai mạc trọng thể tại Thủ đô Hà Nội. Đồng chí Tô Lâm, Tổng Bí thư Ban Chấp hành Trung ương Đảng, Bí thư Quân ủy Trung ương dự và chỉ đạo đại hội.",
     "content": "Nội dung đầy đủ của bài viết sẽ được cập nhật...",
-    "image": "anh11.jpg",
-    "date": "2024-12-20",
-    "author": "Ban Tổ chức Đảng",
+    "image": "ctd1.jpg",
+    "date": "2025-09-30",
+    "author": "Quân đội nhân dân Việt Nam",
     "views": 350,
-    "tags": ["công tác Đảng", "hội nghị", "tổng kết"]
+    "tags": [
+      "công tác Đảng",
+      "hội nghị",
+      "tổng kết"
+    ]
   },
   {
     "id": "42",
@@ -21,10 +24,14 @@
     "excerpt": "Nằm trong các hoạt động kỷ niệm 69 năm Ngày truyền thống Bệnh viện Quân y 4 (07/10/1956 – 07/10/2025), Bệnh viện Quân y 4, Cục Hậu cần – Kỹ thuật Quân khu 4 đã phối hợp với các tổ chức chính trị xã hội tổ chức nhiều hoạt động hỗ trợ bệnh nhân....",
     "content": "Nội dung đầy đủ của bài viết sẽ được cập nhật...",
     "image": "anh_ky_niem.jpg",
-    "date": "2024-9-18",
+    "date": "2024-09-18",
     "author": "Báo Quân khu 4",
     "views": 351,
-    "tags": ["Công tác Đảng", "Chăm sóc ", "tình nguyện"]
+    "tags": [
+      "Công tác Đảng",
+      "Chăm sóc ",
+      "tình nguyện"
+    ]
   },
   {
     "id": "43",
@@ -34,13 +41,13 @@
     "excerpt": "Bệnh viện Quân y 4 được thành lập trên cơ sở sáp nhập 3 đơn vị điều trị: Bệnh viện K43, Bệnh xá Hồ Chí Minh và Đội điều trị 7",
     "content": "Nội dung đầy đủ của bài viết sẽ được cập nhật...",
     "image": "anh65nam.jpg",
-    "date": "2024-9-18",
+    "date": "2024-09-18",
     "author": "Báo Quân đội nhân dân Việt Nam",
     "views": 351,
-    "tags": ["Công tác Đảng", "Kỷ niệm ", "Thành lập"]
+    "tags": [
+      "Công tác Đảng",
+      "Kỷ niệm ",
+      "Thành lập"
+    ]
   }
-  
-  
-
 ]
-

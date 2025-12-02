@@ -1,6 +1,6 @@
 .doctors-section {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin-top: -420px;
+  margin-top: -360px;
 }
 
 .doctors-intro {
@@ -11,8 +11,8 @@
 }
 
 .intro-title {
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 23px;
+  font-weight: 650;
   color: #068526;
   margin: 0 0 20px 0;
   line-height: 1.5;
@@ -20,7 +20,8 @@
 }
 
 .intro-desc {
-  font-size: 16px;
+  font-size: 14px;
+  
   color: #000;
   line-height: 1.5;
   margin: 0;

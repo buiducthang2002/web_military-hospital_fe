@@ -2,475 +2,332 @@
   {
     "id": "1",
     "categoryId": "world-medical",
-    "title": "10 năm chuyển giao kỹ thuật: Đưa Nội soi Tiêu hóa Việt Nam tiệm cận đỉnh cao thế giới",
+    "title": "WHO khôi phục các dịch vụ y tế cơ bản và tiêm chủng cho trẻ em tại Gaza",
     "slug": "tin-tuc-y-hoc-the-gioi-1",
-    "excerpt": "Ngày 15/11/2025, Hội thảo Khoa học Tiêu hóa lần thứ 10 do Bệnh viện phối hợp với hiệp hội phát triển Y học Tiêu hóa Nagoya Asia (NAG) tổ chức đã khai mạc thành công, đánh dấu một thập kỷ hợp tác chiến lược bền vững và không ngừng phát triển...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học thế giới 1...",
-    "image": "anh2.jpg",
-    "date": "2025-04-11", 
+    "excerpt": "Theo phóng viên TTXVN tại Trung Đông, ngày 6/11, Tổ chức Y tế Thế giới (WHO) cho biết sẽ triển khai một chương trình can thiệp y tế lớn tại Gaza vào tuần tới nhằm khôi phục các dịch vụ y tế cơ bản và tiêm chủng cho trẻ em - nhóm đối tượng bị gián đoạn chăm sóc suốt gần 2 năm do chiến sự",
+    "image": "WHO.jpg",
+    "date": "07/11/2025",
     "author": "Admin",
     "views": 150,
-    "tags": ["y học", "thế giới", "nghiên cứu"]
+    "tags": [
+      "y học",
+      "thế giới",
+      "nghiên cứu"
+    ]
   },
   {
     "id": "2",
     "categoryId": "world-medical",
-    "title": "Tin tức y học thế giới 2",
+    "title": "Tất cả các sản phẩm thuốc lá đều có hại cho sức khỏe...",
     "slug": "tin-tuc-y-hoc-the-gioi-2",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học thế giới thứ hai...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học thế giới 2...",
-    "image": "anh2.jpg",
+    "excerpt": "Theo Tổ chức Y tế thế giới, không có sản phẩm thuốc lá nào là an toàn cho sức khỏe. Thuốc lá điện tử, thuốc lá nung nóng có chứa nicotine, vẫn là sản phẩm gây nghiện. Theo Bảng phân loại bệnh tật quốc tế thì lệ thuộc nicotine được phân loại mã bệnh 6C4A.2 là một bệnh thuộc loại rối loạn do sử dụng chất kích thích...",
+    "image": "thuocla1.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 120,
-    "tags": ["y học", "thế giới"]
+    "tags": [
+      "y học",
+      "thế giới"
+    ]
   },
   {
     "id": "3",
     "categoryId": "world-medical",
-    "title": "Tin tức y học thế giới 3",
+    "title": "Nguy cơ lây lan cao của virus Chikungunya trong tương lai sắp tới",
     "slug": "tin-tuc-y-hoc-the-gioi-3",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học thế giới thứ ba...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học thế giới 3...",
-    "image": "anh4.jpg",
+    "excerpt": "Tổ chức Y tế Thế giới (WHO) mới đây đã lên tiếng cảnh báo về nguy cơ lây lan nhanh chóng và trên diện rộng của virus Chikungunya – một loại virus do muỗi truyền có khả năng gây sốt cao, đau khớp kéo dài và nhiều biến chứng nguy hiểm",
+    "image": "yttg1.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 98,
-    "tags": ["y học", "thế giới", "công nghệ"]
+    "tags": [
+      "y học",
+      "thế giới",
+      "công nghệ"
+    ] 
   },
   {
     "id": "4",
     "categoryId": "world-medical",
-    "title": "Tin tức y học thế giới 4",
+    "title": "Đại Hội đồng Y tế thế giới nhất trí trao thêm quyền cho Palestine",
     "slug": "tin-tuc-y-hoc-the-gioi-4",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học thế giới thứ tư...",
+    "excerpt": "Tổng cộng 101 trong tổng số 177 nước có quyền biểu quyết đã ủng hộ dự thảo nghị quyết về việc trao thêm quyền cho Palestine trong Tổ chức Y tế thế giới (WHO), trong khi 5 nước phản đối.",
     "content": "Nội dung đầy đủ của bài viết tin tức y học thế giới 4...",
-    "image": "anh4.jpg",
+    "image": "yttg41.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 87,
-    "tags": ["y học", "thế giới"]
-  },
-  {
-    "id": "5",
-    "categoryId": "world-medical",
-    "title": "Tin tức y học thế giới 5",
-    "slug": "tin-tuc-y-hoc-the-gioi-5",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học thế giới thứ năm...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học thế giới 5...",
-    "image": "anh6.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 76,
-    "tags": ["y học", "thế giới", "nghiên cứu"]
-  },
-  {
-    "id": "6",
-    "categoryId": "world-medical",
-    "title": "Tin tức y học thế giới 6",
-    "slug": "tin-tuc-y-hoc-the-gioi-6",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học thế giới thứ sáu...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học thế giới 6...",
-    "image": "anh7.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 65,
-    "tags": ["y học", "thế giới"]
-  },
-  {
-    "id": "7",
-    "categoryId": "world-medical",
-    "title": "Tin tức y học thế giới 7",
-    "slug": "tin-tuc-y-hoc-the-gioi-7",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học thế giới thứ bảy...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học thế giới 7...",
-    "image": "anh8.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 54,
-    "tags": ["y học", "thế giới", "công nghệ"]
-  },
-  {
-    "id": "8",
-    "categoryId": "world-medical",
-    "title": "Tin tức y học thế giới 8",
-    "slug": "tin-tuc-y-hoc-the-gioi-8",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học thế giới thứ tám...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học thế giới 8...",
-    "image": "anh9.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 43,
-    "tags": ["y học", "thế giới"]
+    "tags": [
+      "y học",
+      "thế giới"
+    ]
   },
   {
     "id": "9",
     "categoryId": "domestic-medical",
     "title": "Trình UBTVQH Chương trình mục tiêu quốc gia về chăm sóc sức khỏe, dân số và phát triển giai đoạn 2026–2035",
     "slug": "tin-tuc-y-hoc-trong-nuoc-1",
-    "excerpt": "UBTVQH tiếp tục họp phiên thứ 51 để cho ý kiến về chủ trương đầu tư Chương trình mục tiêu quốc gia về chăm sóc sức khỏe, dân số và phát triển giai đoạn 2026–2035",
+    "excerpt": "Chiều muộn 17/11/2025,UBTVQH tiếp tục họp phiên thứ 51 để cho ý kiến về chủ trương đầu tư Chương trình mục tiêu quốc gia về chăm sóc sức khỏe, dân số và phát triển giai đoạn 2026–2035",
     "content": "Nội dung đầy đủ của bài viết tin tức y học trong nước 1...",
     "image": "anhqh1.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 200,
-    "tags": ["y học", "trong nước", "Việt Nam"]
+    "tags": [
+      "y học",
+      "trong nước",
+      "Việt Nam"
+    ]
   },
   {
     "id": "10",
     "categoryId": "domestic-medical",
-    "title": "Tin tức y học trong nước 2",
+    "title": "Thúc đẩy các nỗ lực loại trừ ung thư cổ tử cung tại Việt Nam",
     "slug": "tin-tuc-y-hoc-trong-nuoc-2",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học trong nước thứ hai...",
+    "excerpt": "Ngày 26/8, tọa đàm với chủ đề “Giảm thiểu các rào cản kỹ thuật và tâm lý để mở rộng phạm vi sàng lọc ung thư cổ tử cung cho phụ nữ Việt Nam” đã diễn ra tại Hà Nội, với sự tham gia của chuyên gia từ nhiều lĩnh vực nhằm thúc đẩy nỗ lực loại trừ ung thư cổ tử cung tại Việt Nam.",
     "content": "Nội dung đầy đủ của bài viết tin tức y học trong nước 2...",
-    "image": "anh11.jpg",
+    "image": "ytvn2.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 180,
-    "tags": ["y học", "trong nước"]
+    "tags": [
+      "y học",
+      "trong nước"
+    ]
   },
   {
     "id": "11",
     "categoryId": "domestic-medical",
-    "title": "Tin tức y học trong nước 3",
+    "title": "Ngành y tế Thành phố Hồ Chí Minh hướng về đồng bào vùng lũ",
     "slug": "tin-tuc-y-hoc-trong-nuoc-3",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học trong nước thứ ba...",
+    "excerpt": "Những ngày cuối tháng 11, hình ảnh những đoàn xe mang phù hiệu ngành y tế Thành phố Hồ Chí Minh liên tục lăn bánh hướng về các địa phương đang bị thiệt hại nặng nề sau mưa, lũ đã trở thành biểu tượng đẹp của tinh thần trách nhiệm nghĩa tình vì đồng bào cả nước",
     "content": "Nội dung đầy đủ của bài viết tin tức y học trong nước 3...",
-    "image": "anh12.jpg",
+    "image": "yhvn31.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 165,
-    "tags": ["y học", "trong nước", "Việt Nam"]
+    "tags": [
+      "y học",
+      "trong nước",
+      "Việt Nam"
+    ]
   },
   {
     "id": "12",
     "categoryId": "domestic-medical",
-    "title": "Tin tức y học trong nước 4",
+    "title": "Bộ Y tế đề nghị tăng cường công tác phòng, chống dịch bệnh ứng phó với thiên tai",
     "slug": "tin-tuc-y-hoc-trong-nuoc-4",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học trong nước thứ tư...",
+    "excerpt": "Bộ Y tế vừa ban hành Công văn số 1677/PB-BTN gửi Sở Y tế các tỉnh, thành phố trực thuộc Trung ương về tăng cường công tác phòng, chống dịch bệnh ứng phó với thiên tai",
     "content": "Nội dung đầy đủ của bài viết tin tức y học trong nước 4...",
-    "image": "anh13.jpg",
+    "image": "yhvn41.png",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 150,
-    "tags": ["y học", "trong nước"]
-  },
-  {
-    "id": "13",
-    "categoryId": "domestic-medical",
-    "title": "Tin tức y học trong nước 5",
-    "slug": "tin-tuc-y-hoc-trong-nuoc-5",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học trong nước thứ năm...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học trong nước 5...",
-    "image": "anh6.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 140,
-    "tags": ["y học", "trong nước", "Việt Nam"]
-  },
-  {
-    "id": "14",
-    "categoryId": "domestic-medical",
-    "title": "Tin tức y học trong nước 6",
-    "slug": "tin-tuc-y-hoc-trong-nuoc-6",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học trong nước thứ sáu...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học trong nước 6...",
-    "image": "anh7.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 130,
-    "tags": ["y học", "trong nước"]
-  },
-  {
-    "id": "15",
-    "categoryId": "domestic-medical",
-    "title": "Tin tức y học trong nước 7",
-    "slug": "tin-tuc-y-hoc-trong-nuoc-7",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học trong nước thứ bảy...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học trong nước 7...",
-    "image": "anh8.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 120,
-    "tags": ["y học", "trong nước", "Việt Nam"]
-  },
-  {
-    "id": "16",
-    "categoryId": "domestic-medical",
-    "title": "Tin tức y học trong nước 8",
-    "slug": "tin-tuc-y-hoc-trong-nuoc-8",
-    "excerpt": "Đây là mô tả ngắn về tin tức y học trong nước thứ tám...",
-    "content": "Nội dung đầy đủ của bài viết tin tức y học trong nước 8...",
-    "image": "anh9.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 110,
-    "tags": ["y học", "trong nước"]
+    "tags": [
+      "y học",
+      "trong nước"
+    ]
   },
   {
     "id": "17",
     "categoryId": "hospital-activities",
-    "title": "Tin tức hoạt động bệnh viện 1",
+    "title": "Bệnh viện Quân y 4: Hướng tới sự hài lòng của người bệnh",
     "slug": "tin-tuc-hoat-dong-benh-vien-1",
-    "excerpt": "Đây là mô tả ngắn về tin tức hoạt động bệnh viện đầu tiên...",
+    "excerpt": "Trong những năm qua, Bệnh viện luôn chú trọng nâng cao chất lượng đội ngũ cán bộ, y tá, bác sĩ thông qua việc rèn luyện y đức và bồi dưỡng y thuật. Tập thể Bệnh viện thường xuyên triển khai các chương trình đào tạo, sinh hoạt chuyên môn nhằm cập nhật kiến thức mới, hoàn thiện kỹ năng chuyên ngành.",
     "content": "Nội dung đầy đủ của bài viết tin tức hoạt động bệnh viện 1...",
-    "image": "anh1.jpg",
+    "image": "ttbv1.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 300,
-    "tags": ["bệnh viện", "hoạt động"]
+    "tags": [
+      "bệnh viện",
+      "hoạt động"
+    ]
   },
   {
     "id": "18",
     "categoryId": "hospital-activities",
-    "title": "Tin tức hoạt động bệnh viện 2",
+    "title": "Bệnh viện Quân y 4: Tổ chức nhiều hoạt động hỗ trợ người bệnh",
     "slug": "tin-tuc-hoat-dong-benh-vien-2",
     "excerpt": "Đây là mô tả ngắn về tin tức hoạt động bệnh viện thứ hai...",
     "content": "Nội dung đầy đủ của bài viết tin tức hoạt động bệnh viện 2...",
-    "image": "anh2.jpg",
+    "image": "ttbv2.png",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 280,
-    "tags": ["bệnh viện", "hoạt động", "sự kiện"]
+    "tags": [
+      "bệnh viện",
+      "hoạt động",
+      "sự kiện"
+    ]
   },
   {
     "id": "19",
     "categoryId": "hospital-activities",
-    "title": "Tin tức hoạt động bệnh viện 3",
+    "title": "Bệnh viện Quân y 4 tổ chức đánh giá bệnh án điện tử",
     "slug": "tin-tuc-hoat-dong-benh-vien-3",
-    "excerpt": "Đây là mô tả ngắn về tin tức hoạt động bệnh viện thứ ba...",
+    "excerpt": "Thực hiện chỉ đạo của Bộ Quốc phòng, chiều ngày 5 / 9 /2025, Bệnh viện Quân y 4 đã tổ chức Hội đồng thẩm định Bệnh án điện tử nhằm tiến tới quyết định chính thức thay thế hồ sơ bệnh án giấy bằng hồ sơ bệnh án điện tử Hội nghị do Đại tá Nguyễn An Giang, Giám đốc Bệnh viện, Chủ tịch Hội đồng chủ trì cùng 12 đồng chí là thành viên hội đồng Dự hội nghị có Đại tá Trần Duy Hưng, Phó Cục trưởng Cục Quân y; Đại tá Nguyễn Huy Việt, Phó Cục trưởng Cục Hậu cần - Kỹ thuật Quân khu 4; Thượng tá Nguyễn Minh Quyết, Phó Trưởng phòng TMK H /Cục H C -KT; Thượng tá Nguyễn Huy Hoàng, P.CNC T /Cục H C -KT; Đại tá Hồ Xuân Lệ, Phó Trưởng phòng Quân y /Cục H C -KT, Đại tá Bùi Đức Luận, Chính ủy Bệnh viện Quân y 268 và Đại diện Viettel chi nhánh Nghệ An ",
     "content": "Nội dung đầy đủ của bài viết tin tức hoạt động bệnh viện 3...",
-    "image": "anh4.jpg",
+    "image": "ttbv3.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 260,
-    "tags": ["bệnh viện", "hoạt động"]
+    "tags": [
+      "bệnh viện",
+      "hoạt động"
+    ]
   },
   {
     "id": "20",
     "categoryId": "hospital-activities",
-    "title": "Tin tức hoạt động bệnh viện 4",
+    "title": "Bệnh viện Quân y 103 ký kết đào tạo và hỗ trợ chuyên môn với Bệnh viện Quân y 4",
     "slug": "tin-tuc-hoat-dong-benh-vien-4",
     "excerpt": "Đây là mô tả ngắn về tin tức hoạt động bệnh viện thứ tư...",
     "content": "Nội dung đầy đủ của bài viết tin tức hoạt động bệnh viện 4...",
-    "image": "anh4.jpg",
+    "image": "ttbv4.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 240,
-    "tags": ["bệnh viện", "hoạt động", "sự kiện"]
-  },
-  {
-    "id": "21",
-    "categoryId": "hospital-activities",
-    "title": "Tin tức hoạt động bệnh viện 5",
-    "slug": "tin-tuc-hoat-dong-benh-vien-5",
-    "excerpt": "Đây là mô tả ngắn về tin tức hoạt động bệnh viện thứ năm...",
-    "content": "Nội dung đầy đủ của bài viết tin tức hoạt động bệnh viện 5...",
-    "image": "anh6.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 220,
-    "tags": ["bệnh viện", "hoạt động"]
-  },
-  {
-    "id": "22",
-    "categoryId": "hospital-activities",
-    "title": "Tin tức hoạt động bệnh viện 6",
-    "slug": "tin-tuc-hoat-dong-benh-vien-6",
-    "excerpt": "Đây là mô tả ngắn về tin tức hoạt động bệnh viện thứ sáu...",
-    "content": "Nội dung đầy đủ của bài viết tin tức hoạt động bệnh viện 6...",
-    "image": "anh7.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 200,
-    "tags": ["bệnh viện", "hoạt động", "sự kiện"]
-  },
-  {
-    "id": "23",
-    "categoryId": "hospital-activities",
-    "title": "Tin tức hoạt động bệnh viện 7",
-    "slug": "tin-tuc-hoat-dong-benh-vien-7",
-    "excerpt": "Đây là mô tả ngắn về tin tức hoạt động bệnh viện thứ bảy...",
-    "content": "Nội dung đầy đủ của bài viết tin tức hoạt động bệnh viện 7...",
-    "image": "anh8.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 180,
-    "tags": ["bệnh viện", "hoạt động"]
-  },
-  {
-    "id": "24",
-    "categoryId": "hospital-activities",
-    "title": "Tin tức hoạt động bệnh viện 8",
-    "slug": "tin-tuc-hoat-dong-benh-vien-8",
-    "excerpt": "Đây là mô tả ngắn về tin tức hoạt động bệnh viện thứ tám...",
-    "content": "Nội dung đầy đủ của bài viết tin tức hoạt động bệnh viện 8...",
-    "image": "anh9.jpg",
-    "date": "2025-04-12",
-    "author": "Admin",
-    "views": 160,
-    "tags": ["bệnh viện", "hoạt động", "sự kiện"]
+    "tags": [
+      "bệnh viện",
+      "hoạt động",
+      "sự kiện"
+    ]
   },
   {
     "id": "25",
     "categoryId": "professional-articles",
-    "title": "Bài viết chuyên môn 1",
+    "title": "Bé 7 tuổi mắc ung thư xương giữ được đôi chân nhờ công nghệ in 3D cá thể hóa",
     "slug": "bai-viet-chuyen-mon-1",
     "excerpt": "Đây là mô tả ngắn về bài viết chuyên môn đầu tiên...",
     "content": "Nội dung đầy đủ của bài viết chuyên môn 1...",
-    "image": "anh1.jpg",
+    "image": "bvcm1.jpeg",
     "date": "2025-04-11",
     "author": "BS. Nguyễn Văn A",
     "views": 450,
-    "tags": ["chuyên môn", "y học", "nghiên cứu"]
+    "tags": [
+      "chuyên môn",
+      "y học",
+      "nghiên cứu"
+    ]
   },
   {
     "id": "26",
     "categoryId": "professional-articles",
-    "title": "Bài viết chuyên môn 2",
+    "title": "Ca mổ thay cùng lúc 2 khớp gối, bệnh nhân 67 tuổi chấm dứt hơn 10 năm đau đớn",
     "slug": "bai-viet-chuyen-mon-2",
     "excerpt": "Đây là mô tả ngắn về bài viết chuyên môn thứ hai...",
     "content": "Nội dung đầy đủ của bài viết chuyên môn 2...",
-    "image": "anh2.jpg",
+    "image": "bvcm2.jpg",
     "date": "2025-04-11",
     "author": "BS. Trần Thị B",
     "views": 420,
-    "tags": ["chuyên môn", "y học"]
+    "tags": [
+      "chuyên môn",
+      "y học"
+    ]
   },
   {
     "id": "27",
     "categoryId": "professional-articles",
-    "title": "Bài viết chuyên môn 3",
+    "title": "Hành trình tìm lại nụ cười cho những phụ nữ nhiều năm sợ soi gương",
     "slug": "bai-viet-chuyen-mon-3",
     "excerpt": "Đây là mô tả ngắn về bài viết chuyên môn thứ ba...",
     "content": "Nội dung đầy đủ của bài viết chuyên môn 3...",
-    "image": "anh4.jpg",
+    "image": "bvcm3.jpg",
     "date": "2025-04-11",
     "author": "BS. Lê Văn C",
     "views": 390,
-    "tags": ["chuyên môn", "y học", "nghiên cứu"]
+    "tags": [
+      "chuyên môn",
+      "y học",
+      "nghiên cứu"
+    ]
   },
   {
     "id": "28",
     "categoryId": "professional-articles",
-    "title": "Bài viết chuyên môn 4",
+    "title": "Cuộc marathon trong phòng mổ’ cứu sống bệnh nhân ung thư xương hiếm gặp",
     "slug": "bai-viet-chuyen-mon-4",
     "excerpt": "Đây là mô tả ngắn về bài viết chuyên môn thứ tư...",
     "content": "Nội dung đầy đủ của bài viết chuyên môn 4...",
-    "image": "anh4.jpg",
+    "image": "bvcm4.jpg",
     "date": "2025-04-11",
     "author": "BS. Phạm Thị D",
     "views": 360,
-    "tags": ["chuyên môn", "y học"]
-  },
-  {
-    "id": "29",
-    "categoryId": "professional-articles",
-    "title": "Bài viết chuyên môn 5",
-    "slug": "bai-viet-chuyen-mon-5",
-    "excerpt": "Đây là mô tả ngắn về bài viết chuyên môn thứ năm...",
-    "content": "Nội dung đầy đủ của bài viết chuyên môn 5...",
-    "image": "anh6.jpg",
-    "date": "2025-04-12",
-    "author": "BS. Hoàng Văn E",
-    "views": 330,
-    "tags": ["chuyên môn", "y học", "nghiên cứu"]
-  },
-  {
-    "id": "30",
-    "categoryId": "professional-articles",
-    "title": "Bài viết chuyên môn 6",
-    "slug": "bai-viet-chuyen-mon-6",
-    "excerpt": "Đây là mô tả ngắn về bài viết chuyên môn thứ sáu...",
-    "content": "Nội dung đầy đủ của bài viết chuyên môn 6...",
-    "image": "anh7.jpg",
-    "date": "2025-04-12",
-    "author": "BS. Vũ Thị F",
-    "views": 300,
-    "tags": ["chuyên môn", "y học"]
-  },
-  {
-    "id": "31",
-    "categoryId": "professional-articles",
-    "title": "Bài viết chuyên môn 7",
-    "slug": "bai-viet-chuyen-mon-7",
-    "excerpt": "Đây là mô tả ngắn về bài viết chuyên môn thứ bảy...",
-    "content": "Nội dung đầy đủ của bài viết chuyên môn 7...",
-    "image": "anh8.jpg",
-    "date": "2025-04-12",
-    "author": "BS. Đặng Văn G",
-    "views": 270,
-    "tags": ["chuyên môn", "y học", "nghiên cứu"]
-  },
-  {
-    "id": "32",
-    "categoryId": "professional-articles",
-    "title": "Bài viết chuyên môn 8",
-    "slug": "bai-viet-chuyen-mon-8",
-    "excerpt": "Đây là mô tả ngắn về bài viết chuyên môn thứ tám...",
-    "content": "Nội dung đầy đủ của bài viết chuyên môn 8...",
-    "image": "anh9.jpg",
-    "date": "2025-04-12",
-    "author": "BS. Bùi Thị H",
-    "views": 240,
-    "tags": ["chuyên môn", "y học"]
+    "tags": [
+      "chuyên môn",
+      "y học"
+    ]
   },
   {
     "id": "33",
     "categoryId": "events",
-    "title": "Sự kiện nổi bật thế giới 1",
+    "title": "Sự cân bằng mong manh trong những thành tựu, cũng có thể tiềm ẩn không ít âu lo…",
     "slug": "su-kien-noi-bat-the-gioi-1",
-    "excerpt": "Góp phần xây dựng một nước Việt Nam khỏe mạnh",
+    "excerpt": "Ngay trong những thành tựu, cũng có thể tiềm ẩn không ít âu lo…",
     "content": "Nội dung đầy đủ của sự kiện nổi bật thế giới 1...",
-    "image": "anh2.jpg",
+    "image": "sktg1.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 500,
-    "tags": ["sự kiện", "thế giới"]
+    "tags": [
+      "sự kiện",
+      "thế giới"
+    ]
   },
   {
     "id": "34",
     "categoryId": "events",
-    "title": "Sự kiện nổi bật thế giới 2",
+    "title": "Đợi chờ những hành động cụ thể đối với các vấn đề nóng bỏng ở phạm vi quốc tế và toàn cầu, điều thật sự quan trọng có lẽ không phải là những tuyên bố hay cam kết, mà chuyện các phát ngôn đó được hiện thực hóa như thế nào.",
     "slug": "su-kien-noi-bat-the-gioi-2",
-    "excerpt": "Đây là mô tả ngắn về sự kiện nổi bật thế giới thứ hai...",
+    "excerpt": "Đối với các vấn đề nóng bỏng ở phạm vi quốc tế và toàn cầu, điều thật sự quan trọng có lẽ không phải là những tuyên bố hay cam kết, mà chuyện các phát ngôn đó được hiện thực hóa như thế nào.",
     "content": "Nội dung đầy đủ của sự kiện nổi bật thế giới 2...",
-    "image": "anh2.jpg",
+    "image": "sktg2.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 480,
-    "tags": ["sự kiện", "thế giới"]
+    "tags": [
+      "sự kiện",
+      "thế giới"
+    ]
   },
   {
     "id": "35",
     "categoryId": "events",
-    "title": "Sự kiện nổi bật thế giới 3",
+    "title": "Mở rộng thêm những cánh cửa xuất hiện thêm những nỗ lực đáng chú ý nhằm tăng cường cũng như mở rộng các cơ hội hợp tác và phát triển, củng cố hòa bình cũng như bảo đảm ổn định xã hội, ở không ít khu vực trên thế giới.",
     "slug": "su-kien-noi-bat-the-gioi-3",
-    "excerpt": "Đây là mô tả ngắn về sự kiện nổi bật thế giới thứ ba...",
+    "excerpt": "Đã xuất hiện thêm những nỗ lực đáng chú ý nhằm tăng cường cũng như mở rộng các cơ hội hợp tác và phát triển, củng cố hòa bình cũng như bảo đảm ổn định xã hội, ở không ít khu vực trên thế giới.",
     "content": "Nội dung đầy đủ của sự kiện nổi bật thế giới 3...",
-    "image": "anh3.jpg",
+    "image": "sktg3.jpg",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 460,
-    "tags": ["sự kiện", "thế giới"]
+    "tags": [
+      "sự kiện",
+      "thế giới"
+    ]
   },
   {
     "id": "36",
     "categoryId": "events",
-    "title": "Sự kiện nổi bật thế giới 4",
+    "title": "Hướng về phía tương lai những vấn đề nóng bỏng vẫn tồn tại, nhưng trong dòng chảy sự kiện quốc tế, những cơ hội hợp tác cũng vẫn luôn hiện hữu, để hướng đến hòa bình, ổn định và phát triển.",
     "slug": "su-kien-noi-bat-the-gioi-4",
-    "excerpt": "Đây là mô tả ngắn về sự kiện nổi bật thế giới thứ tư...",
+    "excerpt": "Những vấn đề nóng bỏng vẫn tồn tại, nhưng trong dòng chảy sự kiện quốc tế, những cơ hội hợp tác cũng vẫn luôn hiện hữu, để hướng đến hòa bình, ổn định và phát triển.",
     "content": "Nội dung đầy đủ của sự kiện nổi bật thế giới 4...",
-    "image": "anh4.jpg",
+    "image": "sktg4.png",
     "date": "2025-04-11",
     "author": "Admin",
     "views": 440,
-    "tags": ["sự kiện", "thế giới"]
+    "tags": [
+      "sự kiện",
+      "thế giới"
+    ]
   },
   {
     "id": "37",
     "categoryId": "events",
-    "title": "Sự kiện nổi bật trong nước 1",
+    "title": "Cứu sống bệnh nhân ngừng tim 30 phút nhờ can thiệp mạch vành khẩn cấp",
     "slug": "su-kien-noi-bat-trong-nuoc-1",
     "excerpt": "Đây là mô tả ngắn về sự kiện nổi bật trong nước đầu tiên...",
     "content": "Nội dung đầy đủ của sự kiện nổi bật trong nước 1...",
@@ -478,7 +335,10 @@
     "date": "2025-04-11",
     "author": "Admin",
     "views": 420,
-    "tags": ["sự kiện", "trong nước"]
+    "tags": [
+      "sự kiện",
+      "trong nước"
+    ]
   },
   {
     "id": "38",
@@ -491,7 +351,10 @@
     "date": "2025-04-11",
     "author": "Admin",
     "views": 400,
-    "tags": ["sự kiện", "trong nước"]
+    "tags": [
+      "sự kiện",
+      "trong nước"
+    ]
   },
   {
     "id": "39",
@@ -504,7 +367,10 @@
     "date": "2025-04-11",
     "author": "Admin",
     "views": 380,
-    "tags": ["sự kiện", "trong nước"]
+    "tags": [
+      "sự kiện",
+      "trong nước"
+    ]
   },
   {
     "id": "40",
@@ -517,7 +383,9 @@
     "date": "2025-04-11",
     "author": "Admin",
     "views": 360,
-    "tags": ["sự kiện", "trong nước"]
+    "tags": [
+      "sự kiện",
+      "trong nước"
+    ]
   }
 ]
-

@@ -18,6 +18,41 @@ import anh12 from '../../../Components/NewsEvents/Images/anh12.jpg'
 import anh13 from '../../../Components/NewsEvents/Images/anh13.jpg'
 import anhqh1 from '../../../Components/NewsEvents/Images/anhqh1.jpg'
 import anhqh3 from '../../../Components/NewsEvents/Images/anhqh3.jpg'
+import anhbonoivu from '../../../Components/NewsEvents/Images/anhbonoivu.png'
+import WHO from '../../../Components/NewsEvents/Images/WHO.jpg'
+import thuocla1 from '../../../Components/NewsEvents/Images/thuocla1.jpg'
+import thuocla2 from '../../../Components/NewsEvents/Images/thuocla2.jpg'
+import thuocla3 from '../../../Components/NewsEvents/Images/thuocla3.jpg'
+import yttg1 from '../../../Components/NewsEvents/Images/yttg1.jpg'
+import ytvn2 from '../../../Components/NewsEvents/Images/ytvn2.jpg'
+import ytvn3 from '../../../Components/NewsEvents/Images/ytvn3.jpg'
+import yttg41 from '../../../Components/NewsEvents/Images/yttg41.jpg'
+import yhvn31 from '../../../Components/NewsEvents/Images/yhvn31.jpg'
+import yhvn41 from '../../../Components/NewsEvents/Images/yhvn41.png'
+import ttbv1 from '../../../Components/NewsEvents/Images/ttbv1.jpg'
+import ttbv2 from '../../../Components/NewsEvents/Images/ttbv2.png'
+import ttbv3 from '../../../Components/NewsEvents/Images/ttbv3.jpg'
+import ttbv4 from '../../../Components/NewsEvents/Images/ttbv4.jpg'
+import bvcm1 from '../../../Components/NewsEvents/Images/bvcm1.jpeg'
+import bvcm2 from '../../../Components/NewsEvents/Images/bvcm2.jpg'
+import bvcm3 from '../../../Components/NewsEvents/Images/bvcm3.jpg'
+import bvcm4 from '../../../Components/NewsEvents/Images/bvcm4.jpg'
+import sktg1 from '../../../Components/FeaturedEvents/Images/sktg1.jpg'
+import sktg11 from '../../../Components/FeaturedEvents/Images/sktg11.jpg'
+import sktg2 from '../../../Components/FeaturedEvents/Images/sktg2.jpg'
+import sktg3 from '../../../Components/FeaturedEvents/Images/sktg3.jpg'
+import sktg4 from '../../../Components/FeaturedEvents/Images/sktg4.png'
+import yhvn32 from '../../../Components/NewsEvents/Images/yhvn32.jpg'
+import ttbv11 from '../../../Components/NewsEvents/Images/ttbv11.jpg'
+import ttbv12 from '../../../Components/NewsEvents/Images/ttbv12.jpg'
+import ttbv21 from '../../../Components/NewsEvents/Images/ttbv21.jpg'
+import ttbv22 from '../../../Components/NewsEvents/Images/ttbv22.jpg'
+import ttbv23 from '../../../Components/NewsEvents/Images/ttbv23.jpg'
+import ttbv31 from '../../../Components/NewsEvents/Images/ttbv31.jpg'
+import ttbv32 from '../../../Components/NewsEvents/Images/ttbv32.jpg'
+import ttbv33 from '../../../Components/NewsEvents/Images/ttbv33.jpg'
+import sktg21 from '../../../Components/FeaturedEvents/Images/sktg21.jpg'
+
 
 const imageMap = {
   'anh1.jpg': anh1,
@@ -34,6 +69,40 @@ const imageMap = {
   'anh13.jpg': anh13,
   'anhqh1.jpg': anhqh1,
   'anhqh3.jpg': anhqh3,
+  'anhbonoivu.png': anhbonoivu,
+  'WHO.jpg': WHO,
+  'thuocla1.jpg': thuocla1,
+  'thuocla2.jpg': thuocla2,
+  'thuocla3.jpg': thuocla3,
+  'yttg1.jpg': yttg1,
+  'ytvn2.jpg': ytvn2,
+  'ytvn3.jpg': ytvn3,
+  'yttg41.jpg': yttg41,
+  'yhvn31.jpg': yhvn31,
+  'yhvn41.png': yhvn41,
+  'ttbv1.jpg': ttbv1,
+  'ttbv2.png': ttbv2,
+  'ttbv3.jpg': ttbv3,
+  'ttbv31.jpg': ttbv31,
+  'ttbv32.jpg': ttbv32,
+  'ttbv33.jpg': ttbv33,
+  'ttbv4.jpg': ttbv4,
+  'bvcm1.jpeg': bvcm1,
+  'bvcm2.jpg': bvcm2,
+  'bvcm3.jpg': bvcm3,
+  'bvcm4.jpg': bvcm4,
+  'sktg1.jpg': sktg1,
+  'sktg11.jpg': sktg11,
+  'sktg2.jpg': sktg2,
+  'sktg21.jpg': sktg21,
+  'sktg3.jpg': sktg3,
+  'sktg4.png': sktg4,
+  'yhvn32.jpg': yhvn32,
+  'ttbv11.jpg': ttbv11,
+  'ttbv12.jpg': ttbv12,
+  'ttbv21.jpg': ttbv21,
+  'ttbv22.jpg': ttbv22,
+  'ttbv23.jpg': ttbv23,
 }
 
 /**
@@ -43,20 +112,20 @@ const imageMap = {
  */
 export const mapImagePath = (imagePath) => {
   if (!imagePath) return null
-  
+
   // Extract filename từ path
   const filename = imagePath.split('/').pop()
-  
+
   // Nếu là URL từ backend (http/https), return nguyên
   if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
     return imagePath
   }
-  
+
   // Map từ imageMap
   if (imageMap[filename]) {
     return imageMap[filename]
   }
-  
+
   // Fallback: return original path
   return imagePath
 }
@@ -68,7 +137,7 @@ export const mapImagePath = (imagePath) => {
  */
 export const mapArticleImage = (article) => {
   if (!article) return article
-  
+
   return {
     ...article,
     image: mapImagePath(article.image)
@@ -84,7 +153,6 @@ export const mapArticlesImages = (articles) => {
   if (!articles || !Array.isArray(articles)) {
     return []
   }
-  
+
   return articles.map(mapArticleImage)
 }
-

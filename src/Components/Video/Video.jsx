@@ -59,10 +59,10 @@ const VIDEO_CATEGORIES = [
   {
     name: 'Công tác Đảng',
     videos: [
-      createVideo('party-1', anh6, 'Tin tức y học thế giới 1', '11/4/2025', 'https://youtu.be/nliSNYk__Zk?si=Pd7iaz6_EXiGN346'),
-      createVideo('party-2', anh7, 'Tin tức y học thế giới 2', '11/4/2025', 'https://youtu.be/y99YgaQjgx4?si=KbfiUN5yyQqOdr9w'),
-      createVideo('party-3', anh8, 'Tin tức y học thế giới 3', '11/4/2025', 'https://www.youtube.com/embed/kXYiU_JCYtU'),
-      createVideo('party-4', anh9, 'Tin tức y học thế giới 4', '11/4/2025', 'https://www.youtube.com/embed/ScMzIvxBSi4'),
+      createVideo('party-1', anh6, 'Lễ kỷ niệm 80 nằm ngày quốc khánh nước cộng hoà xã hội chủ nghĩa Việt Nam', '11/4/2025', 'https://youtu.be/nliSNYk__Zk?si=Pd7iaz6_EXiGN346'),
+      createVideo('party-2', anh7, 'Các hình ảnh đẹp về lễ kỷ niệm ', '11/4/2025', 'https://youtu.be/y99YgaQjgx4?si=KbfiUN5yyQqOdr9w'),
+      createVideo('party-3', anh8, 'Hình ảnh các đội hình quốc tế', '11/4/2025', 'https://www.youtube.com/embed/kXYiU_JCYtU'),
+      createVideo('party-4', anh9, 'Khối nữ diệu hành', '11/4/2025', 'https://www.youtube.com/embed/ScMzIvxBSi4'),
       createVideo('party-5', anh13, 'Tin tức y học thế giới 5', '11/4/2025', 'https://www.youtube.com/embed/J---aiyznGQ'),
       createVideo('party-6', anh14, 'Tin tức y học thế giới 6', '11/4/2025', 'https://www.youtube.com/embed/tgbNymZ7vqY'),
       createVideo('party-7', anh15, 'Tin tức y học thế giới 7', '11/4/2025', 'https://www.youtube.com/embed/aqz-KE-bpKQ'),

@@ -1,60 +1,59 @@
-import React from 'react'
-import Navbar from '../../Components/Navbar/Navbar'
+import React from 'react';
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from '../../Components/Footer/Footer';
+import './CheckResults.css';
 
 const CheckResults = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Chuyển hướng đến trang tra cứu kết quả trong cùng tab
-    window.open('https://40026.byt.vn/kcb/tra-cuu/', '_blank')
-  }
+  const LINK_KQXN = 'http://117.4.137.26:11664/?c=ketquacls'; 
+  const LINK_KQKH = 'http://117.4.137.26:11664/?c=lichsukham';
 
   return (
-    <div style={{ minHeight: '100vh', width: '100%', overflowX: 'hidden' }}>
+    <div className="check-results-page">
       <Navbar />
-      <div style={{ padding: '60px 20px', maxWidth: '1200px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '32px', fontWeight: '700', marginBottom: '20px' }}>
-          Tra cứu kết quả khám
-        </h1>
-        <p style={{ fontSize: '16px', lineHeight: '1.6', color: '#333' }}>
-          Tra cứu kết quả xét nghiệm
-        </p>
-        <div style={{ marginTop: '40px', padding: '30px', backgroundColor: '#f5f5f5', borderRadius: '12px' }}>
-          <h2 style={{ fontSize: '24px', marginBottom: '20px' }}>Nhập thông tin tra cứu</h2>
-          <p style={{ fontSize: '16px', color: '#666', marginBottom: '20px' }}>
-            Vui lòng nhập mã số khám bệnh hoặc số CMND/CCCD để tra cứu kết quả.
+
+      <div className="check-results__hero">
+        <div className="check-results__container">
+          <h1 className="check-results__title">Tra cứu kết quả - lịch sử khám</h1>
+          <p className="check-results__desc">
+            Hệ thống hỗ trợ tra cứu kết quả xét nghiệm, đơn thuốc và lịch sử khám chữa bệnh nhanh chóng, bảo mật.
           </p>
-          <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Mã số khám bệnh hoặc CMND/CCCD"
-              style={{ padding: '12px', fontSize: '16px', borderRadius: '8px', border: '1px solid #ddd' }}
-            />
-            <input
-              type="date"
-              placeholder="Ngày khám"
-              style={{ padding: '12px', fontSize: '16px', borderRadius: '8px', border: '1px solid #ddd' }}
-            />
-            <button
-              type="submit"
-              style={{
-                padding: '12px 30px',
-                fontSize: '16px',
-                backgroundColor: '#109832',
-                color: 'white',
-                border: 'none',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                fontWeight: '600'
-              }}
-            >
-              Tra cứu
-            </button>
-          </form>
         </div>
       </div>
+
+      <div className="check-results__container check-results__grid-container">
+        <div className="button-card-grid">
+          <a 
+            href={LINK_KQKH} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="customer-guide__card check-results__button-card"
+          >
+            <h3>Kết quả khám (Khám bệnh)</h3>
+            <p>
+              Tra cứu kết quả và lịch sử khám bệnh, chẩn đoán ban đầu từ các bác sĩ chuyên khoa.
+            </p>
+            <div className="customer-guide__link">Truy cập ngay →</div>
+          </a>
+
+          <a 
+            href={LINK_KQXN} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="customer-guide__card check-results__button-card"
+          >
+            <h3>Kết quả cận lâm sàng (XN, CĐHA)</h3>
+            <p>
+              Xem kết quả xét nghiệm máu, nước tiểu, X-quang, siêu âm và các hình ảnh chẩn đoán khác.
+            </p>
+            <div className="customer-guide__link">Truy cập ngay →</div>
+          </a>
+        </div>
+      </div>
+
+      <div style={{ flex: 1, minHeight: '100px' }}></div>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default CheckResults
-
+export default CheckResults;

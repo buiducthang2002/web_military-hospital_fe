@@ -1,4 +1,4 @@
-.services-section{
+.services-section {
   width: 100%;
   background-color: #f5f5e6;
   padding: 0 20px 0 20px;
@@ -10,7 +10,7 @@
 .services-container {
   max-width: 1200px;
   width: 100%;
-  margin: -340px auto 30px;
+  margin: -260px auto 30px;
   background-color: #ffffff;
   border: 1px solid #000 !important;
   border-radius: 24px;

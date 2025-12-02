@@ -40,7 +40,7 @@ const Doctors = () => {
 
     <section className="doctors-section">
       <div className="doctors-intro">
-        <h2 className="intro-title">Bệnh viện quân y 4 - Cục hậu cần kỹ thuật Quân Khu 4</h2>
+        <h2 className="intro-title">BỆNH VIỆN QUÂN Y 4 - CỤC HẬU CẦN KỸ THUẬT QUÂN KHU 4</h2>
         <p className="intro-desc">
           Tại Bệnh viện chúng tôi cam kết mang đến cho bệnh nhân những dịch vụ chăm sóc sức khỏe tốt nhất. Với tầm nhìn trở thành một trong những bệnh viện hàng đầu trong khu vực, chúng tôi không ngừng nỗ lực nâng cao chất lượng dịch vụ, đầu tư công nghệ tiên tiến và xây dựng đội ngũ bác sĩ, y tá chuyên nghiệp và tận tâm.
         </p>
@@ -51,7 +51,7 @@ const Doctors = () => {
         <div className="hospital-image-wrapper">
           <img 
             src={images[currentImageIndex]} 
-            alt={`Bệnh viện Đa Khoa Happy Health - Ảnh ${currentImageIndex + 1}`} 
+            alt={`Bệnh viện Quân Y 4 - Ảnh ${currentImageIndex + 1}`} 
             className="hospital-image" 
           />
           <div className="image-dots">

@@ -27,6 +27,7 @@ const Navbar = () => {
     { href: '/kham-chua-benh/loai-hinh', label: 'Thủ tục xuất viện' },
     { href: '/kham-chua-benh/thanh-toan', label: 'Quy trình thanh toán' },
     { href: '/kham-chua-benh/trang-thiet-bi', label: 'Trang thiết bị' },
+    { href: 'http://117.4.137.26:11664/?c=banggia', label: 'Bảng giá dịch vụ' },
   ]
 
   const infoItems = [
@@ -35,6 +36,7 @@ const Navbar = () => {
     { href: '/thong-tin-chung/thong-tin-duoc', label: 'Thông tin dược' },
     { href: '/thong-tin-chung/bao-hiem-y-te', label: 'Thông tin bảo hiểm y tế' },
     { href: '/thong-tin-chung/thu-chao-moi-san-pham', label: 'Thư chào mời sản phẩm' },
+    { href: '/thong-tin-chung/tool', label: 'Tool' },
   ]
 
   const scrollToTopPaths = new Set([
@@ -243,8 +245,11 @@ const Navbar = () => {
                 {(item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => (
                   <NavDropdown.Item
                     key={dropdownItem.href}
-                    as={Link}
-                    to={dropdownItem.href}
+                    as={dropdownItem.href.startsWith('http') ? 'a' : Link}
+                    to={dropdownItem.href.startsWith('http') ? undefined : dropdownItem.href}
+                    href={dropdownItem.href.startsWith('http') ? dropdownItem.href : undefined}
+                    target={dropdownItem.href.startsWith('http') ? '_blank' : undefined}
+                    rel={dropdownItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="custom-dropdown-item"
                     onClick={handleDropdownItemClick}
                   >
