@@ -26,51 +26,73 @@ const FeaturedEvents = () => {
 
   // Dữ liệu tin tức cho từng tab
   const newsDataByTab = {
-    0: [ // Tin tức y học thế giới
+    0: [ // Sự kiện nổi bật thế giới
       {
+        id: '33',
+        slug: 'su-kien-noi-bat-the-gioi-1',
         image: sktg1,
-        title: 'Sự cân bằng mong manh',
-        
-        date: '11/4/2025'
+        title: 'Sự cân bằng mong manh trong những thành tựu, cũng có thể tiềm ẩn…',      
+        date: '17:05 18/06/2025',
+        description: 'Ngay trong những thành tựu, cũng có thể tiềm ẩn không ít âu lo trong cuộc sống thường ngày…'
       },
       {
+        id: '34',
+        slug: 'su-kien-noi-bat-the-gioi-2',
         image: sktg2,
-        title: 'Đợi chờ những hành động cụ thể',
-        date: '11/4/2025'
+        title: 'Đợi chờ những hành động cụ thể đối với các vấn đề ở phạm vi quốc tế và toàn cầu',
+        date: '17:05 18/06/2025',
+        description: 'Đối với các vấn đề nóng bỏng ở phạm vi quốc tế và toàn cầu, điều thật sự quan trọng có lẽ không phải là những tuyên bố hay cam kết.'
       },
       {
+        id: '35',
+        slug: 'su-kien-noi-bat-the-gioi-3',
         image: sktg3,
-        title: 'Mở rộng thêm những cánh cửa',
-        date: '11/4/2025'
+        title: 'Mở rộng thêm những cánh cửa xuất hiện thêm những nỗ lực đáng chú ý',
+        date: '17:05 18/06/2025',
+        description: 'Đã xuất hiện thêm những nỗ lực đáng chú ý nhằm tăng cường cũng như mở rộng các cơ hội hợp tác và phát triển.'
       },
       {
+        id: '36',
+        slug: 'su-kien-noi-bat-the-gioi-4',
         image: sktg4,
-        title: 'Hướng về phía tương lai',
-        date: '11/4/2025'
+        title: 'Hướng về phía tương lai những vấn đề nóng bỏng vẫn tồn tại',
+        date: '17:05 18/06/2025',
+        description: 'Những vấn đề nóng bỏng vẫn tồn tại, nhưng trong dòng chảy sự kiện quốc tế, những cơ hội hợp tác cũng vẫn luôn hiện hữu.'
       },
-
 
     ],
-    1: [ // Tin tức y học trong nước
+    1: [ // Sự kiện nổi bật trong nước
       {
+        id: '37',
+        slug: 'su-kien-noi-bat-trong-nuoc-1',
         image: anhqh1,
         title: 'Cứu sống bệnh nhân ngừng tim 30 phút nhờ can thiệp mạch vành khẩn cấp',
-        date: '11/4/2025'
+        date: '17:05 18/06/2025',
+        description: 'Ca cấp cứu thành công bệnh nhân ngừng tim 30 phút nhờ kỹ thuật can thiệp mạch vành khẩn cấp và sự phối hợp nhịp nhàng của đội ngũ y bác sĩ.'
       },
       {
+        id: '38',
+        slug: 'su-kien-noi-bat-trong-nuoc-2',
         image: anh11,
-        title: 'Tin tức y học trong nước 2',
-        date: '11/4/2025'
+        title: 'Sự kiện nổi bật trong nước 2',
+        date: '17:05 18/06/2025',
+        description: 'Đây là mô tả ngắn về sự kiện nổi bật trong nước thứ hai...'
       },
       {
+        id: '39',
+        slug: 'su-kien-noi-bat-trong-nuoc-3',
         image: anh12,
-        title: 'Tin tức y học trong nước 3',
-        date: '11/4/2025'
+        title: 'Sự kiện nổi bật trong nước 3',
+        date: '17:05 18/06/2025',
+        description: 'Đây là mô tả ngắn về sự kiện nổi bật trong nước thứ ba...'
       },
       {
+        id: '40',
+        slug: 'su-kien-noi-bat-trong-nuoc-4',
         image: anh13,
-        title: 'Tin tức y học trong nước 4',
-        date: '11/4/2025'
+        title: 'Sự kiện nổi bật trong nước 4',
+        date: '17:05 18/06/2025',
+        description: 'Đây là mô tả ngắn về sự kiện nổi bật trong nước thứ tư...'
       },
 
     ],
@@ -80,7 +102,7 @@ const FeaturedEvents = () => {
 
   // Lấy dữ liệu cho tab hiện tại
   const allNewsItems = newsDataByTab[activeTab] || []
-  const itemsPerPage = 4
+  const itemsPerPage = 8
   const totalPages = Math.ceil(allNewsItems.length / itemsPerPage)
 
   // Tính toán các items hiển thị dựa trên trang hiện tại
@@ -99,8 +121,8 @@ const FeaturedEvents = () => {
       <div className="news-events-container">
         <div className="news-header">
           <div className="news-header-left">
-            <p className="news-label">Sự kiện nổi bật</p>
-            <h2 className="news-main-title">| Sự kiện nổi bật</h2>
+            <p className="news-label">Tin tức & Sự kiện</p>
+           
           </div>
           <div className="news-tabs">
             {tabs.map((tab, index) => (
@@ -118,7 +140,7 @@ const FeaturedEvents = () => {
         <div className="news-grid">
           {newsItems.map((item, index) => (
             <div key={index} className="news-card">
-              <Link to="/news-events" className="news-image-wrapper">
+              <Link to={`/news-events/${item.slug}`} className="news-image-wrapper">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -126,8 +148,14 @@ const FeaturedEvents = () => {
                 />
               </Link>
               <div className="news-content">
-                <h4 className="news-title">{item.title}</h4>
-                <p className="news-date">{item.date}</p>
+                <Link to={`/news-events/${item.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <h4 className="news-title">{item.title}</h4>
+                </Link>
+                <p className="news-date">🕐 {item.date}</p>
+                {item.description && (
+                  <p className="news-description">{item.description}</p>
+                )}
+                <Link to={`/news-events/${item.slug}`} className="news-detail-link">Chi tiết</Link>
               </div>
             </div>
           ))}

@@ -59,23 +59,19 @@ const VIDEO_CATEGORIES = [
   {
     name: 'Công tác Đảng',
     videos: [
-      createVideo('party-1', anh6, 'Lễ kỷ niệm 80 nằm ngày quốc khánh nước cộng hoà xã hội chủ nghĩa Việt Nam', '11/4/2025', 'https://youtu.be/nliSNYk__Zk?si=Pd7iaz6_EXiGN346'),
-      createVideo('party-2', anh7, 'Các hình ảnh đẹp về lễ kỷ niệm ', '11/4/2025', 'https://youtu.be/y99YgaQjgx4?si=KbfiUN5yyQqOdr9w'),
-      createVideo('party-3', anh8, 'Hình ảnh các đội hình quốc tế', '11/4/2025', 'https://www.youtube.com/embed/kXYiU_JCYtU'),
-      createVideo('party-4', anh9, 'Khối nữ diệu hành', '11/4/2025', 'https://www.youtube.com/embed/ScMzIvxBSi4'),
-      createVideo('party-5', anh13, 'Tin tức y học thế giới 5', '11/4/2025', 'https://www.youtube.com/embed/J---aiyznGQ'),
-      createVideo('party-6', anh14, 'Tin tức y học thế giới 6', '11/4/2025', 'https://www.youtube.com/embed/tgbNymZ7vqY'),
-      createVideo('party-7', anh15, 'Tin tức y học thế giới 7', '11/4/2025', 'https://www.youtube.com/embed/aqz-KE-bpKQ'),
-      createVideo('party-8', anh16, 'Tin tức y học thế giới 8', '11/4/2025', 'https://www.youtube.com/embed/2Vv-BfVoq4g'),
+      createVideo('party-1', anh6, 'Lễ kỷ niệm 80 nằm ngày quốc khánh nước cộng hoà xã hội chủ nghĩa Việt Nam', '17:05 18/06/2025', 'https://youtu.be/nliSNYk__Zk?si=Pd7iaz6_EXiGN346'),
+      createVideo('party-2', anh7, 'Các hình ảnh đẹp về lễ kỷ niệm ', '17:05 18/06/2025', 'https://youtu.be/y99YgaQjgx4?si=KbfiUN5yyQqOdr9w'),
+      createVideo('party-3', anh8, 'Hình ảnh các đội hình quốc tế', '17:05 18/06/2025', 'https://www.youtube.com/embed/kXYiU_JCYtU'),
+      createVideo('party-4', anh9, 'Khối nữ diệu hành', '17:05 18/06/2025', 'https://www.youtube.com/embed/ScMzIvxBSi4'), 
     ],
   },
   {
     name: 'Y khoa hiện đại',
     videos: [
-      createVideo('medical-1', anh13, 'Tin tức y học trong nước 1', '11/4/2025', 'https://youtu.be/y99YgaQjgx4?si=KbfiUN5yyQqOdr9w'),
-      createVideo('medical-2', anh14, 'Tin tức y học trong nước 2', '11/4/2025', 'https://www.youtube.com/embed/ysz5S6PUM-U'),
-      createVideo('medical-3', anh15, 'Tin tức y học trong nước 3', '11/4/2025', 'https://www.youtube.com/embed/kXYiU_JCYtU'),
-      createVideo('medical-4', anh16, 'Tin tức y học trong nước 4', '11/4/2025', 'https://www.youtube.com/embed/ScMzIvxBSi4'),
+      createVideo('medical-1', anh13, 'Tin tức y học trong nước 1', '17:05 18/06/2025', 'https://youtu.be/y99YgaQjgx4?si=KbfiUN5yyQqOdr9w'),
+      createVideo('medical-2', anh14, 'Tin tức y học trong nước 2', '17:05 18/06/2025', 'https://www.youtube.com/embed/ysz5S6PUM-U'),
+      createVideo('medical-3', anh15, 'Tin tức y học trong nước 3', '17:05 18/06/2025', 'https://www.youtube.com/embed/kXYiU_JCYtU'),
+      createVideo('medical-4', anh16, 'Tin tức y học trong nước 4', '17:05 18/06/2025', 'https://www.youtube.com/embed/ScMzIvxBSi4'),
     ],
   },
 ]

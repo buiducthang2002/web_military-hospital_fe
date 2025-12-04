@@ -14,11 +14,6 @@ const OrganizationStructure = ({ director, viceDirectors, additionalDirectors })
   return (
     <div className="organization-structure">
       <div className="org-structure-container">
-        {/* Leadership Section */}
-        <div className="org-leadership-section">
-          <div className="org-leadership-title">LÃNH ĐẠO BỆNH VIỆN</div>
-        </div>
-
         {/* Director Section */}
         <div className="org-director-wrapper">
           <div className="org-connector-vertical org-connector-top"></div>
@@ -184,17 +179,17 @@ const Organization = () => {
 
   const viceDirectors = [
     {
-      name: "BS.CK II Trương Quang Thắng",
+      name: "Đại tá, BS.CK II Trương Quang Thắng",
       position: "Phó giám đốc bệnh viện",
       image: gd2a,
     },
     {
-      name: "Tiến sĩ. Bác sĩ Phan Quốc Khánh",
+      name: "Thượng tá, BS.CK II Phan Quốc Khánh",
       position: "Phó giám đốc bệnh viện",
       image: gd3,
     },
     {
-      name: "BS.CK II Nguyễn Huy Thắng",
+      name: "Thượng tá, BS.CK II Nguyễn Huy Thắng",
       position: "Phó giám đốc bệnh viện",
       image: anhgd4vip,
     },

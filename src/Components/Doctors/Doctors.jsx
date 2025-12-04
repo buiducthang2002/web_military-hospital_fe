@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { UserCheck, ClipboardCheck, Ambulance, HeartHandshake } from 'lucide-react'
 import Doctor1 from './Images/Doctor1.png'
 import Doctor2 from './Images/Doctor2.png'
@@ -9,27 +9,38 @@ const Doctors = () => {
   const images = [Doctor1, Doctor2]
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+  // Tự động chuyển ảnh sau mỗi 3 giây
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      )
+    }, 3000) // 3000ms = 3 giây
+
+    return () => clearInterval(interval) // Cleanup khi component unmount
+  }, [images.length])
+
   const features = [
     {
-      icon: <UserCheck size={48} />,
+      icon: <UserCheck />,
       title: 'Đội ngũ bác sĩ chuyên môn cao',
       desc:
         'Đội ngũ bác sĩ của chúng tôi có chuyên môn cao, nhiều năm kinh nghiệm và luôn sẵn sàng tư vấn, chăm sóc bệnh nhân tận tâm, chuyên nghiệp.',
     },
     {
-      icon: <ClipboardCheck size={48} />,
+      icon: <ClipboardCheck />,
       title: 'Quy trình chuyên nghiệp',
       desc:
         'Tại Bệnh viện quân y 4, chúng tôi tiêu chuẩn hóa quy trình khám chữa bệnh, tối ưu thời gian chờ và nâng cao trải nghiệm người bệnh.',
     },
     {
-      icon: <Ambulance size={48} />,
+      icon: <Ambulance />,
       title: 'Cơ sở vật chất hiện đại nhất ',
       desc:
         'Trang thiết bị tiên tiến, không gian sạch sẽ, thân thiện, đảm bảo môi trường khám chữa bệnh an toàn và thoải mái.',
     },
     {
-      icon: <HeartHandshake size={48} />,
+      icon: <HeartHandshake />,
       title: 'Dịch vụ cao cấp với chi phí tốt',
       desc:
         'Hỗ trợ đặt lịch trực tuyến, tư vấn 24/7 qua hotline và website, giúp tiết kiệm thời gian với chi phí minh bạch, hợp lý.',

@@ -1,7 +1,4 @@
-/**
- * Index file để export tất cả các file nội dung bài viết
- * Khi tạo file nội dung mới, cần import và export ở đây
- */
+
 
 import content1 from './tin-tuc-y-hoc-the-gioi-1.js'
 import content2 from './tin-tuc-y-hoc-the-gioi-2.js'
@@ -20,7 +17,7 @@ import content14 from './su-kien-noi-bat-the-gioi-2.js'
 import content15 from './su-kien-noi-bat-the-gioi-3.js'
 import content16 from './su-kien-noi-bat-the-gioi-4.js'
 
-// Mapping slug -> content
+
 const articleContents = {
   'tin-tuc-y-hoc-the-gioi-1': content1,
   'tin-tuc-y-hoc-the-gioi-2': content2,
@@ -40,10 +37,6 @@ const articleContents = {
   'su-kien-noi-bat-the-gioi-4': content16,
 
 
-  // Thêm các bài viết khác ở đây khi tạo file mới
-  // 'tin-tuc-y-hoc-the-gioi-2': content2,
-  // 'tin-tuc-y-hoc-trong-nuoc-1': content3,
-  // ...
 }
 
 /**

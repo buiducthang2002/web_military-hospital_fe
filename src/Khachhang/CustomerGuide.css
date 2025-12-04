@@ -164,3 +164,136 @@
 .hero-news-header .news-label {
   color: #109832; /* green */
 }
+
+/* Expandable shortcut styles */
+.customer-guide-shortcut-wrapper {
+  width: 100%;
+}
+
+.customer-guide-shortcut.expandable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.customer-guide-shortcut.expandable:hover {
+  border-color: #0b7439;
+  box-shadow: 0 10px 20px rgba(25, 235, 116, 0.15);
+}
+
+.customer-guide-shortcut.expanded {
+  border-color: #0b7439;
+  box-shadow: 0 10px 25px rgba(25, 235, 116, 0.2);
+}
+
+.shortcut-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: #0b7439;
+}
+
+.shortcut-header svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.shortcut-cta {
+  margin-top: auto;
+  padding-top: 10px;
+  color: #0b7439;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.customer-guide-shortcut.expandable:hover .shortcut-cta {
+  color: #094f27;
+}
+
+/* Documents list styles */
+.documents-list {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid #e4efe7;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.document-category {
+  margin-bottom: 20px;
+}
+
+.document-category:last-child {
+  margin-bottom: 0;
+}
+
+.document-category-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b7439;
+  margin: 0 0 10px 0;
+  padding: 8px 12px;
+  background: #f5fbf7;
+  border-radius: 6px;
+}
+
+.document-category-title svg {
+  flex-shrink: 0;
+  color: #0b7439;
+}
+
+.document-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.document-items li {
+  padding-left: 24px;
+  position: relative;
+  color: #2d3748;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.document-items li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #0b7439;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .customer-guide-shortcuts {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .document-category-title {
+    font-size: 14px;
+  }
+  
+  .document-items li {
+    font-size: 13px;
+  }
+}

@@ -1,7 +1,7 @@
 .featured-events-section {
     width: 100%;
     background-color: #ffffff;
-    padding: 30px 20px 30px 20px;
+    padding: 15px 20px 15px 20px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   
@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     gap: 30px;
   }
   
@@ -78,7 +78,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   
   .news-card {
@@ -139,7 +139,7 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    margin-top: 20px;
+    margin-top: 0px;
   }
   
   .pagination-btn {

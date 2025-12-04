@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { NavDropdown } from 'react-bootstrap'
+import { Navbar as BootstrapNavbar, Nav, NavDropdown, Container } from 'react-bootstrap'
 import './Navbar.css'
 import Logo from '../Assets/Logo.jpg'
 
@@ -33,8 +33,8 @@ const Navbar = () => {
   const infoItems = [
     { href: '/thong-tin-chung/thong-tin-benh-vien', label: 'Giới thiệu bệnh viện' },
     { href: '/thong-tin-chung/cac-don-vi', label: 'Giới thiệu các đơn vị' },
-    { href: '/thong-tin-chung/thong-tin-duoc', label: 'Thông tin dược' },
-    { href: '/thong-tin-chung/bao-hiem-y-te', label: 'Thông tin bảo hiểm y tế' },
+    { href: 'https://moh.gov.vn/cong-bo-thong-tin-lien-quan-den-linh-vuc-duoc', label: 'Thông tin dược' },
+    { href: 'https://baohiemxahoi.gov.vn/tracuu/pages/tra-cuu-thoi-han-su-dung-the-bhyt.aspx', label: 'Thông tin bảo hiểm y tế' },
     { href: '/thong-tin-chung/thu-chao-moi-san-pham', label: 'Thư chào mời sản phẩm' },
     { href: '/thong-tin-chung/tool', label: 'Tool' },
   ]
@@ -187,6 +187,127 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Mobile Bootstrap Navbar - Only visible on mobile */}
+      <BootstrapNavbar 
+        bg="success" 
+        variant="dark" 
+        expand={false} 
+        className="mobile-navbar-bootstrap" 
+        fixed="top"
+      >
+        <Container fluid>
+          <BootstrapNavbar.Brand as={Link} to="/">
+            <img
+              src={Logo}
+              height="50"
+              className="d-inline-block align-top"
+              alt="Logo"
+            />
+          </BootstrapNavbar.Brand>
+          <div className="position-absolute start-50 translate-middle-x d-flex flex-column justify-content-center align-items-center text-center text-white">
+            <span className="fw-bold" style={{ fontSize: '11px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>Bệnh viện Quân y 4</span>
+            <span style={{ fontSize: '11px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>Cục Hậu cần - Kỹ thuật Quân khu 4</span>
+          </div>
+          <BootstrapNavbar.Toggle aria-controls="mobile-navbar-nav" />
+          <BootstrapNavbar.Collapse id="mobile-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link 
+                as={Link} 
+                to="/" 
+                active={location.pathname === '/'}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Trang chủ
+              </Nav.Link>
+              <Nav.Link 
+                as={Link} 
+                to="/organization" 
+                active={location.pathname === '/organization'}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Cơ cấu tổ chức
+              </Nav.Link>
+              <Nav.Link 
+                as={Link} 
+                to="/news-events" 
+                active={location.pathname === '/news-events'}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Tin tức, Sự kiện
+              </Nav.Link>
+              
+              {/* Khám chữa bệnh dropdown */}
+              <NavDropdown 
+                title="Khám chữa bệnh" 
+                id="mobile-kcb-dropdown"
+                active={location.pathname.startsWith('/kham-chua-benh')}
+              >
+                {khamChuaBenhItems.map(item => (
+                  <NavDropdown.Item
+                    key={item.href}
+                    as={item.href.startsWith('http') ? 'a' : Link}
+                    to={item.href.startsWith('http') ? undefined : item.href}
+                    href={item.href.startsWith('http') ? item.href : undefined}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    {item.label}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+
+              <Nav.Link 
+                as={Link} 
+                to="/party-politics" 
+                active={location.pathname === '/party-politics'}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Công tác Đảng - Chính trị
+              </Nav.Link>
+              <Nav.Link 
+                as={Link} 
+                to="/nghiencuu-hoptac" 
+                active={location.pathname === '/nghiencuu-hoptac'}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Nghiên cứu khoa học - Hợp tác
+              </Nav.Link>
+              <Nav.Link 
+                as={Link} 
+                to="/customer-guide" 
+                active={location.pathname === '/customer-guide'}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Hướng dẫn khách hàng
+              </Nav.Link>
+
+              {/* Thông tin chung dropdown */}
+              <NavDropdown 
+                title="Thông tin chung" 
+                id="mobile-info-dropdown"
+                active={location.pathname.startsWith('/thong-tin-chung')}
+              >
+                {infoItems.map(item => (
+                  <NavDropdown.Item
+                    key={item.href}
+                    as={item.href.startsWith('http') ? 'a' : Link}
+                    to={item.href.startsWith('http') ? undefined : item.href}
+                    href={item.href.startsWith('http') ? item.href : undefined}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    {item.label}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+            </Nav>
+          </BootstrapNavbar.Collapse>
+        </Container>
+      </BootstrapNavbar>
+
+      {/* Desktop Navbar - Unchanged, hidden on mobile */}
       <div className="navbar" ref={navbarRef}>
         <div className="top-strip">
           <div className="location-text">Đường Lê Viết Thuật, Phường Vinh Lộc, Tỉnh Nghệ An</div>

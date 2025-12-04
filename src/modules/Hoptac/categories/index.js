@@ -4,23 +4,23 @@
 
 export const PARTY_CATEGORIES = {
   PARTY_WORK: {
-    id: 'party-work',
+    id: 'cooperation-scientific',
     displayName: 'Hợp tác khoa học',
-    apiEndpoint: '/api/party/party-work',
+    apiEndpoint: '/api/cooperation/scientific',
     slug: 'hop-tac-khoa-hoc',
     icon: '🤝',
   },
   POLITICS: {
-    id: 'politics',
+    id: 'cooperation-competitions',
     displayName: 'Các cuộc thi',
-    apiEndpoint: '/api/party/politics',
+    apiEndpoint: '/api/cooperation/competitions',
     slug: 'cac-cuoc-thi',
     icon: '🏆',
   },
   YOUTH_UNION: {
-    id: 'youth-union',
+    id: 'cooperation-partners',
     displayName: 'Đơn vị đồng hành',
-    apiEndpoint: '/api/party/youth-union',
+    apiEndpoint: '/api/cooperation/partners',
     slug: 'don-vi-dong-hanh',
     icon: '👥',
   },

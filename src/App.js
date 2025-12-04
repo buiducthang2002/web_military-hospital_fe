@@ -16,7 +16,9 @@ import Khamchuabenh from './Khamchuabenh/Khamchuabenh';
 import Thutucxuatvien from './Khamchuabenh/Thutucxuatvien';
 import Quytrinhthanhtoan from './Khamchuabenh/Quytrinhthanhtoan';
 import CustomerGuidePage from './Khachhang/CustomerGuide';
+import Danhgia from './Khachhang/Danhgia';
 import Donvi from './Thongtinchung/Donvi/Donvi';
+import GioithieuBV from './Thongtinchung/GioithieuBV/GioithieuBV';
 
 function App() {
   return (
@@ -33,8 +35,10 @@ function App() {
         <Route path="/kham-chua-benh" element={<Khamchuabenh />} />
         <Route path="/kham-chua-benh/loai-hinh" element={<Thutucxuatvien />} />
         <Route path="/kham-chua-benh/thanh-toan" element={<Quytrinhthanhtoan />} />
+        <Route path="/thong-tin-chung/thong-tin-benh-vien" element={<GioithieuBV />} />
         <Route path="/thong-tin-chung/cac-don-vi" element={<Donvi />} />
         <Route path="/customer-guide" element={<CustomerGuidePage />} />
+        <Route path="/danh-gia" element={<Danhgia />} />
         <Route path="/call-center" element={<CallCenter />} />
         <Route path="/book-appointment" element={<BookAppointment />} />
         <Route path="/expert-consultation" element={<ExpertConsultation />} />

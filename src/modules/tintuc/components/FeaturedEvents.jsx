@@ -68,7 +68,7 @@ const FeaturedEvents = () => {
         <div className="news-header">
           <div className="news-header-left">
             <p className="news-label">Sự kiện nổi bật</p>
-            <h2 className="news-main-title">|   Sự kiện nổi bật</h2>
+            
           </div>
           <div className="news-tabs">
             {eventTabs.map((tab, index) => (
