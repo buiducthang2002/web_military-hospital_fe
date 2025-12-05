@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Star } from 'lucide-react'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
 import './Danhgia.css'
@@ -48,10 +49,11 @@ const evaluationQuestions = [
 ]
 
 const ratingLevels = [
-  { value: 4, label: 'Rất tốt', emoji: '😊' },
-  { value: 3, label: 'Tốt', emoji: '🙂' },
-  { value: 2, label: 'Trung bình', emoji: '😐' },
-  { value: 1, label: 'Kém', emoji: '☹️' }
+  { value: 5, label: 'Xuất sắc' },
+  { value: 4, label: 'Tốt' },
+  { value: 3, label: 'Trung bình' },
+  { value: 2, label: 'Khá' },
+  { value: 1, label: 'Kém' }
 ]
 
 const Danhgia = () => {
@@ -270,27 +272,29 @@ const Danhgia = () => {
                     <p className="question-text">{question.question}</p>
                   </div>
                   
-                  <div className="rating-options">
-                    {ratingLevels.map((level) => (
-                      <label
-                        key={level.value}
-                        className={`rating-option ${
-                          ratings[question.id] === level.value ? 'selected' : ''
+                  <div className="rating-options star-rating">
+                    {[1, 2, 3, 4, 5].map((starValue) => (
+                      <button
+                        key={starValue}
+                        type="button"
+                        className={`star-button ${
+                          ratings[question.id] >= starValue ? 'filled' : ''
                         }`}
+                        onClick={() => handleRatingChange(question.id, starValue)}
+                        aria-label={`${starValue} sao`}
                       >
-                        <input
-                          type="radio"
-                          name={`question-${question.id}`}
-                          value={level.value}
-                          checked={ratings[question.id] === level.value}
-                          onChange={() => handleRatingChange(question.id, level.value)}
+                        <Star 
+                          size={32} 
+                          fill={ratings[question.id] >= starValue ? '#fbbf24' : 'none'}
+                          color={ratings[question.id] >= starValue ? '#fbbf24' : '#d1d5db'}
                         />
-                        <div className="rating-content">
-                          <span className="rating-emoji">{level.emoji}</span>
-                          <span className="rating-label">{level.label}</span>
-                        </div>
-                      </label>
+                      </button>
                     ))}
+                    {ratings[question.id] && (
+                      <span className="rating-label-text">
+                        {ratingLevels.find(level => level.value === ratings[question.id])?.label}
+                      </span>
+                    )}
                   </div>
                 </div>
               ))}
@@ -329,7 +333,20 @@ const Danhgia = () => {
           {/* Overall Score Display */}
           {Object.keys(ratings).length > 0 && (
             <div className="overall-score">
-              <p>Điểm đánh giá trung bình: <strong>{calculateOverallScore()}/4.00</strong></p>
+              <div className="overall-score-content">
+                <p>Điểm đánh giá trung bình:</p>
+                <div className="overall-stars">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star
+                      key={star}
+                      size={24}
+                      fill={star <= Math.round(calculateOverallScore()) ? '#fbbf24' : 'none'}
+                      color={star <= Math.round(calculateOverallScore()) ? '#fbbf24' : '#d1d5db'}
+                    />
+                  ))}
+                  <strong>{calculateOverallScore()}/5.00</strong>
+                </div>
+              </div>
             </div>
           )}
         </div>

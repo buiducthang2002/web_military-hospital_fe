@@ -62,7 +62,7 @@ const NewsEvents = () => {
         image: thuocla1,
         title: 'Tất cả các sản phẩm thuốc lá đều có hại cho sức khỏe',
         date: '17:05 18/06/2025',
-        description: 'WHO khẳng định tất cả các dạng thuốc lá, bao gồm thuốc lá điện tử và các sản phẩm mới, đều gây hại nghiêm trọng đến sức khỏe con người.'
+        description: 'WHO khẳng định tất cả các dạng thuốc lá, bao gồm thuốc lá điện tử và các sản phẩm mới, đều gây hại nghiêm trọng đến sức khỏe con người và những người xung quanh.'
       },
       {
         id: '3',
@@ -70,7 +70,7 @@ const NewsEvents = () => {
         image: yttg1,
         title: 'Nguy cơ lây lan cao của virus Chikungunya',
         date: '17:05 18/06/2025',
-        description: 'Các chuyên gia y tế cảnh báo về nguy cơ gia tăng sự lây lan của virus Chikungunya do sự thay đổi khí hậu và sự di chuyển của người dân.'
+        description: 'Các chuyên gia y tế cảnh báo về nguy cơ gia tăng sự lây lan của virus Chikungunya do sự thay đổi khí hậu và sự di chuyển của người dân trong thời gian vừa qua.'
       },
       {
         id: '4',
@@ -78,13 +78,13 @@ const NewsEvents = () => {
         image: yttg41,
         title: 'Đại Hội đồng Y tế thế giới nhất trí trao thêm quyền cho Palestine',
         date: '17:05 18/06/2025',
-        description: 'Đại Hội đồng Y tế Thế giới đã thông qua nghị quyết trao thêm quyền và trách nhiệm cho Palestine trong các hoạt động y tế quốc tế.'
+        description: 'Đại Hội đồng Y tế Thế giới đã thông qua nghị quyết trao thêm quyền và trách nhiệm cho Palestine trong các hoạt động y tế quốc tế thế giới hiện nay và tương lai.'
       },
       {
         id: '9',
         slug: 'tin-tuc-y-hoc-trong-nuoc-1',
         image: anhqh1,
-        title: 'Trình UBTVQH Chương trình mục tiêu quốc gia về chăm sóc sức khỏe, dân số và phát triển giai đoạn 2026–2035',
+        title: 'Trình UBTVQH mục tiêu quốc gia về chăm sóc sức khỏe, dân số và phát triển giai đoạn 2026–2035',
         date: '17:05 18/06/2025',
         description: 'Bộ Y tế đã trình Ủy ban Thường vụ Quốc hội Chương trình mục tiêu quốc gia về chăm sóc sức khỏe người dân, dân số và phát triển giai đoạn 2026-2035.'
       },

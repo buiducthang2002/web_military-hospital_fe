@@ -1,7 +1,6 @@
 .article-card {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   transition: transform 0.3s ease;
   text-decoration: none;
   color: inherit;
@@ -52,9 +51,10 @@
 
 .article-meta {
   display: flex;
-  gap: 12px;
+  gap: 6px;
   align-items: center;
   flex-wrap: wrap;
+  color: #666;
 }
 
 .article-date {
@@ -64,11 +64,19 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.article-views {
+.article-detail-link {
   font-size: 13px;
-  color: #999;
-  margin: 0;
+  color: #0066cc;
+  text-decoration: none;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-top: 4px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.article-detail-link:hover {
+  color: #0052a3;
+  text-decoration: underline;
 }
 
 .article-excerpt {
