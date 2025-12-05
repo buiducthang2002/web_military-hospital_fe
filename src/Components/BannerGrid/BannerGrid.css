@@ -2,7 +2,7 @@
   width: 100%;
   background-color: #ffffff;
   padding: 0;
-  border-top: 1px solid #e5e5e5;
+  margin-top: 20px;
 }
 
 .banner-grid-container {
@@ -11,14 +11,14 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+  gap: 10px;
 }
 
 .banner-grid-item {
   width: 100%;
   /* Let content (image) define height to avoid letterboxing */
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 0px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: transparent;
@@ -67,4 +67,3 @@
     gap: 10px;
   }
 }
-

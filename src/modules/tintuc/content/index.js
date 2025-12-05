@@ -1,23 +1,42 @@
-/**
- * Index file để export tất cả các file nội dung bài viết
- * Khi tạo file nội dung mới, cần import và export ở đây
- */
+
 
 import content1 from './tin-tuc-y-hoc-the-gioi-1.js'
 import content2 from './tin-tuc-y-hoc-the-gioi-2.js'
-import content3 from './tin-tuc-y-hoc-trong-nuoc-1.js'
-import content4 from './su-kien-noi-bat-the-gioi-1.js'
+import content3 from './tin-tuc-y-hoc-the-gioi-3.js'
+import content4 from './tin-tuc-y-hoc-the-gioi-4.js'
+import content5 from './tin-tuc-y-hoc-trong-nuoc-1.js'
+import content6 from './tin-tuc-y-hoc-trong-nuoc-2.js'
+import content7 from './tin-tuc-y-hoc-trong-nuoc-3.js'
+import content8 from './tin-tuc-y-hoc-trong-nuoc-4.js'
+import content9 from './tin-tuc-hoat-dong-benh-vien-1.js'
+import content10 from './tin-tuc-hoat-dong-benh-vien-2.js'
+import content11 from './tin-tuc-hoat-dong-benh-vien-3.js'
+import content12 from './tin-tuc-hoat-dong-benh-vien-4.js'
+import content13 from './su-kien-noi-bat-the-gioi-1.js'
+import content14 from './su-kien-noi-bat-the-gioi-2.js'
+import content15 from './su-kien-noi-bat-the-gioi-3.js'
+import content16 from './su-kien-noi-bat-the-gioi-4.js'
 
-// Mapping slug -> content
+
 const articleContents = {
   'tin-tuc-y-hoc-the-gioi-1': content1,
   'tin-tuc-y-hoc-the-gioi-2': content2,
-  'tin-tuc-y-hoc-trong-nuoc-1': content3,
-  'su-kien-noi-bat-the-gioi-1': content4,
-  // Thêm các bài viết khác ở đây khi tạo file mới
-  // 'tin-tuc-y-hoc-the-gioi-2': content2,
-  // 'tin-tuc-y-hoc-trong-nuoc-1': content3,
-  // ...
+  'tin-tuc-y-hoc-the-gioi-3': content3,
+  'tin-tuc-y-hoc-the-gioi-4': content4,
+  'tin-tuc-y-hoc-trong-nuoc-1': content5,
+  'tin-tuc-y-hoc-trong-nuoc-2': content6,
+  'tin-tuc-y-hoc-trong-nuoc-3': content7,
+  'tin-tuc-y-hoc-trong-nuoc-4': content8,
+  'tin-tuc-hoat-dong-benh-vien-1': content9,
+  'tin-tuc-hoat-dong-benh-vien-2': content10,
+  'tin-tuc-hoat-dong-benh-vien-3': content11,
+  'tin-tuc-hoat-dong-benh-vien-4': content12,
+  'su-kien-noi-bat-the-gioi-1': content13,
+  'su-kien-noi-bat-the-gioi-2': content14,
+  'su-kien-noi-bat-the-gioi-3': content15,
+  'su-kien-noi-bat-the-gioi-4': content16,
+
+
 }
 
 /**

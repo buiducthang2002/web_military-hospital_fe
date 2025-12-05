@@ -32,13 +32,7 @@ export const CATEGORIES = {
     slug: 'bai-viet-chuyen-mon',
     icon: '📚',
   },
-  EVENTS: {
-    id: 'events',
-    displayName: 'Sự kiện',
-    apiEndpoint: '/api/news/events',
-    slug: 'su-kien',
-    icon: '🎉',
-  },
+  
 }
 
 /**

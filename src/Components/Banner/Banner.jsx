@@ -1,6 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './Banner.css'
-import bannerImage1 from './Images/bannerHome.png'
+
+import Banner12 from './Images/Banner12.jpg'
+import Banner13 from './Images/Banner13.jpg'
+import Banner12a from './Images/Banner12a.png'
+
+
 
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0) // Index của banner thật (0-3)
@@ -11,13 +16,9 @@ const Banner = () => {
   const isTransitioning = useRef(false)
   const dragStartPosition = useRef({ x: 0, y: 0 })
 
-  const banners = [bannerImage1]
+  const banners = [ Banner12, Banner13, Banner12a ]
   // Mảng links cho từng banner - có thể thay đổi theo nhu cầu
   const bannerLinks = [
-    'https://www.qdnd.vn/', 
-    'https://chinhphu.vn/', 
-    'https://suckhoedoisong.vn/', 
-    'https://www.mod.gov.vn/', 
   ]
   // Tạo mảng với clone: [banner cuối, ...banners, banner đầu]
   const infiniteBanners = [banners[banners.length - 1], ...banners, banners[0]]
@@ -209,7 +210,7 @@ const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length)
-    }, 5000) // Chuyển banner mỗi 5 giây
+    }, 3000) // Chuyển banner mỗi 3 giây
 
     return () => clearInterval(interval)
   }, [banners.length])

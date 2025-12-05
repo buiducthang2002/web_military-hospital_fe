@@ -10,12 +10,12 @@ const Features = () => {
   const features = [
     {
       image: anh1,
-      title: 'Đăng ký khám',
-      path: ''
+      title: 'Bảng giá dịch vụ ',
+      path: 'http://117.4.137.26:11664/?c=banggia'
     },
     {
       image: anh2,
-      title: 'Quy trình khám',
+      title: 'Quy trình khám chữa bệnh',
       path: '/kham-chua-benh'
     },
     {
@@ -34,10 +34,18 @@ const Features = () => {
     <div className="features-section">
       <div className="features-container">
         {features.map((feature, index) => (
-          <div key={index} className="feature-panel" onClick={() => feature.path && navigate(feature.path)} style={{ cursor: 'pointer' }}>
+          <div key={index} className="feature-panel" onClick={() => {
+            if (feature.path) {
+              if (feature.path.startsWith('http')) {
+                window.open(feature.path, '_blank')
+              } else {
+                navigate(feature.path)
+              }
+            }
+          }} style={{ cursor: 'pointer' }}>
             <div className="feature-image-wrapper">
-              <img 
-                src={feature.image} 
+              <img
+                src={feature.image}
                 alt={feature.title}
                 className="feature-image"
               />

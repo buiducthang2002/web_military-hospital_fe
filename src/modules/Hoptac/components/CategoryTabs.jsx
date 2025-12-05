@@ -3,7 +3,7 @@ import { getAllPartyCategories } from '../categories'
 import './CategoryTabs.css'
 
 /**
- * Component hiển thị tabs category cho module Công tác Đảng - Chính trị
+ * Component hiển thị tabs category cho module Nghiên cứu khoa học - Hợp tác
  * @param {string} activeCategoryId - ID của category đang active
  * @param {Function} onCategoryChange - Callback khi đổi category
  */

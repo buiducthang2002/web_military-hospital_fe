@@ -4,42 +4,28 @@
  */
 
 const content = `
-  <p>Chiều muộn 17/11/2025, UBTVQH tiếp tục họp phiên thứ 51 để cho ý kiến về chủ trương đầu tư Chương trình mục tiêu quốc gia về chăm sóc sức khỏe, dân số và phát triển giai đoạn 2026–2035.</p>
-  <h2>Góp phần xây dựng một nước Việt Nam khỏe mạnh</h2>
-  <p>Trình bày Tờ trình, Bộ trưởng Bộ Y tế Đào Hồng Lan cho biết mục tiêu tổng quát của Chương trình là nâng cao sức khỏe thể chất, tinh thần, tầm vóc, tuổi thọ và chất lượng cuộc sống của Nhân dân; bảo đảm mọi người dân đều được quản lý, chăm sóc sức khỏe ban đầu chất lượng; người dân chủ động tự chăm sóc và nâng cao sức khỏe.
-Cùng với đó là hạn chế bệnh tật, được phòng bệnh từ sớm, từ xa, ngay tại cơ sở; giải quyết các vấn đề dân số ưu tiên, chủ động thích ứng với già hóa, nâng cao chất lượng dân số; tăng cường chăm sóc cho các nhóm yếu thế, góp phần xây dựng một nước Việt Nam khỏe mạnh, thịnh vượng trong kỷ nguyên mới.</p>
-
-  <h2>Chương trình đặt ra các mục tiêu cụ thể như sau:</h2>
+  
+  <h2>Dải Gaza trong nỗi khắc khoải mong chờ an ninh, ổn định và tái thiết</h2>
   <ul>
-    <li>Góp phần nâng tỷ lệ xã, phường, đặc khu đạt Bộ tiêu chí quốc gia về y tế xã lên 90% vào năm 2030 và 95% vào năm 2035.</li>
-    <li>Tỷ lệ người dân được lập sổ sức khỏe điện tử và quản lý sức khỏe theo vòng đời đến năm 2030 đạt 100% và duy trì đến năm 2035.</li>
-    <li> Tỷ lệ trung tâm kiểm soát bệnh tật (CDC) các tỉnh, thành phố đủ năng lực xét nghiệm tác nhân, kháng nguyên, kháng thể các bệnh truyền nhiễm nguy hiểm; chất lượng nước sạch; vệ sinh trường học đến năm 2030 đạt 100%.</li>
-    <li>Tỷ lệ trạm y tế xã, phường, đặc khu trên toàn quốc triển khai thực hiện dự phòng, quản lý, điều trị một số bệnh không lây nhiễm đầy đủ theo quy trình được hướng dẫn đến năm 2030 đạt 100% và duy trì đến năm 2035.</li>
-    <li>Tỷ lệ suy dinh dưỡng thấp còi ở trẻ em dưới 5 tuổi đến năm 2030 giảm xuống dưới 15% và đến năm 2035 giảm xuống dưới 13%.</li>
-    <li>Tỷ lệ người dân được tiếp cận với ít nhất 01 kênh thông tin đại chúng chính thống về chăm sóc sức khỏe ban đầu, phòng bệnh, nâng cao sức khỏe đạt 50% vào năm 2030 và 80% vào năm 2035.</li>
-    <li>Tỷ suất sinh thô đến năm 2030 tăng thêm 0,5‰ so với năm 2025 và đến năm 2035 tăng thêm 0,5‰ so với năm 2030.</li>
-    <li>Tỷ số giới tính khi sinh đến năm 2030 giảm xuống dưới 109 bé trai/100 bé gái sinh ra sống và đến năm 2035 giảm xuống dưới 107 bé trai/100 bé gái sinh ra sống.</li>
-    <li>Tỷ lệ cặp nam, nữ được tư vấn, khám sức khỏe trước khi kết hôn đạt 90% vào năm 2030 và 95% vào năm 2035; 70% phụ nữ mang thai được tầm soát ít nhất 4 loại bệnh tật bẩm sinh phổ biến nhất vào năm 2030 và 90% vào năm 2035; 90% trẻ sơ sinh được tầm soát ít nhất 5 loại bệnh bẩm sinh phổ biến nhất vào năm 2030 và 95% vào năm 2035.</li>
-    <li>Số lượng người yếu thế, người dễ bị tổn thương được tiếp cận, sử dụng các dịch vụ tại các cơ sở chăm sóc xã hội đến năm 2030 tăng thêm 70% so với năm 2025 và đến năm 2035 tăng thêm 90% so với năm 2030</li>
-  </ul>
-  <p>Chương trình gồm 5 dự án thành phần:
-<li>Dự án 1: Nâng cao năng lực mạng lưới y tế cơ sở.</li>
-<li>Dự án 2: Nâng cao hiệu quả hệ thống phòng bệnh và nâng cao sức khỏe.</li>
-<li>Dự án 3: Dân số và phát triển.</li>
-<li>Dự án 4: Nâng cao chất lượng chăm sóc xã hội cho người yếu thế.</li>
-<li>Dự án 5: Truyền thông y tế, quản lý, theo dõi và giám sát thực hiện Chương trình.</li>
-Nội dung của Chương trình bám sát chỉ đạo của Bộ Chính trị tại Kết luận số 149-KL/TW ngày 10/4/2025 và Nghị quyết số 72-NQ/TW ngày 09/9/2025; chỉ đạo của Tổng Bí thư tại Thông báo số 176-TB/VPTW ngày 25/4/2025; đồng thời bảo đảm trọng tâm, trọng điểm, khả thi; không để dàn trải, chồng chéo, trùng lặp với các nhiệm vụ chi đầu tư, chi thường xuyên của ngành, lĩnh vực đã được ngân sách nhà nước bảo đảm; không trùng lặp với các chương trình mục tiêu quốc gia, các chương trình, dự án, chính sách khác đã được cấp có thẩm quyền phê duyệt thực hiện trong giai đoạn 2026–2035.</p>
-
-  <h2>Chương trình thể chế hóa chủ trương của Đảng</h2>
-  <p>Thẩm tra Tờ trình, Chủ nhiệm Ủy ban Văn hóa và Xã hội Nguyễn Đắc Vinh cho hay Thường trực Ủy ban tán thành sự cần thiết xây dựng Chương trình nhằm thể chế hóa chủ trương của Đảng về nâng cao chất lượng chăm sóc sức khỏe nhân dân, thực hiện tốt công tác dân số và phát triển. Chương trình đáp ứng các yêu cầu về điều kiện quyết định chủ trương đầu tư theo quy định tại Điều 19 Luật Đầu tư công.</p>
+    <li>Ngày 18/11, Brazil, nước chủ nhà Hội nghị lần thứ 30 các Bên tham gia Công ước khung của Liên hợp quốc về biến đổi khí hậu (COP30) đã công bố bản dự thảo đầu tiên của một thỏa thuận chung, sau nhiều thảo luận hết sức căng thẳng và gay gắt.</li>
+    <li>Bản dự thảo bao gồm một loạt các phương án về những vấn đề "gai góc", phản ánh sự chia rẽ sâu sắc về quan điểm của liên minh các nước muốn có một "lộ trình" cụ thể để loại bỏ dần nhiên liệu hóa thạch và của khối các quốc gia sản xuất dầu mỏ, vốn luôn phản đối nỗ lực này.</li>
+    <li>Dự thảo cũng đề cập đến khả năng đánh giá các cam kết khí hậu của mỗi quốc gia hằng năm, thay vì định kỳ 5 năm, để có thể theo dõi thường xuyên hơn tiến trình giảm phát thải khí nhà kính trên toàn cầu. Đồng thời, dự thảo cũng đề xuất: Khoản hỗ trợ tài chính từ các nước giàu cho các nước đang phát triển để thích ứng với biến đổi khí hậu cần được tăng gấp ba lần vào năm 2030 hoặc 2035 - vốn vẫn là một yêu cầu then chốt.</li>
+   <li>Cùng ngày 18/11, một số nước đã lên tiếng về nghị quyết do Mỹ soạn thảo và vừa được Hội đồng Bảo an Liên hợp quốc thông qua, nhằm chấm dứt xung đột tại Dải Gaza và cho phép thành lập Lực lượng Ổn định Quốc tế (ISF) tại đây, sau các diễn biến ngày 17/11. Theo đó, Hội đồng Bảo an đã thông qua nghị quyết về chấm dứt xung đột tại Dải Gaza, cũng như cho phép thành lập lực lượng ISF để phối hợp với Ai Cập, Israel cùng lực lượng cảnh sát mới được huấn luyện của Palestine tiến hành bảo đảm an ninh.</li>
+  <li>Ngoài ra, các bên cũng sẽ thành lập "Hội đồng Hòa bình" giữ vai trò lãnh đạo trong giai đoạn chuyển tiếp đến hết năm 2027, đồng thời đề cập khả năng thành lập một Nhà nước Palestine trong tương lai.
+Trên mạng xã hội X, Văn phòng Thủ tướng Israel Benjamin Netanyahu tin tưởng kế hoạch hòa bình của Tổng thống Trump sẽ thúc đẩy hợp tác và mở rộng việc ký kết Hiệp định Abraham giữa Israel và các nước trong khu vực, mang lại "hòa bình và thịnh vượng" cho Dải Gaza. Phía Palestine cũng nhận định đây là "bước đi đầu tiên trên con đường hướng tới hòa bình"
+Bộ trưởng Ngoại giao Đức Johann Wadephul khẳng định: Berlin sẵn sàng "đóng vai trò tích cực trong nỗ lực tái thiết Dải Gaza". Indonesia, nước Hồi giáo đông dân nhất thế giới, cũng hoan nghênh động thái này.
+Tuy nhiên, phong trào Hồi giáo Hamas lại bác bỏ nghị quyết, cho rằng nó không đáp ứng các quyền và yêu cầu của người Palestine. Cùng đó, phía Nga lo ngại: Đây là "nỗ lực tiềm ẩn rủi ro".</li>
+   </ul>
   <div style="margin: 20px 0; text-align: center;">
-    <img src="{{anhqh3.jpg}}"  style="max-width: 100%; height: auto; border-radius: 8px;" />
-    <p style="margin-top: 10px; font-style: italic; color: #666; font-size: 14px;">Chủ nhiệm Ủy ban Văn hóa và Xã hội Nguyễn Đắc Vinh.</p>
+    <img src="{{sktg11.jpg}}"  style="max-width: 100%; height: auto; border-radius: 8px;" />
+    <p style="margin-top: 10px; font-style: italic; color: #666; font-size: 14px;">AMR (Anti Microbial Resistance) - hiểm họa đòi hỏi những hành động toàn cầu.</p>
   </div>
-  <p>Về đối tượng thụ hưởng, Ủy ban đề nghị nghiên cứu bổ sung đối tượng ưu tiên là người khuyết tật; đồng thời chỉnh lý quy định về đối tượng ưu tiên theo hướng giao Chính phủ quy định chi tiết để bảo đảm thể chế hóa đầy đủ tinh thần Nghị quyết số 72 và thuận tiện trong triển khai.
-Về tổng vốn thực hiện Chương trình, Ủy ban đề nghị Chính phủ bảo đảm bố trí đủ nguồn vốn tối thiểu; nghiên cứu tăng cường xã hội hóa trong thực hiện; tiếp tục nghiên cứu, cân đối và bổ sung thêm nguồn lực khi có điều kiện. Đối với ngân sách địa phương, Ủy ban đề nghị đánh giá sát khả năng huy động và tính toán mức bố trí vốn phù hợp hơn với thực tiễn.
-Về mục tiêu của Chương trình, Ủy ban đề nghị tiếp tục rà soát mục tiêu chung, mục tiêu cụ thể và các nội dung hoạt động của từng tiểu dự án để bảo đảm tính thống nhất, logic, phù hợp nguyên tắc quản lý dựa trên kết quả; thuận lợi cho kiểm tra, giám sát và đánh giá hiệu quả KT-XH.
-Về các dự án của Chương trình, Ủy ban đề nghị rà soát, lựa chọn các nội dung cốt lõi, quan trọng; tránh dàn trải, lãng phí nguồn lực. Các mục tiêu, nhiệm vụ, giải pháp của từng tiểu dự án phải bảo đảm thống nhất giữa mục tiêu tổng quát, mục tiêu cụ thể và nội dung hoạt động, có chỉ số cụ thể, dễ kiểm tra và đánh giá kết quả thực hiện.</p>
+  <ul>
+    <li>Tổ chức Y tế Thế giới (WHO) ngày 18/11 cảnh báo: Kháng kháng sinh (AMR) đã và đang gây ra tình trạng khẩn cấp về sức khỏe toàn cầu, đe dọa xóa bỏ những tiến bộ y học của gần một thế kỷ, khi các bệnh nhiễm trùng thông thường ngày càng trở nên khó điều trị.
+Cùng ngày, Giám đốc WHO khu vực Tây Thái Bình Dương, ông Saia Ma'u Piukala, cho biết: Việc lạm dụng và sử dụng quá mức các loại thuốc kháng khuẩn khiến vi khuẩn, virus, nấm và ký sinh trùng nhanh chóng biến đổi, để chống lại hiệu lực của thuốc. Trên toàn thế giới, cứ sáu ca nhiễm trùng do vi khuẩn thì có một ca kháng lại các loại kháng sinh tiêu chuẩn. Riêng tại khu vực Tây Thái Bình Dương, WHO ước tính: 5,2 triệu người có thể tử vong do nhiễm trùng vi khuẩn kháng thuốc trong giai đoạn 2020-2030. Xu hướng đáng báo động này đòi hỏi hành động tập thể, ở cả cấp độ khu vực và toàn cầu.</li>
+    <li>Ngày 17/11, trả lời phỏng vấn hãng BBC, Giám đốc điều hành của tập đoàn Google, Sundar Pichai, cảnh báo: Làn sóng đầu tư vào trí tuệ nhân tạo (AI) đang có những yếu tố "phi lý", cho dù chính cơn sốt này đã góp phần kích hoạt đà tăng mạnh mẽ của các cổ phiếu công nghệ trong năm nay. Chính lo ngại về nguy cơ vỡ "bong bóng AI" đã kích hoạt làn sóng bán tháo của giới đầu tư, kéo thị trường chứng khoán toàn cầu giảm sâu trong vài tháng gần đây.
+"Tôi cho rằng, không có công ty nào đủ khả năng miễn nhiễm (trong trường hợp "bong bóng AI" vỡ), kể cả chúng tôi (nghĩa là Google)" - ông nói</li>
+  </ul>
 `
 
 export default content

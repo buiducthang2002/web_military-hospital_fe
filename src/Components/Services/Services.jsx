@@ -1,5 +1,6 @@
 import { PhoneCall, CalendarClock, Users, MailSearch } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import BannerGrid from '../BannerGrid/BannerGrid'
 
 import './Services.css'
 
@@ -60,14 +61,16 @@ const Services = () => {
 
         <div className="info-right">
           <p className="info-description">
-            Bệnh viện Quân y 4 là bệnh viện hoàn chỉnh tại Việt Nam, với tầm nhìn trở thành bệnh viện uy tín trong khu vực. 
-            Chúng tôi cam kết chăm sóc sức khỏe toàn diện cho mọi người dân bằng tài năng, y đức và sự tận tâm....... 
+            Bệnh viện Quân y 4 là bệnh viện hoàn chỉnh tại Việt Nam, với tầm nhìn trở thành bệnh viện uy tín trong khu vực.
+            Chúng tôi cam kết chăm sóc sức khỏe toàn diện cho mọi người dân bằng tài năng, y đức và sự tận tâm.......
             <button className="read-more-btn">Xem thêm</button>
           </p>
 
-         
+
         </div>
       </div>
+
+      <BannerGrid />
     </div>
   )
 }

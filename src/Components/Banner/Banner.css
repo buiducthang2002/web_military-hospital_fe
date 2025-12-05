@@ -48,7 +48,7 @@
 
 .banner-slide {
   width: 100vw;
-  height: 350px;
+  height: 430px;
   flex-shrink: 0;
   scroll-snap-align: start;
   position: relative;
@@ -76,6 +76,8 @@
   outline: none;
   margin: 0;
   padding: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .banner-dots {

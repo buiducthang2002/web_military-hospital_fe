@@ -22,22 +22,22 @@ const ArticleDetailPage = () => {
   useEffect(() => {
     // Scroll to top khi load trang
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    
+
     // Map images cho all news data
     const newsWithImages = mapArticlesImages(allNewsData)
-    
+
     // Tìm bài viết theo slug
     const foundArticle = newsWithImages.find(item => item.slug === slug)
-    
+
     if (foundArticle) {
       // Lấy nội dung từ file riêng nếu có, nếu không thì dùng nội dung từ JSON
       let contentFromFile = getArticleContent(slug, foundArticle.content)
-      
+
       // Thay thế placeholder {{ARTICLE_IMAGE}} bằng ảnh thực tế nếu có
       if (contentFromFile && foundArticle.image) {
         contentFromFile = contentFromFile.replace(/\{\{ARTICLE_IMAGE\}\}/g, foundArticle.image)
       }
-      
+
       // Thay thế các placeholder dạng {{tên_file.jpg}} bằng đường dẫn ảnh đã được map
       if (contentFromFile) {
         // Tìm tất cả các placeholder dạng {{tên_file}}
@@ -48,26 +48,26 @@ const ArticleDetailPage = () => {
           return mappedImage || imageName
         })
       }
-      
+
       // Tạo article object với nội dung đã được cập nhật
       const articleWithContent = {
         ...foundArticle,
         content: contentFromFile
       }
-      
+
       setArticle(articleWithContent)
-      
+
       // Lấy các bài viết liên quan (cùng category, loại trừ bài hiện tại)
       const related = newsWithImages
-        .filter(item => 
-          item.categoryId === foundArticle.categoryId && 
+        .filter(item =>
+          item.categoryId === foundArticle.categoryId &&
           item.id !== foundArticle.id
         )
         .slice(0, 4)
-      
+
       setRelatedNews(related)
     }
-    
+
     setLoading(false)
   }, [slug])
 
@@ -147,9 +147,9 @@ const ArticleDetailPage = () => {
             {category && (
               <>
                 <span> | </span>
-                <Link 
-                  to="/news-events" 
-               
+                <Link
+                  to="/news-events"
+
                   onClick={() => {
                     // Scroll to top khi chuyển trang
                     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -160,8 +160,8 @@ const ArticleDetailPage = () => {
                 </Link>
               </>
             )}
-            
-         
+
+
           </nav>
 
           {/* Article Header */}
@@ -182,13 +182,20 @@ const ArticleDetailPage = () => {
                 </span>
               )}
             </div>
+
+            {/* Excerpt - Mô tả ngắn */}
+            {article.excerpt && (
+              <div className="article-detail-excerpt">
+                <p>{article.excerpt}</p>
+              </div>
+            )}
           </div>
 
           {/* Article Image */}
           {article.image && (
             <div className="article-detail-image-wrapper">
-              <img 
-                src={article.image} 
+              <img
+                src={article.image}
                 alt={article.title}
                 className="article-detail-image"
                 onError={(e) => {
@@ -228,7 +235,7 @@ const ArticleDetailPage = () => {
               <ul className="related-news-list">
                 {relatedNews.map((item, index) => (
                   <li key={item.id} className="related-news-item">
-                    <Link 
+                    <Link
                       to={`/news-events/${item.slug}`}
                       className="related-news-link"
                     >
@@ -241,7 +248,7 @@ const ArticleDetailPage = () => {
           )}
 
           {/* Share Buttons */}
-          
+
         </div>
       </div>
       <Footer />

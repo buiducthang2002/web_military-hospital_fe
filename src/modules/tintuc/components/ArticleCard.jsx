@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Clock } from 'lucide-react'
 import { formatDate } from '../utils/formatDate'
 import { mapImagePath } from '../utils/imageMapper'
 import './ArticleCard.css'
@@ -28,7 +29,7 @@ const ArticleCard = ({ article }) => {
   }
 
   return (
-    <Link to={articleUrl} className="article-card" onClick={handleClick}>
+    <div className="article-card">
       <div className="article-image-wrapper">
         <img 
           src={imageSrc} 
@@ -42,16 +43,17 @@ const ArticleCard = ({ article }) => {
       <div className="article-content">
         <h4 className="article-title">{article.title}</h4>
         <div className="article-meta">
+          <Clock size={14} />
           <p className="article-date">{formatDate(article.date)}</p>
-          {article.views !== undefined && (
-            <p className="article-views">{article.views} lượt xem</p>
-          )}
         </div>
         {article.excerpt && (
           <p className="article-excerpt">{article.excerpt}</p>
         )}
+        <Link to={articleUrl} className="article-detail-link" onClick={handleClick}>
+          Chi tiết
+        </Link>
       </div>
-    </Link>
+    </div>
   )
 }
 

@@ -24,14 +24,14 @@ const FeaturedEvents = () => {
   const allEventsByTab = useMemo(() => {
     const news = mapArticlesImages(allNewsData)
     const allEvents = getNewsByCategory(news, 'events')
-    
+
     if (activeEventTab === 0) {
-      return allEvents.filter(event => 
-        event.title.includes('thế giới')
+      return allEvents.filter(event =>
+        event.slug.includes('the-gioi')
       )
     } else {
-      return allEvents.filter(event => 
-        event.title.includes('trong nước')
+      return allEvents.filter(event =>
+        event.slug.includes('trong-nuoc')
       )
     }
   }, [activeEventTab])
@@ -41,7 +41,7 @@ const FeaturedEvents = () => {
   const startIndex = (currentPage - 1) * itemsPerPage
   const endIndex = startIndex + itemsPerPage
   const eventNews = allEventsByTab.slice(startIndex, endIndex)
-  
+
   // Debug: log để kiểm tra
   console.log('FeaturedEvents Debug:', {
     allEventsByTab: allEventsByTab.length,
@@ -68,7 +68,7 @@ const FeaturedEvents = () => {
         <div className="news-header">
           <div className="news-header-left">
             <p className="news-label">Sự kiện nổi bật</p>
-            <h2 className="news-main-title">|   Sự kiện nổi bật</h2>
+            
           </div>
           <div className="news-tabs">
             {eventTabs.map((tab, index) => (

@@ -1,0 +1,517 @@
+/* Evaluation Page Styles */
+
+.evaluation-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f5fbf7;
+}
+
+.evaluation-page__hero {
+  background: #ffffff;
+  color: #000000;
+  padding: 30px 20px 20px;
+}
+
+.evaluation-page__hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.evaluation-page__hero-content h1 {
+  font-size: 32px;
+  margin: 16px 0 8px;
+  color: #0b2d19;
+  text-align: center;
+}
+
+.evaluation-page__hero-content p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+  max-width: 700px;
+}
+
+/* Main Content */
+.evaluation-content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
+}
+
+.evaluation-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Progress Bar */
+.evaluation-progress {
+  margin-bottom: 40px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e4efe7;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0b7439 0%, #19eb74 100%);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.progress-text {
+  text-align: center;
+  color: #0b7439;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Sections */
+.evaluation-section {
+  margin-bottom: 40px;
+}
+
+.evaluation-section h3 {
+  color: #0b2d19;
+  font-size: 22px;
+  margin: 0 0 12px 0;
+}
+
+.section-description {
+  color: #4f5a55;
+  margin: 0 0 24px 0;
+  font-size: 15px;
+}
+
+/* Patient Info Section */
+.patient-info-section {
+  background: #f9fdfb;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e4efe7;
+}
+
+.patient-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #0b2d19;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input {
+  padding: 12px 16px;
+  border: 1px solid #d1e0d7;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0b7439;
+  box-shadow: 0 0 0 3px rgba(11, 116, 57, 0.1);
+}
+
+/* Question Cards */
+.questions-section {
+  padding: 0;
+}
+
+.question-card {
+  background: #ffffff;
+  border: 1px solid #e4efe7;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.question-card:hover {
+  border-color: #0b7439;
+  box-shadow: 0 4px 12px rgba(11, 116, 57, 0.08);
+}
+
+.question-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.question-number {
+  min-width: 32px;
+  height: 32px;
+  background: #0b7439;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.question-text {
+  color: #0b2d19;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6;
+  padding-top: 4px;
+}
+
+/* Rating Options */
+.rating-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Star Rating */
+.rating-options.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.star-button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  outline: none;
+}
+
+.star-button:hover {
+  transform: scale(1.15);
+}
+
+.star-button:active {
+  transform: scale(0.95);
+}
+
+.rating-label-text {
+  margin-left: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0b7439;
+}
+
+.rating-option {
+  position: relative;
+  cursor: pointer;
+}
+
+.rating-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.rating-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 12px;
+  background: #f9fdfb;
+  border: 2px solid #e4efe7;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.rating-option:hover .rating-content {
+  border-color: #0b7439;
+  background: #f0f9f4;
+}
+
+.rating-option.selected .rating-content {
+  border-color: #0b7439;
+  background: #e6f7ed;
+  box-shadow: 0 4px 12px rgba(11, 116, 57, 0.15);
+}
+
+.rating-emoji {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.rating-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0b2d19;
+  text-align: center;
+}
+
+/* Comments Section */
+.comments-section textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #d1e0d7;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 12px;
+}
+
+.comments-section textarea:focus {
+  outline: none;
+  border-color: #0b7439;
+  box-shadow: 0 0 0 3px rgba(11, 116, 57, 0.1);
+}
+
+/* Submit Status */
+.submit-status {
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.submit-status.success {
+  background: #e6f7ed;
+  color: #0b7439;
+  border: 1px solid #0b7439;
+}
+
+.submit-status.error {
+  background: #ffe6e6;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+}
+
+/* Submit Button */
+.evaluation-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #0b7439 0%, #19eb74 100%);
+  color: white;
+  border: none;
+  padding: 16px 48px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(11, 116, 57, 0.3);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(11, 116, 57, 0.4);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Overall Score */
+.overall-score {
+  text-align: center;
+  padding: 20px;
+  background: #f0f9f4;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.overall-score-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.overall-score p {
+  margin: 0;
+  color: #0b2d19;
+  font-size: 16px;
+}
+
+.overall-stars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.overall-score strong {
+  color: #0b7439;
+  font-size: 20px;
+  margin-left: 12px;
+}
+
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .evaluation-container {
+    padding: 24px;
+  }
+
+  .evaluation-page__hero-content h1 {
+    font-size: 24px;
+  }
+
+  .evaluation-section h3 {
+    font-size: 20px;
+  }
+
+  .patient-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rating-options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .rating-content {
+    padding: 12px 8px;
+  }
+
+  .rating-emoji {
+    font-size: 28px;
+  }
+
+  .rating-label {
+    font-size: 13px;
+  }
+
+  .question-header {
+    gap: 12px;
+  }
+
+  .question-number {
+    min-width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  .question-text {
+    font-size: 15px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .evaluation-content {
+    margin: 20px auto;
+    padding: 0 12px 40px;
+  }
+
+  .evaluation-container {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .evaluation-page__hero {
+    padding: 20px 12px 16px;
+  }
+
+  .evaluation-page__hero-content h1 {
+    font-size: 20px;
+  }
+
+  .evaluation-section h3 {
+    font-size: 18px;
+  }
+
+  .patient-info-section {
+    padding: 16px;
+  }
+
+  .question-card {
+    padding: 16px;
+  }
+
+  .rating-options {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .rating-content {
+    padding: 10px 6px;
+  }
+
+  .rating-emoji {
+    font-size: 24px;
+  }
+
+  .rating-label {
+    font-size: 12px;
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .question-number {
+    min-width: 26px;
+    height: 26px;
+    font-size: 12px;
+  }
+
+  .question-text {
+    font-size: 14px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 360px) {
+  .rating-options {
+    grid-template-columns: 1fr;
+  }
+
+  .rating-content {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .rating-emoji {
+    font-size: 28px;
+  }
+
+  .rating-label {
+    font-size: 14px;
+  }
+}
+

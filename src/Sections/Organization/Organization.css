@@ -275,25 +275,7 @@
   gap: 0;
 }
 
-/* Leadership Section */
-.org-leadership-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0;
-  position: relative;
-}
 
-/* LÃNH ĐẠO BỆNH VIỆN - Đã chỉnh: màu nền #0b7439 (màu xanh menu), màu chữ trắng */
-.org-leadership-title {
-  background: #0b7439;
-  color: #ffffff;
-  padding: 12px 102px;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 600;
-  text-align: center;
-}
 
 /* Board of Directors Section */
 .org-board-section {
@@ -634,17 +616,83 @@
   }
 
   .org-functional-section {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    display: block;
+    gap: 0;
+  }
+
+  .org-functional-block {
+    display: contents;
   }
 
   .org-functional-label {
-    font-size: 14px;
-    padding: 10px 16px;
+    display: none;
+  }
+
+  /* Ẩn tất cả các thanh ngang và thanh dọc trên mobile */
+  .org-connector-vertical,
+  .org-connector-horizontal,
+  .org-connector-top,
+  .org-connector-director-bottom,
+  .org-connector-deputy,
+  .org-connector-board-top,
+  .org-connector-board-bottom,
+  .org-connector-block,
+  .org-connector-content,
+  .org-connector-functional,
+  .org-connector-horizontal-5 {
+    display: none !important;
   }
 
   .org-functional-content {
-    min-height: 150px;
+    min-height: auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+  }
+
+  .org-office-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #f9fdfb;
+    border: 1px solid #e4efe7;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    color: #0b2d19;
+  }
+
+  .org-office-item::before {
+    content: '✓';
+    color: #0b7439;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .org-office-item:hover {
+    background: #e6f7ed;
+    border-color: #0b7439;
+    transform: translateX(4px);
+  }
+}
+
+@media (max-width: 480px) {
+  .org-office-item {
+    padding: 8px 10px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .org-office-item::before {
+    font-size: 14px;
   }
 }
 

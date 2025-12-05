@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Mobile Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Test mobile navbar */
+        .mobile-test-navbar {
+            background-color: #069242 !important;
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 10000;
+        }
+        
+        body {
+            padding-top: 60px;
+        }
+        
+        .content-test {
+            padding: 20px;
+            background: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        .test-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Test Mobile Navbar -->
+    <nav class="navbar navbar-dark mobile-test-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <span class="fw-bold">BỆNH VIỆN QUÂN Y 4</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cơ cấu tổ chức</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tin tức</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Khám chữa bệnh
+                        </a>
+                        <ul class="dropdown-menu" style="background-color: #069242;">
+                            <li><a class="dropdown-item text-white" href="#">Quy trình khám</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Thủ tục xuất viện</a></li>
+                            <li><a class="dropdown-item text-white" href="#">Thanh toán</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-test">
+        <h2>🧪 Test Mobile Navbar</h2>
+        <div class="test-card">
+            <h3>✅ Kiểm tra:</h3>
+            <ul>
+                <li>Navbar màu xanh (#069242) ở top</li>
+                <li>Nút hamburger menu bên phải</li>
+                <li>Click hamburger → menu mở ra</li>
+                <li>Dropdown "Khám chữa bệnh" hoạt động</li>
+                <li>Responsive trên mobile (width ≤ 700px)</li>
+            </ul>
+        </div>
+        
+        <div class="test-card">
+            <h3>📱 Cách test:</h3>
+            <ol>
+                <li>Mở Chrome DevTools (F12)</li>
+                <li>Toggle device toolbar (Ctrl+Shift+M)</li>
+                <li>Chọn iPhone hoặc kéo width ≤ 700px</li>
+                <li>Refresh trang này</li>
+                <li>Kiểm tra navbar hoạt động</li>
+            </ol>
+        </div>
+        
+        <div class="test-card">
+            <h3>🔗 Sau khi test OK ở đây:</h3>
+            <p>Quay lại app chính tại: <strong>http://localhost:3000</strong></p>
+            <p>Mobile navbar sẽ hoạt động tương tự!</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+

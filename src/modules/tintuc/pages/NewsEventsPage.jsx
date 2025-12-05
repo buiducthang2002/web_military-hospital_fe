@@ -55,8 +55,7 @@ const NewsEventsPage = () => {
         <div className="news-events-container">
           <div className="news-header">
             <div className="news-header-left">
-              <p className="news-label">Tin tức & Sự kiện</p>
-              <h2 className="news-main-title">|   Tin tức nổi bật</h2>
+              <p className="news-label">Tin tức & Sự kiện</p>           
             </div>
             <CategoryTabs
               activeCategoryId={activeCategoryId}

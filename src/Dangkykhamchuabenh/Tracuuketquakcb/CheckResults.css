@@ -1,0 +1,128 @@
+:root{
+  --green-600: #0b7439;
+  --muted: #4f5a55;
+  --card-border: #e6f0e8;
+  --card-shadow: 0 18px 40px rgba(11,116,57,0.06);
+  --radius: 12px;
+  --max-center-width: 640px; /* giống ảnh */
+}
+
+/* Page base */
+.check-results-page {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #0b2d19;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Hero */
+.check-results__hero {
+  background: #fafafa; /* nhẹ như ảnh */
+  padding: 48px 16px 28px;
+  border-bottom: 1px solid rgba(11,116,57,0.04);
+}
+.check-results__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.check-results__title {
+  text-align: center;
+  font-size: 28px;
+  margin: 0 0 8px;
+  color: #0b2d19;
+  font-weight: 700;
+}
+.check-results__desc {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 760px;
+  color: var(--muted);
+  opacity: 0.95;
+  margin-bottom: 12px;
+}
+
+/* Grid area that centers that narrow column like in the screenshot */
+.check-results__grid-container {
+  display: flex;
+  justify-content: center; /* centers the narrow column */
+  padding: 40px 16px;
+}
+
+/* The narrow column wrapper (cards stack vertically) */
+.button-card-grid {
+  width: 100%;
+  max-width: 900px; /* rộng hơn cho 2 card */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 card 1 hàng */
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Card style based on customer-guide__card */
+.customer-guide__card,
+.check-results__button-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 20px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 120px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Hover / focus */
+.customer-guide__card:hover,
+.customer-guide__card:focus,
+.check-results__button-card:hover,
+.check-results__button-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(11,116,57,0.09);
+}
+
+/* Content inside card */
+.customer-guide__card h3,
+.check-results__button-card h3 {
+  margin: 0;
+  color: var(--green-600);
+  font-size: 16px;
+  font-weight: 700;
+}
+.customer-guide__card p,
+.check-results__button-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* CTA link line */
+.customer-guide__link {
+  color: var(--green-600);
+  font-weight: 700;
+  margin-top: 8px;
+  text-decoration: underline;
+  width: fit-content;
+}
+
+/* Make sure anchor looks clickable and accessible */
+.customer-guide__card:focus,
+.check-results__button-card:focus {
+  outline: none;
+  box-shadow: 0 0 0 6px rgba(16,152,50,0.10);
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  :root { --max-center-width: 92%; }
+  .customer-guide__card,
+  .check-results__button-card {
+    padding: 16px;
+  }
+  .check-results__title { font-size: 20px; }
+}
