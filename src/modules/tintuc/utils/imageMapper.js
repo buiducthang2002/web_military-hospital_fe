@@ -52,6 +52,15 @@ import ttbv31 from '../../../Components/NewsEvents/Images/ttbv31.jpg'
 import ttbv32 from '../../../Components/NewsEvents/Images/ttbv32.jpg'
 import ttbv33 from '../../../Components/NewsEvents/Images/ttbv33.jpg'
 import sktg21 from '../../../Components/FeaturedEvents/Images/sktg21.jpg'
+import ttbv51 from '../../../Components/NewsEvents/Images/ttbv51.jpg'
+import ttbv52 from '../../../Components/NewsEvents/Images/ttbv52.jpg'
+import ttbv53 from '../../../Components/NewsEvents/Images/ttbv53.jpg'
+import ttbv61 from '../../../Components/NewsEvents/Images/ttbv61.jpg'
+import ttbv62 from '../../../Components/NewsEvents/Images/ttbv62.jpg'
+import ttbv63 from '../../../Components/NewsEvents/Images/ttbv63.jpg'
+import ttbv64 from '../../../Components/NewsEvents/Images/ttbv64.jpg'
+import ttbv65 from '../../../Components/NewsEvents/Images/ttbv65.jpg'
+
 
 
 const imageMap = {
@@ -103,6 +112,14 @@ const imageMap = {
   'ttbv21.jpg': ttbv21,
   'ttbv22.jpg': ttbv22,
   'ttbv23.jpg': ttbv23,
+  'ttbv51.jpg': ttbv51,
+  'ttbv52.jpg': ttbv52,
+  'ttbv53.jpg': ttbv53,
+  'ttbv61.jpg': ttbv61,
+  'ttbv62.jpg': ttbv62,
+  'ttbv63.jpg': ttbv63,
+  'ttbv64.jpg': ttbv64,
+  'ttbv65.jpg': ttbv65,
 }
 
 /**

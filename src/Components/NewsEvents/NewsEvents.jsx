@@ -1,21 +1,8 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './NewsEvents.css'
-import anh1 from './Images/anh1.jpg'
-import anh2 from './Images/anh2.jpg'
-import anh3 from './Images/anh4.jpg'
-import anh4 from './Images/anh4.jpg'
-import anh6 from './Images/anh6.jpg'
-import anh7 from './Images/anh7.jpg'
-import anh8 from './Images/anh8.jpg'
-import anh9 from './Images/anh9.jpg'
-import anh10 from './Images/anh10.jpg'
-import anh11 from './Images/anh11.jpg'
-import anh12 from './Images/anh12.jpg'
-import anh13 from './Images/anh13.jpg'
+
 import anhqh1 from './Images/anhqh1.jpg'
-import anhqh3 from './Images/anhqh3.jpg'
-import anhbonoivu from './Images/anhbonoivu.png'
 import WHO from './Images/WHO.jpg'
 import thuocla1 from './Images/thuocla1.jpg'
 import yttg1 from './Images/yttg1.jpg'
@@ -31,6 +18,8 @@ import bvcm1 from './Images/bvcm1.jpeg'
 import bvcm2 from './Images/bvcm2.jpg'
 import bvcm3 from './Images/bvcm3.jpg'
 import bvcm4 from './Images/bvcm4.jpg'
+import ttbv51 from './Images/ttbv51.jpg'
+
 
 const NewsEvents = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -180,7 +169,14 @@ const NewsEvents = () => {
         date: '17:05 18/06/2025',
         description: 'Hai bệnh viện đã ký kết thỏa thuận hợp tác trong đào tạo cán bộ y tế, chuyển giao kỹ thuật và hỗ trợ chuyên môn.'
       },
-      
+        {
+        id: '21a',
+        slug: 'tin-tuc-hoat-dong-benh-vien-5',
+        image: ttbv51,
+        title: 'Bệnh viện Quân y 4 hoàn thành tốt nhiệm vụ năm 2025',
+        date: '17:05 18/06/2025',
+        description: '  Chiều ngày 26/11/2025, Bệnh viện Quân y 4 tổ chức Hội nghị quân chính năm 2025'
+      },
     ],
     3: [ // Bài viết chuyên môn
       {
