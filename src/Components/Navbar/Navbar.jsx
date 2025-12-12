@@ -7,19 +7,25 @@ import Logo from '../Assets/Logo.jpg'
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState('#home')
   const [isScrolled, setIsScrolled] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState(null) // 'kcb' | 'info' | null
+  const [openDropdown, setOpenDropdown] = useState(null) // 'kcb' | 'info' | 'org' | null
   const navbarRef = useRef(null)
   const location = useLocation()
 
   const menuItems = [
     { href: '/', label: 'Trang chủ', isRoute: true },
-    { href: '/organization', label: 'Cơ cấu tổ chức', isRoute: true },
+    { href: '/organization', label: 'Tổ chức bệnh viện', isRoute: true, isDropdown: true, dropdownKey: 'org' },
     { href: '/news-events', label: 'Tin tức, Sự kiện', isRoute: true },
     { href: '/kham-chua-benh', label: 'Khám chữa bệnh', isRoute: true, isDropdown: true, dropdownKey: 'kcb' },
     { href: '/party-politics', label: 'Công tác Đảng - Chính trị', isRoute: true },
     { href: '/nghiencuu-hoptac', label: 'Nghiên cứu khoa học - Hợp tác', isRoute: true },
-    { href: '/customer-guide', label: 'Hướng dẫn khách hàng', isRoute: true },
+    { href: '/customer-guide', label: 'Dành cho khách hàng', isRoute: true },
     { href: '/thong-tin-chung', label: 'Thông tin chung', isRoute: false, isDropdown: true, dropdownKey: 'info' },
+  ]
+
+  const organizationItems = [
+    { href: '/organization', label: 'Ban giám đốc bệnh viện' },
+    { href: '/thong-tin-chung/thong-tin-benh-vien', label: 'Giới thiệu bệnh viện' },
+    { href: '/thong-tin-chung/cac-don-vi', label: 'Giới thiệu các đơn vị' },
   ]
 
   const khamChuaBenhItems = [
@@ -31,8 +37,7 @@ const Navbar = () => {
   ]
 
   const infoItems = [
-    { href: '/thong-tin-chung/thong-tin-benh-vien', label: 'Giới thiệu bệnh viện' },
-    { href: '/thong-tin-chung/cac-don-vi', label: 'Giới thiệu các đơn vị' },
+
     { href: 'https://moh.gov.vn/cong-bo-thong-tin-lien-quan-den-linh-vuc-duoc', label: 'Thông tin dược' },
     { href: 'https://baohiemxahoi.gov.vn/tracuu/pages/tra-cuu-thoi-han-su-dung-the-bhyt.aspx', label: 'Thông tin bảo hiểm y tế' },
     { href: '/thong-tin-chung/thu-chao-moi-san-pham', label: 'Thư chào mời sản phẩm' },
@@ -219,14 +224,28 @@ const Navbar = () => {
               >
                 Trang chủ
               </Nav.Link>
-              <Nav.Link 
-                as={Link} 
-                to="/organization" 
-                active={location.pathname === '/organization'}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              
+              {/* Cơ cấu tổ chức dropdown */}
+              <NavDropdown 
+                title="Cơ cấu tổ chức" 
+                id="mobile-org-dropdown"
+                active={location.pathname === '/organization' || location.pathname.startsWith('/organization')}
               >
-                Cơ cấu tổ chức
-              </Nav.Link>
+                {organizationItems.map(item => (
+                  <NavDropdown.Item
+                    key={item.href}
+                    as={item.href.startsWith('http') ? 'a' : Link}
+                    to={item.href.startsWith('http') ? undefined : item.href}
+                    href={item.href.startsWith('http') ? item.href : undefined}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    {item.label}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+
               <Nav.Link 
                 as={Link} 
                 to="/news-events" 
@@ -326,7 +345,7 @@ const Navbar = () => {
 
           <div className="title-wrap">
             <div className="title-vi">BỆNH VIỆN QUÂN Y 4 - CỤC HẬU CẦN KỸ THUẬT QUÂN KHU 4</div>
-            <div className="title-en">MILITARY HOSPITAL</div>
+            <div className="title-en">Military Central Hospital 4</div>
           </div>
 
           <div className="actions-wrap">
@@ -363,7 +382,7 @@ const Navbar = () => {
                   ],
                 }}
               >
-                {(item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => (
+                {(item.dropdownKey === 'org' ? organizationItems : item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => (
                   <NavDropdown.Item
                     key={dropdownItem.href}
                     as={dropdownItem.href.startsWith('http') ? 'a' : Link}
@@ -427,11 +446,14 @@ const Navbar = () => {
                   ],
                 }}
               >
-                {(item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => (
+                {(item.dropdownKey === 'org' ? organizationItems : item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => (
                   <NavDropdown.Item
                     key={dropdownItem.href}
-                    as={Link}
-                    to={dropdownItem.href}
+                    as={dropdownItem.href.startsWith('http') ? 'a' : Link}
+                    to={dropdownItem.href.startsWith('http') ? undefined : dropdownItem.href}
+                    href={dropdownItem.href.startsWith('http') ? dropdownItem.href : undefined}
+                    target={dropdownItem.href.startsWith('http') ? '_blank' : undefined}
+                    rel={dropdownItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="custom-dropdown-item"
                     onClick={handleDropdownItemClick}
                   >

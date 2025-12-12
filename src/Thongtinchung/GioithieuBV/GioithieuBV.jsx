@@ -288,39 +288,6 @@ const GioithieuBV = () => {
               ))}
             </div>
           </section>
-
-          {/* Contact Info */}
-          <section className="contact-info-section">
-            <h2 className="section-title">Thông tin liên hệ</h2>
-            <div className="contact-grid">
-              <div className="contact-item">
-                <div className="contact-icon">📍</div>
-                <h4>Địa chỉ</h4>
-                <p>Đường Lê Viết Thuật,Phường Vinh Lộc,Tỉnh Nghệ An</p>
-              </div>
-              <div className="contact-item">
-                <div className="contact-icon">📞</div>
-                <h4>Điện thoại</h4>
-                <p>Điện thoại: 0965 331 414 - CSKH: 0974 225 225</p>
-                <p>Cấp cứu: (0234) 3826 999</p>
-              </div>
-              <div className="contact-item">
-                <div className="contact-icon">✉️</div>
-                <h4>Email</h4>
-                <p>bv4.qk4@gmail.com</p>
-                
-              </div>
-              <div className="contact-item">
-                <div className="contact-icon">🕐</div>
-                <h4>Giờ làm việc</h4>
-                <p>Thứ 2 - Thứ 6: 7:00 - 17:00</p>
-                <p>Cấp cứu: 24/7</p>
-              </div>
-            </div>
-          </section>
-
-      
-
         </div>
       </main>
 

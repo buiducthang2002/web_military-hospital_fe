@@ -21,10 +21,9 @@ const FeaturedEvents = () => {
   const tabs = [
     'Sự kiện nổi bật thế giới',
     'Sự kiện nổi bật trong nước',
-
   ]
 
-  // Dữ liệu tin tức cho từng tab
+  // Dữ liệu tin tức cho từng tab+
   const newsDataByTab = {
     0: [ // Sự kiện nổi bật thế giới
       {

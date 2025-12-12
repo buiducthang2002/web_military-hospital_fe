@@ -15,7 +15,7 @@ const content = `
   <p>Dự đại hội có các đồng chí Ủy viên Trung ương Đảng, Thứ trưởng Bộ Quốc phòng: Thượng tướng Võ Minh Lương, Ủy viên Thường vụ Quân ủy Trung ương; Thượng tướng Hoàng Xuân Chiến, Ủy viên Thường vụ Quân ủy Trung ương; Thượng tướng Lê Huy Vịnh; Thượng tướng Vũ Hải Sản; Thượng tướng Phạm Hoài Nam; Thượng tướng Nguyễn Văn Hiền; Thượng tướng Nguyễn Trường Thắng; Thượng tướng Nguyễn Quang Ngọc. Tham dự đại hội có các đồng chí nguyên Ủy viên Bộ Chính trị, Ủy viên Trung ương Đảng, nguyên Ủy viên Trung ương Đảng; lãnh đạo, nguyên lãnh đạo Đảng, Nhà nước, MTTQ Việt Nam; đại diện lãnh đạo các bộ, ban, ngành Trung ương; các đồng chí lãnh đạo, nguyên lãnh đạo Bộ Quốc phòng, Bộ Tổng Tham mưu, Tổng cục Chính trị QĐND Việt Nam cùng 448 đại biểu (gồm đại biểu đương nhiên và đại biểu được bầu từ 56 Đảng bộ trực thuộc Quân ủy Trung ương), đại diện cho trí tuệ, bản lĩnh chính trị, ý chí, niềm tin và nguyện vọng của hơn 27 vạn đảng viên trong Đảng bộ Quân đội.</p>
 
   <div style="margin: 20px 0; text-align: center;">
-    <img src="{{ctd13.jpg}}"  style="max-width: 100%; height: auto; border-radius: 8px;" />
+    <img src="{{ctd13.jpg}}"  style="width: 100%; height: auto; border-radius: 8px;" />
     <p style="margin-top: 10px; font-style: italic; color: #666; font-size: 14px;">Đoàn Chủ tịch điều hành đại hội.</p>
   </div>
 `

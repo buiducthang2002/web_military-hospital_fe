@@ -4,11 +4,10 @@
   margin-top: -1px !important;
   margin-bottom: 0 !important;
   padding: 0 !important;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
   position: relative;
   cursor: grab;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   border: none;
@@ -48,7 +47,7 @@
 
 .banner-slide {
   width: 100vw;
-  height: 430px;
+  height: clamp(220px, 45vw, 520px);
   flex-shrink: 0;
   scroll-snap-align: start;
   position: relative;
@@ -70,6 +69,8 @@
   display: block;
   object-fit: cover;
   object-position: center;
+  background: #0f172a;
+  filter: saturate(1.05) contrast(1.02);
   user-select: none;
   pointer-events: none;
   border: none;
@@ -82,12 +83,14 @@
 
 .banner-dots {
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 18px;
+  transform: translateX(-50%);
   display: flex;
   gap: 10px;
   z-index: 10;
+  padding: 8px 12px;
+  border-radius: 999px;
 }
 
 .dot {
@@ -134,21 +137,75 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+/* Banner Arrows */
+.banner-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  font-size: 24px !important;
+  opacity: 1 !important;
+}
+
+.banner-arrow:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.banner-arrow.left {
+  left: 20px;
+}
+
+.banner-arrow.right {
+  right: 20px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .banner-slide {
-    height: 180px;
+    height: clamp(160px, 42vw, 260px);
+  }
+
+  .banner-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 20px !important;
+  }
+
+  .banner-arrow.left {
+    left: 10px;
+  }
+
+  .banner-arrow.right {
+    right: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .banner-slide {
-    height: 150px;
+    height: 160px;
   }
 
   .dot {
     width: 12px;
     height: 12px;
   }
-}
 
+  .banner-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 18px !important;
+  }
+}

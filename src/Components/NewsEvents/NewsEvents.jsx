@@ -1,21 +1,8 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import './NewsEvents.css'
-import anh1 from './Images/anh1.jpg'
-import anh2 from './Images/anh2.jpg'
-import anh3 from './Images/anh4.jpg'
-import anh4 from './Images/anh4.jpg'
-import anh6 from './Images/anh6.jpg'
-import anh7 from './Images/anh7.jpg'
-import anh8 from './Images/anh8.jpg'
-import anh9 from './Images/anh9.jpg'
-import anh10 from './Images/anh10.jpg'
-import anh11 from './Images/anh11.jpg'
-import anh12 from './Images/anh12.jpg'
-import anh13 from './Images/anh13.jpg'
+
 import anhqh1 from './Images/anhqh1.jpg'
-import anhqh3 from './Images/anhqh3.jpg'
-import anhbonoivu from './Images/anhbonoivu.png'
 import WHO from './Images/WHO.jpg'
 import thuocla1 from './Images/thuocla1.jpg'
 import yttg1 from './Images/yttg1.jpg'
@@ -31,6 +18,11 @@ import bvcm1 from './Images/bvcm1.jpeg'
 import bvcm2 from './Images/bvcm2.jpg'
 import bvcm3 from './Images/bvcm3.jpg'
 import bvcm4 from './Images/bvcm4.jpg'
+import ttbv51 from './Images/ttbv51.jpg'
+import ttbv8 from './Images/ttbv8.jpg'
+import ttbv61 from './Images/ttbv61.jpg'
+import ttbv7 from './Images/ttbv7.jpg'
+
 
 const NewsEvents = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -38,16 +30,83 @@ const NewsEvents = () => {
   const location = useLocation()
   const isNewsEventsPage = location.pathname === '/news-events'
 
-  const tabs = [
-    'Tin tức y học thế giới',
-    'Tin tức y học trong nước',
-    'Tin tức hoạt động bệnh viện',
-    'Bài viết chuyên môn'
+  const tabConfigs = [
+    { key: 'hospital', label: 'Tin tức hoạt động bệnh viện' },
+    { key: 'world', label: 'Tin tức y học thế giới' },
+    { key: 'domestic', label: 'Tin tức y học trong nước' },
+    { key: 'expert', label: 'Bài viết chuyên môn' }
   ]
 
   // Dữ liệu tin tức cho từng tab
   const newsDataByTab = {
-    0: [ // Tin tức y học thế giới
+    hospital: [
+      {
+        id: '17',
+        slug: 'tin-tuc-hoat-dong-benh-vien-1',
+        image: ttbv1,
+        title: 'Bệnh viện Quân y 4: Hướng tới sự hài lòng của người bệnh',
+        date: '17:05 18/06/2025',
+        description: 'Bệnh viện Quân y 4 không ngừng nâng cao chất lượng khám chữa bệnh, cải thiện cơ sở vật chất và dịch vụ nhằm mang lại sự hài lòng cao nhất '
+      },
+      {
+        id: '18',
+        slug: 'tin-tuc-hoat-dong-benh-vien-2',
+        image: ttbv2,
+        title: 'Bệnh viện Quân y 4: Tổ chức nhiều hoạt động hỗ trợ người bệnh',
+        date: '17:05 18/06/2025',
+        description: 'Bệnh viện đã triển khai nhiều hoạt động hỗ trợ như tư vấn sức khỏe miễn phí, tặng thuốc, và hướng dẫn chăm sóc sau điều trị cho bệnh nhân.'
+      },
+      {
+        id: '19',
+        slug: 'tin-tuc-hoat-dong-benh-vien-3',
+        image: ttbv3,
+        title: 'Bệnh viện Quân y 4 tổ chức đánh giá bệnh án điện tử',
+        date: '17:05 18/06/2025',
+        description: 'Hội đồng đánh giá đã tiến hành kiểm tra chất lượng bệnh án điện tử nhằm cải thiện quy trình quản lý và lưu trữ hồ sơ bệnh nhân.'
+      },
+      {
+        id: '20',
+        slug: 'tin-tuc-hoat-dong-benh-vien-4',
+        image: ttbv4,
+        title: 'Bệnh viện Quân y 103 ký kết đào tạo hỗ trợ chuyên môn với Bệnh viện Quân y 4',
+        date: '17:05 18/06/2025',
+        description: 'Hai bệnh viện đã ký kết thỏa thuận hợp tác trong đào tạo, quản lý cán bộ y tế, chuyển giao kỹ thuật và hỗ trợ chuyên môn.'
+      },
+        {
+        id: '21a',
+        slug: 'tin-tuc-hoat-dong-benh-vien-5',
+        image: ttbv51,
+        title: 'Bệnh viện Quân y 4 hoàn thành tốt nhiệm vụ năm 2025',
+        date: '17:05 18/06/2025',
+        description: '  Chiều ngày 26/11/2025, Bệnh viện Quân y 4 tổ chức Hội nghị quân chính năm 2025. Đại tá, Thầy thuốc ưu tú, Bác sỹ CKII Nguyễn An Giang, Giám đốc chủ trì hội nghị.Dự hội nghị có Thượng tá Thái Kiên Định'
+      },
+      {
+        id: '21b',
+        slug: 'tin-tuc-hoat-dong-benh-vien-6',
+        image: ttbv61,
+        title: ' Bệnh viện Quân y 4 vinh dự nhận cờ thi đua của Thủ trưởng Bộ Quốc Phòng',
+        date: '17:05 18/06/2025',
+        description: '  Sáng 28-11, tại TP Hồ Chí Minh, Thượng tướng Vũ Hải Sản, Ủy viên Trung ương Đảng, Thứ trưởng Bộ Quốc phòng chủ trì Hội nghị sơ kết thực hiện Chỉ thị số 97/CT-BQP và Chỉ thị số 85/CT-BQP'
+      },
+      {
+        id: '21c',
+        slug: 'tin-tuc-hoat-dong-benh-vien-7',
+        image: ttbv7,
+        title: 'Chuẩn bị chu đáo tham gia Hội thi Điều dưỡng viên toàn quân năm 2026',
+        date: '17:05 18/06/2025',
+        description: '  Công tác chuẩn bị cho Hội thi Điều dưỡng viên các bệnh viện trong Quân đội năm 2026 đang được Bệnh viện Quân y 4 (Cục Hậu cần - Kỹ thuật Quân khu 4) xác định là một trong những nhiệm vụ trọng tâm'
+      },
+      {
+        id: '21d',
+        slug: 'tin-tuc-hoat-dong-benh-vien-8',
+        image: ttbv8,
+        title: 'Bệnh viện Quân y 4 khám, tư vấn sức khỏe, tặng quà trên địa bàn tỉnh Nghệ An',
+        date: '17:05 18/06/2025',
+        description: 'Sáng 9-12, Bệnh viện Quân y 4 (Quân khu 4) tổ chức khám, chữa bệnh, tư vấn sức khỏe, cấp thuốc và tặng quà các gia đình có hoàn cảnh khó khăn tại xã Minh Châu, tỉnh Nghệ An.'
+      },
+
+    ],
+    world: [
       {
         id: '1',
         slug: 'tin-tuc-y-hoc-the-gioi-1',
@@ -80,40 +139,8 @@ const NewsEvents = () => {
         date: '17:05 18/06/2025',
         description: 'Đại Hội đồng Y tế Thế giới đã thông qua nghị quyết trao thêm quyền và trách nhiệm cho Palestine trong các hoạt động y tế quốc tế thế giới hiện nay và tương lai.'
       },
-      {
-        id: '9',
-        slug: 'tin-tuc-y-hoc-trong-nuoc-1',
-        image: anhqh1,
-        title: 'Trình UBTVQH mục tiêu quốc gia về chăm sóc sức khỏe, dân số và phát triển giai đoạn 2026–2035',
-        date: '17:05 18/06/2025',
-        description: 'Bộ Y tế đã trình Ủy ban Thường vụ Quốc hội Chương trình mục tiêu quốc gia về chăm sóc sức khỏe người dân, dân số và phát triển giai đoạn 2026-2035.'
-      },
-      {
-        id: '10',
-        slug: 'tin-tuc-y-hoc-trong-nuoc-2',
-        image: ytvn2,
-        title: 'Thúc đẩy các nỗ lực loại trừ ung thư cổ tử cung tại Việt Nam',
-        date: '17:05 18/06/2025',
-        description: 'Việt Nam đang đẩy mạnh các chương trình sàng lọc và tiêm vắc-xin phòng ngừa HPV nhằm loại trừ ung thư cổ tử cung trong cộng đồng.'
-      },
-      {
-        id: '11',
-        slug: 'tin-tuc-y-hoc-trong-nuoc-3',
-        image: yhvn31,
-        title: 'Ngành y tế Thành phố Hồ Chí Minh hướng về đồng bào vùng lũ',
-        date: '17:05 18/06/2025',
-        description: 'Ngành y tế TP.HCM đã tổ chức nhiều đoàn cán bộ y tế mang theo thuốc men, thiết bị y tế đến hỗ trợ đồng bào vùng lũ lụt.'
-      },
-      {
-        id: '12',
-        slug: 'tin-tuc-y-hoc-trong-nuoc-4',
-        image: yhvn41,
-        title: 'Bộ Y tế đề nghị tăng cường công tác phòng, chống dịch bệnh ứng phó với thiên tai',
-        date: '17:05 18/06/2025',
-        description: 'Bộ Y tế yêu cầu các địa phương tăng cường công tác phòng chống dịch bệnh, đảm bảo an toàn sức khỏe cho người dân trong mùa mưa bão.'
-      },
     ],
-    1: [ // Tin tức y học trong nước
+    domestic: [
       {
         id: '9',
         slug: 'tin-tuc-y-hoc-trong-nuoc-1',
@@ -147,42 +174,8 @@ const NewsEvents = () => {
         description: 'Bộ Y tế yêu cầu các địa phương tăng cường công tác phòng chống dịch bệnh, đảm bảo an toàn sức khỏe cho người dân trong mùa mưa bão.'
       },
     ],
-    2: [ // Tin tức hoạt động bệnh viện
-      {
-        id: '17',
-        slug: 'tin-tuc-hoat-dong-benh-vien-1',
-        image: ttbv1,
-        title: 'Bệnh viện Quân y 4: Hướng tới sự hài lòng của người bệnh',
-        date: '17:05 18/06/2025',
-        description: 'Bệnh viện Quân y 4 không ngừng nâng cao chất lượng khám chữa bệnh, cải thiện cơ sở vật chất và dịch vụ nhằm mang lại sự hài lòng cao nhất cho người bệnh.'
-      },
-      {
-        id: '18',
-        slug: 'tin-tuc-hoat-dong-benh-vien-2',
-        image: ttbv2,
-        title: 'Bệnh viện Quân y 4: Tổ chức nhiều hoạt động hỗ trợ người bệnh',
-        date: '17:05 18/06/2025',
-        description: 'Bệnh viện đã triển khai nhiều hoạt động hỗ trợ như tư vấn sức khỏe miễn phí, tặng thuốc, và hướng dẫn chăm sóc sau điều trị cho bệnh nhân.'
-      },
-      {
-        id: '19',
-        slug: 'tin-tuc-hoat-dong-benh-vien-3',
-        image: ttbv3,
-        title: 'Bệnh viện Quân y 4 tổ chức đánh giá bệnh án điện tử',
-        date: '17:05 18/06/2025',
-        description: 'Hội đồng đánh giá đã tiến hành kiểm tra chất lượng bệnh án điện tử nhằm cải thiện quy trình quản lý và lưu trữ hồ sơ bệnh nhân.'
-      },
-      {
-        id: '20',
-        slug: 'tin-tuc-hoat-dong-benh-vien-4',
-        image: ttbv4,
-        title: 'Bệnh viện Quân y 103 ký kết đào tạo và hỗ trợ chuyên môn với Bệnh viện Quân y 4',
-        date: '17:05 18/06/2025',
-        description: 'Hai bệnh viện đã ký kết thỏa thuận hợp tác trong đào tạo cán bộ y tế, chuyển giao kỹ thuật và hỗ trợ chuyên môn.'
-      },
-      
-    ],
-    3: [ // Bài viết chuyên môn
+    
+    expert: [
       {
         id: '25',
         slug: 'bai-viet-chuyen-mon-1',
@@ -218,15 +211,19 @@ const NewsEvents = () => {
     ],
   }
 
-  // Lấy dữ liệu cho tab hiện tại
-  const allNewsItems = newsDataByTab[activeTab] || []
-  const itemsPerPage = 8
-  const totalPages = Math.ceil(allNewsItems.length / itemsPerPage)
-
-  // Tính toán các items hiển thị dựa trên trang hiện tại
-  const startIndex = (currentPage - 1) * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
-  const newsItems = allNewsItems.slice(startIndex, endIndex)
+  // Lấy dữ liệu cho tab hiện tại với useMemo để đảm bảo re-compute khi activeTab hoặc currentPage thay đổi
+  const { newsItems, totalPages } = useMemo(() => {
+    const activeKey = tabConfigs[activeTab]?.key
+    const allNewsItems = newsDataByTab[activeKey] || []
+    const itemsPerPage = 8
+    const totalPages = Math.ceil(allNewsItems.length / itemsPerPage)
+    
+    const startIndex = (currentPage - 1) * itemsPerPage
+    const endIndex = startIndex + itemsPerPage
+    const newsItems = allNewsItems.slice(startIndex, endIndex)
+    
+    return { newsItems, totalPages }
+  }, [activeTab, currentPage, newsDataByTab])
 
   // Hàm xử lý khi chuyển tab - reset về trang 1
   const handleTabChange = (index) => {
@@ -243,21 +240,21 @@ const NewsEvents = () => {
             
           </div>
           <div className="news-tabs">
-            {tabs.map((tab, index) => (
+            {tabConfigs.map((tab, index) => (
               <button
                 key={index}
                 className={`news-tab ${activeTab === index ? 'active' : ''}`}
                 onClick={() => handleTabChange(index)}
               >
-                {tab}
+                {tab.label}
               </button>
             ))}
           </div>
         </div>
 
-        <div className="news-grid">
-          {newsItems.map((item, index) => (
-            <div key={index} className="news-card">
+        <div className="news-grid" key={`tab-${activeTab}-page-${currentPage}`}>
+          {newsItems.map((item) => (
+            <div key={item.id} className="news-card">
               <Link to={`/news-events/${item.slug}`} className="news-image-wrapper">
                 <img
                   src={item.image}

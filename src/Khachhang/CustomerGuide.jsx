@@ -26,6 +26,12 @@ const quickLinks = [
     to: '/dat-lich',
   },
   {
+    title: 'Tra cứu kết quả khám chữa bệnh',
+    description: 'Tra cứu nhanh kết quả khám chữa bệnh, xét nghiệm, đơn thuốc và lịch sử khám chữa bệnh.',
+    cta: 'Hướng dẫn',
+    to: '/check-results',
+  },
+  {
     title: 'Chuẩn bị hồ sơ & thủ tục',
     description: 'Danh sách giấy tờ, biểu mẫu cần thiết cho quá trình tiếp nhận và xuất viện.',
     cta: 'Xem hướng dẫn',

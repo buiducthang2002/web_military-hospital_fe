@@ -15,7 +15,7 @@ const Doctors = () => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       )
-    }, 3000) // 3000ms = 3 giây
+    }, 9000) // 9000ms = 9 giây
 
     return () => clearInterval(interval) // Cleanup khi component unmount
   }, [images.length])
@@ -23,7 +23,7 @@ const Doctors = () => {
   const features = [
     {
       icon: <UserCheck />,
-      title: 'Đội ngũ bác sĩ chuyên môn cao',
+      title: 'Bác sĩ giàu kinh nghiệm ',
       desc:
         'Đội ngũ bác sĩ của chúng tôi có chuyên môn cao, nhiều năm kinh nghiệm và luôn sẵn sàng tư vấn, chăm sóc bệnh nhân tận tâm, chuyên nghiệp.',
     },
@@ -35,13 +35,13 @@ const Doctors = () => {
     },
     {
       icon: <Ambulance />,
-      title: 'Cơ sở vật chất hiện đại nhất ',
+      title: 'Cơ sở vật chất hiện đại ',
       desc:
         'Trang thiết bị tiên tiến, không gian sạch sẽ, thân thiện, đảm bảo môi trường khám chữa bệnh an toàn và thoải mái.',
     },
     {
       icon: <HeartHandshake />,
-      title: 'Dịch vụ cao cấp với chi phí tốt',
+      title: 'Dịch vụ với chi phí tốt',
       desc:
         'Hỗ trợ đặt lịch trực tuyến, tư vấn 24/7 qua hotline và website, giúp tiết kiệm thời gian với chi phí minh bạch, hợp lý.',
     },
@@ -50,12 +50,6 @@ const Doctors = () => {
   return (
 
     <section className="doctors-section">
-      <div className="doctors-intro">
-        <h2 className="intro-title">BỆNH VIỆN QUÂN Y 4 - CỤC HẬU CẦN KỸ THUẬT QUÂN KHU 4</h2>
-        <p className="intro-desc">
-          Tại Bệnh viện chúng tôi cam kết mang đến cho bệnh nhân những dịch vụ chăm sóc sức khỏe tốt nhất. Với tầm nhìn trở thành một trong những bệnh viện hàng đầu trong khu vực, chúng tôi không ngừng nỗ lực nâng cao chất lượng dịch vụ, đầu tư công nghệ tiên tiến và xây dựng đội ngũ bác sĩ, y tá chuyên nghiệp và tận tâm.
-        </p>
-      </div>
 
 
       <div className="doctors-layout">

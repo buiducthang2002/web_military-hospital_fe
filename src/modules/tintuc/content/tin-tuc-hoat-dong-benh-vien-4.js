@@ -8,7 +8,7 @@ const content = `
 
 Trong chuyến công tác trở lại Bệnh viện Quân y 4 lần này, điều chúng tôi được chứng kiến là sự đổi thay toàn diện. Trong các phòng, khoa, nhiều máy móc, trang thiết bị hiện đại, với đội ngũ y, bác sĩ thân thiện đang khám, điều trị cho người bệnh. Gặp gỡ, trò chuyện với bệnh nhân và người nhà bệnh nhân đang điều trị nơi đây, chúng tôi đều nhận được sự đánh giá cao về tinh thần, thái độ của đội ngũ cán bộ, y, bác sĩ đối với bệnh nhân.</p>
 <div style="margin: 20px 0; text-align: center;">
-    <img src="{{ttbv11.jpg}}"  style="max-width: 80%; height: auto; border-radius: 8px;" />
+    <img src="{{ttbv11.jpg}}"  style="max-width: 100%; height: auto; border-radius: 8px;" />
     <p style="margin-top: 10px; font-style: italic; color: #666; font-size: 14px;">Đội ngũ y, bác sĩ Bệnh viện Quân y 4 tận tụy chăm sóc, cứu chữa người bệnh. .</p>
   </div>  
 <p>Nhận kết quả khám căn bệnh đau đầu không rõ nguyên nhân, tại Khoa Khám bệnh, Bệnh viện Quân y 4, bà Lê Thị Hoa ở xã Đông Lộc, tỉnh Nghệ An nói: “Sau gần hai giờ tôi đã được các bác sĩ, nhân viên bệnh viện tiến hành làm các thủ tục và thực hiện các công đoạn thăm khám. So với trước đây rút ngắn hơn một nửa thời gian. Quá trình kiểm tra một số chuyên khoa, Bệnh viện áp dụng nhiều máy móc, trang bị hiện đại. Không chỉ vậy, các y, bác sĩ bệnh viện hết sức tận tình chu đáo trong hướng dẫn, thăm khám cho người bệnh”.
@@ -20,7 +20,7 @@ Ngồi cạnh bà Hoa, bệnh nhân Đặng Thị Mai ở xã Nghi Xuân, tỉnh
 
 Cùng với việc tích cực tiếp cận, áp dụng khoa học, công nghệ mới, những năm gần đây phong trào nghiên cứu khoa học, sáng kiến cải tiến kỹ thuật luôn được Ban giám đốc Bệnh viện Quân y 4 thường xuyên quan tâm, đầu tư. Trung bình mỗi năm, Bệnh viện Quân y 4 có hơn 20 đề tài nghiên cứu khoa học và hàng chục công trình sáng kiến cải tiến kỹ thuật được áp dụng hiệu quả vào thực tiễn công tác khám, điều trị cho bệnh nhân. Nhờ vậy, một số căn bệnh trước đây phải chuyển lên tuyến trên hoặc phẫu thuật bằng phương pháp mổ thông thường thì nay thực hiện bằng nội soi như: Phẫu thuật thắt giãn tĩnh mạch thực quản; phẫu thuật cột sống; cắt ổ tử cung toàn phần, bán phần; phẫu thuật dạ dày; tán sỏi thận qua da...</p>
 <div style="margin: 20px 0; text-align: center;">
-    <img src="{{ttbv12.jpg}}"  style="max-width: 80%; height: auto; border-radius: 8px;" />
+    <img src="{{ttbv12.jpg}}"  style="max-width: 100%; height: auto; border-radius: 8px;" />
     <p style="margin-top: 10px; font-style: italic; color: #666; font-size: 14px;">Trao hỗ trợ bệnh nhân.</p>
   </div>    
 <p>Tìm hiểu thực tế chúng tôi được biết thêm, để tạo niềm tin, sự hài lòng đối với người bệnh, cán bộ, nhân viên, chiến sĩ, y, bác sĩ Bệnh viện Quân y 4 đã tổ chức các mô hình hướng về bệnh nhân như: “Bát cháo tình thương”; “Đồng hành cùng người bệnh”, cắt tóc, gội đầu cho bệnh nhân; thay băng theo khẩu phần hấp sấy…

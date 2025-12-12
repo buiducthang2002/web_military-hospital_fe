@@ -1,12 +1,12 @@
 .doctors-section {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin-top: -360px;
-  padding: 0 20px;
+  margin-top: 0;
+  padding: 0 20px 15px 20px;
 }
 
 .doctors-intro {
   max-width: 1200px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 20px auto;
   text-align: left;
   padding: 0 15px;
 }
@@ -14,7 +14,7 @@
 .intro-title {
   font-size: clamp(18px, 2.5vw, 23px);
   font-weight: 650;
-  color: #67e491;
+  color: #069242;
   margin: 0 0 20px 0;
   line-height: 1.5;
   text-align: center;
@@ -33,18 +33,22 @@
   margin: 0 auto;
   display: flex;
   gap: clamp(20px, 3vw, 40px);
-  align-items: flex-start;
+  align-items: center;
   padding: 0 15px;
 }
 
 .hospital-image-wrapper {
   flex: 1;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hospital-image {
   width: 100%;
   height: auto;
+  max-height: 330px;
   object-fit: cover;
   border-radius: 8px;
   display: block;
@@ -66,7 +70,7 @@
   height: 12px;
   border-radius: 50%;
   border: 2px solid #ffffff;
-  background-color: rgba(255, 255, 255, 0.5);
+
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
@@ -74,7 +78,7 @@
 }
 
 .image-dots .dot:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+
   transform: scale(1.2);
 }
 
@@ -91,28 +95,29 @@
   grid-template-columns: 1fr 1fr;
   gap: clamp(12px, 2vw, 20px);
   align-items: stretch;
+  align-content: center;
 }
 
 .feature-item {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(8px, 1.2vw, 12px);
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 8px 12px;
   height: 100%;
-  padding: 10px;
+  padding: 12px;
   box-sizing: border-box;
 }
 
 .feature-icon {
-  width: clamp(30px, 4vw, 40px);
-  height: clamp(30px, 4vw, 40px);
+  width: clamp(25px, 3vw, 30px);
+  height: clamp(25px, 3vw, 30px);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4FC3F7;
+  color: #000000;
   background-color: transparent;
-  margin-left: 0;
-  flex-shrink: 0;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .feature-icon svg {
@@ -121,11 +126,7 @@
 }
 
 .feature-content {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
-  justify-content: flex-start;
+  display: contents;
 }
 
 .feature-title {
@@ -134,20 +135,20 @@
   color: #109832;
   margin: 0;
   line-height: 1.4;
-  text-align: center;
-  min-height: 2.8em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: left;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
 }
 
 .feature-desc {
-  font-size: clamp(11px, 1.2vw, 13px);
+  font-size: clamp(13px, 1.4vw, 15px);
   color: #000;
   line-height: 1.6;
   margin: 0;
   text-align: justify;
-  flex: 1;
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
 
 /* Tablet lớn */
@@ -156,14 +157,17 @@
     flex-direction: column;
     gap: 30px;
   }
+
   .hospital-image {
     height: auto;
     max-height: 400px;
     object-fit: cover;
   }
+
   .features-grid {
     grid-template-columns: 1fr 1fr;
   }
+
   .doctors-section {
     margin-top: 0;
     padding: 0 15px;
@@ -176,23 +180,29 @@
     padding: 20px 15px;
     margin-top: 0;
   }
+
   .doctors-intro {
     margin-bottom: 30px;
   }
+
   .doctors-layout {
     gap: 25px;
   }
+
   .hospital-image-wrapper {
     margin: 0 auto;
   }
+
   .hospital-image {
     max-height: 300px;
     margin: 0 auto;
   }
+
   .image-dots .dot {
     width: 10px;
     height: 10px;
   }
+
   .image-dots .dot.active {
     width: 12px;
     height: 12px;
@@ -205,42 +215,51 @@
     padding: 20px 15px;
     margin-top: 0;
   }
+
   .doctors-intro {
     padding: 0;
     margin-bottom: 25px;
   }
+
   .intro-title {
     font-size: 18px;
     line-height: 1.4;
     margin-bottom: 15px;
   }
+
   .intro-desc {
     font-size: 14px;
     line-height: 1.6;
   }
+
   .doctors-layout {
     padding: 0;
     gap: 25px;
     flex-direction: column;
   }
+
   .hospital-image-wrapper {
     width: 100%;
     margin: 0 auto;
     max-width: 100%;
   }
+
   .hospital-image {
     width: 100%;
     max-height: 280px;
     border-radius: 8px;
     object-fit: cover;
   }
+
   .image-dots {
     bottom: 12px;
   }
+
   .features-grid {
     grid-template-columns: 1fr;
     gap: 15px;
   }
+
   .feature-item {
     align-items: flex-start;
     flex-direction: row;
@@ -250,23 +269,27 @@
     border-radius: 8px;
     border-left: 3px solid #109832;
   }
+
   .feature-icon {
     flex-shrink: 0;
     width: 36px;
     height: 36px;
     margin-top: 2px;
   }
+
   .feature-content {
     gap: 6px;
   }
+
   .feature-title {
     font-size: 15px;
     text-align: left;
     min-height: auto;
     justify-content: flex-start;
   }
+
   .feature-desc {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
   }
 }
@@ -276,55 +299,69 @@
   .doctors-section {
     padding: 15px 12px;
   }
+
   .doctors-intro {
     margin-bottom: 20px;
   }
+
   .intro-title {
     font-size: 16px;
     margin-bottom: 12px;
     line-height: 1.3;
   }
+
   .intro-desc {
     font-size: 13px;
   }
+
   .doctors-layout {
     gap: 20px;
   }
+
   .hospital-image-wrapper {
     width: 100%;
     max-width: 100%;
   }
+
   .hospital-image {
     max-height: 220px;
     border-radius: 6px;
   }
+
   .image-dots {
     bottom: 8px;
     gap: 6px;
   }
+
   .image-dots .dot {
     width: 8px;
     height: 8px;
   }
+
   .image-dots .dot.active {
     width: 10px;
     height: 10px;
   }
+
   .features-grid {
     gap: 12px;
   }
+
   .feature-item {
     padding: 12px;
     gap: 10px;
   }
+
   .feature-icon {
     width: 32px;
     height: 32px;
   }
+
   .feature-title {
     font-size: 14px;
   }
+
   .feature-desc {
-    font-size: 12px;
+    font-size: 13px;
   }
 }

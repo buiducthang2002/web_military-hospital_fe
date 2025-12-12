@@ -42,7 +42,7 @@
   font-size: 15px;
   font-weight: 700;
   color: #000000;
-  
+
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -238,6 +238,24 @@
   margin-bottom: 10px;
 }
 
+/* Đồng nhất kích thước ảnh trong bài viết */
+.article-body img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.article-body div[style*="text-align: center"] {
+  margin: 20px 0;
+}
+
+.article-body div[style*="text-align: center"] img {
+  display: block;
+  margin: 0 auto;
+}
+
 .article-tags {
   display: flex;
   flex-wrap: wrap;
@@ -396,4 +414,3 @@
     text-align: center;
   }
 }
-

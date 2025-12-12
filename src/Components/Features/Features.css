@@ -1,8 +1,8 @@
 .features-section {
   width: 100%;
   background-color: #d6f2d6;
-  margin-top: 40px; /*tăng khoảng trống giữa Doctor*/
-  padding: 60px 20px;
+  margin-top: 15px;
+  padding: 30px 20px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -111,4 +111,3 @@
     line-height: 1.3;
   }
 }
-

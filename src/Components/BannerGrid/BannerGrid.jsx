@@ -9,7 +9,7 @@ const BannerGrid = () => {
     { id: 1, image: Banner_CTTDT_BQP1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
     { id: 2, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
     { id: 3, image: Banner_CTTDT_BQP1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
-    { id: 4, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
+    { id: 4, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://qlms.bqp.vn/' },
   ]
 
   const handleBannerClick = (link) => {
