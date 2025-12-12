@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import './Banner.css'
 
-import Banner12 from './Images/Banner12.jpg'
-import Banner13 from './Images/Banner13.jpg'
-import Banner12a from './Images/Banner12a.png'
 
+import A1 from './Images/A1.jpg'
+ import A2 from './Images/A2.jpg'
+ import A3 from './Images/A3.jpg'
+ import A4 from './Images/A4.jpg'
 
 
 const Banner = () => {
@@ -16,7 +18,7 @@ const Banner = () => {
   const isTransitioning = useRef(false)
   const dragStartPosition = useRef({ x: 0, y: 0 })
 
-  const banners = [ Banner12, Banner13, Banner12a ]
+  const banners = [A1, A2, A3, A4]
   // Mảng links cho từng banner - có thể thay đổi theo nhu cầu
   const bannerLinks = [
   ]
@@ -43,11 +45,11 @@ const Banner = () => {
     setIsDragging(false)
     const banner = bannerRef.current
     if (!banner) return
-    
+
     const scrollPosition = banner.scrollLeft
     const bannerWidth = banner.offsetWidth
     let newIndex = Math.round(scrollPosition / bannerWidth)
-    
+
     // Kiểm tra xem có phải là click (không phải drag) không
     if (wasDragging && e) {
       const dragDistance = Math.abs(e.pageX - dragStartPosition.current.x) + Math.abs(e.pageY - dragStartPosition.current.y)
@@ -60,7 +62,7 @@ const Banner = () => {
         }
       }
     }
-    
+
     // Xử lý vòng lặp
     if (newIndex === 0) {
       // Đang ở clone đầu tiên (banner cuối), nhảy về banner cuối thật
@@ -85,7 +87,7 @@ const Banner = () => {
         }
       }, 50)
     }
-    
+
     // Cập nhật currentIndex (trừ đi 1 vì có clone ở đầu)
     const realIndex = newIndex - 1
     if (realIndex >= 0 && realIndex < banners.length) {
@@ -154,13 +156,13 @@ const Banner = () => {
     let scrollTimeout
     const handleScroll = () => {
       if (isTransitioning.current) return
-      
+
       clearTimeout(scrollTimeout)
       scrollTimeout = setTimeout(() => {
         const scrollPosition = banner.scrollLeft
         const bannerWidth = banner.offsetWidth
         let newIndex = Math.round(scrollPosition / bannerWidth)
-        
+
         // Xử lý vòng lặp
         if (newIndex === 0) {
           // Đang ở clone đầu, nhảy về banner cuối thật
@@ -185,7 +187,7 @@ const Banner = () => {
             isTransitioning.current = false
           }, 50)
         }
-        
+
         // Cập nhật currentIndex (trừ đi 1 vì có clone ở đầu)
         const realIndex = newIndex - 1
         if (realIndex >= 0 && realIndex < banners.length) {
@@ -210,13 +212,25 @@ const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length)
-    }, 3000) // Chuyển banner mỗi 3 giây
+    }, 8000) // Chuyển banner mỗi 3 giây
 
     return () => clearInterval(interval)
   }, [banners.length])
 
+  const handlePrev = (e) => {
+    e.stopPropagation()
+    const prevIndex = (currentIndex - 1 + banners.length) % banners.length
+    setCurrentIndex(prevIndex)
+  }
+
+  const handleNext = (e) => {
+    e.stopPropagation()
+    const nextIndex = (currentIndex + 1) % banners.length
+    setCurrentIndex(nextIndex)
+  }
+
   return (
-    <section 
+    <section
       className="banner-container"
       ref={bannerRef}
       aria-label="Banner carousel"
@@ -245,6 +259,23 @@ const Banner = () => {
           </div>
         ))}
       </div>
+
+      <button
+        className="banner-arrow left"
+        onClick={handlePrev}
+        aria-label="Previous banner"
+      >
+        <FiChevronLeft />
+      </button>
+
+      <button
+        className="banner-arrow right"
+        onClick={handleNext}
+        aria-label="Next banner"
+      >
+        <FiChevronRight />
+      </button>
+
       <div className="banner-dots">
         {banners.map((banner, index) => (
           <button

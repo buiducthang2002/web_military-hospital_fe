@@ -4,26 +4,6 @@
   overflow-x: hidden;
   background-color: #fff;
   font-family: 'Roboto', sans-serif;
-}
-
-/* =========================================
-   PHẦN STYLE CŨ (SERVICES) - ĐƯỢC KHÔI PHỤC
-   ========================================= */
-
-.services-section {
-  width: 100%;
-  background: linear-gradient(135deg, #ffffff);
-  padding: 10px 20px 30px 20px;
-  min-height: calc(100vh - 80px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -180px;
-}
-
-.services-containerA {
-  max-width: 1350px;
-  width: 100%;
   margin: -20px auto 0;
   background: transparent;
   border: none;
@@ -249,13 +229,11 @@
 
 .highlight-text {
   color: #28a745;
-  /* Green color for hospital name */
   font-weight: 700;
 }
 
 .link-text {
   color: #dc3545;
-  /* Red color for links */
   text-decoration: none;
   font-weight: 500;
 }
@@ -266,7 +244,6 @@
 
 .highlight-phone {
   color: #dc3545;
-  /* Red color for phone */
   font-weight: 700;
 }
 
@@ -309,7 +286,6 @@
   display: flex;
   align-items: center;
   height: calc(1.5em + 0.75rem + 2px);
-  /* Match input height */
 }
 
 .radio-label {
@@ -349,10 +325,8 @@ textarea.form-control {
   min-height: 100px;
 }
 
-/* Style for the disabled textarea placeholder */
 textarea.form-control[disabled] {
   background-color: #fff;
-  /* Keep it white as per image */
   opacity: 1;
   min-height: 80px;
 }
@@ -366,7 +340,6 @@ textarea.form-control[disabled] {
 
 .btn-next {
   background-color: #17a2b8;
-  /* Teal color */
   border-color: #17a2b8;
   color: #fff;
   padding: 10px 30px;

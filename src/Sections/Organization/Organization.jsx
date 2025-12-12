@@ -172,19 +172,19 @@ const Organization = () => {
   }, [location.pathname]);
 
   const director = {
-    name: "Đại Tá, BS.CK II Nguyễn An Giang",
+    name: "Đại tá, BSCKII, Thầy thuốc Ưu tú Nguyễn An Giang",
     position: "Giám đốc bệnh viện",
     image: gd1a,
   };
 
   const viceDirectors = [
     {
-      name: "Đại tá, BS.CK II Trương Quang Thắng",
+      name: " Đại tá, BSCKII Trương Quang Thắng",
       position: "Phó giám đốc bệnh viện",
       image: gd2a,
     },
     {
-      name: "Thượng tá, BS.CK II Phan Quốc Khánh",
+      name: "Tiến sĩ, Bác sỹ Phan Quốc Khánh",
       position: "Phó giám đốc bệnh viện",
       image: gd3,
     },

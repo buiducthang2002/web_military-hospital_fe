@@ -1,0 +1,68 @@
+.clinic-hours-bar {
+  width: 100%;
+  background: #28a745;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clinic-hours-content {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.clinic-label {
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.clinic-days {
+  color: #fff;
+}
+
+.clinic-morning {
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.clinic-afternoon {
+  color: #ff6b35;
+  font-weight: 700;
+}
+
+.clinic-time {
+  color: #fff;
+}
+
+.clinic-emergency {
+  color: #fff;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .clinic-hours-bar {
+    padding: 10px 15px;
+  }
+
+  .clinic-hours-content {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clinic-hours-bar {
+    padding: 8px 12px;
+  }
+
+  .clinic-hours-content {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+

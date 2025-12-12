@@ -14,6 +14,8 @@ import content11 from './tin-tuc-hoat-dong-benh-vien-3.js'
 import content12 from './tin-tuc-hoat-dong-benh-vien-4.js'
 import content17 from './tin-tuc-hoat-dong-benh-vien-5.js'
 import content18 from './tin-tuc-hoat-dong-benh-vien-6.js'
+import content19 from './tin-tuc-hoat-dong-benh-vien-7.js'
+import content20 from './tin-tuc-hoat-dong-benh-vien-8.js'
 import content13 from './su-kien-noi-bat-the-gioi-1.js'
 import content14 from './su-kien-noi-bat-the-gioi-2.js'
 import content15 from './su-kien-noi-bat-the-gioi-3.js'
@@ -35,6 +37,8 @@ const articleContents = {
   'tin-tuc-hoat-dong-benh-vien-4': content12,
   'tin-tuc-hoat-dong-benh-vien-5': content17,
   'tin-tuc-hoat-dong-benh-vien-6': content18,
+  'tin-tuc-hoat-dong-benh-vien-7': content19,
+  'tin-tuc-hoat-dong-benh-vien-8': content20,
   'su-kien-noi-bat-the-gioi-1': content13,
   'su-kien-noi-bat-the-gioi-2': content14,
   'su-kien-noi-bat-the-gioi-3': content15,

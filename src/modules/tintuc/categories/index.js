@@ -4,12 +4,12 @@
  */
 
 export const CATEGORIES = {
-  WORLD_MEDICAL: {
-    id: 'world-medical',
-    displayName: 'Tin tức y học thế giới',
-    apiEndpoint: '/api/news/world-medical',
-    slug: 'tin-tuc-y-hoc-the-gioi',
-    icon: '🌍',
+  HOSPITAL_ACTIVITIES: {
+    id: 'hospital-activities',
+    displayName: 'Tin tức hoạt động bệnh viện',
+    apiEndpoint: '/api/news/hospital-activities',
+    slug: 'tin-tuc-hoat-dong-benh-vien',
+    icon: '🏥',
   },
   DOMESTIC_MEDICAL: {
     id: 'domestic-medical',
@@ -18,12 +18,12 @@ export const CATEGORIES = {
     slug: 'tin-tuc-y-hoc-trong-nuoc',
     icon: '⭐',
   },
-  HOSPITAL_ACTIVITIES: {
-    id: 'hospital-activities',
-    displayName: 'Tin tức hoạt động bệnh viện',
-    apiEndpoint: '/api/news/hospital-activities',
-    slug: 'tin-tuc-hoat-dong-benh-vien',
-    icon: '🏥',
+  WORLD_MEDICAL: {
+    id: 'world-medical',
+    displayName: 'Tin tức y học thế giới',
+    apiEndpoint: '/api/news/world-medical',
+    slug: 'tin-tuc-y-hoc-the-gioi',
+    icon: '🌍',
   },
   PROFESSIONAL_ARTICLES: {
     id: 'professional-articles',

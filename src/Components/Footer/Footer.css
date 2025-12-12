@@ -6,6 +6,7 @@ footer,
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 9px 5% 14px;
   box-sizing: border-box;
+  margin: 0;
 }
 
 .footer__wrapper {

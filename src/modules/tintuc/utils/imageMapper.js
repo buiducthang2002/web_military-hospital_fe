@@ -60,6 +60,13 @@ import ttbv62 from '../../../Components/NewsEvents/Images/ttbv62.jpg'
 import ttbv63 from '../../../Components/NewsEvents/Images/ttbv63.jpg'
 import ttbv64 from '../../../Components/NewsEvents/Images/ttbv64.jpg'
 import ttbv65 from '../../../Components/NewsEvents/Images/ttbv65.jpg'
+import ttbv7 from '../../../Components/NewsEvents/Images/ttbv7.jpg'
+import ttbv71 from '../../../Components/NewsEvents/Images/ttbv71.jpg'
+import ttbv8 from '../../../Components/NewsEvents/Images/ttbv8.jpg'
+import ttbv81 from '../../../Components/NewsEvents/Images/ttbv81.jpg'
+import ttbv82 from '../../../Components/NewsEvents/Images/ttbv82.jpg'
+import ttbv83 from '../../../Components/NewsEvents/Images/ttbv83.jpg'
+import ttbv84 from '../../../Components/NewsEvents/Images/ttbv84.jpg'
 
 
 
@@ -120,6 +127,15 @@ const imageMap = {
   'ttbv63.jpg': ttbv63,
   'ttbv64.jpg': ttbv64,
   'ttbv65.jpg': ttbv65,
+  'ttbv7.jpg': ttbv7,
+  'ttbv71.jpg': ttbv71,
+  'ttbv8.jpg': ttbv8,
+  'ttbv81.jpg': ttbv81,
+  'ttbv82.jpg': ttbv82,
+  'ttbv83.jpg': ttbv83,
+  'ttbv84.jpg': ttbv84,
+
+ 
 }
 
 /**
