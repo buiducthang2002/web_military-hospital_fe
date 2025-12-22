@@ -49,10 +49,7 @@
 
 @media (max-width: 768px) {
   .category-tabs {
-    flex-direction: row;
-    gap: 15px;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    display: none !important;
   }
 
   .category-tab {
@@ -67,4 +64,3 @@
     font-size: 13px;
   }
 }
-

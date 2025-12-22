@@ -143,7 +143,7 @@ const ArticleDetailPage = () => {
           <nav className="article-breadcrumb">
             <Link to="/">Trang chủ</Link>
             <span> | </span>
-            <Link to="/news-events">Tin tức & Sự kiện</Link>
+            <Link to="/news-events">Tin tức - Sự kiện</Link>
             {category && (
               <>
                 <span> | </span>

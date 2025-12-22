@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { FiGlobe, FiMapPin } from 'react-icons/fi'
 import './FeaturedEvents.css'
 
 import anh11 from './Images/anh11.jpg'
@@ -19,8 +20,8 @@ const FeaturedEvents = () => {
   const isNewsEventsPage = location.pathname === '/news-events'
 
   const tabs = [
-    'Sự kiện nổi bật thế giới',
-    'Sự kiện nổi bật trong nước',
+    { label: 'Sự kiện nổi bật thế giới', icon: FiGlobe },
+    { label: 'Sự kiện nổi bật trong nước', icon: FiMapPin },
   ]
 
   // Dữ liệu tin tức cho từng tab+
@@ -120,43 +121,51 @@ const FeaturedEvents = () => {
       <div className="news-events-container">
         <div className="news-header">
           <div className="news-header-left">
-            <p className="news-label">Tin tức & Sự kiện</p>
-           
+            <p className="news-label">Sự kiện nổi bật</p>
+            
           </div>
           <div className="news-tabs">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                className={`news-tab ${activeTab === index ? 'active' : ''}`}
-                onClick={() => handleTabChange(index)}
-              >
-                {tab}
-              </button>
-            ))}
+            {tabs.map((tab, index) => {
+              const Icon = tab.icon
+              return (
+                <button
+                  key={index}
+                  className={`news-tab ${activeTab === index ? 'active' : ''}`}
+                  onClick={() => handleTabChange(index)}
+                >
+                  <Icon className="tab-icon" />
+                  <span className="tab-label">{tab.label}</span>
+                </button>
+              )
+            })}
           </div>
         </div>
 
         <div className="news-grid">
           {newsItems.map((item, index) => (
-            <div key={index} className="news-card">
-              <Link to={`/news-events/${item.slug}`} className="news-image-wrapper">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="news-image"
-                />
-              </Link>
-              <div className="news-content">
-                <Link to={`/news-events/${item.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link 
+              key={index} 
+              to={`/news-events/${item.slug}`} 
+              className="news-card-link"
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <div className="news-card">
+                <div className="news-image-wrapper">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="news-image"
+                  />
+                </div>
+                <div className="news-content">
                   <h4 className="news-title">{item.title}</h4>
-                </Link>
-                <p className="news-date">🕐 {item.date}</p>
-                {item.description && (
-                  <p className="news-description">{item.description}</p>
-                )}
-                <Link to={`/news-events/${item.slug}`} className="news-detail-link">Chi tiết</Link>
+                  <p className="news-date">🕐 {item.date}</p>
+                  {item.description && (
+                    <p className="news-description">{item.description}</p>
+                  )}
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

@@ -41,7 +41,9 @@ const ArticleCard = ({ article }) => {
         />
       </div>
       <div className="article-content">
-        <h4 className="article-title">{article.title}</h4>
+        <Link to={articleUrl} className="article-title" onClick={handleClick} style={{ textDecoration: 'none', color: 'inherit' }}>
+          {article.title}
+        </Link>
         <div className="article-meta">
           <Clock size={14} />
           <p className="article-date">{formatDate(article.date)}</p>
@@ -49,9 +51,6 @@ const ArticleCard = ({ article }) => {
         {article.excerpt && (
           <p className="article-excerpt">{article.excerpt}</p>
         )}
-        <Link to={articleUrl} className="article-detail-link" onClick={handleClick}>
-          Chi tiết
-        </Link>
       </div>
     </div>
   )

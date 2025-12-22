@@ -179,17 +179,17 @@ const Organization = () => {
 
   const viceDirectors = [
     {
-      name: " Đại tá, BSCKII Trương Quang Thắng",
+      name: " Đại tá, Thạc sĩ, BSCKII Trương Quang Thắng",
       position: "Phó giám đốc bệnh viện",
       image: gd2a,
     },
     {
-      name: "Tiến sĩ, Bác sỹ Phan Quốc Khánh",
+      name: "Thượng tá, Tiến sĩ, BS Phan Quốc Khánh",
       position: "Phó giám đốc bệnh viện",
       image: gd3,
     },
     {
-      name: "Thượng tá, BS.CK II Nguyễn Huy Thắng",
+      name: "Đại tá, BSCKII, Thạc sĩ Nguyễn Huy Thắng",
       position: "Phó giám đốc bệnh viện",
       image: anhgd4vip,
     },
@@ -199,49 +199,36 @@ const Organization = () => {
     {
       name: "BS.CK II",
       position: "Trưởng khoa",
-      
     },
     {
       name: "BS.CK II",
       position: "Trưởng khoa",
-      
-    },
-    {
-      name: "BS.CK II ",
-      position: "Trưởng khoa",
-      
     },
     {
       name: "BS.CK II",
       position: "Trưởng khoa",
-     
     },
     {
-      name: "BS.CK II ",
+      name: "BS.CK II",
       position: "Trưởng khoa",
-     
     },
     {
-      name: "BS.CK II ",
+      name: "BS.CK II",
       position: "Trưởng khoa",
-      
     },
-  
     {
-      name: "BS.CK II ",
+      name: "BS.CK II",
       position: "Trưởng khoa",
-      
     },
-  
     {
-      name: "BS.CK II ",
+      name: "BS.CK II",
       position: "Trưởng khoa",
-      
     },
-  
-  
+    {
+      name: "BS.CK II",
+      position: "Trưởng khoa",
+    },
   ];
- 
 
   return (
     <div
@@ -255,20 +242,14 @@ const Organization = () => {
       <Navbar />
       <main className="organization-main">
         <section className="organization-section">
-          <div className="organization-container">
+            <div className="organization-container">
             <div className="news-header">
               <div className="news-header-left">
-                <p className="news-label">Cơ cấu tổ chức</p>
-                <h2 className="news-main-title">|   Giới thiệu chung</h2>
+                <p className="news-label">Tổ chức bệnh viện</p>
+                <h2 className="news-main-title">|   Giám đốc bệnh viện</h2>
               </div>
             </div>
-            <header className="organization-header">
-              <p className="organization-description">
-                Thông tin giới thiệu tổng quan về mô hình tổ chức, chức năng
-                nhiệm vụ của các khoa phòng thuộc Bệnh viện Quân y 4. Các nội
-                dung bên dưới có thể được cập nhật chi tiết hơn theo nhu cầu.
-              </p>
-            </header>
+           
 
             {/* Organization Structure Chart */}
             <div className="organization-structure-wrapper">

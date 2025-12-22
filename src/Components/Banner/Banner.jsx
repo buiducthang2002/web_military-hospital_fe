@@ -4,9 +4,9 @@ import './Banner.css'
 
 
 import A1 from './Images/A1.jpg'
- import A2 from './Images/A2.jpg'
- import A3 from './Images/A3.jpg'
- import A4 from './Images/A4.jpg'
+import A2 from './Images/A2.jpg'
+import A3 from './Images/A3.jpg'
+import A4 from './Images/A4.jpg'
 
 
 const Banner = () => {
@@ -230,35 +230,55 @@ const Banner = () => {
   }
 
   return (
-    <section
-      className="banner-container"
-      ref={bannerRef}
-      aria-label="Banner carousel"
-      tabIndex={0}
-      onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-      onKeyDown={(e) => {
-        if (e.key === 'ArrowLeft') {
-          const prevIndex = (currentIndex - 1 + banners.length) % banners.length
-          setCurrentIndex(prevIndex)
-        } else if (e.key === 'ArrowRight') {
-          const nextIndex = (currentIndex + 1) % banners.length
-          setCurrentIndex(nextIndex)
-        }
-      }}
-    >
-      <div className="banner-wrapper">
-        {infiniteBanners.map((banner, index) => (
-          <div key={`${banner}-${index}`} className="banner-slide">
-            <img src={banner} alt={`Banner ${(index - 1 + banners.length) % banners.length + 1}`} className="banner-image" />
-          </div>
-        ))}
-      </div>
+    <div className="banner-outer-wrapper">
+      <section
+        className="banner-container"
+        ref={bannerRef}
+        aria-label="Banner carousel"
+        tabIndex={0}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onKeyDown={(e) => {
+          if (e.key === 'ArrowLeft') {
+            const prevIndex = (currentIndex - 1 + banners.length) % banners.length
+            setCurrentIndex(prevIndex)
+          } else if (e.key === 'ArrowRight') {
+            const nextIndex = (currentIndex + 1) % banners.length
+            setCurrentIndex(nextIndex)
+          }
+        }}
+      >
+        <div className="banner-wrapper">
+          {infiniteBanners.map((banner, index) => (
+            <div key={`${banner}-${index}`} className="banner-slide">
+              <img src={banner} alt={`Banner ${(index - 1 + banners.length) % banners.length + 1}`} className="banner-image" />
+            </div>
+          ))}
+        </div>
+
+        <div className="banner-dots">
+          {banners.map((banner, index) => (
+            <button
+              key={banner}
+              type="button"
+              className={`dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => setCurrentIndex(index)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  setCurrentIndex(index)
+                }
+              }}
+              aria-label={`Go to banner ${index + 1}`}
+            />
+          ))}
+        </div>
+      </section>
 
       <button
         className="banner-arrow left"
@@ -275,25 +295,7 @@ const Banner = () => {
       >
         <FiChevronRight />
       </button>
-
-      <div className="banner-dots">
-        {banners.map((banner, index) => (
-          <button
-            key={banner}
-            type="button"
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => setCurrentIndex(index)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault()
-                setCurrentIndex(index)
-              }
-            }}
-            aria-label={`Go to banner ${index + 1}`}
-          />
-        ))}
-      </div>
-    </section>
+    </div>
   )
 }
 

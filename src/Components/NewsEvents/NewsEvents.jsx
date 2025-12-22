@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { FiActivity, FiGlobe, FiMapPin, FiFileText } from 'react-icons/fi'
 import './NewsEvents.css'
 
 import anhqh1 from './Images/anhqh1.jpg'
@@ -31,10 +32,10 @@ const NewsEvents = () => {
   const isNewsEventsPage = location.pathname === '/news-events'
 
   const tabConfigs = [
-    { key: 'hospital', label: 'Tin tức hoạt động bệnh viện' },
-    { key: 'world', label: 'Tin tức y học thế giới' },
-    { key: 'domestic', label: 'Tin tức y học trong nước' },
-    { key: 'expert', label: 'Bài viết chuyên môn' }
+    { key: 'hospital', label: 'Tin tức hoạt động bệnh viện', icon: FiActivity },
+    { key: 'world', label: 'Tin tức y học thế giới', icon: FiGlobe },
+    { key: 'domestic', label: 'Tin tức y học trong nước', icon: FiMapPin },
+    { key: 'expert', label: 'Bài viết chuyên môn', icon: FiFileText }
   ]
 
   // Dữ liệu tin tức cho từng tab
@@ -240,39 +241,47 @@ const NewsEvents = () => {
             
           </div>
           <div className="news-tabs">
-            {tabConfigs.map((tab, index) => (
-              <button
-                key={index}
-                className={`news-tab ${activeTab === index ? 'active' : ''}`}
-                onClick={() => handleTabChange(index)}
-              >
-                {tab.label}
-              </button>
-            ))}
+            {tabConfigs.map((tab, index) => {
+              const Icon = tab.icon
+              return (
+                <button
+                  key={index}
+                  className={`news-tab ${activeTab === index ? 'active' : ''}`}
+                  onClick={() => handleTabChange(index)}
+                >
+                  <Icon className="tab-icon" />
+                  <span className="tab-label">{tab.label}</span>
+                </button>
+              )
+            })}
           </div>
         </div>
 
         <div className="news-grid" key={`tab-${activeTab}-page-${currentPage}`}>
           {newsItems.map((item) => (
-            <div key={item.id} className="news-card">
-              <Link to={`/news-events/${item.slug}`} className="news-image-wrapper">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="news-image"
-                />
-              </Link>
-              <div className="news-content">
-                <Link to={`/news-events/${item.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link 
+              key={item.id} 
+              to={`/news-events/${item.slug}`} 
+              className="news-card-link"
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <div className="news-card">
+                <div className="news-image-wrapper">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="news-image"
+                  />
+                </div>
+                <div className="news-content">
                   <h4 className="news-title">{item.title}</h4>
-                </Link>
-                <p className="news-date">🕐 {item.date}</p>
-                {item.description && (
-                  <p className="news-description">{item.description}</p>
-                )}
-                <Link to={`/news-events/${item.slug}`} className="news-detail-link">Chi tiết</Link>
+                  <p className="news-date">🕐 {item.date}</p>
+                  {item.description && (
+                    <p className="news-description">{item.description}</p>
+                  )}
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

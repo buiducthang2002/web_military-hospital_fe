@@ -101,7 +101,7 @@
   margin: 0 auto;
 }
 
-.customer-guide-page__hero-content h1 {
+.customer-guide-page__hero-title {
   font-size: 32px;
   margin: 16px 0 8px;
   color: #0b2d19;
@@ -289,6 +289,10 @@
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .customer-guide-page__hero-title {
+    display: none;
+  }
+
   .customer-guide-shortcuts {
     grid-template-columns: 1fr;
     gap: 12px;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
+
 import './Donvi.css'
 
 const Donvi = () => {
@@ -79,7 +80,7 @@ const Donvi = () => {
         <div className="khamchuabenh-container">
           <div className="news-header">
             <div className="news-header-left">
-              <p className="news-label">Trang chủ</p>
+              <p className="news-label">Tổ chức bệnh viện</p>
               <h2 className="news-main-title">| Giới thiệu các đơn vị</h2>
             </div>
           </div>

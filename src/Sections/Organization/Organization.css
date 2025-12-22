@@ -1,6 +1,5 @@
 .organization-main {
-  padding-top: 0;
-  padding-bottom: 60px;
+  padding: 0 20px 60px; /* giảm top padding để header sát lên trên hơn */
   background: #ffffff;
 }
 
@@ -150,8 +149,16 @@
 }
 
 .organization-container .news-header {
-  margin-bottom: -20px;
-} 
+  margin-top: 10px; /* đẩy header lên gần navbar hơn */
+  margin-bottom: 25px;
+}
+
+.organization-container .news-header-left {
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 15px !important;
+  flex-wrap: nowrap !important;
+}
 
 .organization-header {
   display: flex;
@@ -228,6 +235,21 @@
 
   .organization-text {
     font-size: 15px;
+  }
+
+  /* Đảm bảo header luôn nằm ngang trên mobile */
+  .organization-container .news-header-left {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .organization-container .news-label {
+    font-size: 13px;
+  }
+
+  .organization-container .news-main-title {
+    font-size: 13px;
   }
 
   .board-directors-section {
@@ -404,7 +426,7 @@
 
 .org-director-image-wrapper {
   width: 200px;
-  height: 250px;
+  height: 280px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -488,8 +510,8 @@
 }
 
 .org-deputy-image-wrapper {
-  width: 180px;
-  height: 220px;
+  width: 220px;
+  height: 260px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -600,19 +622,68 @@
     padding: 10px 24px;
   }
 
+  .org-director-wrapper {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
   .org-director-image-wrapper {
-    width: 180px;
-    height: 220px;
+    width: 200px;
+    height: 250px;
   }
 
   .org-deputy-image-wrapper {
-    width: 180px;
-    height: 220px;
+    width: 200px;
+    height: 240px;
+  }
+
+  /* Ẩn phần trưởng khoa trên mobile */
+  .org-deputy-section.org-deputy-section-5 {
+    display: none !important;
+  }
+
+  /* Ẩn thanh ngang phía trên trưởng khoa */
+  .org-connector-horizontal.org-connector-horizontal-5 {
+    display: none !important;
+  }
+
+  /* Ẩn thanh dọc nối xuống trưởng khoa */
+  .org-deputy-section-5 + .org-connector-vertical {
+    display: none !important;
+  }
+
+  /* Cho phép text xuống hàng để hiển thị đủ */
+  .org-director-name,
+  .org-deputy-name {
+    white-space: normal !important;
+    word-wrap: break-word;
+    max-width: 220px;
+    font-size: 14px;
+  }
+
+  .org-deputy-label {
+    white-space: normal !important;
+    word-wrap: break-word;
+    max-width: 220px;
+    font-size: 14px;
   }
 
   .org-deputy-section {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    grid-template-columns: none !important;
+    padding: 0 16px !important;
+  }
+
+  .org-deputy-item-wrapper {
+    width: 100%;
+    max-width: 250px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   .org-functional-section {

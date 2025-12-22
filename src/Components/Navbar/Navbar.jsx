@@ -1,20 +1,42 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Navbar as BootstrapNavbar, Nav, NavDropdown, Container } from 'react-bootstrap'
+import { Navbar as BootstrapNavbar, NavDropdown, Container, Offcanvas } from 'react-bootstrap'
 import './Navbar.css'
 import Logo from '../Assets/Logo.jpg'
+import { FiMinus, FiPlus } from 'react-icons/fi'
+
+const SCROLL_TO_TOP_PATHS = new Set([
+  '/',
+  '/organization',
+  '/news-events',
+  '/kham-chua-benh',
+  '/kham-chua-benh/loai-hinh',
+  '/kham-chua-benh/thanh-toan',
+  '/kham-chua-benh/trang-thiet-bi',
+  '/kham-chua-benh/cac-don-vi',
+  '/thong-tin-chung/cac-don-vi',
+  '/thong-tin-chung/thong-tin-duoc',
+  '/thong-tin-chung/bao-hiem-y-te',
+  '/thong-tin-chung/thu-chao-moi-san-pham',
+])
+
+const MOBILE_MENU_HOTLINE_DISPLAY = '1900.888.866'
+const MOBILE_MENU_HOTLINE_TEL = '1900888866'
+const MOBILE_MENU_BOOKING_PATH = '/book-appointment'
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState('#home')
   const [isScrolled, setIsScrolled] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null) // 'kcb' | 'info' | 'org' | null
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mobileExpandedKey, setMobileExpandedKey] = useState(null) // 'org' | 'kcb' | 'info' | null
   const navbarRef = useRef(null)
   const location = useLocation()
 
   const menuItems = [
     { href: '/', label: 'Trang chủ', isRoute: true },
     { href: '/organization', label: 'Tổ chức bệnh viện', isRoute: true, isDropdown: true, dropdownKey: 'org' },
-    { href: '/news-events', label: 'Tin tức, Sự kiện', isRoute: true },
+    { href: '/news-events', label: 'Tin tức - Sự kiện', isRoute: true },
     { href: '/kham-chua-benh', label: 'Khám chữa bệnh', isRoute: true, isDropdown: true, dropdownKey: 'kcb' },
     { href: '/party-politics', label: 'Công tác Đảng - Chính trị', isRoute: true },
     { href: '/nghiencuu-hoptac', label: 'Nghiên cứu khoa học - Hợp tác', isRoute: true },
@@ -44,22 +66,6 @@ const Navbar = () => {
     { href: '/thong-tin-chung/tool', label: 'Tool' },
   ]
 
-  const scrollToTopPaths = new Set([
-    '/',
-    '/organization',
-    '/news-events',
-    '/kham-chua-benh',
-    '/kham-chua-benh/loai-hinh',
-    '/kham-chua-benh/thanh-toan',
-    '/kham-chua-benh/trang-thiet-bi',
-    '/kham-chua-benh/cac-don-vi',
-    '/thong-tin-chung/cac-don-vi',
-    '/thong-tin-chung/thong-tin-duoc',
-    '/thong-tin-chung/bao-hiem-y-te',
-    '/thong-tin-chung/thu-chao-moi-san-pham',
-  ])
-
-
   useEffect(() => {
     if (location.pathname === '/') {
       setActiveMenu('/')
@@ -68,10 +74,21 @@ const Navbar = () => {
 
 
   useEffect(() => {
-    if (scrollToTopPaths.has(location.pathname)) {
+    if (SCROLL_TO_TOP_PATHS.has(location.pathname)) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [location.pathname])
+
+  // Close mobile drawer when navigating
+  useEffect(() => {
+    setIsMobileMenuOpen(false)
+    setMobileExpandedKey(null)
+  }, [location.pathname])
+
+  // Reset expanded section when drawer closes
+  useEffect(() => {
+    if (!isMobileMenuOpen) setMobileExpandedKey(null)
+  }, [isMobileMenuOpen])
 
   const handleDropdownItemClick = () => {
 
@@ -190,6 +207,23 @@ const Navbar = () => {
     }
   }, [openDropdown])
 
+  const getMobileDropdownItems = (dropdownKey) => {
+    if (dropdownKey === 'org') return organizationItems
+    if (dropdownKey === 'kcb') return khamChuaBenhItems
+    if (dropdownKey === 'info') return infoItems
+    return []
+  }
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+    setMobileExpandedKey(null)
+  }
+
+  const handleMobileLeafClick = () => {
+    closeMobileMenu()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <>
       {/* Mobile Bootstrap Navbar - Only visible on mobile */}
@@ -211,120 +245,127 @@ const Navbar = () => {
           </BootstrapNavbar.Brand>
           <div className="position-absolute start-50 translate-middle-x d-flex flex-column justify-content-center align-items-center text-center text-white">
             <span className="fw-bold" style={{ fontSize: '11px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>Bệnh viện Quân y 4</span>
-            <span style={{ fontSize: '11px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>Cục Hậu cần - Kỹ thuật Quân khu 4</span>
+            <span style={{ fontSize: '11px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>Military Central Hospital </span>
           </div>
-          <BootstrapNavbar.Toggle aria-controls="mobile-navbar-nav" />
-          <BootstrapNavbar.Collapse id="mobile-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link 
-                as={Link} 
-                to="/" 
-                active={location.pathname === '/'}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              >
-                Trang chủ
-              </Nav.Link>
-              
-              {/* Cơ cấu tổ chức dropdown */}
-              <NavDropdown 
-                title="Cơ cấu tổ chức" 
-                id="mobile-org-dropdown"
-                active={location.pathname === '/organization' || location.pathname.startsWith('/organization')}
-              >
-                {organizationItems.map(item => (
-                  <NavDropdown.Item
-                    key={item.href}
-                    as={item.href.startsWith('http') ? 'a' : Link}
-                    to={item.href.startsWith('http') ? undefined : item.href}
-                    href={item.href.startsWith('http') ? item.href : undefined}
-                    target={item.href.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  >
-                    {item.label}
-                  </NavDropdown.Item>
-                ))}
-              </NavDropdown>
-
-              <Nav.Link 
-                as={Link} 
-                to="/news-events" 
-                active={location.pathname === '/news-events'}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              >
-                Tin tức, Sự kiện
-              </Nav.Link>
-              
-              {/* Khám chữa bệnh dropdown */}
-              <NavDropdown 
-                title="Khám chữa bệnh" 
-                id="mobile-kcb-dropdown"
-                active={location.pathname.startsWith('/kham-chua-benh')}
-              >
-                {khamChuaBenhItems.map(item => (
-                  <NavDropdown.Item
-                    key={item.href}
-                    as={item.href.startsWith('http') ? 'a' : Link}
-                    to={item.href.startsWith('http') ? undefined : item.href}
-                    href={item.href.startsWith('http') ? item.href : undefined}
-                    target={item.href.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  >
-                    {item.label}
-                  </NavDropdown.Item>
-                ))}
-              </NavDropdown>
-
-              <Nav.Link 
-                as={Link} 
-                to="/party-politics" 
-                active={location.pathname === '/party-politics'}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              >
-                Công tác Đảng - Chính trị
-              </Nav.Link>
-              <Nav.Link 
-                as={Link} 
-                to="/nghiencuu-hoptac" 
-                active={location.pathname === '/nghiencuu-hoptac'}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              >
-                Nghiên cứu khoa học - Hợp tác
-              </Nav.Link>
-              <Nav.Link 
-                as={Link} 
-                to="/customer-guide" 
-                active={location.pathname === '/customer-guide'}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              >
-                Hướng dẫn khách hàng
-              </Nav.Link>
-
-              {/* Thông tin chung dropdown */}
-              <NavDropdown 
-                title="Thông tin chung" 
-                id="mobile-info-dropdown"
-                active={location.pathname.startsWith('/thong-tin-chung')}
-              >
-                {infoItems.map(item => (
-                  <NavDropdown.Item
-                    key={item.href}
-                    as={item.href.startsWith('http') ? 'a' : Link}
-                    to={item.href.startsWith('http') ? undefined : item.href}
-                    href={item.href.startsWith('http') ? item.href : undefined}
-                    target={item.href.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  >
-                    {item.label}
-                  </NavDropdown.Item>
-                ))}
-              </NavDropdown>
-            </Nav>
-          </BootstrapNavbar.Collapse>
+          <BootstrapNavbar.Toggle
+            aria-label="Open menu"
+            onClick={() => setIsMobileMenuOpen(true)}
+          />
         </Container>
       </BootstrapNavbar>
+
+      {/* Mobile Drawer Menu (Offcanvas) */}
+      <Offcanvas
+        show={isMobileMenuOpen}
+        onHide={closeMobileMenu}
+        placement="start"
+        className="mobile-drawer"
+        backdrop
+        scroll={false}
+      >
+        <Offcanvas.Header closeButton />
+        <Offcanvas.Body>
+          <div className="mobile-drawer-body">
+            <ul className="mobile-menu">
+              {menuItems.map((item) => {
+                const isExpanded = mobileExpandedKey === item.dropdownKey
+                const isDropdown = Boolean(item.isDropdown)
+
+                if (!isDropdown) {
+                  const isExternal = item.href.startsWith('http')
+                  return (
+                    <li key={item.href} className="mobile-menu-item">
+                      {isExternal ? (
+                        <a
+                          className="mobile-menu-row"
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={handleMobileLeafClick}
+                        >
+                          <span className="mobile-menu-label">{item.label}</span>
+                        </a>
+                      ) : (
+                        <Link
+                          className="mobile-menu-row"
+                          to={item.href}
+                          onClick={handleMobileLeafClick}
+                        >
+                          <span className="mobile-menu-label">{item.label}</span>
+                        </Link>
+                      )}
+                    </li>
+                  )
+                }
+
+                return (
+                  <li key={item.href} className="mobile-menu-item">
+                    <button
+                      type="button"
+                      className="mobile-menu-row mobile-menu-row--toggle"
+                      aria-expanded={isExpanded}
+                      onClick={() =>
+                        setMobileExpandedKey(isExpanded ? null : item.dropdownKey)
+                      }
+                    >
+                      <span className="mobile-menu-label">{item.label}</span>
+                      <span className="mobile-menu-icon" aria-hidden="true">
+                        {isExpanded ? <FiMinus /> : <FiPlus />}
+                      </span>
+                    </button>
+
+                    {isExpanded && (
+                      <div className="mobile-submenu">
+                        {getMobileDropdownItems(item.dropdownKey).map((subItem) => {
+                          const isExternal = subItem.href.startsWith('http')
+                          return isExternal ? (
+                            <a
+                              key={subItem.href}
+                              className="mobile-submenu-link"
+                              href={subItem.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={handleMobileLeafClick}
+                            >
+                              {subItem.label}
+                            </a>
+                          ) : (
+                            <Link
+                              key={subItem.href}
+                              className="mobile-submenu-link"
+                              to={subItem.href}
+                              onClick={handleMobileLeafClick}
+                            >
+                              {subItem.label}
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
+
+            <div className="mobile-drawer-footer">
+              <a
+                className="mobile-drawer-btn mobile-drawer-btn--outline"
+                href={`tel:${MOBILE_MENU_HOTLINE_TEL}`}
+                onClick={closeMobileMenu}
+              >
+                Gọi tổng đài {MOBILE_MENU_HOTLINE_DISPLAY}
+              </a>
+              <Link
+                className="mobile-drawer-btn mobile-drawer-btn--solid"
+                to={MOBILE_MENU_BOOKING_PATH}
+                onClick={handleMobileLeafClick}
+              >
+                Đặt lịch khám
+              </Link>
+            </div>
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
 
       {/* Desktop Navbar - Unchanged, hidden on mobile */}
       <div className="navbar" ref={navbarRef}>

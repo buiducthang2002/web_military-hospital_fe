@@ -13,7 +13,7 @@ const Thutucxuatvien = () => {
           <div className="news-header">
             <div className="news-header-left">
               <p className="news-label">Khám chữa bệnh</p>
-              <h2 className="news-main-title">|   Loại hình khám chữa bệnh</h2>
+              <h2 className="news-main-title">|   Thủ tục xuất viện</h2>
             </div>
           </div>
           <h1 className="khamchuabenh-title">

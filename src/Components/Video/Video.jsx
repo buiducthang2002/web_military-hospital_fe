@@ -57,16 +57,16 @@ const createVideo = (id, image, title, date, url) => ({
 
 const VIDEO_CATEGORIES = [
   {
-    name: 'Công tác Đảng',
+    name: 'Y học thường thức',
     videos: [
       createVideo('party-1', anh6, ' TOÀN CẢNH: Lễ diễu binh, diễu hành kỷ niệm 80 năm Cách mạng tháng Tám thành công và Quốc khánh nước Cộng hòa xã hội chủ nghĩa Việt Nam bắt đầu từ 6h30 đến 10h, sáng thứ Ba, ngày 02/09.', '17:05 02/09/2025', 'https://www.youtube.com/watch?v=-WjOCaAa5bY'),
       createVideo('party-2', anh7, 'Các hình ảnh đẹp về lễ kỷ niệm ngày Quốc Khánh nước Cộng Hoà Xã Hội Chủ Nghĩa Việt Nam', '17:05 02/09/2025', 'https://www.youtube.com/shorts/_jCND91OX6M'),
       createVideo('party-3', anh8, 'Sự tham gia của các đội hình quốc tế trong một buổi lễ kỷ niệm không chỉ là một nghi thức trang trọng mà còn là một minh chứng sống động cho tinh thần đoàn kết, hữu nghị và hợp tác giữa các quốc gia ', '17:05 02/09/2025', 'https://www.youtube.com/watch?v=8lCB3Gb84D0'),
-      createVideo('party-4', anh9, 'Các khối nữ chiến sĩ quân đội và công an tham gia tổng duyệt diễu binh, diễu hành A80 để lại nhiều ấn tượng đẹp cho người dân với sự vui vẻ, rạng rỡ, nhưng cũng nghiêm trang, hào hùng.', '17:05 02/09/2025', 'https://www.youtube.com/watch?v=AvZjVzK1Qls'), 
+      createVideo('party-4', anh9, 'Các khối nữ chiến sĩ quân đội và công an tham gia tổng duyệt diễu binh, diễu hành A80 để lại nhiều ấn tượng đẹp cho người dân với sự vui vẻ, rạng rỡ, nhưng cũng nghiêm trang, hào hùng.', '17:05 02/09/2025', 'https://www.youtube.com/watch?v=AvZjVzK1Qls'),
     ],
   },
   {
-    name: 'Y khoa hiện đại',
+    name: 'Sức khoẻ và đời sống',
     videos: [
       createVideo('medical-1', anh13, 'Tin tức y học trong nước 1', '17:05 18/06/2025', 'https://youtu.be/y99YgaQjgx4?si=KbfiUN5yyQqOdr9w'),
       createVideo('medical-2', anh14, 'Tin tức y học trong nước 2', '17:05 18/06/2025', 'https://www.youtube.com/embed/ysz5S6PUM-U'),
@@ -141,7 +141,7 @@ const Video = () => {
           <div className="news-header">
             <div className="news-header-left">
               <p className="news-label">Thư viện video</p>
-              <h2 className="news-main-title">|   Video nổi bật</h2>
+
             </div>
             <div className="news-tabs">
               {tabs.map((tab, index) => (

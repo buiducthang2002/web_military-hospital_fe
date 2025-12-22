@@ -11,7 +11,7 @@ const quickLinks = [
     title: 'Sơ đồ bệnh viện & khu điều trị',
     description: 'Dễ dàng tìm đến các khoa, phòng chức năng và khu điều trị khi mới đến viện.',
     cta: 'Xem sơ đồ',
-    to: '/so-do-benh-vien', // Ví dụ: Cần điền đường dẫn thực tế
+    to: '/so-do-benh-vien', 
   },
   {
     title: 'Đánh giá dịch vụ khám chữa bệnh',
@@ -30,6 +30,12 @@ const quickLinks = [
     description: 'Tra cứu nhanh kết quả khám chữa bệnh, xét nghiệm, đơn thuốc và lịch sử khám chữa bệnh.',
     cta: 'Hướng dẫn',
     to: '/check-results',
+  },
+  {
+    title: 'Đăng ký khám chữa bệnh',
+    description: 'Đăng ký khám chữa bệnh trực tuyến tại đây hoặc gọi qua tổng đài trong vài phút.',
+    cta: 'Hướng dẫn',
+    to: '/book-appointment',
   },
   {
     title: 'Chuẩn bị hồ sơ & thủ tục',
@@ -87,11 +93,13 @@ const CustomerGuidePage = () => {
           <div className="news-header hero-news-header">
             <div className="news-header-left">
               <p className="news-label">Hướng dẫn khách hàng</p>
-              <h2 className="news-main-title">| Dành cho khách hàng</h2>             
+                          
             </div>
             <p>Tài liệu, biểu mẫu và hướng dẫn giúp người bệnh chuẩn bị tốt nhất</p>
           </div>
-          <h1>THÔNG TIN BỆNH VIÊN - QUY TRÌNH KHÁM BỆNH - HỖ TRỢ BỆNH NHÂN</h1>
+          <h1 className="customer-guide-page__hero-title">
+            THÔNG TIN BỆNH VIÊN - QUY TRÌNH KHÁM BỆNH - HỖ TRỢ BỆNH NHÂN
+          </h1>
         </div>
       </div>
 

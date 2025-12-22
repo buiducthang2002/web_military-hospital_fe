@@ -29,10 +29,10 @@ const ArticleCard = ({ article }) => {
   }
 
   return (
-    <div className="article-card">
+    <Link to={articleUrl} className="article-card" onClick={handleClick} style={{ textDecoration: 'none', color: 'inherit' }}>
       <div className="article-image-wrapper">
-        <img 
-          src={imageSrc} 
+        <img
+          src={imageSrc}
           alt={article.title}
           className="article-image"
           onError={(e) => {
@@ -49,11 +49,8 @@ const ArticleCard = ({ article }) => {
         {article.excerpt && (
           <p className="article-excerpt">{article.excerpt}</p>
         )}
-        <Link to={articleUrl} className="article-detail-link" onClick={handleClick}>
-          Chi tiết
-        </Link>
       </div>
-    </div>
+    </Link>
   )
 }
 

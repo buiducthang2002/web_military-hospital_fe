@@ -64,21 +64,6 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.article-detail-link {
-  font-size: 13px;
-  color: #0066cc;
-  text-decoration: none;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin-top: 4px;
-  display: inline-block;
-  transition: color 0.2s ease;
-}
-
-.article-detail-link:hover {
-  color: #0052a3;
-  text-decoration: underline;
-}
-
 .article-excerpt {
   font-size: 13px;
   color: #666;
