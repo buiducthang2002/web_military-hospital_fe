@@ -10,6 +10,7 @@
 
 /* Force hide on desktop */
 @media (min-width: 701px) {
+
   .mobile-navbar-bootstrap,
   .mobile-navbar-bootstrap.navbar,
   nav.mobile-navbar-bootstrap {
@@ -22,7 +23,7 @@
 .mobile-navbar-bootstrap .navbar-brand {
   font-size: 16px;
   font-weight: 700;
-  color: #fff !important;
+  color: #069242 !important;
 }
 
 .mobile-navbar-bootstrap .navbar-brand:hover {
@@ -30,7 +31,7 @@
 }
 
 .mobile-navbar-bootstrap .nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #069242 !important;
   padding: 0.75rem 1rem !important;
   font-weight: 500;
   transition: color 0.2s ease;
@@ -38,29 +39,29 @@
 
 .mobile-navbar-bootstrap .nav-link:hover,
 .mobile-navbar-bootstrap .nav-link:focus {
-  color: #ffeb3b !important;
+  color: #046c31 !important;
 }
 
 .mobile-navbar-bootstrap .nav-link.active {
-  color: #ffeb3b !important;
+  color: #046c31 !important;
   font-weight: 600;
 }
 
 .mobile-navbar-bootstrap .dropdown-menu {
-  background-color: #069242 !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 .mobile-navbar-bootstrap .dropdown-item {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: #069242 !important;
   padding: 0.75rem 1rem !important;
   transition: background-color 0.2s ease;
 }
 
 .mobile-navbar-bootstrap .dropdown-item:hover,
 .mobile-navbar-bootstrap .dropdown-item:focus {
-  background-color: rgba(0, 0, 0, 0.1) !important;
-  color: #ffeb3b !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: #046c31 !important;
 }
 
 .mobile-navbar-bootstrap .dropdown-toggle::after {
@@ -68,39 +69,42 @@
 }
 
 .mobile-navbar-bootstrap .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(6, 146, 66, 0.5);
   padding: 0.5rem 0.75rem;
 }
 
 .mobile-navbar-bootstrap .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(6, 146, 66, 0.25);
 }
 
 .mobile-navbar-bootstrap .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%286, 146, 66, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 @media (max-width: 700px) {
+
   .mobile-navbar-bootstrap,
   .mobile-navbar-bootstrap.navbar,
   nav.mobile-navbar-bootstrap {
     display: flex !important;
     visibility: visible !important;
-    z-index: 1000 !important; /* keep below offcanvas */
-    background-color: #069242 !important;
+    z-index: 1000 !important;
+    /* keep below offcanvas */
+    background-color: #ffffff !important;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
     opacity: 1 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
+
   /* Add padding to body to account for fixed navbar on mobile */
   body {
     padding-top: 60px !important;
   }
-  
+
   /* Mobile Drawer Menu (Offcanvas) */
   .mobile-drawer.offcanvas {
     --bs-offcanvas-bg: #ffffff;
@@ -109,11 +113,13 @@
     width: 86vw;
     max-width: 380px;
     border-right: 1px solid rgba(0, 0, 0, 0.08);
-    z-index: 12000 !important; /* cover navbar/logo */
+    z-index: 12000 !important;
+    /* cover navbar/logo */
   }
 
   .offcanvas-backdrop {
-    z-index: 11900 !important; /* below drawer, above navbar */
+    z-index: 11900 !important;
+    /* below drawer, above navbar */
   }
 
   .mobile-drawer .offcanvas-header {
@@ -123,7 +129,9 @@
   }
 
   /* Header in sample is basically just a close button */
-  .mobile-drawer .offcanvas-title { display: none; }
+  .mobile-drawer .offcanvas-title {
+    display: none;
+  }
 
   .mobile-drawer .btn-close {
     filter: none;
@@ -721,6 +729,7 @@ body>.dropdown-menu,
 }
 
 @media (max-width: 700px) {
+
   /* Hide desktop navbar on mobile */
   .navbar {
     display: none !important;

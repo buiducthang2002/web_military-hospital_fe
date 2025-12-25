@@ -2,9 +2,10 @@ import React from 'react'
 
 const ServicesIntro = () => {
   return (
-    <p className="services-intro">
-      Bắt đầu hành trình chăm sóc sức khỏe của bạn bằng cách kết nối với chúng tôi ngay hôm nay
-    </p>
+    <div className="services-intro">
+      <h2 className="intro-main-title">Chúng tôi luôn đặt sức khỏe của bạn lên hàng đầu</h2>
+      <p className="intro-subtitle">Chuyên nghiệp - An toàn - Hiệu quả - Tin cậy</p>
+    </div>
   )
 }
 

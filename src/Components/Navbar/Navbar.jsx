@@ -20,16 +20,16 @@ const SCROLL_TO_TOP_PATHS = new Set([
   '/thong-tin-chung/thu-chao-moi-san-pham',
 ])
 
-const MOBILE_MENU_HOTLINE_DISPLAY = '1900.888.866'
-const MOBILE_MENU_HOTLINE_TEL = '1900888866'
+const MOBILE_MENU_HOTLINE_DISPLAY = '0974225225'
+const MOBILE_MENU_HOTLINE_TEL = '0974225225'
 const MOBILE_MENU_BOOKING_PATH = '/book-appointment'
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState('#home')
   const [isScrolled, setIsScrolled] = useState(false)
-  const [openDropdown, setOpenDropdown] = useState(null) // 'kcb' | 'info' | 'org' | null
+  const [openDropdown, setOpenDropdown] = useState(null)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [mobileExpandedKey, setMobileExpandedKey] = useState(null) // 'org' | 'kcb' | 'info' | null
+  const [mobileExpandedKey, setMobileExpandedKey] = useState(null)
   const navbarRef = useRef(null)
   const location = useLocation()
 
@@ -79,13 +79,13 @@ const Navbar = () => {
     }
   }, [location.pathname])
 
-  // Close mobile drawer when navigating
+
   useEffect(() => {
     setIsMobileMenuOpen(false)
     setMobileExpandedKey(null)
   }, [location.pathname])
 
-  // Reset expanded section when drawer closes
+
   useEffect(() => {
     if (!isMobileMenuOpen) setMobileExpandedKey(null)
   }, [isMobileMenuOpen])
@@ -160,10 +160,8 @@ const Navbar = () => {
         return
       }
 
-      // Check if click is on dropdown menu or its items
       const isClickOnDropdownMenu = target.closest('.dropdown-menu')
       if (isClickOnDropdownMenu) {
-        // Check if it's our custom dropdown menu
         const hasCustomItems = isClickOnDropdownMenu.querySelector('.custom-dropdown-item')
         if (hasCustomItems) {
           // Don't close when clicking on menu items
@@ -227,11 +225,11 @@ const Navbar = () => {
   return (
     <>
       {/* Mobile Bootstrap Navbar - Only visible on mobile */}
-      <BootstrapNavbar 
-        bg="success" 
-        variant="dark" 
-        expand={false} 
-        className="mobile-navbar-bootstrap" 
+      <BootstrapNavbar
+        bg="white"
+        variant="light"
+        expand={false}
+        className="mobile-navbar-bootstrap"
         fixed="top"
       >
         <Container fluid>
@@ -243,9 +241,9 @@ const Navbar = () => {
               alt="Logo"
             />
           </BootstrapNavbar.Brand>
-          <div className="position-absolute start-50 translate-middle-x d-flex flex-column justify-content-center align-items-center text-center text-white">
-            <span className="fw-bold" style={{ fontSize: '11px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>Bệnh viện Quân y 4</span>
-            <span style={{ fontSize: '11px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>Military Central Hospital </span>
+          <div className="position-absolute start-50 translate-middle-x d-flex flex-column justify-content-center align-items-center text-center text-success">
+            <span className="fw-bold" style={{ fontSize: '13px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>BỆNH VIỆN QUÂN Y 4</span>
+            <span style={{ fontSize: '13px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>MILITARY CENTREL HOSPITAL </span>
           </div>
           <BootstrapNavbar.Toggle
             aria-label="Open menu"

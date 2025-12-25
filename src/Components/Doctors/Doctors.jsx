@@ -39,6 +39,12 @@ const Doctors = () => {
       desc:
         'Trang thiết bị tiên tiến, không gian sạch sẽ, thân thiện, đảm bảo môi trường khám chữa bệnh an toàn và thoải mái.',
     },
+     {
+      icon: <Ambulance />,
+      title: 'Ứng dụng công nghệ điều trị cao',
+      desc:
+        'Trang thiết bị tiên tiến, không gian sạch sẽ, thân thiện, đảm bảo môi trường khám chữa bệnh an toàn và thoải mái.',
+    },
     {
       icon: <HeartHandshake />,
       title: 'Dịch vụ với chi phí tốt',
@@ -48,31 +54,11 @@ const Doctors = () => {
   ]
 
   return (
-
     <section className="doctors-section">
-
+     
 
       <div className="doctors-layout">
-        <div className="hospital-image-wrapper">
-          <img 
-            src={images[currentImageIndex]} 
-            alt={`Bệnh viện Quân Y 4 - Ảnh ${currentImageIndex + 1}`} 
-            className="hospital-image" 
-          />
-          <div className="image-dots">
-            {images.map((_, index) => (
-              
-              <button
-                key={index}
-                className={`dot ${index === currentImageIndex ? 'active' : ''}`}
-                onClick={() => setCurrentImageIndex(index)}
-                aria-label={`Chuyển sang ảnh ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="features-grid">
+        <div className="features-list">
           {features.map((f, i) => (
             <div className="feature-item" key={i}>
               <div className="feature-icon">{f.icon}</div>
@@ -83,8 +69,33 @@ const Doctors = () => {
             </div>
           ))}
         </div>
-      </div>
 
+        <div className="hospital-info-card">
+          <div className="hospital-image-wrapper">
+            <img
+              src={images[currentImageIndex]}
+              alt={`Bệnh viện Quân Y 4 - Ảnh ${currentImageIndex + 1}`}
+              className="hospital-image"
+            />
+            <div className="image-dots">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  className={`dot ${index === currentImageIndex ? 'active' : ''}`}
+                  onClick={() => setCurrentImageIndex(index)}
+                  aria-label={`Chuyển sang ảnh ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="hospital-info-content">
+          
+            <p className="hospital-info-desc">
+Sức mạnh cốt lõi của Bệnh viện Quân y 4 nằm ở đội ngũ y bác sĩ những trí tuệ ưu tú từng được tôi luyện và khẳng định tài năng tại các cơ sở y tế danh tiếng nhất Việt Nam. Không chỉ tự hào với bảng thành tích chuyên môn xuất sắc và những công trình nghiên cứu giá trị, mỗi bác sĩ tại đây còn là một tấm gương về sự tận tụy, luôn lấy sự an tâm và hồi phục của thân chủ làm kim chỉ nam cho mọi hành động            </p>
+           
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

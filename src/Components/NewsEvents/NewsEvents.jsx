@@ -1,6 +1,5 @@
-import { useState, useMemo } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { FiActivity, FiGlobe, FiMapPin, FiFileText } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
+import { FiActivity, FiGlobe, FiMapPin, FiFileText, FiChevronRight } from 'react-icons/fi'
 import './NewsEvents.css'
 
 import anhqh1 from './Images/anhqh1.jpg'
@@ -20,18 +19,13 @@ import bvcm2 from './Images/bvcm2.jpg'
 import bvcm3 from './Images/bvcm3.jpg'
 import bvcm4 from './Images/bvcm4.jpg'
 import ttbv51 from './Images/ttbv51.jpg'
-import ttbv8 from './Images/ttbv8.jpg'
+import ttbv85 from './Images/ttbv85.jpg'
 import ttbv61 from './Images/ttbv61.jpg'
 import ttbv7 from './Images/ttbv7.jpg'
-
+  
 
 const NewsEvents = () => {
-  const [activeTab, setActiveTab] = useState(0)
-  const [currentPage, setCurrentPage] = useState(1)
-  const location = useLocation()
-  const isNewsEventsPage = location.pathname === '/news-events'
-
-  const tabConfigs = [
+  const newsCategories = [
     { key: 'hospital', label: 'Tin tức hoạt động bệnh viện', icon: FiActivity },
     { key: 'world', label: 'Tin tức y học thế giới', icon: FiGlobe },
     { key: 'domestic', label: 'Tin tức y học trong nước', icon: FiMapPin },
@@ -100,10 +94,10 @@ const NewsEvents = () => {
       {
         id: '21d',
         slug: 'tin-tuc-hoat-dong-benh-vien-8',
-        image: ttbv8,
-        title: 'Bệnh viện Quân y 4 khám, tư vấn sức khỏe, tặng quà trên địa bàn tỉnh Nghệ An',
+        image: ttbv85,
+        title: 'Đảng ủy Bệnh viện Quân y 4: Ra nghị quyết lãnh đạo thực hiện nhiệm vụ năm 2026',
         date: '17:05 18/06/2025',
-        description: 'Sáng 9-12, Bệnh viện Quân y 4 (Quân khu 4) tổ chức khám, chữa bệnh, tư vấn sức khỏe, cấp thuốc và tặng quà các gia đình có hoàn cảnh khó khăn tại xã Minh Châu, tỉnh Nghệ An.'
+        description: 'Năm 2025, Đảng ủy, Ban Giám đốc Bệnh viện lãnh đạo triển khai toàn diện các mặt công tác; duy trì nghiêm nền nếp trực sẵn sàng chiến đấu (SSCĐ) và chế độ trực chuyên môn, nhất là dịp lễ '
       },
 
     ],
@@ -212,96 +206,60 @@ const NewsEvents = () => {
     ],
   }
 
-  // Lấy dữ liệu cho tab hiện tại với useMemo để đảm bảo re-compute khi activeTab hoặc currentPage thay đổi
-  const { newsItems, totalPages } = useMemo(() => {
-    const activeKey = tabConfigs[activeTab]?.key
-    const allNewsItems = newsDataByTab[activeKey] || []
-    const itemsPerPage = 8
-    const totalPages = Math.ceil(allNewsItems.length / itemsPerPage)
-    
-    const startIndex = (currentPage - 1) * itemsPerPage
-    const endIndex = startIndex + itemsPerPage
-    const newsItems = allNewsItems.slice(startIndex, endIndex)
-    
-    return { newsItems, totalPages }
-  }, [activeTab, currentPage, newsDataByTab])
-
-  // Hàm xử lý khi chuyển tab - reset về trang 1
-  const handleTabChange = (index) => {
-    setActiveTab(index)
-    setCurrentPage(1)
-  }
-
   return (
     <div className="news-events-section">
       <div className="news-events-container">
-        <div className="news-header">
-          <div className="news-header-left">
-            <p className="news-label">Tin tức & Sự kiện</p>
-            
-          </div>
-          <div className="news-tabs">
-            {tabConfigs.map((tab, index) => {
-              const Icon = tab.icon
-              return (
-                <button
-                  key={index}
-                  className={`news-tab ${activeTab === index ? 'active' : ''}`}
-                  onClick={() => handleTabChange(index)}
-                >
-                  <Icon className="tab-icon" />
-                  <span className="tab-label">{tab.label}</span>
-                </button>
-              )
-            })}
-          </div>
+        <div className="section-main-header">
+          <p className="section-main-title">Tin tức & Sự kiện</p>
         </div>
 
-        <div className="news-grid" key={`tab-${activeTab}-page-${currentPage}`}>
-          {newsItems.map((item) => (
-            <Link 
-              key={item.id} 
-              to={`/news-events/${item.slug}`} 
-              className="news-card-link"
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <div className="news-card">
-                <div className="news-image-wrapper">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="news-image"
-                  />
+        {/* Render mỗi category thành một hàng riêng */}
+        {newsCategories.map((category) => {
+          const Icon = category.icon
+          const newsItems = newsDataByTab[category.key] || []
+          const displayItems = newsItems.slice(0, 4) // Hiển thị 4 tin đầu tiên
+
+          return (
+            <div key={category.key} className="news-category-section">
+              {/* Header cho mỗi category */}
+              <div className="category-header">
+                <div className="category-title-wrapper">
+                  <Icon className="category-icon" />
+                  <h3 className="category-title">{category.label}</h3>
                 </div>
-                <div className="news-content">
-                  <h4 className="news-title">{item.title}</h4>
-                  <p className="news-date">🕐 {item.date}</p>
-                  {item.description && (
-                    <p className="news-description">{item.description}</p>
-                  )}
-                </div>
+                <Link to="/news-events" className="category-see-more">
+                  XEM THÊM <FiChevronRight /><FiChevronRight />
+                </Link>
               </div>
-            </Link>
-          ))}
-        </div>
 
-        <div className="news-pagination">
-          {isNewsEventsPage ? (
-            Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index}
-                className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
-                onClick={() => setCurrentPage(index + 1)}
-              >
-                {index + 1}
-              </button>
-            ))
-          ) : (
-            <Link to="/news-events" className="view-more-text">
-              Xem thêm
-            </Link>
-          )}
-        </div>
+              {/* Grid hiển thị tin tức */}
+              <div className="news-grid">
+                {displayItems.map((item) => (
+                  <Link
+                    key={item.id}
+                    to={`/news-events/${item.slug}`}
+                    className="news-card-link"
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    <div className="news-card">
+                      <div className="news-image-wrapper">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="news-image"
+                        />
+                      </div>
+                      <div className="news-content">
+                        <h4 className="news-title">{item.title}</h4>
+                        <p className="news-date">🕐 {item.date}</p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )
+        })}
       </div>
     </div>
   )

@@ -67,6 +67,8 @@ import ttbv81 from '../../../Components/NewsEvents/Images/ttbv81.jpg'
 import ttbv82 from '../../../Components/NewsEvents/Images/ttbv82.jpg'
 import ttbv83 from '../../../Components/NewsEvents/Images/ttbv83.jpg'
 import ttbv84 from '../../../Components/NewsEvents/Images/ttbv84.jpg'
+import ttbv85 from '../../../Components/NewsEvents/Images/ttbv85.jpg'
+import ttbv86 from '../../../Components/NewsEvents/Images/ttbv86.jpg'
 
 
 
@@ -134,6 +136,8 @@ const imageMap = {
   'ttbv82.jpg': ttbv82,
   'ttbv83.jpg': ttbv83,
   'ttbv84.jpg': ttbv84,
+  'ttbv85.jpg': ttbv85,
+  'ttbv86.jpg': ttbv86,
 
  
 }

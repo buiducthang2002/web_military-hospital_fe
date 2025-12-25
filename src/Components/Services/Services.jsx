@@ -7,8 +7,12 @@ import ServicesInfo from './ServicesInfo'
 const Services = () => {
   return (
     <div className="services-section">
-      <ServicesIntro />
-      <ServicesContainer />
+      <div className="services-wrapper">
+        <div className="services-wrapper-inner">
+          <ServicesIntro />
+          <ServicesContainer />
+        </div>
+      </div>
       <ServicesInfo />
     </div>
   )

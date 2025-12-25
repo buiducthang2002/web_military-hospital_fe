@@ -2,39 +2,42 @@ import { Link } from 'react-router-dom'
 import './NewsBoard.css'
 import { FiClock, FiChevronRight } from 'react-icons/fi'
 
-import ttbv1 from '../NewsEvents/Images/ttbv1.jpg'
-import ttbv2 from '../NewsEvents/Images/ttbv2.png'
+
+
 import ttbv3 from '../NewsEvents/Images/ttbv3.jpg'
 import ttbv4 from '../NewsEvents/Images/ttbv4.jpg'
-
+import ttbv61 from '../NewsEvents/Images/ttbv61.jpg'
+import ttbv7 from '../NewsEvents/Images/ttbv7.jpg'
+import ttbv52 from '../NewsEvents/Images/ttbv52.jpg'
+import ttbv85 from '../NewsEvents/Images/ttbv85.jpg'
 const featuredNews = {
-  title: 'Bệnh viện Quân y 4: Hướng tới sự hài lòng, niềm tin và sức khoẻ của khách hàng',
+  title: 'BỆNH VIỆN QUÂN Y 4 VINH DỰ NHẬN THƯỞNG CỜ THI ĐUA CỦA THỦ TRƯỞNG BỘ QUỐC PHÒNG',
   time: '07/12/2025',
-  image: ttbv1,
-  link: '/news-events/tin-tuc-hoat-dong-benh-vien-1'
+  image: ttbv61,
+  link: '/news-events/tin-tuc-hoat-dong-benh-vien-6'
 }
 
 const subNews = [
   {
     id: 1,
-    title: 'Bệnh viện Quân y 4: Tổ chức nhiều hoạt động hỗ trợ người bệnh',
+    title: 'Chuẩn bị chu đáo tham gia Hội thi Điều dưỡng viên toàn quân năm 2026',
     time: '06/12/2025',
-    image: ttbv2,
-    link: '/news-events/tin-tuc-hoat-dong-benh-vien-2'
+    image: ttbv7,
+    link: '/news-events/tin-tuc-hoat-dong-benh-vien-7'
   },
   {
     id: 2,
-    title: 'Bệnh viện Quân y 4 tổ chức đánh giá bệnh án điện tử',
+    title: 'Bệnh viện Quân y 4 hoàn thành tốt nhiệm vụ năm 2025',
     time: '04/12/2025',
-    image: ttbv3,
-    link: '/news-events/tin-tuc-hoat-dong-benh-vien-3'
+    image: ttbv52,
+    link: '/news-events/tin-tuc-hoat-dong-benh-vien-5'
   },
   {
     id: 3,
-    title: 'Bệnh viện Quân y 103 ký kết đào tạo và hỗ trợ chuyên môn với Bệnh viện Quân y 4"',
+    title: 'Đảng ủy Bệnh viện Quân y 4 ra nghị quyết lãnh đạo thực hiện nhiệm vụ năm 2026',
     time: '02/12/2025',
-    image: ttbv4,
-    link: '/news-events/tin-tuc-hoat-dong-benh-vien-4'
+    image: ttbv85,
+    link: '/news-events/tin-tuc-hoat-dong-benh-vien-8'
   }
 ]
 
@@ -156,17 +159,7 @@ const NewsBoard = () => {
       </div>
 
       {/* Bottom Running notification bar */}
-      <div className="notification-bar notification-bar-bottom">
-        <div className="notification-content">
-          <span className="notification-icon">⚕️</span>
-          <span className="notification-text">
-            Bệnh viện Quân y 4 - Luôn đồng hành cùng sức khỏe của bạn | 
-            Đặt lịch khám qua Hotline: 0974.225.225 | 
-            Khám bệnh Thứ 2 - Thứ 6: Sáng 7h30-11h30, Chiều 13h30-15h30 | 
-            Cấp cứu 24/7 - Liên hệ: 0999999999
-          </span>
-        </div>
-      </div>
+    
     </section>
   )
 }

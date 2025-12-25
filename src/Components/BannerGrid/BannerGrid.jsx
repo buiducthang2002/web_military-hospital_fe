@@ -8,8 +8,7 @@ const BannerGrid = () => {
   const banners = [
     { id: 1, image: Banner_CTTDT_BQP1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
     { id: 2, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
-    { id: 3, image: Banner_CTTDT_BQP1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
-    { id: 4, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://qlms.bqp.vn/' },
+
   ]
 
   const handleBannerClick = (link) => {
@@ -22,8 +21,8 @@ const BannerGrid = () => {
     <section className="banner-grid-section">
       <div className="banner-grid-container">
         {banners.map((banner) => (
-          <div 
-            key={banner.id} 
+          <div
+            key={banner.id}
             className="banner-grid-item"
             onClick={() => handleBannerClick(banner.link)}
             style={{ cursor: banner.link ? 'pointer' : 'default' }}
@@ -37,9 +36,9 @@ const BannerGrid = () => {
             }}
             aria-label={banner.link ? `Click to visit ${banner.alt}` : undefined}
           >
-            <img 
-              src={banner.image} 
-              alt={banner.alt} 
+            <img
+              src={banner.image}
+              alt={banner.alt}
               className="banner-grid-image"
             />
           </div>

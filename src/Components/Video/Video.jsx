@@ -59,7 +59,7 @@ const VIDEO_CATEGORIES = [
   {
     name: 'Y học thường thức',
     videos: [
-      createVideo('party-1', anh6, ' TOÀN CẢNH: Lễ diễu binh, diễu hành kỷ niệm 80 năm Cách mạng tháng Tám thành công và Quốc khánh nước Cộng hòa xã hội chủ nghĩa Việt Nam bắt đầu từ 6h30 đến 10h, sáng thứ Ba, ngày 02/09.', '17:05 02/09/2025', 'https://www.youtube.com/watch?v=-WjOCaAa5bY'),
+      createVideo('party-1', anh6, 'Lễ diễu binh, diễu hành kỷ niệm 80 năm Cách mạng tháng Tám thành công và Quốc khánh nước Cộng hòa xã hội chủ nghĩa Việt Nam bắt đầu từ 6h30 đến 10h, sáng thứ Ba, ngày 02/09.', '17:05 02/09/2025', 'https://www.youtube.com/watch?v=-WjOCaAa5bY'),
       createVideo('party-2', anh7, 'Các hình ảnh đẹp về lễ kỷ niệm ngày Quốc Khánh nước Cộng Hoà Xã Hội Chủ Nghĩa Việt Nam', '17:05 02/09/2025', 'https://www.youtube.com/shorts/_jCND91OX6M'),
       createVideo('party-3', anh8, 'Sự tham gia của các đội hình quốc tế trong một buổi lễ kỷ niệm không chỉ là một nghi thức trang trọng mà còn là một minh chứng sống động cho tinh thần đoàn kết, hữu nghị và hợp tác giữa các quốc gia ', '17:05 02/09/2025', 'https://www.youtube.com/watch?v=8lCB3Gb84D0'),
       createVideo('party-4', anh9, 'Các khối nữ chiến sĩ quân đội và công an tham gia tổng duyệt diễu binh, diễu hành A80 để lại nhiều ấn tượng đẹp cho người dân với sự vui vẻ, rạng rỡ, nhưng cũng nghiêm trang, hào hùng.', '17:05 02/09/2025', 'https://www.youtube.com/watch?v=AvZjVzK1Qls'),

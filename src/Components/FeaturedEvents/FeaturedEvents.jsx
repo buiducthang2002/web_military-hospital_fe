@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FiGlobe, FiMapPin } from 'react-icons/fi'
 import './FeaturedEvents.css'
 
@@ -14,17 +13,8 @@ import sktg4 from './Images/sktg4.png'
 
 
 const FeaturedEvents = () => {
-  const [activeTab, setActiveTab] = useState(0)
-  const [currentPage, setCurrentPage] = useState(1)
-  const location = useLocation()
-  const isNewsEventsPage = location.pathname === '/news-events'
 
-  const tabs = [
-    { label: 'Sự kiện nổi bật thế giới', icon: FiGlobe },
-    { label: 'Sự kiện nổi bật trong nước', icon: FiMapPin },
-  ]
 
-  // Dữ liệu tin tức cho từng tab+
   const newsDataByTab = {
     0: [ // Sự kiện nổi bật thế giới
       {
@@ -61,7 +51,7 @@ const FeaturedEvents = () => {
       },
 
     ],
-    1: [ // Sự kiện nổi bật trong nước
+    1: [ 
       {
         id: '37',
         slug: 'su-kien-noi-bat-trong-nuoc-1',
@@ -100,91 +90,92 @@ const FeaturedEvents = () => {
 
   }
 
-  // Lấy dữ liệu cho tab hiện tại
-  const allNewsItems = newsDataByTab[activeTab] || []
-  const itemsPerPage = 8
-  const totalPages = Math.ceil(allNewsItems.length / itemsPerPage)
-
-  // Tính toán các items hiển thị dựa trên trang hiện tại
-  const startIndex = (currentPage - 1) * itemsPerPage
-  const endIndex = startIndex + itemsPerPage
-  const newsItems = allNewsItems.slice(startIndex, endIndex)
-
-  // Hàm xử lý khi chuyển tab - reset về trang 1
-  const handleTabChange = (index) => {
-    setActiveTab(index)
-    setCurrentPage(1)
-  }
+  const worldNews = newsDataByTab[0].slice(0, 4) // 4 sự kiện thế giới
+  const domesticNews = newsDataByTab[1].slice(0, 4) // 4 sự kiện trong nước
 
   return (
     <div className="featured-events-section">
       <div className="news-events-container">
         <div className="news-header">
-          <div className="news-header-left">
-            <p className="news-label">Sự kiện nổi bật</p>
-            
-          </div>
-          <div className="news-tabs">
-            {tabs.map((tab, index) => {
-              const Icon = tab.icon
-              return (
-                <button
-                  key={index}
-                  className={`news-tab ${activeTab === index ? 'active' : ''}`}
-                  onClick={() => handleTabChange(index)}
-                >
-                  <Icon className="tab-icon" />
-                  <span className="tab-label">{tab.label}</span>
-                </button>
-              )
-            })}
-          </div>
+          <p className="news-label">Tin tức & Sự kiện</p>
         </div>
 
-        <div className="news-grid">
-          {newsItems.map((item, index) => (
-            <Link 
-              key={index} 
-              to={`/news-events/${item.slug}`} 
-              className="news-card-link"
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <div className="news-card">
-                <div className="news-image-wrapper">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="news-image"
-                  />
-                </div>
-                <div className="news-content">
-                  <h4 className="news-title">{item.title}</h4>
-                  <p className="news-date">🕐 {item.date}</p>
-                  {item.description && (
-                    <p className="news-description">{item.description}</p>
-                  )}
-                </div>
-              </div>
-            </Link>
-          ))}
+        <div className="news-dual-grid">
+          {/* Bên trái: Sự kiện thế giới */}
+          <div className="news-column">
+            <h3 className="news-column-title">
+              <FiGlobe className="column-icon" />
+             Sự kiện nổi bật trong nước
+            </h3>
+            <div className="news-grid">
+              {worldNews.map((item, index) => (
+                <Link
+                  key={index}
+                  to={`/news-events/${item.slug}`}
+                  className="news-card-link"
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                  <div className="news-card">
+                    <div className="news-image-wrapper">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="news-image"
+                      />
+                    </div>
+                    <div className="news-content">
+                      <h4 className="news-title">{item.title}</h4>
+                      <p className="news-date">🕐 {item.date}</p>
+                      {item.description && (
+                        <p className="news-description">{item.description}</p>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Bên phải: Sự kiện trong nước */}
+          <div className="news-column">
+            <h3 className="news-column-title">
+              <FiMapPin className="column-icon" />
+              Sự kiện nổi bật trong nước
+            </h3>
+            <div className="news-grid">
+              {domesticNews.map((item, index) => (
+                <Link
+                  key={index}
+                  to={`/news-events/${item.slug}`}
+                  className="news-card-link"
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                  <div className="news-card">
+                    <div className="news-image-wrapper">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="news-image"
+                      />
+                    </div>
+                    <div className="news-content">
+                      <h4 className="news-title">{item.title}</h4>
+                      <p className="news-date">🕐 {item.date}</p>
+                      {item.description && (
+                        <p className="news-description">{item.description}</p>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="news-pagination">
-          {isNewsEventsPage ? (
-            Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index}
-                className={`pagination-btn ${currentPage === index + 1 ? 'active' : ''}`}
-                onClick={() => setCurrentPage(index + 1)}
-              >
-                {index + 1}
-              </button>
-            ))
-          ) : (
-            <Link to="/news-events" className="view-more-text">
-              Xem thêm
-            </Link>
-          )}
+          <Link to="/news-events" className="view-more-text">
+            Xem thêm
+          </Link>
         </div>
       </div>
     </div>

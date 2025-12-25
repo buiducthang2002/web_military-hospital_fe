@@ -1,70 +1,68 @@
 .banner-grid-section {
-  width: 100%;
-  background-color: #ffffff;
-  padding: 0;
-  margin: 20px 0 20px 0;
-  border: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 20px 0 20px 0;
+    border: 0;
 }
 
 .banner-grid-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
 .banner-grid-item {
-  width: 100%;
-  /* Let content (image) define height to avoid letterboxing */
-  overflow: hidden;
-  border-radius: 0px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: transparent;
-  border: none;
+    width: 100%;
+    /* Let content (image) define height to avoid letterboxing */
+    overflow: hidden;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+    border: none;
 }
 
 .banner-grid-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-color: #d0d0d0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #d0d0d0;
 }
 
 .banner-grid-image {
-  width: 100%;
-  height: auto;
-  display: block;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 480px) {
+  /* Thu nhỏ kích thước Banner */
   .banner-grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-}
-
-@media (max-width: 768px) {
-  .banner-grid-section {
-    padding: 15px 0;
-  }
-
-  .banner-grid-container {
-    padding: 0 15px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Giữ 2 cột */
     gap: 10px;
+    padding: 0 10px;
+  }
+
+  .banner-grid-image {
+    /* Ép tỉ lệ dẹt hơn để ảnh trông nhỏ lại */
+    aspect-ratio: 16 / 7 !important; 
+    height: auto !important;
+    object-fit: cover;
   }
 
   .banner-grid-item {
-    border-radius: 6px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   }
-}
 
-@media (max-width: 480px) {
-  .banner-grid-container {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-}
+  /* Chỉnh tiêu đề chính cho rõ ràng hơn */
+  .news-main-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #008543; /* Màu xanh y tế */
+    line-height: 1.4;
+  }}
