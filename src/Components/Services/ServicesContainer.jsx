@@ -7,7 +7,7 @@ const ServicesContainer = () => {
     {
       icon: <PhoneCall size={40} color="#069242" strokeWidth={1} />,
       title: 'Gọi tổng đài',
-      subtitle: 'Đặt lịch khám qua tổng đài 0974.225.225',
+      subtitle: 'Tư vấn lịch khám qua tổng đài',
       path: '/call-center'
     },
     {

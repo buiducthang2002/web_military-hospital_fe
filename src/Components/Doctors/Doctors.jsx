@@ -58,13 +58,13 @@ const Doctors = () => {
      
 
       <div className="doctors-layout">
-        <div className="features-list">
+        <div className="doctors-features-list">
           {features.map((f, i) => (
-            <div className="feature-item" key={i}>
-              <div className="feature-icon">{f.icon}</div>
-              <div className="feature-content">
-                <h4 className="feature-title">{f.title}</h4>
-                <p className="feature-desc">{f.desc}</p>
+            <div className="doctors-feature-item" key={i}>
+              <div className="doctors-feature-icon">{f.icon}</div>
+              <div className="doctors-feature-content">
+                <h4 className="doctors-feature-title">{f.title}</h4>
+                <p className="doctors-feature-desc">{f.desc}</p>
               </div>
             </div>
           ))}
@@ -91,8 +91,7 @@ const Doctors = () => {
           <div className="hospital-info-content">
           
             <p className="hospital-info-desc">
-Sức mạnh cốt lõi của Bệnh viện Quân y 4 nằm ở đội ngũ y bác sĩ những trí tuệ ưu tú từng được tôi luyện và khẳng định tài năng tại các cơ sở y tế danh tiếng nhất Việt Nam. Không chỉ tự hào với bảng thành tích chuyên môn xuất sắc và những công trình nghiên cứu giá trị, mỗi bác sĩ tại đây còn là một tấm gương về sự tận tụy, luôn lấy sự an tâm và hồi phục của thân chủ làm kim chỉ nam cho mọi hành động            </p>
-           
+Sức mạnh cốt lõi của Bệnh viện Quân y 4 nằm ở đội ngũ y bác sĩ những trí tuệ ưu tú từng được tôi luyện và khẳng định tài năng tại các cơ sở y tế danh tiếng nhất Việt Nam. Không chỉ tự hào với bảng thành tích chuyên môn xuất sắc và những công trình nghiên cứu giá trị, mỗi bác sĩ tại đây còn là một tấm gương về sự tận tụy, luôn lấy sự an tâm và hồi phục của thân chủ làm kim chỉ nam cho mọi hành động</p>          
           </div>
         </div>
       </div>

@@ -32,9 +32,10 @@ const Features = () => {
 
   return (
     <div className="features-section">
+    
       <div className="features-container">
         {features.map((feature, index) => (
-          <div key={index} className="feature-panel" onClick={() => {
+          <div key={index} className="features-panel" onClick={() => {
             if (feature.path) {
               if (feature.path.startsWith('http')) {
                 window.open(feature.path, '_blank')
@@ -43,14 +44,14 @@ const Features = () => {
               }
             }
           }} style={{ cursor: 'pointer' }}>
-            <div className="feature-image-wrapper">
+            <div className="features-image-wrapper">
               <img
                 src={feature.image}
                 alt={feature.title}
-                className="feature-image"
+                className="features-image"
               />
             </div>
-            <p className="feature-title">{feature.title}</p>
+            <p className="features-title">{feature.title}</p>
           </div>
         ))}
       </div>

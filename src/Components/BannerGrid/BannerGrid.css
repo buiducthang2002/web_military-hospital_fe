@@ -38,25 +38,81 @@
     display: block;
 }
 
+.banner-mobile-slider {
+  position: relative;
+  width: 100%;
+}
+
+.banner-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.banner-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  outline: none;
+}
+
+.banner-dot:hover {
+  transform: scale(1.2);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.banner-dot.active {
+  background-color: #ffffff;
+  width: 12px;
+  height: 12px;
+  border-color: #ffffff;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
   /* Thu nhỏ kích thước Banner */
   .banner-grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Giữ 2 cột */
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 0;
     padding: 0 10px;
   }
 
   .banner-grid-image {
-    /* Ép tỉ lệ dẹt hơn để ảnh trông nhỏ lại */
-    aspect-ratio: 16 / 7 !important; 
-    height: auto !important;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 120px;
   }
 
   .banner-grid-item {
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  .banner-dots {
+    bottom: 12px;
+    gap: 6px;
+  }
+
+  .banner-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .banner-dot.active {
+    width: 10px;
+    height: 10px;
   }
 
   /* Chỉnh tiêu đề chính cho rõ ràng hơn */

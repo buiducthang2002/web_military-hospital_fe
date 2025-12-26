@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './BannerGrid.css'
 import Banner_CTTDT_BQP1 from './Images/Banner_CTTDT_BQP1.jpg'
 import Banner_CDVC_BQP1 from './Images/Banner_CDVC_BQP1.jpg'
@@ -8,8 +8,35 @@ const BannerGrid = () => {
   const banners = [
     { id: 1, image: Banner_CTTDT_BQP1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
     { id: 2, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
+    { id: 3, image: Banner_CTTDT_BQP1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
+    { id: 4, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
 
   ]
+
+  const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480)
+
+  // Theo dõi kích thước màn hình
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 480)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Auto-slide cho mobile
+  useEffect(() => {
+    if (isMobile) {
+      const interval = setInterval(() => {
+        setCurrentBannerIndex((prevIndex) =>
+          prevIndex === banners.length - 1 ? 0 : prevIndex + 1
+        )
+      }, 3000) // 3 giây
+
+      return () => clearInterval(interval)
+    }
+  }, [isMobile, banners.length])
 
   const handleBannerClick = (link) => {
     if (link) {
@@ -20,29 +47,67 @@ const BannerGrid = () => {
   return (
     <section className="banner-grid-section">
       <div className="banner-grid-container">
-        {banners.map((banner) => (
+        {isMobile ? (
+          // Mobile: hiển thị 1 banner tại một thời điểm
           <div
-            key={banner.id}
-            className="banner-grid-item"
-            onClick={() => handleBannerClick(banner.link)}
-            style={{ cursor: banner.link ? 'pointer' : 'default' }}
-            role={banner.link ? 'button' : undefined}
-            tabIndex={banner.link ? 0 : undefined}
+            className="banner-grid-item banner-mobile-slider"
+            onClick={() => handleBannerClick(banners[currentBannerIndex].link)}
+            style={{ cursor: banners[currentBannerIndex].link ? 'pointer' : 'default' }}
+            role={banners[currentBannerIndex].link ? 'button' : undefined}
+            tabIndex={banners[currentBannerIndex].link ? 0 : undefined}
             onKeyDown={(e) => {
-              if (banner.link && (e.key === 'Enter' || e.key === ' ')) {
+              if (banners[currentBannerIndex].link && (e.key === 'Enter' || e.key === ' ')) {
                 e.preventDefault()
-                handleBannerClick(banner.link)
+                handleBannerClick(banners[currentBannerIndex].link)
               }
             }}
-            aria-label={banner.link ? `Click to visit ${banner.alt}` : undefined}
+            aria-label={banners[currentBannerIndex].link ? `Click to visit ${banners[currentBannerIndex].alt}` : undefined}
           >
             <img
-              src={banner.image}
-              alt={banner.alt}
+              src={banners[currentBannerIndex].image}
+              alt={banners[currentBannerIndex].alt}
               className="banner-grid-image"
             />
+            <div className="banner-dots">
+              {banners.map((_, index) => (
+                <button
+                  key={index}
+                  className={`banner-dot ${index === currentBannerIndex ? 'active' : ''}`}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setCurrentBannerIndex(index)
+                  }}
+                  aria-label={`Go to banner ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
-        ))}
+        ) : (
+          // Desktop: hiển thị tất cả banners
+          banners.map((banner) => (
+            <div
+              key={banner.id}
+              className="banner-grid-item"
+              onClick={() => handleBannerClick(banner.link)}
+              style={{ cursor: banner.link ? 'pointer' : 'default' }}
+              role={banner.link ? 'button' : undefined}
+              tabIndex={banner.link ? 0 : undefined}
+              onKeyDown={(e) => {
+                if (banner.link && (e.key === 'Enter' || e.key === ' ')) {
+                  e.preventDefault()
+                  handleBannerClick(banner.link)
+                }
+              }}
+              aria-label={banner.link ? `Click to visit ${banner.alt}` : undefined}
+            >
+              <img
+                src={banner.image}
+                alt={banner.alt}
+                className="banner-grid-image"
+              />
+            </div>
+          ))
+        )}
       </div>
     </section>
   )

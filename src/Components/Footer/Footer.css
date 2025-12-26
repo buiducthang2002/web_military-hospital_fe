@@ -231,12 +231,29 @@ footer,
     height: 40px;
   }
 
-  .footer__link {
-    font-size: 12.5px;
-    padding: 7px 12px;
+  .footer__link-list {
+    display: none;
+  }
+
+  .footer__column--links {
+    gap: 6px;
+    margin-top: 0;
+  }
+
+  .footer__connect-title {
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .footer__socials {
+    margin-bottom: 0;
   }
 
   .footer__schedule-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer__copyright {
+    margin-top: 10px;
   }
 }

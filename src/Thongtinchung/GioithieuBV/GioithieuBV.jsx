@@ -158,10 +158,10 @@ const GioithieuBV = () => {
       <div className="gioithieu-hero">
         <div className="gioithieu-hero-overlay"></div>
         <div className="gioithieu-hero-content">
-          <div className="news-header hero-news-header">
+          <div className="news-header">
             <div className="news-header-left">
-              <p className="news-label">Thông tin chung</p>
-              <h2 className="news-main-title">| Giới thiệu bệnh viện</h2>
+              <p className="news-label">Tổ chức bệnh viện</p>
+              <h2 className="news-main-title">|   Giới thiệu bệnh viện</h2>
             </div>
           </div>
           <h1>BỆNH VIỆN QUÂN Y 4</h1>
