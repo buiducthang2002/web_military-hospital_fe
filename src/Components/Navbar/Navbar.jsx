@@ -20,7 +20,7 @@ const SCROLL_TO_TOP_PATHS = new Set([
   '/thong-tin-chung/thu-chao-moi-san-pham',
 ])
 
-const MOBILE_MENU_HOTLINE_DISPLAY = '0974225225'
+const MOBILE_MENU_HOTLINE_DISPLAY = '0974.225.225'
 const MOBILE_MENU_HOTLINE_TEL = '0974225225'
 const MOBILE_MENU_BOOKING_PATH = '/book-appointment'
 

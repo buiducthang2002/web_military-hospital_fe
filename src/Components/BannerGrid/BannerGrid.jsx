@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import './BannerGrid.css'
-import Banner_CTTDT_BQP1 from './Images/Banner_CTTDT_BQP1.jpg'
-import Banner_CDVC_BQP1 from './Images/Banner_CDVC_BQP1.jpg'
+import BQP from './Images/BQP.png'
+import BQPBDHV from './Images/BQPBDHV.png'
+import BQPCTTDT from './Images/BQPCTTDT.jpg'
+import BQPQK4 from './Images/BQPQK4.png'
 
 
 const BannerGrid = () => {
   const banners = [
-    { id: 1, image: Banner_CTTDT_BQP1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
-    { id: 2, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
-    { id: 3, image: Banner_CTTDT_BQP1, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
-    { id: 4, image: Banner_CDVC_BQP1, alt: 'Banner 2', link: 'https://chinhphu.vn/' },
+    { id: 1, image: BQP, alt: 'Banner 1', link: 'https://www.qdnd.vn/' },
+    { id: 2, image:BQPBDHV , alt: 'Banner 2', link: 'https://qlms.bqp.vn/trang-chu' },
+    { id: 3, image: BQPCTTDT, alt: 'Banner 3', link: 'https://www.qdnd.vn/' },
+    { id: 4, image: BQPQK4, alt: 'Banner 4', link: 'https://baoquankhu4.com.vn/' },
 
   ]
 
