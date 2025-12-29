@@ -88,8 +88,7 @@ const Doctors = () => {
               ))}
             </div>
           </div>
-          <div className="hospital-info-content">
-          
+          <div className="hospital-info-content">          
             <p className="hospital-info-desc">
 Sức mạnh cốt lõi của Bệnh viện Quân y 4 nằm ở đội ngũ y bác sĩ những trí tuệ ưu tú từng được tôi luyện và khẳng định tài năng tại các cơ sở y tế danh tiếng nhất Việt Nam. Không chỉ tự hào với bảng thành tích chuyên môn xuất sắc và những công trình nghiên cứu giá trị, mỗi bác sĩ tại đây còn là một tấm gương về sự tận tụy, luôn lấy sự an tâm và hồi phục của thân chủ làm kim chỉ nam cho mọi hành động</p>          
           </div>

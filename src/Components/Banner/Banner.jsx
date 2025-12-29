@@ -260,25 +260,25 @@ const Banner = () => {
             </div>
           ))}
         </div>
-
-        <div className="banner-dots">
-          {banners.map((banner, index) => (
-            <button
-              key={banner}
-              type="button"
-              className={`dot ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => setCurrentIndex(index)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault()
-                  setCurrentIndex(index)
-                }
-              }}
-              aria-label={`Go to banner ${index + 1}`}
-            />
-          ))}
-        </div>
       </section>
+
+      <div className="banner-dots">
+        {banners.map((banner, index) => (
+          <button
+            key={banner}
+            type="button"
+            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => setCurrentIndex(index)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                setCurrentIndex(index)
+              }
+            }}
+            aria-label={`Go to banner ${index + 1}`}
+          />
+        ))}
+      </div>
 
       <button
         className="banner-arrow left"
