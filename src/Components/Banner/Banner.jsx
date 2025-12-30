@@ -10,7 +10,7 @@ import A4 from './Images/A4.jpg'
 
 
 const Banner = () => {
-  const [currentIndex, setCurrentIndex] = useState(0) // Index của banner thật (0-3)
+  const [currentIndex, setCurrentIndex] = useState(0) 
   const [isDragging, setIsDragging] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
@@ -19,10 +19,10 @@ const Banner = () => {
   const dragStartPosition = useRef({ x: 0, y: 0 })
 
   const banners = [A1, A2, A3, A4]
-  // Mảng links cho từng banner - có thể thay đổi theo nhu cầu
+
   const bannerLinks = [
   ]
-  // Tạo mảng với clone: [banner cuối, ...banners, banner đầu]
+ 
   const infiniteBanners = [banners[banners.length - 1], ...banners, banners[0]]
 
   const handleMouseDown = (e) => {
@@ -50,10 +50,10 @@ const Banner = () => {
     const bannerWidth = banner.offsetWidth
     let newIndex = Math.round(scrollPosition / bannerWidth)
 
-    // Kiểm tra xem có phải là click (không phải drag) không
+   
     if (wasDragging && e) {
       const dragDistance = Math.abs(e.pageX - dragStartPosition.current.x) + Math.abs(e.pageY - dragStartPosition.current.y)
-      // Nếu khoảng cách di chuyển < 5px, coi như là click
+   
       if (dragDistance < 5) {
         const realIndex = newIndex - 1
         if (realIndex >= 0 && realIndex < banners.length && bannerLinks[realIndex]) {
@@ -63,9 +63,9 @@ const Banner = () => {
       }
     }
 
-    // Xử lý vòng lặp
+ 
     if (newIndex === 0) {
-      // Đang ở clone đầu tiên (banner cuối), nhảy về banner cuối thật
+   
       newIndex = banners.length
       setTimeout(() => {
         if (bannerRef.current) {
@@ -76,7 +76,7 @@ const Banner = () => {
         }
       }, 50)
     } else if (newIndex === infiniteBanners.length - 1) {
-      // Đang ở clone cuối (banner đầu), nhảy về banner đầu thật
+   
       newIndex = 1
       setTimeout(() => {
         if (bannerRef.current) {
@@ -88,7 +88,7 @@ const Banner = () => {
       }, 50)
     }
 
-    // Cập nhật currentIndex (trừ đi 1 vì có clone ở đầu)
+  
     const realIndex = newIndex - 1
     if (realIndex >= 0 && realIndex < banners.length) {
       setCurrentIndex(realIndex)
@@ -122,11 +122,11 @@ const Banner = () => {
     handleDragEnd(syntheticEvent)
   }
 
-  // Khởi tạo scroll về vị trí banner đầu tiên (index 1)
+ 
   useEffect(() => {
     const banner = bannerRef.current
     if (banner && !isTransitioning.current) {
-      const targetIndex = currentIndex + 1 // +1 vì có clone ở đầu
+      const targetIndex = currentIndex + 1
       banner.scrollTo({
         left: targetIndex * banner.offsetWidth,
         behavior: 'smooth'
@@ -134,21 +134,21 @@ const Banner = () => {
     }
   }, [currentIndex])
 
-  // Khởi tạo vị trí ban đầu
+
   useEffect(() => {
     const banner = bannerRef.current
     if (banner) {
-      // Đợi một chút để đảm bảo DOM đã render xong
+    
       setTimeout(() => {
         if (bannerRef.current) {
-          // Scroll đến banner đầu tiên thật (index 1)
+      
           bannerRef.current.scrollLeft = bannerRef.current.offsetWidth
         }
       }, 100)
     }
   }, [])
 
-  // Cập nhật currentIndex khi scroll và xử lý vòng lặp
+
   useEffect(() => {
     const banner = bannerRef.current
     if (!banner) return
@@ -163,9 +163,9 @@ const Banner = () => {
         const bannerWidth = banner.offsetWidth
         let newIndex = Math.round(scrollPosition / bannerWidth)
 
-        // Xử lý vòng lặp
+   
         if (newIndex === 0) {
-          // Đang ở clone đầu, nhảy về banner cuối thật
+     
           isTransitioning.current = true
           newIndex = banners.length
           banner.scrollTo({
@@ -176,7 +176,7 @@ const Banner = () => {
             isTransitioning.current = false
           }, 50)
         } else if (newIndex === infiniteBanners.length - 1) {
-          // Đang ở clone cuối, nhảy về banner đầu thật
+       
           isTransitioning.current = true
           newIndex = 1
           banner.scrollTo({
@@ -188,7 +188,7 @@ const Banner = () => {
           }, 50)
         }
 
-        // Cập nhật currentIndex (trừ đi 1 vì có clone ở đầu)
+  
         const realIndex = newIndex - 1
         if (realIndex >= 0 && realIndex < banners.length) {
           setCurrentIndex((prevIndex) => {
@@ -208,11 +208,11 @@ const Banner = () => {
     }
   }, [banners.length, infiniteBanners.length])
 
-  // Auto-play banner
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length)
-    }, 8000) // Chuyển banner mỗi 3 giây
+    }, 8000)
 
     return () => clearInterval(interval)
   }, [banners.length])

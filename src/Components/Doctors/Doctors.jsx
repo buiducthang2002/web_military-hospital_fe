@@ -9,47 +9,47 @@ const Doctors = () => {
   const images = [Doctor1, Doctor2]
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  // Tự động chuyển ảnh sau mỗi 3 giây
+ 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       )
-    }, 9000) // 9000ms = 9 giây
+    }, 9000) 
 
-    return () => clearInterval(interval) // Cleanup khi component unmount
+    return () => clearInterval(interval) 
   }, [images.length])
 
   const features = [
     {
       icon: <UserCheck />,
-      title: 'Bác sĩ giàu kinh nghiệm ',
+      title: 'Đội ngũ chuyên gia đầu ngành ',
       desc:
-        'Đội ngũ bác sĩ của chúng tôi có chuyên môn cao, nhiều năm kinh nghiệm và luôn sẵn sàng tư vấn, chăm sóc bệnh nhân tận tâm, chuyên nghiệp.',
+        'Đội ngũ bác sĩ của chúng tôi có chuyên môn cao, nhiều năm kinh nghiệm và luôn sẵn sàng tư vấn, chăm sóc bệnh nhân tận tâm, chuyên nghiệp',
     },
     {
       icon: <ClipboardCheck />,
-      title: 'Quy trình chuyên nghiệp',
+      title: 'Quy trình chuẩn hóa, nhanh chóng',
       desc:
-        'Tại Bệnh viện quân y 4, chúng tôi tiêu chuẩn hóa quy trình khám chữa bệnh, tối ưu thời gian chờ và nâng cao trải nghiệm người bệnh.',
+        'Hệ thống quản lý khoa học giúp tối ưu hóa thủ tục hành chính, rút ngắn thời gian chờ đợi và đảm bảo độ chính xác trong từng bước thăm khám',
     },
     {
       icon: <Ambulance />,
-      title: 'Cơ sở vật chất hiện đại ',
+      title: 'Hệ thống hạ tầng đồng bộ',
       desc:
-        'Trang thiết bị tiên tiến, không gian sạch sẽ, thân thiện, đảm bảo môi trường khám chữa bệnh an toàn và thoải mái.',
+        'Không gian điều trị khang trang, sạch sẽ theo tiêu chuẩn y tế, tạo cảm giác an tâm và gần gũi cho người bệnh',
     },
      {
       icon: <Ambulance />,
-      title: 'Ứng dụng công nghệ điều trị cao',
+      title: 'Kỹ thuật y khoa tiên tiến',
       desc:
-        'Trang thiết bị tiên tiến, không gian sạch sẽ, thân thiện, đảm bảo môi trường khám chữa bệnh an toàn và thoải mái.',
+        'Chủ động cập nhật và ứng dụng những phương pháp điều trị hiện đại, giúp nâng cao tỷ lệ thành công và rút ngắn thời gian hồi phục',
     },
     {
       icon: <HeartHandshake />,
       title: 'Dịch vụ với chi phí tốt',
       desc:
-        'Hỗ trợ đặt lịch trực tuyến, tư vấn 24/7 qua hotline và website, giúp tiết kiệm thời gian với chi phí minh bạch, hợp lý.',
+        'Mọi danh mục dịch vụ đều được niêm yết rõ ràng; hỗ trợ thanh toán bảo hiểm đúng quy định, giúp bệnh nhân yên tâm về tài chính',
     },
   ]
 

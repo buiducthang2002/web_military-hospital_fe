@@ -18,7 +18,7 @@ const BannerGrid = () => {
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480)
 
-  // Theo dõi kích thước màn hình
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 480)
@@ -27,14 +27,14 @@ const BannerGrid = () => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  // Auto-slide cho mobile
+
   useEffect(() => {
     if (isMobile) {
       const interval = setInterval(() => {
         setCurrentBannerIndex((prevIndex) =>
           prevIndex === banners.length - 1 ? 0 : prevIndex + 1
         )
-      }, 3000) // 3 giây
+      }, 3000)
 
       return () => clearInterval(interval)
     }
@@ -50,7 +50,7 @@ const BannerGrid = () => {
     <section className="banner-grid-section">
       <div className="banner-grid-container">
         {isMobile ? (
-          // Mobile: hiển thị 1 banner tại một thời điểm
+
           <div
             className="banner-grid-item banner-mobile-slider"
             onClick={() => handleBannerClick(banners[currentBannerIndex].link)}
