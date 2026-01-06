@@ -316,24 +316,27 @@ const Navbar = () => {
                       <div className="mobile-submenu">
                         {getMobileDropdownItems(item.dropdownKey).map((subItem) => {
                           const isExternal = subItem.href.startsWith('http')
+                          const isActive = !isExternal && location.pathname === subItem.href
                           return isExternal ? (
                             <a
                               key={subItem.href}
-                              className="mobile-submenu-link"
+                              className={`mobile-submenu-link ${isActive ? 'active' : ''}`}
                               href={subItem.href}
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={handleMobileLeafClick}
                             >
+                              {isActive && <span className="star-icon">⭐ </span>}
                               {subItem.label}
                             </a>
                           ) : (
                             <Link
                               key={subItem.href}
-                              className="mobile-submenu-link"
+                              className={`mobile-submenu-link ${isActive ? 'active' : ''}`}
                               to={subItem.href}
                               onClick={handleMobileLeafClick}
                             >
+                              {isActive && <span className="star-icon">⭐ </span>}
                               {subItem.label}
                             </Link>
                           )
@@ -421,20 +424,24 @@ const Navbar = () => {
                   ],
                 }}
               >
-                {(item.dropdownKey === 'org' ? organizationItems : item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => (
-                  <NavDropdown.Item
-                    key={dropdownItem.href}
-                    as={dropdownItem.href.startsWith('http') ? 'a' : Link}
-                    to={dropdownItem.href.startsWith('http') ? undefined : dropdownItem.href}
-                    href={dropdownItem.href.startsWith('http') ? dropdownItem.href : undefined}
-                    target={dropdownItem.href.startsWith('http') ? '_blank' : undefined}
-                    rel={dropdownItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="custom-dropdown-item"
-                    onClick={handleDropdownItemClick}
-                  >
-                    {dropdownItem.label}
-                  </NavDropdown.Item>
-                ))}
+                {(item.dropdownKey === 'org' ? organizationItems : item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => {
+                  const isActive = !dropdownItem.href.startsWith('http') && location.pathname === dropdownItem.href
+                  return (
+                    <NavDropdown.Item
+                      key={dropdownItem.href}
+                      as={dropdownItem.href.startsWith('http') ? 'a' : Link}
+                      to={dropdownItem.href.startsWith('http') ? undefined : dropdownItem.href}
+                      href={dropdownItem.href.startsWith('http') ? dropdownItem.href : undefined}
+                      target={dropdownItem.href.startsWith('http') ? '_blank' : undefined}
+                      rel={dropdownItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className={`custom-dropdown-item ${isActive ? 'active' : ''}`}
+                      onClick={handleDropdownItemClick}
+                    >
+                      {isActive && <span className="star-icon">⭐</span>}
+                      {dropdownItem.label}
+                    </NavDropdown.Item>
+                  )
+                })}
               </NavDropdown>
             ) : item.isRoute ? (
               <Link
@@ -485,20 +492,24 @@ const Navbar = () => {
                   ],
                 }}
               >
-                {(item.dropdownKey === 'org' ? organizationItems : item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => (
-                  <NavDropdown.Item
-                    key={dropdownItem.href}
-                    as={dropdownItem.href.startsWith('http') ? 'a' : Link}
-                    to={dropdownItem.href.startsWith('http') ? undefined : dropdownItem.href}
-                    href={dropdownItem.href.startsWith('http') ? dropdownItem.href : undefined}
-                    target={dropdownItem.href.startsWith('http') ? '_blank' : undefined}
-                    rel={dropdownItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="custom-dropdown-item"
-                    onClick={handleDropdownItemClick}
-                  >
-                    {dropdownItem.label}
-                  </NavDropdown.Item>
-                ))}
+                {(item.dropdownKey === 'org' ? organizationItems : item.dropdownKey === 'kcb' ? khamChuaBenhItems : infoItems).map(dropdownItem => {
+                  const isActive = !dropdownItem.href.startsWith('http') && location.pathname === dropdownItem.href
+                  return (
+                    <NavDropdown.Item
+                      key={dropdownItem.href}
+                      as={dropdownItem.href.startsWith('http') ? 'a' : Link}
+                      to={dropdownItem.href.startsWith('http') ? undefined : dropdownItem.href}
+                      href={dropdownItem.href.startsWith('http') ? dropdownItem.href : undefined}
+                      target={dropdownItem.href.startsWith('http') ? '_blank' : undefined}
+                      rel={dropdownItem.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className={`custom-dropdown-item ${isActive ? 'active' : ''}`}
+                      onClick={handleDropdownItemClick}
+                    >
+                      {isActive && <span className="star-icon">⭐</span>}
+                      {dropdownItem.label}
+                    </NavDropdown.Item>
+                  )
+                })}
               </NavDropdown>
             ) : item.isRoute ? (
               <Link

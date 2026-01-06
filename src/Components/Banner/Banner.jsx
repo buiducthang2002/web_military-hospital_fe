@@ -3,8 +3,8 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import './Banner.css'
 
 
-import A1 from './Images/A1.jpg'
-import A2 from './Images/A2.jpg'
+
+
 import A3 from './Images/A3.jpg'
 import A4 from './Images/A4.jpg'
 
@@ -18,7 +18,7 @@ const Banner = () => {
   const isTransitioning = useRef(false)
   const dragStartPosition = useRef({ x: 0, y: 0 })
 
-  const banners = [A1, A2, A3, A4]
+  const banners = [A3, A4]
 
   const bannerLinks = [
   ]

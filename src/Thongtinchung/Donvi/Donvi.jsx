@@ -29,12 +29,19 @@ const Donvi = () => {
     'Phòng Kế hoạch tổng hợp': {
       head: 'Trưởng phòng: Trần Sơn',
       duties: [
-        
+        'Giúp Giám đốc Bệnh viện theo dõi, chỉ đạo công tác khám bệnh, chữa bệnh chăm sóc và bảo vệ sức khỏe trong toàn Bệnh viện, công tác tổ chức lực lượng phục vụ công tác khám bệnh, chữa bệnh; thống kê, tổng hợp báo cáo công tác Bệnh viện và hoạt động chuyên môn lên Giám đốc và các cơ quan cấp trên theo quy định.',
+        'Tham mưu cho Đảng uỷ, Ban Giám đốc Bệnh viện đề ra phương hướng và kế hoạch thực hiện công tác KH-CN&MT trong Bệnh viện. Theo dõi, quản lý công tác đào tạo, huấn luyện học sinh, sinh viên, CBNV từ các đơn vị đến học tập tại Bệnh viện',
+        ' Tham mưu giúp chỉ huy Bệnh viện lập và triển khai kế hoạch kiện toàn Bệnh viện theo biểu tổ chức biên chế quy định và quy hoạch tổ chức quân số của Cục Hậu cần, Quân khu, hướng dẫn các khoa, ban thuộc quyền thực hiện biều tổ chức biên chế của từng cấp quản lý, sắp xếp QNCN, CNVQP, HSQ-BS theo phân cấp.',
+        ' Triển khai công tác Luật Bảo hiểm y tế tới từng cá nhân, làm tốt công tác hồ sơ bệnh án của Bảo hiểm y tế. Tổng hợp số liệu trong khám chữa bệnh cho các đối tượng bệnh nhân bộ đội, bệnh nhân bảo hiểm y tế và thu viện phí tại bệnh viện; giải quyết chế độ khám chữa bệnh cho bệnh nhân theo qui định của ngành và Giám đốc Bệnh viện.',
+        'Quản lý hồ sơ, bệnh án phục vụ công tác điều trị bệnh nhân',
+        'Quản lý công tác vệ sinh, môi trường Bệnh viện',
       ],
     },
     'Phòng tham mưu hành chính': {
       head: 'Trưởng phòng: Trần Đức Sơn',
       duties: [
+        'Là cơ quan giúp Ban Giám đốc duy trì đơn vị chấp hành nghiêm kỷ luật quân đội, pháp luật nhà nước; các chế độ quy định của người chỉ huy; tổ chức đón tiếp và hướng dẫn khách đến làm việc với Bệnh viện; bảo đảm trật tự an toàn khu vực đơn vị đóng quân.',
+        'Tiếp nhận, đăng ký quản lý lưu trữ công văn tài liệu con dấu của đơn vị',
         
       ],
     },
@@ -47,6 +54,7 @@ const Donvi = () => {
     'Phòng chính trị': {
       head: 'Trưởng phòng:Võ Xuân Thành',
       duties: [
+        'Tham mưu giúp thường vụ Đảng ủy, Ban Giám đốc lãnh đạo, chỉ đạo triển khai hoạt động Công tác Đảng, công tác chính trị trong Bệnh viện.',
         
       ],
       
@@ -54,13 +62,16 @@ const Donvi = () => {
     'Ban điều dưỡng': {
       head: 'Trưởng phòng:Trần Hoàng',
       duties: [
+        '',
         
       ],
     },
         'Ban tài chính': {
           head: 'Trưởng ban:Đặng Văn Mừng',
           duties: [
-            
+            'Lập dự toán thu chi ngân sách quốc phòng thường xuyên',
+            'Tổ chức bảo đảm, cấp phát, quản lý việc sử dụng, giám sát, kiểm soát việc chi tiêu thanh toán, quyết toán ngân sách.',
+            'Tổ chức công tác kế toán, thống kê, đăng ký ghi chép các hoạt động tài chính, Tổ chức công tác kế toán, thống kê, đăng ký ghi chép các hoạt động tài chính, tài sản của đơn vị theo đúng chế độ quy định.',
           ],
         },
           'Ban công nghệ thông tin': {

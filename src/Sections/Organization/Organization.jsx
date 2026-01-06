@@ -195,40 +195,7 @@ const Organization = () => {
     },
   ];
 
-  const additionalDirectors = [
-    {
-      name: "BS.CK II",
-      position: "Trưởng khoa",
-    },
-    {
-      name: "BS.CK II",
-      position: "Trưởng khoa",
-    },
-    {
-      name: "BS.CK II",
-      position: "Trưởng khoa",
-    },
-    {
-      name: "BS.CK II",
-      position: "Trưởng khoa",
-    },
-    {
-      name: "BS.CK II",
-      position: "Trưởng khoa",
-    },
-    {
-      name: "BS.CK II",
-      position: "Trưởng khoa",
-    },
-    {
-      name: "BS.CK II",
-      position: "Trưởng khoa",
-    },
-    {
-      name: "BS.CK II",
-      position: "Trưởng khoa",
-    },
-  ];
+  
 
   return (
     <div
@@ -256,7 +223,6 @@ const Organization = () => {
               <OrganizationStructure
                 director={director}
                 viceDirectors={viceDirectors}
-                additionalDirectors={additionalDirectors}
               />
             </div>
 
