@@ -3,7 +3,7 @@
  */
 
 /**
- * Filter tin tức theo từ khóa (tìm trong title, excerpt, tags)
+ * Filter tin tức theo từ khóa (tìm trong title, excerpt, content, tags)
  * @param {Array} news - Mảng tin tức
  * @param {string} keyword - Từ khóa tìm kiếm
  * @returns {Array} - Mảng tin tức đã filter
@@ -12,21 +12,27 @@ export const filterNewsByKeyword = (news, keyword) => {
   if (!news || !Array.isArray(news)) {
     return []
   }
-  
+
   if (!keyword || keyword.trim() === '') {
     return news
   }
-  
+
   const lowerKeyword = keyword.toLowerCase().trim()
-  
+
   return news.filter(item => {
     const titleMatch = item.title?.toLowerCase().includes(lowerKeyword)
     const excerptMatch = item.excerpt?.toLowerCase().includes(lowerKeyword)
-    const tagsMatch = item.tags?.some(tag => 
+
+    // Chuyển content thành string và loại bỏ HTML tags trước khi tìm kiếm
+    const contentStr = typeof item.content === 'string' ? item.content : ''
+    const contentWithoutHtml = contentStr.replace(/<[^>]*>/g, ' ').toLowerCase()
+    const contentMatch = contentWithoutHtml.includes(lowerKeyword)
+
+    const tagsMatch = item.tags?.some(tag =>
       tag.toLowerCase().includes(lowerKeyword)
     )
-    
-    return titleMatch || excerptMatch || tagsMatch
+
+    return titleMatch || excerptMatch || contentMatch || tagsMatch
   })
 }
 

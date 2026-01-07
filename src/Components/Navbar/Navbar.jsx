@@ -4,6 +4,11 @@ import { Navbar as BootstrapNavbar, NavDropdown, Container, Offcanvas } from 're
 import './Navbar.css'
 import Logo from '../Assets/Logo.jpg'
 import { FiMinus, FiPlus } from 'react-icons/fi'
+import SearchResults from './SearchResults'
+import allNewsData from '../../modules/tintuc/data/allNews.json'
+import { mapArticlesImages } from '../../modules/tintuc/utils/imageMapper'
+import { filterNewsByKeyword } from '../../modules/tintuc/utils/filterNews'
+import articleContents from '../../modules/tintuc/content/index'
 
 const SCROLL_TO_TOP_PATHS = new Set([
   '/',
@@ -30,7 +35,11 @@ const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState(null)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [mobileExpandedKey, setMobileExpandedKey] = useState(null)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [searchResults, setSearchResults] = useState([])
+  const [showSearchResults, setShowSearchResults] = useState(false)
   const navbarRef = useRef(null)
+  const searchRef = useRef(null)
   const location = useLocation()
 
   const menuItems = [
@@ -222,6 +231,65 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  // Search functionality
+  const handleSearchChange = (e) => {
+    const value = e.target.value
+    setSearchTerm(value)
+
+    if (value.trim().length >= 2) {
+      const allNews = mapArticlesImages(allNewsData)
+
+      // Thêm nội dung đầy đủ từ các file content vào mỗi bài viết
+      const newsWithFullContent = allNews.map(article => {
+        const fullContent = articleContents[article.slug] || article.content || ''
+        return {
+          ...article,
+          content: fullContent
+        }
+      })
+
+      const filtered = filterNewsByKeyword(newsWithFullContent, value)
+      setSearchResults(filtered.slice(0, 5))
+      setShowSearchResults(true)
+    } else {
+      setSearchResults([])
+      setShowSearchResults(false)
+    }
+  }
+
+  const handleSearchFocus = () => {
+    if (searchTerm.trim().length >= 2 && searchResults.length > 0) {
+      setShowSearchResults(true)
+    }
+  }
+
+  const handleCloseSearch = () => {
+    setShowSearchResults(false)
+  }
+
+  // Click outside to close search results
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShowSearchResults(false)
+      }
+    }
+
+    if (showSearchResults) {
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }
+  }, [showSearchResults])
+
+  // Clear search when navigating
+  useEffect(() => {
+    setSearchTerm('')
+    setSearchResults([])
+    setShowSearchResults(false)
+  }, [location.pathname])
+
   return (
     <>
       {/* Mobile Bootstrap Navbar - Only visible on mobile */}
@@ -391,9 +459,21 @@ const Navbar = () => {
           </div>
 
           <div className="actions-wrap">
-            <div className="search-box">
-              <input placeholder="Tìm kiếm............" />
+            <div className="search-box" ref={searchRef}>
+              <input
+                placeholder="Tìm kiếm............"
+                value={searchTerm}
+                onChange={handleSearchChange}
+                onFocus={handleSearchFocus}
+              />
               <span className="icon">| 🔍</span>
+              {showSearchResults && (
+                <SearchResults
+                  results={searchResults}
+                  onClose={handleCloseSearch}
+                  searchTerm={searchTerm}
+                />
+              )}
             </div>
           </div>
         </div>

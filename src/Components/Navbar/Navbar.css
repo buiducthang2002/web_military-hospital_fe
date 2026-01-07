@@ -407,6 +407,12 @@
   border: 1px solid #e0e0e0;
   border-radius: 18px;
   outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-box input:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.1);
 }
 
 .search-box .icon {
