@@ -5,10 +5,8 @@ import './Navbar.css'
 import Logo from '../Assets/Logo.jpg'
 import { FiMinus, FiPlus } from 'react-icons/fi'
 import SearchResults from './SearchResults'
-import allNewsData from '../../modules/tintuc/data/allNews.json'
-import { mapArticlesImages } from '../../modules/tintuc/utils/imageMapper'
-import { filterNewsByKeyword } from '../../modules/tintuc/utils/filterNews'
-import articleContents from '../../modules/tintuc/content/index'
+import { getAllSearchableData } from '../../utils/searchData'
+import { searchAndSort } from '../../utils/globalSearch'
 
 const SCROLL_TO_TOP_PATHS = new Set([
   '/',
@@ -237,19 +235,13 @@ const Navbar = () => {
     setSearchTerm(value)
 
     if (value.trim().length >= 2) {
-      const allNews = mapArticlesImages(allNewsData)
+      // Lấy tất cả dữ liệu có thể tìm kiếm
+      const allData = getAllSearchableData()
 
-      // Thêm nội dung đầy đủ từ các file content vào mỗi bài viết
-      const newsWithFullContent = allNews.map(article => {
-        const fullContent = articleContents[article.slug] || article.content || ''
-        return {
-          ...article,
-          content: fullContent
-        }
-      })
+      // Tìm kiếm và sắp xếp theo độ liên quan
+      const results = searchAndSort(allData, value, 5)
 
-      const filtered = filterNewsByKeyword(newsWithFullContent, value)
-      setSearchResults(filtered.slice(0, 5))
+      setSearchResults(results)
       setShowSearchResults(true)
     } else {
       setSearchResults([])
