@@ -19,6 +19,8 @@ const SearchResults = ({ results, onClose, searchTerm }) => {
     switch (article.type) {
       case 'organization':
         return '/organization'
+      case 'departments':
+        return '/thong-tin-chung/cac-don-vi'
       case 'party-politics':
         return `/party-politics/${article.slug}`
       case 'cooperation':

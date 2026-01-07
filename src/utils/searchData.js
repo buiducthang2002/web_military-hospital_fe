@@ -66,6 +66,90 @@ export const organizationData = [
     date: '2025-01-01',
     tags: ['ban giám đốc', 'tổ chức', 'phó giám đốc'],
     categoryId: 'organization'
+  },
+  {
+    id: 'dept-1',
+    type: 'departments',
+    title: 'Phòng Kế hoạch tổng hợp - Trưởng phòng: Trần Sơn',
+    slug: 'thong-tin-chung/cac-don-vi',
+    excerpt: 'Phòng Kế hoạch tổng hợp do Trưởng phòng Trần Sơn phụ trách',
+    content: 'Phòng Kế hoạch tổng hợp - Trưởng phòng: Trần Sơn. Giúp Giám đốc Bệnh viện theo dõi, chỉ đạo công tác khám bệnh, chữa bệnh chăm sóc và bảo vệ sức khỏe trong toàn Bệnh viện',
+    image: null,
+    date: '2025-01-01',
+    tags: ['phòng ban', 'tổ chức', 'kế hoạch'],
+    categoryId: 'departments'
+  },
+  {
+    id: 'dept-2',
+    type: 'departments',
+    title: 'Phòng tham mưu hành chính - Trưởng phòng: Trần Đức Sơn',
+    slug: 'thong-tin-chung/cac-don-vi',
+    excerpt: 'Phòng tham mưu hành chính do Trưởng phòng Trần Đức Sơn phụ trách',
+    content: 'Phòng tham mưu hành chính - Trưởng phòng: Trần Đức Sơn. Là cơ quan giúp Ban Giám đốc duy trì đơn vị chấp hành nghiêm kỷ luật quân đội',
+    image: null,
+    date: '2025-01-01',
+    tags: ['phòng ban', 'tổ chức', 'hành chính'],
+    categoryId: 'departments'
+  },
+  {
+    id: 'dept-3',
+    type: 'departments',
+    title: 'Phòng hậu cần kỹ thuật - Trưởng phòng: Nguyễn Duy Hồng',
+    slug: 'thong-tin-chung/cac-don-vi',
+    excerpt: 'Phòng hậu cần kỹ thuật do Trưởng phòng Nguyễn Duy Hồng phụ trách',
+    content: 'Phòng hậu cần kỹ thuật - Trưởng phòng: Nguyễn Duy Hồng',
+    image: null,
+    date: '2025-01-01',
+    tags: ['phòng ban', 'tổ chức', 'hậu cần'],
+    categoryId: 'departments'
+  },
+  {
+    id: 'dept-4',
+    type: 'departments',
+    title: 'Phòng chính trị - Trưởng phòng: Võ Xuân Thành',
+    slug: 'thong-tin-chung/cac-don-vi',
+    excerpt: 'Phòng chính trị do Trưởng phòng Võ Xuân Thành phụ trách',
+    content: 'Phòng chính trị - Trưởng phòng: Võ Xuân Thành. Tham mưu giúp thường vụ Đảng ủy, Ban Giám đốc lãnh đạo, chỉ đạo triển khai hoạt động Công tác Đảng, công tác chính trị trong Bệnh viện',
+    image: null,
+    date: '2025-01-01',
+    tags: ['phòng ban', 'tổ chức', 'chính trị'],
+    categoryId: 'departments'
+  },
+  {
+    id: 'dept-5',
+    type: 'departments',
+    title: 'Ban điều dưỡng - Trưởng ban: Trần Hoàng',
+    slug: 'thong-tin-chung/cac-don-vi',
+    excerpt: 'Ban điều dưỡng do Trưởng ban Trần Hoàng phụ trách',
+    content: 'Ban điều dưỡng - Trưởng ban: Trần Hoàng',
+    image: null,
+    date: '2025-01-01',
+    tags: ['phòng ban', 'tổ chức', 'điều dưỡng'],
+    categoryId: 'departments'
+  },
+  {
+    id: 'dept-6',
+    type: 'departments',
+    title: 'Ban tài chính - Trưởng ban: Đặng Văn Mừng',
+    slug: 'thong-tin-chung/cac-don-vi',
+    excerpt: 'Ban tài chính do Trưởng ban Đặng Văn Mừng phụ trách',
+    content: 'Ban tài chính - Trưởng ban: Đặng Văn Mừng. Lập dự toán thu chi ngân sách quốc phòng thường xuyên. Tổ chức bảo đảm, cấp phát, quản lý việc sử dụng, giám sát, kiểm soát việc chi tiêu thanh toán, quyết toán ngân sách',
+    image: null,
+    date: '2025-01-01',
+    tags: ['phòng ban', 'tổ chức', 'tài chính'],
+    categoryId: 'departments'
+  },
+  {
+    id: 'dept-7',
+    type: 'departments',
+    title: 'Ban công nghệ thông tin - Trưởng ban: Hoàng Đình Đồng',
+    slug: 'thong-tin-chung/cac-don-vi',
+    excerpt: 'Ban công nghệ thông tin do Trưởng ban Hoàng Đình Đồng phụ trách',
+    content: 'Ban công nghệ thông tin - Trưởng ban: Hoàng Đình Đồng',
+    image: null,
+    date: '2025-01-01',
+    tags: ['phòng ban', 'tổ chức', 'công nghệ thông tin'],
+    categoryId: 'departments'
   }
 ]
 
@@ -110,7 +194,8 @@ export const getTypeLabel = (type) => {
     'news': 'Tin tức',
     'party-politics': 'Công tác Đảng',
     'cooperation': 'Nghiên cứu - Hợp tác',
-    'organization': 'Tổ chức bệnh viện'
+    'organization': 'Tổ chức',
+    'departments': 'Phòng ban'
   }
   return labels[type] || 'Khác'
 }

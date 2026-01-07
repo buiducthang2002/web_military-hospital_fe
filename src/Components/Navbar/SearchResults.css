@@ -120,6 +120,11 @@
   color: #2e7d32;
 }
 
+.search-result-type-badge.type-departments {
+  background: #fff3e0;
+  color: #e65100;
+}
+
 .search-result-item:hover .search-result-title {
   color: #27ae60;
 }

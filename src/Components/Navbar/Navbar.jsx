@@ -338,7 +338,7 @@ const Navbar = () => {
                           className="mobile-menu-row"
                           href={item.href}
                           target="_blank"
-                          rel="noopener noreferrer"
+                            rel="noopener noreferrer"
                           onClick={handleMobileLeafClick}
                         >
                           <span className="mobile-menu-label">{item.label}</span>
