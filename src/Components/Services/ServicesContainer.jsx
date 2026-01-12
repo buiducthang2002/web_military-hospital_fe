@@ -4,16 +4,17 @@ import { Link } from 'react-router-dom'
 
 const ServicesContainer = () => {
   const services = [
-    {
-      icon: <PhoneCall size={40} color="#069242" strokeWidth={1} />,
-      title: 'Gọi tổng đài',
-      subtitle: 'Tư vấn lịch khám qua tổng đài',
-      path: '/call-center'
+     {
+      icon: <CalendarClock size={40} color="#23b26b" strokeWidth={1} />,
+      title: 'Đặt lịch khám sức khoẻ',
+      subtitle: 'Đặt lịch  tại website hoặc liên hệ tổng đài',
+      path: 'https://40026.byt.vn/kcb/dang-ky-ksk',
+      external: true
     },
     {
       icon: <CalendarClock size={40} color="#23b26b" strokeWidth={1} />,
-      title: 'Đặt lịch khám',
-      subtitle: 'Đặt lịch khám online tại website',
+      title: 'Đặt lịch khám theo yêu cầu',
+      subtitle: 'Đặt lịch  tại website hoặc liên hệ tổng đài',
       path: '/book-appointment'
     },
     {
@@ -33,18 +34,35 @@ const ServicesContainer = () => {
   return (
     <div className="services-container">
       {services.map(service => (
-        <Link
-          key={service.title}
-          to={service.path}
-          className="service-item"
-          style={{ textDecoration: 'none', color: 'inherit' }}
-        >
-          <div className="service-icon">{service.icon}</div>
-          <div className="service-content">
-            <h3 className="service-title">{service.title}</h3>
-            <p className="service-subtitle">{service.subtitle}</p>
-          </div>
-        </Link>
+        service.external ? (
+          <a
+            key={service.title}
+            href={service.path}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="service-item"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <div className="service-icon">{service.icon}</div>
+            <div className="service-content">
+              <h3 className="service-title">{service.title}</h3>
+              <p className="service-subtitle">{service.subtitle}</p>
+            </div>
+          </a>
+        ) : (
+          <Link
+            key={service.title}
+            to={service.path}
+            className="service-item"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <div className="service-icon">{service.icon}</div>
+            <div className="service-content">
+              <h3 className="service-title">{service.title}</h3>
+              <p className="service-subtitle">{service.subtitle}</p>
+            </div>
+          </Link>
+        )
       ))}
     </div>
   )

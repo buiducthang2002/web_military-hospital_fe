@@ -56,6 +56,7 @@
 .banner-slide {
   width: 100vw;
   height: clamp(220px, 45vw, 520px);
+  /*  height: clamp(160px, 32vw, 420px); giảm chiều cao màn thì sử dụng cái này */
   flex-shrink: 0;
   scroll-snap-align: start;
   position: relative;

@@ -179,7 +179,7 @@ const Organization = () => {
 
   const viceDirectors = [
     {
-      name: " Đại tá, Thạc sĩ, BSCKII Trương Quang Thắng",
+      name: " Đại tá, BSCKII, Thạc sĩ Trương Quang Thắng",
       position: "Phó giám đốc bệnh viện",
       image: gd2a,
     },

@@ -60,7 +60,7 @@ const Navbar = () => {
   const khamChuaBenhItems = [
     { href: '/kham-chua-benh', label: 'Quy trình khám chữa bệnh' },
     { href: '/kham-chua-benh/loai-hinh', label: 'Thủ tục xuất viện' },
-    { href: '/kham-chua-benh/thanh-toan', label: 'Quy trình thanh toán' },
+    { href: '/kham-chua-benh/thanh-toan', label: 'Đăng ký khám theo yêu cầu' },
     { href: '/kham-chua-benh/trang-thiet-bi', label: 'Trang thiết bị' },
     { href: 'http://117.4.137.26:11664/?c=banggia', label: 'Bảng giá dịch vụ' },
   ]
@@ -433,8 +433,8 @@ const Navbar = () => {
         <div className="top-strip">
           <div className="location-text">Đường Lê Viết Thuật, Phường Vinh Lộc, Tỉnh Nghệ An</div>
           <div className="quick-actions">
-            <button className="btn btn-outline">Gọi tổng đài</button>
-            <button className="btn btn-outline">Đặt lịch khám</button>
+            <a href="tel:0974225225" className="btn btn-outline">Gọi tổng đài</a>
+            <Link to="/book-appointment" className="btn btn-outline">Đặt lịch khám</Link>
           </div>
         </div>
 
