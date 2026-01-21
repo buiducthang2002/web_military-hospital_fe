@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import Navbar from '../../../Components/Navbar/Navbar'
 import Footer from '../../../Components/Footer/Footer'
-import { formatDate, formatDateTime } from '../utils/formatDate'
+import { formatDate } from '../utils/formatDate'
 import { getCategoryById } from '../categories'
 import { mapArticlesImages, mapImagePath } from '../utils/imageMapper'
 import { getArticleContent } from '../content'
@@ -14,7 +14,6 @@ import './ArticleDetailPage.css'
  */
 const ArticleDetailPage = () => {
   const { slug } = useParams()
-  const navigate = useNavigate()
   const [article, setArticle] = useState(null)
   const [relatedNews, setRelatedNews] = useState([])
   const [loading, setLoading] = useState(true)
@@ -42,7 +41,7 @@ const ArticleDetailPage = () => {
       if (contentFromFile) {
         // Tìm tất cả các placeholder dạng {{tên_file}}
         const imagePlaceholderRegex = /\{\{([^}]+\.(jpg|jpeg|png|gif|webp))\}\}/gi
-        contentFromFile = contentFromFile.replace(imagePlaceholderRegex, (match, imageName) => {
+        contentFromFile = contentFromFile.replace(imagePlaceholderRegex, (_match, imageName) => {
           // Map tên file thành đường dẫn ảnh thực tế
           const mappedImage = mapImagePath(imageName)
           return mappedImage || imageName
@@ -99,40 +98,6 @@ const ArticleDetailPage = () => {
   }
 
   const category = getCategoryById(article.categoryId)
-
-  // Hàm chia sẻ lên Facebook
-  const handleShareFacebook = () => {
-    const url = window.location.href
-    const title = article.title
-    const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(title)}`
-    window.open(shareUrl, '_blank', 'width=600,height=400')
-  }
-
-  // Hàm chia sẻ lên Zalo
-  const handleShareZalo = () => {
-    const url = window.location.href
-    const title = article.title
-    const shareUrl = `https://zalo.me/share?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`
-    window.open(shareUrl, '_blank', 'width=600,height=400')
-  }
-
-  // Hàm copy link
-  const handleCopyLink = async () => {
-    const url = window.location.href
-    try {
-      await navigator.clipboard.writeText(url)
-      alert('Đã sao chép link bài viết!')
-    } catch (err) {
-      // Fallback cho trình duyệt cũ
-      const textArea = document.createElement('textarea')
-      textArea.value = url
-      document.body.appendChild(textArea)
-      textArea.select()
-      document.execCommand('copy')
-      document.body.removeChild(textArea)
-      alert('Đã sao chép link bài viết!')
-    }
-  }
 
   return (
     <div style={{ minHeight: '100vh', width: '100%', overflowX: 'hidden' }}>
@@ -233,7 +198,7 @@ const ArticleDetailPage = () => {
             <div className="related-news-section">
               <h2 className="related-news-title">Tin tức liên quan</h2>
               <ul className="related-news-list">
-                {relatedNews.map((item, index) => (
+                {relatedNews.map((item) => (
                   <li key={item.id} className="related-news-item">
                     <Link
                       to={`/news-events/${item.slug}`}
