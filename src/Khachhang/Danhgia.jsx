@@ -145,7 +145,7 @@ const Danhgia = () => {
       })
 
       if (response.ok) {
-        const result = await response.json()
+        await response.json()
         setSubmitStatus({
           type: 'success',
           message: 'Cảm ơn bạn đã gửi đánh giá! Ý kiến của bạn rất quan trọng giúp chúng tôi cải thiện chất lượng dịch vụ.'

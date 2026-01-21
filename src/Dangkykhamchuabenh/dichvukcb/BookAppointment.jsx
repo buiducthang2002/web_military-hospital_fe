@@ -1,54 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import './BookAppointment.css'
 
 const BookAppointment = () => {
-  const [formData, setFormData] = useState({
-    date: '',
-    session: 'morning',
-    specialty: '',
-    healthIssue: ''
-  })
-
-  const specialties = [
-    "Nội tổng hợp",
-    "Ngoại tổng hợp",
-    "Tai mũi họng",
-    "Răng hàm mặt",
-    "Mắt",
-    "Nhiệt đới",
-    "Ung bướu",
-    "Nhi",
-    "Bỏng",
-    "Tâm thần kinh",
-    "Đái tháo đường",
-    "Tim mạch",
-  ]
-
-  const handleDateChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      date: e.target.value
-    }))
-  }
-
-  const handleSessionChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      session: e.target.value
-    }))
-  }
-
-  const handleHealthIssueChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      healthIssue: e.target.value
-    }))
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
     
     // Chuyển hướng đến trang đăng ký khám trong tab mới
     window.open('https://40026.byt.vn/kcb/dang-ky-kham', '_blank')
@@ -67,7 +23,7 @@ const BookAppointment = () => {
             <span className="highlight-text"> Bệnh viện Quân y 4 </span>, xin vui lòng thực hiện theo hướng dẫn sau:
           </p>
           <p>1. Đăng ký khám lần đầu: bằng cách bấm vào bên dưới.</p>
-          <p>2. Đăng ký khám lại tại: <a href="#" className="link-text">Đăng ký khám lại</a></p>
+          <p>2. Đăng ký khám lại tại: <button type="button" className="link-text" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>Đăng ký khám lại</button></p>
           <p>
             3.Xác nhận đặt lịch hẹn khám: bằng cách gọi tổng đài Chăm sóc khách hàng tại số
             <span className="highlight-phone"> 0974.225.225</span>.

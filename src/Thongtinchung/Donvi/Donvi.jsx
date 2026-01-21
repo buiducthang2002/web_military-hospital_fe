@@ -13,8 +13,7 @@ const Donvi = () => {
     'Phòng chính trị',
     'Ban điều dưỡng',
     'Ban tài chính',
-    'Ban công nghệ thông tin',
-    ,
+    'Ban công nghệ thông tin'
   ]
   const [activeDept, setActiveDept] = useState(departments[0])
 
