@@ -69,6 +69,12 @@ import ttbv83 from '../../../Components/NewsEvents/Images/ttbv83.jpg'
 import ttbv84 from '../../../Components/NewsEvents/Images/ttbv84.jpg'
 import ttbv85 from '../../../Components/NewsEvents/Images/ttbv85.jpg'
 import ttbv86 from '../../../Components/NewsEvents/Images/ttbv86.jpg'
+import phatcom1 from '../../../Components/NewsEvents/Images/phatcom1.jpg'
+import phatcom2 from '../../../Components/NewsEvents/Images/phatcom2.jpg'
+import phatcom3 from '../../../Components/NewsEvents/Images/phatcom3.jpg'
+import phatcom4 from '../../../Components/NewsEvents/Images/phatcom4.jpg'
+import phatcom5 from '../../../Components/NewsEvents/Images/phatcom5.jpg'
+
 
 
 
@@ -138,6 +144,13 @@ const imageMap = {
   'ttbv84.jpg': ttbv84,
   'ttbv85.jpg': ttbv85,
   'ttbv86.jpg': ttbv86,
+  'phatcom1.jpg': phatcom1,
+  'phatcom2.jpg': phatcom2,
+  'phatcom3.jpg': phatcom3,
+  'phatcom4.jpg': phatcom4,
+  'phatcom5.jpg': phatcom5,
+
+
 
  
 }

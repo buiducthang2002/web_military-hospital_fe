@@ -54,9 +54,11 @@
 }
 
 .banner-slide {
+  --banner-height-min: 220px;
+  --banner-height-preferred: 45vw;
+  --banner-height-max: 520px;
   width: 100vw;
-  height: clamp(220px, 45vw, 520px);
-  /*  height: clamp(160px, 32vw, 420px); giảm chiều cao màn thì sử dụng cái này */
+  height: clamp(var(--banner-height-min), var(--banner-height-preferred), var(--banner-height-max));
   flex-shrink: 0;
   scroll-snap-align: start;
   position: relative;
@@ -79,7 +81,16 @@
   object-fit: cover;
   object-position: center;
   background: #0f172a;
-  filter: saturate(1.05) contrast(1.02);
+  /* High quality image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  -ms-interpolation-mode: bicubic;
+  /* Hardware acceleration for smooth rendering */
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(1.001);
+  will-change: transform;
+  /* Sharpen low quality images */
+  filter: contrast(1.02) saturate(1.05);
   user-select: none;
   pointer-events: none;
   border: none;
@@ -186,7 +197,9 @@
 /* Responsive */
 @media (max-width: 768px) {
   .banner-slide {
-    height: clamp(160px, 42vw, 260px);
+    --banner-height-min: 160px;
+    --banner-height-preferred: 42vw;
+    --banner-height-max: 260px;
   }
 
   .banner-arrow {
@@ -206,7 +219,9 @@
 
 @media (max-width: 480px) {
   .banner-slide {
-    height: 160px;
+    --banner-height-min: 160px;
+    --banner-height-preferred: 160px;
+    --banner-height-max: 160px;
   }
 
   .dot {

@@ -139,6 +139,23 @@
       "Trao thưởng"
     ]
   },
+    {
+    "id": "21e",
+    "categoryId": "hospital-activities",
+    "title": " Bệnh viện Quân y 4 phát cháo miễn phí cho bệnh nhân",
+    "slug": "tin-tuc-hoat-dong-benh-vien-9",
+    "excerpt": "Chiều 19-1, Hội Phụ nữ cơ sở Bệnh viện Quân y 4 (Quân khu 4) phối hợp tổ chức phát cháo miễn phí cho các bệnh nhân đang điều trị tại bệnh viện",
+    "image": "phatcom1.jpg",
+    "date": "16:04 07/12/2025",
+    "author": "Admin",
+    "views": 240,
+    "tags": [
+      "bệnh viện",
+      "hoạt động",
+      "sự kiện",
+      "lan tỏa yêu thương"
+    ]
+  },
   {
     "id": "1",
     "categoryId": "world-medical",

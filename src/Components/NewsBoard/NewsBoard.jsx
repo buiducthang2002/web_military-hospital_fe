@@ -5,15 +5,16 @@ import { FiClock, FiChevronRight } from 'react-icons/fi'
 
 
 import ttbv61 from '../NewsEvents/Images/ttbv61.jpg'
+import phatcom1 from '../NewsEvents/Images/phatcom1.jpg'
 import ttbv7 from '../NewsEvents/Images/ttbv7.jpg'
-import ttbv52 from '../NewsEvents/Images/ttbv52.jpg'
+
 import ttbv85 from '../NewsEvents/Images/ttbv85.jpg'
 const newsData = {
   featuredNews: {
-    title: 'BỆNH VIỆN QUÂN Y 4 VINH DỰ NHẬN THƯỞNG CỜ THI ĐUA CỦA THỦ TRƯỞNG BỘ QUỐC PHÒNG',
+    title: 'BỆNH VIÊN QUÂN Y 4 TỔ CHỨC CHƯƠNG TRÌNH PHÁT CHÁO TỪ THIỆN',
     time: '07/12/2025',
-    image: ttbv61,
-    link: '/news-events/tin-tuc-hoat-dong-benh-vien-6'
+    image: phatcom1,
+    link: '/news-events/tin-tuc-hoat-dong-benh-vien-9'
   },
   subNews: [
     {
@@ -23,12 +24,12 @@ const newsData = {
       image: ttbv7,
       link: '/news-events/tin-tuc-hoat-dong-benh-vien-7'
     },
-    {
+  {
       id: 2,
-      title: 'Bệnh viện Quân y 4 hoàn thành tốt nhiệm vụ năm 2025',
-      time: '04/12/2025',
-      image: ttbv52,
-      link: '/news-events/tin-tuc-hoat-dong-benh-vien-5'
+      title: 'Bệnh viện quân y 4 vinh dự nhận cờ thi đua của Thủ trưởng Bộ Quốc Phòng',
+      time: '02/12/2025',
+      image: ttbv61,
+      link: '/news-events/tin-tuc-hoat-dong-benh-vien-6'
     },
     {
       id: 3,
@@ -36,7 +37,7 @@ const newsData = {
       time: '02/12/2025',
       image: ttbv85,
       link: '/news-events/tin-tuc-hoat-dong-benh-vien-8'
-    }
+    },
   ]
 }
 

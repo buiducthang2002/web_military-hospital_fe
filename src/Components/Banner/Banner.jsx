@@ -2,11 +2,9 @@ import React, { useState, useRef, useEffect } from 'react'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import './Banner.css'
 
-
-
-
 import A3 from './Images/A3.jpg'
-import A4 from './Images/A4.jpg'
+import hpnwqy4vn1 from './Images/hpnwqy4vn1.jpg'
+
 
 
 const Banner = () => {
@@ -18,7 +16,7 @@ const Banner = () => {
   const isTransitioning = useRef(false)
   const dragStartPosition = useRef({ x: 0, y: 0 })
 
-  const banners = [A3, A4]
+  const banners = [ hpnwqy4vn1,A3]
 
   const bannerLinks = [
   ]

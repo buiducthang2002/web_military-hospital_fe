@@ -27,6 +27,7 @@ import ttbv51 from './Images/ttbv51.jpg'
 import ttbv85 from './Images/ttbv85.jpg'
 import ttbv61 from './Images/ttbv61.jpg'
 import ttbv7 from './Images/ttbv7.jpg'
+import phatcom1 from './Images/phatcom1.jpg'
   
 
 const NewsEvents = () => {
@@ -103,6 +104,14 @@ const NewsEvents = () => {
         title: 'Đảng ủy Bệnh viện Quân y 4: Ra nghị quyết lãnh đạo thực hiện nhiệm vụ năm 2026',
         date: '17:05 18/06/2025',
         description: 'Năm 2025, Đảng ủy, Ban Giám đốc Bệnh viện lãnh đạo triển khai toàn diện các mặt công tác; duy trì nghiêm nền nếp trực sẵn sàng chiến đấu (SSCĐ) và chế độ trực chuyên môn, nhất là dịp lễ '
+      },
+      {
+        id: '21e',
+        slug: 'tin-tuc-hoat-dong-benh-vien-9',
+        image: phatcom1,
+        title: 'Bệnh viện Quân y 4 tổ chức chương trình phát cháo từ thiện',
+        date: '17:05 18/06/2025',
+        description: 'Chương trình phát cháo từ thiện là một trong những hoạt động nhân văn, ý nghĩa, phát huy truyền thống tương thân, tương ái, “lá lành đùm lá rách”, lan tỏa tinh thần vì cộng đồng tới nhiều cá nhân, đơn vị tài trợ; nhân thêm nhiều hoạt động ý nghĩa, mang niềm vui, hạnh phúc cho người bệnh.'
       },
 
     ],

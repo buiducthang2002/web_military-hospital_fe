@@ -13,6 +13,5 @@ const content = `
   <p>Trong công tác Đảng, công tác chính trị, Bệnh viện quán triệt, triển khai thực hiện nghiêm các chỉ thị, nghị quyết của trên; duy trì nền nếp sinh hoạt Đảng; tổ chức đánh giá, xếp loại tổ chức Đảng, Đảng viên nghiêm túc… Với những kết quả đó, năm 2025, Bệnh viện được Quân khu tặng Cờ thi đua, 3 tổ chức quần chúng được khen thưởng.
 Phát biểu chỉ đạo, Đại tá Phạm Đức Tuấn ghi nhận, biểu dương những kết quả Bệnh viện đạt được trong năm 2025. Đồng chí yêu cầu thời gian tới Bệnh viện Quân y 4 tiếp tục quán triệt, triển khai hiệu quả mục tiêu, chỉ tiêu nghị quyết đại hội Đảng các cấp nhiệm kỳ 2025–2030; mệnh lệnh, chỉ lệnh thực hiện nhiệm vụ năm 2026 của Tư lệnh Quân khu và Cục Hậu cần – Kỹ thuật. Trọng tâm là nâng cao chất lượng công tác chuyên môn; xây dựng chính quy, chấp hành kỷ luật; cải cách hành chính; chuyển đổi số; nâng cao năng lực lãnh đạo, sức chiến đấu của cấp ủy, tổ chức đảng; xây dựng Bệnh viện vững mạnh toàn diện “Mẫu mực, tiêu biểu</p>
 `
-
 export default content
 
