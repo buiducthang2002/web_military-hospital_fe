@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react'
-import { Link } from 'react-router-dom'
 import NewsGrid from './NewsGrid'
 import { mapArticlesImages } from '../utils/imageMapper'
 import { getNewsByCategory } from '../utils/getNewsByCategory'
