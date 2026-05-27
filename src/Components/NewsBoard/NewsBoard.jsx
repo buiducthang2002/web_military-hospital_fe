@@ -42,41 +42,55 @@ const newsData = {
 }
 
 const announcements = [
+   {
+    text: 'Thông báo:Thư mời báo giá Camera',
+    time: '22/05/2026',
+    link: '/thu-moi-bao-gia-camera.pdf'
+  },
   {
     text: 'Thông báo: Lịch Sinh hoạt khoa học của các đơn vị trong Bệnh viện Quân y 4 từ ngày 08/12/2025 đến ngày 14/12/2025',
-    time: '1 ngày trước'
+    time: '05/12/2025',
+    link: ''
   },
   {
     text: 'Thông báo Kế hoạch Tổ chức đào tạo hướng dẫn thực hành khám bệnh, chữa bệnh 12/2025',
-    time: '05/12/2025'
+    time: '05/12/2025',
+    link: ''
   },
   {
     text: 'Thông báo về việc thu hút nhân lực chất lượng cao tham gia triển khai, tổ chức và điều phối hoạt động chuyên môn tại các khoa, trung tâm trực thuộc BV',
-    time: '28/11/2025'
+    time: '28/11/2025',
+    link: ''
   },
   {
     text: 'Thông báo về việc trúng tuyển và nhập học nghiên cứu sinh đợt II năm 2025',
-    time: '21/11/2025'
+    time: '21/11/2025',
+    link: ''
   },
   {
     text: 'CƠ HỘI HỌC BỔNG TIẾN SĨ TOÀN PHẦN TẠI ĐỨC CHUYÊN NGÀNH TRUYỀN NHIỄM, DỊCH TỄ HỌC VÀ Y TẾ TOÀN CẦU',
-    time: '16/10/2025'
+    time: '16/10/2025',
+    link: ''
   },
   {
     text: 'Một số cập nhật quỹ Nafosted (Quỹ phát triển Khoa học và Công nghệ quốc gia) - Hội đồng ứng dụng',
-    time: '23/08/2025'
+    time: '23/08/2025',
+    link: ''
   },
   {
     text: 'CƠ HỘI HỌC BỔNG TIẾN SĨ TOÀN PHẦN TẠI ĐỨC CHUYÊN NGÀNH TRUYỀN NHIỄM, DỊCH TỄ HỌC VÀ Y TẾ TOÀN CẦU',
-    time: '16/10/2025'
+    time: '16/10/2025',
+    link: ''
   },
   {
     text: 'CƠ HỘI HỌC BỔNG TIẾN SĨ TOÀN PHẦN TẠI ĐỨC CHUYÊN NGÀNH TRUYỀN NHIỄM, DỊCH TỄ HỌC VÀ Y TẾ TOÀN CẦU',
-    time: '16/10/2025'
+    time: '16/10/2025',
+    link: ''
   },
   {
     text: 'CƠ HỘI HỌC BỔNG TIẾN SĨ TOÀN PHẦN TẠI ĐỨC CHUYÊN NGÀNH TRUYỀN NHIỄM, DỊCH TỄ HỌC VÀ Y TẾ TOÀN CẦU',
-    time: '16/10/2025'
+    time: '16/10/2025',
+    link: ''
   }
 ]
 
@@ -146,7 +160,18 @@ const NewsBoard = () => {
               <li key={idx} className="announce-item">
                 <FiChevronRight className="announce-arrow" />
                 <div className="announce-content">
-                  <div className="announce-text">{item.text}</div>
+                  {item.link ? (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="announce-text announce-link"
+                    >
+                      {item.text}
+                    </a>
+                  ) : (
+                    <div className="announce-text">{item.text}</div>
+                  )}
                   <div className="announce-time">
                     <FiClock className="clock-icon" />
                     <span>{item.time}</span>

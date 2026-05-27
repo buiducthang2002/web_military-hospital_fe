@@ -193,7 +193,7 @@ const GioithieuBV = () => {
             <h2 className="section-title">Lời giới thiệu</h2>
             <div className="intro-content">
               <p>
-                <strong>Bệnh viện Quân y 4</strong> là bệnh viện tuyến cuối trực thuộc cục hậu cần kỹ thuật quân khu 4, thuộc Bộ Quốc phòng, có 
+                <strong>Bệnh viện Quân y 4/Cục Hậu cần - Kỹ thuật </strong> là bệnh viện tuyến cuối Quân khu 4, có 
                 truyền thống lịch sử vẻ vang hơn 70 năm xây dựng và trưởng thành. Bệnh viện được thành lập 
                 với sứ mệnh chăm sóc sức khỏe cho cán bộ, chiến sĩ quân đội và nhân dân, đồng thời là 
                 trung tâm đào tạo, nghiên cứu khoa học y học quân sự.

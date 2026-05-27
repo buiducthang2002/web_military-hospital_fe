@@ -324,6 +324,12 @@
   transition: color 0.3s ease;
 }
 
+a.announce-text {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .announce-item:hover .announce-text {
   color: #28a745;
 }
