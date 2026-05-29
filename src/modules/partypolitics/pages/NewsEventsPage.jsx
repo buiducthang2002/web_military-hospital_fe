@@ -8,6 +8,8 @@ import { getAllPartyCategories, PARTY_CATEGORIES } from '../categories'
 import { getNewsByCategory } from '../utils/getNewsByCategory'
 import { mapArticlesImages } from '../utils/imageMapper'
 import allNewsData from '../data/allNews.json'
+import { useArticlesByModule } from '../../../lib/useArticles'
+import { mergeArticlesBySlug } from '../../../lib/mergeArticles'
 import './NewsEventsPage.css'
 
 /**
@@ -22,11 +24,13 @@ const NewsEventsPage = () => {
   
   const itemsPerPage = 8
 
-  // Map images và filter news theo category
+  const { articles: sanityArticles } = useArticlesByModule('partypolitics')
+
   const filteredNews = useMemo(() => {
-    const news = mapArticlesImages(allNewsData)
-    return getNewsByCategory(news, activeCategoryId)
-  }, [activeCategoryId])
+    const staticNews = mapArticlesImages(allNewsData)
+    const merged = mergeArticlesBySlug(sanityArticles, staticNews)
+    return getNewsByCategory(merged, activeCategoryId)
+  }, [activeCategoryId, sanityArticles])
 
   // Tính toán pagination
   const totalPages = Math.ceil(filteredNews.length / itemsPerPage)

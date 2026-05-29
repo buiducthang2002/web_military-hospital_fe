@@ -4,7 +4,11 @@
       "Bash(npm run build:*)",
       "Bash(ls \"C:/Users/HH/Downloads/THU MOI CHAO GIA CAMERA.pdf\")",
       "Read(//c/Users/HH/Downloads/**)",
-      "Bash(cp \"C:/Users/HH/Downloads/THU MOI CHAO GIA CAMERA.pdf\" \"c:/Users/HH/web_military-hospital_fe/web_military-hospital_fe/public/thu-moi-bao-gia-camera.pdf\" && ls \"c:/Users/HH/web_military-hospital_fe/web_military-hospital_fe/public/thu-moi-bao-gia-camera.pdf\")"
+      "Bash(cp \"C:/Users/HH/Downloads/THU MOI CHAO GIA CAMERA.pdf\" \"c:/Users/HH/web_military-hospital_fe/web_military-hospital_fe/public/thu-moi-bao-gia-camera.pdf\" && ls \"c:/Users/HH/web_military-hospital_fe/web_military-hospital_fe/public/thu-moi-bao-gia-camera.pdf\")",
+      "Bash(npm install *)",
+      "Bash(node scripts/verify.mjs)",
+      "Bash(npm start *)",
+      "Bash(npx sanity *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\HH\\Downloads"

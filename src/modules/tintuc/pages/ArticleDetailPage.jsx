@@ -7,6 +7,7 @@ import { getCategoryById } from '../categories'
 import { mapArticlesImages, mapImagePath } from '../utils/imageMapper'
 import { getArticleContent } from '../content'
 import allNewsData from '../data/allNews.json'
+import { getArticleBySlug } from '../../../lib/articles'
 import './ArticleDetailPage.css'
 
 /**
@@ -19,55 +20,71 @@ const ArticleDetailPage = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Scroll to top khi load trang
     window.scrollTo({ top: 0, behavior: 'smooth' })
+    let cancelled = false
 
-    // Map images cho all news data
-    const newsWithImages = mapArticlesImages(allNewsData)
-
-    // Tìm bài viết theo slug
-    const foundArticle = newsWithImages.find(item => item.slug === slug)
-
-    if (foundArticle) {
-      // Lấy nội dung từ file riêng nếu có, nếu không thì dùng nội dung từ JSON
-      let contentFromFile = getArticleContent(slug, foundArticle.content)
-
-      // Thay thế placeholder {{ARTICLE_IMAGE}} bằng ảnh thực tế nếu có
-      if (contentFromFile && foundArticle.image) {
-        contentFromFile = contentFromFile.replace(/\{\{ARTICLE_IMAGE\}\}/g, foundArticle.image)
+    const resolveStaticImages = (html, fallbackImage) => {
+      if (!html) return html
+      let result = html
+      if (fallbackImage) {
+        result = result.replace(/\{\{ARTICLE_IMAGE\}\}/g, fallbackImage)
       }
-
-      // Thay thế các placeholder dạng {{tên_file.jpg}} bằng đường dẫn ảnh đã được map
-      if (contentFromFile) {
-        // Tìm tất cả các placeholder dạng {{tên_file}}
-        const imagePlaceholderRegex = /\{\{([^}]+\.(jpg|jpeg|png|gif|webp))\}\}/gi
-        contentFromFile = contentFromFile.replace(imagePlaceholderRegex, (_match, imageName) => {
-          // Map tên file thành đường dẫn ảnh thực tế
-          const mappedImage = mapImagePath(imageName)
-          return mappedImage || imageName
-        })
-      }
-
-      // Tạo article object với nội dung đã được cập nhật
-      const articleWithContent = {
-        ...foundArticle,
-        content: contentFromFile
-      }
-
-      setArticle(articleWithContent)
-
-      // Lấy các bài viết liên quan (cùng category, loại trừ bài hiện tại)
-      const related = newsWithImages
-        .filter(item =>
-          item.categoryId === foundArticle.categoryId &&
-          item.id !== foundArticle.id
-        )
-        .slice(0, 4)
-
-      setRelatedNews(related)
+      const imagePlaceholderRegex = /\{\{([^}]+\.(jpg|jpeg|png|gif|webp))\}\}/gi
+      result = result.replace(imagePlaceholderRegex, (_m, imageName) => {
+        const mapped = mapImagePath(imageName)
+        return mapped || imageName
+      })
+      return result
     }
 
-    setLoading(false)
+    const loadFromStatic = () => {
+      const newsWithImages = mapArticlesImages(allNewsData)
+      const foundArticle = newsWithImages.find(item => item.slug === slug)
+      if (!foundArticle) return null
+
+      const contentFromFile = getArticleContent(slug, foundArticle.content)
+      const content = resolveStaticImages(contentFromFile, foundArticle.image)
+
+      const related = newsWithImages
+        .filter(item => item.categoryId === foundArticle.categoryId && item.id !== foundArticle.id)
+        .slice(0, 4)
+
+      return { article: { ...foundArticle, content }, related }
+    }
+
+    const run = async () => {
+      try {
+        const sanityArticle = await getArticleBySlug(slug)
+        if (cancelled) return
+
+        if (sanityArticle && sanityArticle.module === 'tintuc') {
+          setArticle(sanityArticle)
+          const newsWithImages = mapArticlesImages(allNewsData)
+          const related = newsWithImages
+            .filter(item => item.categoryId === sanityArticle.categoryId && item.slug !== sanityArticle.slug)
+            .slice(0, 4)
+          setRelatedNews(related)
+          return
+        }
+
+        const fromStatic = loadFromStatic()
+        if (fromStatic) {
+          setArticle(fromStatic.article)
+          setRelatedNews(fromStatic.related)
+        }
+      } catch {
+        const fromStatic = loadFromStatic()
+        if (fromStatic) {
+          setArticle(fromStatic.article)
+          setRelatedNews(fromStatic.related)
+        }
+      } finally {
+        if (!cancelled) setLoading(false)
+      }
+    }
+
+    run()
+    return () => { cancelled = true }
   }, [slug])
 
   if (loading) {
