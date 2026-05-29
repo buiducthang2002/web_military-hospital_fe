@@ -113,6 +113,20 @@ export default {
       initialValue: 'draft',
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: 'featured',
+      title: 'Tin nổi bật (hiển thị ngoài trang chủ)',
+      type: 'boolean',
+      description: 'Bật để bài viết xuất hiện trong khung "TIN NỔI BẬT" của trang chủ.',
+      initialValue: false,
+    },
+    {
+      name: 'featuredOrder',
+      title: 'Thứ tự hiển thị nổi bật',
+      type: 'number',
+      description: 'Số nhỏ hơn xuất hiện trước. Bài có featured = bật mới có tác dụng.',
+      initialValue: 0,
+    },
   ],
   orderings: [
     {

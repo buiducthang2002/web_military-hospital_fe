@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import './NewsBoard.css'
 import { FiClock, FiChevronRight } from 'react-icons/fi'
+import { useFeaturedArticles, useAnnouncements } from '../../lib/useHomepage'
 
 
 
@@ -94,7 +95,32 @@ const announcements = [
   }
 ]
 
+// Map slug → image cho các bài cũ không có thumbnail trên Sanity
+const STATIC_IMAGE_BY_SLUG = {
+  'tin-tuc-hoat-dong-benh-vien-9': phatcom1,
+  'tin-tuc-hoat-dong-benh-vien-7': ttbv7,
+  'tin-tuc-hoat-dong-benh-vien-6': ttbv61,
+  'tin-tuc-hoat-dong-benh-vien-8': ttbv85,
+}
+
 const NewsBoard = () => {
+  const { featured: sanityFeatured } = useFeaturedArticles(4)
+  const { announcements: sanityAnnouncements } = useAnnouncements(10)
+
+  // Build featured list: ưu tiên Sanity (kèm fallback ảnh static), fallback toàn bộ về hardcoded
+  const featuredList = sanityFeatured.length > 0
+    ? sanityFeatured.map((item) => ({
+        ...item,
+        image: item.image || STATIC_IMAGE_BY_SLUG[item.slug],
+      }))
+    : [newsData.featuredNews, ...newsData.subNews]
+
+  const featuredMain = featuredList[0]
+  const subFeatured = featuredList.slice(1, 4)
+
+  // Announcements: ưu tiên Sanity, fallback hardcoded
+  const announceList = sanityAnnouncements.length > 0 ? sanityAnnouncements : announcements
+
   return (
     <section className="newsboard-section">
       <div className="newsboard-container">
@@ -109,24 +135,26 @@ const NewsBoard = () => {
             </Link>
           </div>
 
-          <div className="featured-main">
-            <Link to={newsData.featuredNews.link} className="main-image-wrap">
-              <img src={newsData.featuredNews.image} alt={newsData.featuredNews.title} />
-            </Link>
-            <div className="main-content">
-              <Link to={newsData.featuredNews.link} className="main-title">
-                {newsData.featuredNews.title}
+          {featuredMain && (
+            <div className="featured-main">
+              <Link to={featuredMain.link} className="main-image-wrap">
+                <img src={featuredMain.image} alt={featuredMain.title} />
               </Link>
-              <div className="time-meta">
-                <FiClock className="clock-icon" />
-                <span>{newsData.featuredNews.time}</span>
+              <div className="main-content">
+                <Link to={featuredMain.link} className="main-title">
+                  {featuredMain.title}
+                </Link>
+                <div className="time-meta">
+                  <FiClock className="clock-icon" />
+                  <span>{featuredMain.time}</span>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           <div className="sub-news-grid">
-            {newsData.subNews.map((item) => (
-              <div key={item.id} className="sub-news-card">
+            {subFeatured.map((item, idx) => (
+              <div key={item.id || idx} className="sub-news-card">
                 <Link to={item.link} className="sub-news-image">
                   <img src={item.image} alt={item.title} />
                 </Link>
@@ -156,8 +184,8 @@ const NewsBoard = () => {
           </div>
 
           <ul className="announce-list">
-            {announcements.map((item, idx) => (
-              <li key={idx} className="announce-item">
+            {announceList.map((item, idx) => (
+              <li key={item.id || idx} className="announce-item">
                 <FiChevronRight className="announce-arrow" />
                 <div className="announce-content">
                   {item.link ? (
@@ -184,7 +212,7 @@ const NewsBoard = () => {
       </div>
 
       {/* Bottom Running notification bar */}
-    
+
     </section>
   )
 }
