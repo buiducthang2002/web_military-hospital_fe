@@ -58,8 +58,17 @@ const ArticleDetailPage = () => {
         if (cancelled) return
 
         if (sanityArticle && sanityArticle.module === 'hoptac') {
-          setArticle(sanityArticle)
           const newsWithImages = mapArticlesImages(allNewsData)
+          const staticMatch = newsWithImages.find(item => item.slug === slug)
+          const fallbackContent = staticMatch
+            ? resolveStaticImages(getArticleContent(slug, staticMatch.content), staticMatch.image)
+            : ''
+          setArticle({
+            ...(staticMatch || {}),
+            ...sanityArticle,
+            image: sanityArticle.image || staticMatch?.image,
+            content: sanityArticle.content || fallbackContent,
+          })
           const related = newsWithImages
             .filter(item => item.categoryId === sanityArticle.categoryId && item.slug !== sanityArticle.slug)
             .slice(0, 4)
