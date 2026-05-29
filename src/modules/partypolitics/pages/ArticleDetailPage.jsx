@@ -60,14 +60,14 @@ const ArticleDetailPage = () => {
         if (sanityArticle && sanityArticle.module === 'partypolitics') {
           const newsWithImages = mapArticlesImages(allNewsData)
           const staticMatch = newsWithImages.find(item => item.slug === slug)
-          const fallbackContent = staticMatch
-            ? resolveStaticImages(getArticleContent(slug, staticMatch.content), staticMatch.image)
-            : ''
+          const rawContent = sanityArticle.content
+            || (staticMatch ? getArticleContent(slug, staticMatch.content) : '')
+          const finalImage = sanityArticle.image || staticMatch?.image
           setArticle({
             ...(staticMatch || {}),
             ...sanityArticle,
-            image: sanityArticle.image || staticMatch?.image,
-            content: sanityArticle.content || fallbackContent,
+            image: finalImage,
+            content: resolveStaticImages(rawContent, finalImage),
           })
           const related = newsWithImages
             .filter(item => item.categoryId === sanityArticle.categoryId && item.slug !== sanityArticle.slug)
