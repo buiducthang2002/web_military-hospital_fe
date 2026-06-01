@@ -5,6 +5,7 @@
   
   import { Link } from 'react-router-dom'
 import { FiActivity, FiGlobe, FiMapPin, FiFileText, FiChevronRight } from 'react-icons/fi'
+import { useArticlesByModule } from '../../lib/useArticles'
 import './NewsEvents.css'
 
 import anhqh1 from './Images/anhqh1.jpg'
@@ -31,11 +32,13 @@ import phatcom1 from './Images/phatcom1.jpg'
   
 
 const NewsEvents = () => {
+  const { articles: sanityArticles } = useArticlesByModule('tintuc')
+
   const newsCategories = [
-    { key: 'hospital', label: 'Tin tức hoạt động bệnh viện', icon: FiActivity },
-    { key: 'world', label: 'Tin tức y học thế giới', icon: FiGlobe },
-    { key: 'domestic', label: 'Tin tức y học trong nước', icon: FiMapPin },
-    { key: 'expert', label: 'Bài viết chuyên môn', icon: FiFileText }
+    { key: 'hospital', categoryId: 'hospital-activities', label: 'Tin tức hoạt động bệnh viện', icon: FiActivity },
+    { key: 'world', categoryId: 'world-medical', label: 'Tin tức y học thế giới', icon: FiGlobe },
+    { key: 'domestic', categoryId: 'domestic-medical', label: 'Tin tức y học trong nước', icon: FiMapPin },
+    { key: 'expert', categoryId: 'professional-articles', label: 'Bài viết chuyên môn', icon: FiFileText }
   ]
 
   // Dữ liệu tin tức cho từng tab
@@ -230,8 +233,31 @@ const NewsEvents = () => {
         {/* Render mỗi category thành một hàng riêng */}
         {newsCategories.map((category) => {
           const Icon = category.icon
-          const newsItems = newsDataByTab[category.key] || []
-          const displayItems = newsItems.slice(0, 4) // Hiển thị 4 tin đầu tiên
+
+          // Lấy bài Sanity theo categoryId, mới nhất trước
+          const sanityForCategory = sanityArticles.filter(
+            (a) => a.categoryId === category.categoryId
+          )
+
+          // Map slug -> ảnh từ data hardcoded, dùng làm fallback khi Sanity không có thumbnail
+          const fallbackImageBySlug = {}
+          for (const it of newsDataByTab[category.key] || []) {
+            fallbackImageBySlug[it.slug] = it.image
+          }
+
+          // Merge: ưu tiên Sanity (kèm fallback ảnh), nếu Sanity trống thì dùng hardcoded
+          const mergedItems = sanityForCategory.length > 0
+            ? sanityForCategory.map((a) => ({
+                id: a.id,
+                slug: a.slug,
+                title: a.title,
+                date: a.date,
+                description: a.excerpt,
+                image: a.image || fallbackImageBySlug[a.slug],
+              }))
+            : (newsDataByTab[category.key] || [])
+
+          const displayItems = mergedItems.slice(0, 4) // Hiển thị 4 tin đầu tiên
 
           return (
             <div key={category.key} className="news-category-section">
