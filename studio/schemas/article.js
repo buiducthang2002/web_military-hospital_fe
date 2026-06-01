@@ -57,14 +57,15 @@ export default {
       type: 'text',
       rows: 30,
       description:
-        'Nội dung HTML. Có thể dùng thẻ <p>, <h2>, <strong>, <em>, <img src="..." />, ...',
+        'Nội dung HTML. Dùng thẻ <p>, <h2>, <strong>, <em>... Để chèn ảnh: upload ảnh ở mục "Ảnh dùng trong nội dung" bên dưới, rồi viết <img src="{{IMG1}}" style="max-width:100%" /> — {{IMG1}} là ảnh thứ 1, {{IMG2}} là ảnh thứ 2...',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'contentImages',
       title: 'Ảnh dùng trong nội dung',
       type: 'array',
-      description: 'Upload ảnh ở đây để lấy URL chèn vào HTML phía trên.',
+      description:
+        'Upload ảnh theo thứ tự. Ảnh đầu tiên = {{IMG1}}, ảnh thứ hai = {{IMG2}}... Chèn vào ô "Nội dung bài viết (HTML)" bằng <img src="{{IMG1}}" />.',
       of: [
         {
           type: 'image',

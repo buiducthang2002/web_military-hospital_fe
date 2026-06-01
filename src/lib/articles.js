@@ -10,12 +10,23 @@ const ARTICLE_FIELDS = `
   thumbnail,
   excerpt,
   content,
+  "contentImages": contentImages[]{"url": asset->url, caption},
   author,
   publishedAt,
   views,
   tags,
   status
 `
+
+// Thay các placeholder {{IMG1}}, {{IMG2}}... trong HTML bằng URL ảnh
+// đã upload ở mục "Ảnh dùng trong nội dung" (theo đúng thứ tự upload).
+const resolveContentImages = (content, contentImages) => {
+  if (!content || !Array.isArray(contentImages)) return content
+  return content.replace(/\{\{IMG(\d+)\}\}/gi, (match, num) => {
+    const img = contentImages[Number(num) - 1]
+    return img && img.url ? img.url : match
+  })
+}
 
 const mapArticle = (a) => ({
   id: a._id,
@@ -27,7 +38,7 @@ const mapArticle = (a) => ({
   image: a.thumbnail ? urlFor(a.thumbnail).width(800).url() : null,
   thumbnailRaw: a.thumbnail,
   excerpt: a.excerpt,
-  content: a.content,
+  content: resolveContentImages(a.content, a.contentImages),
   author: a.author || 'Admin',
   date: a.publishedAt ? a.publishedAt.split('T')[0] : '',
   publishedAt: a.publishedAt,
