@@ -1,3 +1,4 @@
+import usePageMeta from '../hooks/usePageMeta'
 import React, { useState } from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
@@ -77,6 +78,7 @@ const quickLinks = [
 ]
 
 const CustomerGuidePage = () => {
+  usePageMeta('Hướng dẫn khách hàng')
   const [expandedIndex, setExpandedIndex] = useState(null)
 
   const handleToggle = (index) => {

@@ -1,3 +1,4 @@
+import usePageMeta from '../../hooks/usePageMeta'
 import React from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
@@ -5,6 +6,7 @@ import './GioithieuBV.css'
 import '../../Components/NewsEvents/NewsEvents.css'
 
 const GioithieuBV = () => {
+  usePageMeta('Giới thiệu bệnh viện')
   const highlights = [
     {
       number: '70+',

@@ -8,6 +8,7 @@ import { mapArticlesImages, mapImagePath } from '../utils/imageMapper'
 import { getArticleContent } from '../content'
 import allNewsData from '../data/allNews.json'
 import { getArticleBySlug } from '../../../lib/articles'
+import usePageMeta from '../../../hooks/usePageMeta'
 import './ArticleDetailPage.css'
 
 /**
@@ -95,6 +96,8 @@ const ArticleDetailPage = () => {
     run()
     return () => { cancelled = true }
   }, [slug])
+
+  usePageMeta(article?.title, article?.excerpt)
 
   if (loading) {
     return (

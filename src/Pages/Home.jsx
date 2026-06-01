@@ -12,7 +12,9 @@ import NewsEvents from '../Components/NewsEvents/NewsEvents'
 import Video from '../Components/Video/Video'
 import BannerGrid from '../Components/BannerGrid/BannerGrid'
 import Footer from '../Components/Footer/Footer'
+import usePageMeta from '../hooks/usePageMeta'
 const Home = () => {
+  usePageMeta()
   return (
     <div style={{ minHeight: '100vh', width: '100%', overflowX: 'hidden', margin: 0, padding: 0 }}>
       <Navbar />

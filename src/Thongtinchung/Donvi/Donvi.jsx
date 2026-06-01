@@ -1,3 +1,4 @@
+import usePageMeta from '../../hooks/usePageMeta'
 import React, { useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
@@ -5,6 +6,7 @@ import Footer from '../../Components/Footer/Footer'
 import './Donvi.css'
 
 const Donvi = () => {
+  usePageMeta('Các đơn vị')
   const departments = [
     'Ban Giám đốc',
     'Phòng Kế hoạch tổng hợp',

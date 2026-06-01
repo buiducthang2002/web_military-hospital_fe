@@ -1,8 +1,10 @@
+import usePageMeta from '../../hooks/usePageMeta'
 import React from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import './BookAppointment.css'
 
 const BookAppointment = () => {
+  usePageMeta('Đặt lịch khám bệnh')
   const handleSubmit = (e) => {
     e.preventDefault()
     

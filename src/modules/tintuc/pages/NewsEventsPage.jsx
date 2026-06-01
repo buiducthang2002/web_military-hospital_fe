@@ -1,3 +1,4 @@
+import usePageMeta from '../../../hooks/usePageMeta'
 import React, { useState, useMemo } from 'react'
 import Navbar from '../../../Components/Navbar/Navbar'
 import Footer from '../../../Components/Footer/Footer'
@@ -17,6 +18,7 @@ import './NewsEventsPage.css'
  * Trang tổng tin tức & sự kiện
  */
 const NewsEventsPage = () => {
+  usePageMeta('Tin tức - Sự kiện')
   const categories = getAllCategories()
   const defaultCategoryId = categories[0]?.id || CATEGORIES.WORLD_MEDICAL.id
   

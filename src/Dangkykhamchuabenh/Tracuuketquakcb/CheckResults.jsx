@@ -1,9 +1,11 @@
+import usePageMeta from '../../hooks/usePageMeta'
 import React from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import './CheckResults.css';
 
 const CheckResults = () => {
+  usePageMeta('Tra cứu kết quả khám')
   const LINK_KQXN = 'http://117.4.137.26:11664/?c=ketquacls'; 
   const LINK_KQKH = 'http://117.4.137.26:11664/?c=lichsukham';
 

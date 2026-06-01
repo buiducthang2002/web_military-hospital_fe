@@ -1,3 +1,4 @@
+import usePageMeta from '../../hooks/usePageMeta'
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -164,6 +165,7 @@ const OrganizationStructure = ({ director, viceDirectors, additionalDirectors })
 };
 
 const Organization = () => {
+  usePageMeta('Cơ cấu tổ chức')
   const location = useLocation();
 
   useEffect(() => {

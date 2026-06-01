@@ -1,3 +1,4 @@
+import usePageMeta from '../hooks/usePageMeta'
 import React, { useState } from 'react'
 import { Star } from 'lucide-react'
 import Navbar from '../Components/Navbar/Navbar'
@@ -57,6 +58,7 @@ const ratingLevels = [
 ]
 
 const Danhgia = () => {
+  usePageMeta('Đánh giá chất lượng')
   const [ratings, setRatings] = useState({})
   const [additionalComments, setAdditionalComments] = useState('')
   const [patientInfo, setPatientInfo] = useState({

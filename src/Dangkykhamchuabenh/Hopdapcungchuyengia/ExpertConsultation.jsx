@@ -1,7 +1,9 @@
+import usePageMeta from '../../hooks/usePageMeta'
 import React from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 
 const ExpertConsultation = () => {
+  usePageMeta('Hỏi đáp cùng chuyên gia')
   return (
     <div style={{ minHeight: '100vh', width: '100%', overflowX: 'hidden' }}>
       <Navbar />
