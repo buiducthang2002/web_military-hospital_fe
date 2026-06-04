@@ -19,6 +19,7 @@ import CustomerGuidePage from './Khachhang/CustomerGuide';
 import Danhgia from './Khachhang/Danhgia';
 import Donvi from './Thongtinchung/Donvi/Donvi';
 import GioithieuBV from './Thongtinchung/GioithieuBV/GioithieuBV';
+import DocumentViewer from './Components/DocumentViewer/DocumentViewer';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/book-appointment" element={<BookAppointment />} />
         <Route path="/expert-consultation" element={<ExpertConsultation />} />
         <Route path="/check-results" element={<CheckResults />} />
+        <Route path="/xem-tai-lieu" element={<DocumentViewer />} />
 
       </Routes>
     </Router>

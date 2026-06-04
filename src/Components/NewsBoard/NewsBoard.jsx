@@ -103,6 +103,11 @@ const STATIC_IMAGE_BY_SLUG = {
   'tin-tuc-hoat-dong-benh-vien-8': ttbv85,
 }
 
+// PDF (file Sanity hoặc link .pdf) → mở trong trang xem tài liệu thay vì tải về
+const isPdfLink = (url) => /\.pdf($|\?)/i.test(url) || url.includes('/files/')
+const buildAnnounceHref = (url) =>
+  isPdfLink(url) ? `/xem-tai-lieu?file=${encodeURIComponent(url)}` : url
+
 const NewsBoard = () => {
   const { featured: sanityFeatured } = useFeaturedArticles(4)
   const { announcements: sanityAnnouncements } = useAnnouncements(10)
@@ -190,7 +195,7 @@ const NewsBoard = () => {
                 <div className="announce-content">
                   {item.link ? (
                     <a
-                      href={item.link}
+                      href={buildAnnounceHref(item.link)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="announce-text announce-link"
