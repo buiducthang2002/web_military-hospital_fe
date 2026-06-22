@@ -69,12 +69,12 @@
 }
 
 .mobile-navbar-bootstrap .navbar-toggler {
-  border-color: rgba(6, 146, 66, 0.5);
+  border: none;
   padding: 0.5rem 0.75rem;
 }
 
 .mobile-navbar-bootstrap .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.2rem rgba(6, 146, 66, 0.25);
+  box-shadow: none;
 }
 
 .mobile-navbar-bootstrap .navbar-toggler-icon {
