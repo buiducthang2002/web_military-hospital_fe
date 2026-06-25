@@ -4,7 +4,6 @@
  */
 
 import contentParty1 from './hoi-nghi-tong-ket-cong-tac-dang-2024.js'
-import contentParty2 from './ngay-truyen-thong-benh-vien-quan-y-4.js'
 import contentParty3 from './ngay-thanh-lap-benh-vien-quan-y-4.js'
 import contentAlbumin from './che-pham-albumin-tong-quan-lam-sang.js'
 
@@ -12,7 +11,6 @@ import contentAlbumin from './che-pham-albumin-tong-quan-lam-sang.js'
 const articleContents = {
 
   'hoi-nghi-tong-ket-cong-tac-dang-2024': contentParty1,
-  'ngay-truyen-thong-benh-vien-quan-y-4': contentParty2,
   'ngay-thanh-lap-benh-vien-quan-y-4': contentParty3,
   'che-pham-albumin-tong-quan-lam-sang': contentAlbumin,
   // Thêm các bài viết khác ở đây khi tạo file mới
