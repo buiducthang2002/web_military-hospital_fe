@@ -46,7 +46,7 @@ const Navbar = () => {
     { href: '/news-events', label: 'Tin tức - Sự kiện', isRoute: true },
     { href: '/kham-chua-benh', label: 'Khám chữa bệnh', isRoute: true, isDropdown: true, dropdownKey: 'kcb' },
     { href: '/party-politics', label: 'Công tác Đảng - Chính trị', isRoute: true },
-    { href: '/nghiencuu-hoptac', label: 'Nghiên cứu khoa học - Hợp tác', isRoute: true },
+    { href: '/duoc-pham-suc-khoe', label: 'Dược phẩm - Sức khoẻ', isRoute: true },
     { href: '/customer-guide', label: 'Dành cho khách hàng', isRoute: true },
     { href: '/thong-tin-chung', label: 'Thông tin chung', isRoute: false, isDropdown: true, dropdownKey: 'info' },
   ]

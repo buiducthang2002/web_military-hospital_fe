@@ -117,8 +117,8 @@ const ArticleDetailPage = () => {
         <Navbar />
         <div className="article-detail-not-found">
           <h2>Không tìm thấy bài viết</h2>
-          <Link to="/nghiencuu-hoptac" className="back-link">
-            ← Quay lại trang Nghiên cứu khoa học - Hợp tác
+          <Link to="/duoc-pham-suc-khoe" className="back-link">
+            ← Quay lại trang Dược phẩm - Sức khoẻ
           </Link>
         </div>
         <Footer />
@@ -137,7 +137,7 @@ const ArticleDetailPage = () => {
           <nav className="article-breadcrumb">
             <Link to="/">Trang chủ</Link>
             <span> | </span>
-            <Link to="/nghiencuu-hoptac">Nghiên cứu khoa học - Hợp tác</Link>
+            <Link to="/duoc-pham-suc-khoe">Dược phẩm - Sức khoẻ</Link>
             {category && (
               <>
                 <span> | </span>
@@ -168,7 +168,7 @@ const ArticleDetailPage = () => {
           </div>
 
           {/* Article Image */}
-          {article.image && (
+          {article.image && !article.hideCoverImage && (
             <div className="article-detail-image-wrapper">
               <img 
                 src={article.image} 
@@ -212,7 +212,7 @@ const ArticleDetailPage = () => {
                 {relatedNews.map((item, index) => (
                   <li key={item.id} className="related-news-item">
                     <Link 
-                        to={`/nghiencuu-hoptac/${item.slug}`}
+                        to={`/duoc-pham-suc-khoe/${item.slug}`}
                       className="related-news-link"
                     >
                       {item.title}

@@ -24,7 +24,7 @@ const SearchResults = ({ results, onClose, searchTerm }) => {
       case 'party-politics':
         return `/party-politics/${article.slug}`
       case 'cooperation':
-        return `/nghiencuu-hoptac/${article.slug}`
+        return `/duoc-pham-suc-khoe/${article.slug}`
       case 'news':
       default:
         return `/news-events/${article.slug}`

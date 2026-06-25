@@ -22,6 +22,7 @@ import anhbonoivu from '../../../Components/NewsEvents/Images/anhbonoivu.png'
 import anh_ky_niem from '../../../Components/NewsEvents/Images/anh_ky_niem.jpg'
 import anh_ky_niem2 from '../../../Components/NewsEvents/Images/anh_ky_niem2.jpg'
 import anh65nam from '../../../Components/NewsEvents/Images/anh65nam.jpg'
+import anhduoc1 from '../../../Components/NewsEvents/Images/anhduoc1.jpg'
 const imageMap = {
   'anh1.jpg': anh1,
   'anh2.jpg': anh2,
@@ -41,6 +42,7 @@ const imageMap = {
   'anh_ky_niem.jpg': anh_ky_niem,
   'anh_ky_niem2.jpg': anh_ky_niem2,
   'anh65nam.jpg': anh65nam,
+  'anhduoc1.jpg': anhduoc1,
 }
 
 /**

@@ -13,7 +13,7 @@ const FEATURED_FIELDS = `
 const mapFeatured = (a) => {
   const moduleToPath = {
     tintuc: 'news-events',
-    hoptac: 'nghiencuu-hoptac',
+    hoptac: 'duoc-pham-suc-khoe',
     partypolitics: 'party-politics',
   }
   const basePath = moduleToPath[a.module] || 'news-events'

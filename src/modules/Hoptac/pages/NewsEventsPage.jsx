@@ -60,7 +60,7 @@ const NewsEventsPage = () => {
         <div className="news-events-container">
           <div className="news-header">
             <div className="news-header-left">
-              <p className="news-label">Nghiên cứu khoa học - Hợp tác</p>
+              <p className="news-label">Dược phẩm - Sức khoẻ</p>
             
             </div>
             <CategoryTabs

@@ -30,8 +30,8 @@ function App() {
         <Route path="/news-events/:slug" element={<ArticleDetailPage />} />
         <Route path="/party-politics" element={<PartyPoliticsPage />} />
         <Route path="/party-politics/:slug" element={<PartyArticleDetailPage />} />
-        <Route path="/nghiencuu-hoptac" element={<HoptacNewsEventsPage />} />
-        <Route path="/nghiencuu-hoptac/:slug" element={<HoptacArticleDetailPage />} />
+        <Route path="/duoc-pham-suc-khoe" element={<HoptacNewsEventsPage />} />
+        <Route path="/duoc-pham-suc-khoe/:slug" element={<HoptacArticleDetailPage />} />
         <Route path="/kham-chua-benh" element={<Khamchuabenh />} />
         <Route path="/kham-chua-benh/loai-hinh" element={<Thutucxuatvien />} />
         <Route path="/kham-chua-benh/thanh-toan" element={<Quytrinhthanhtoan />} />

@@ -1,17 +1,17 @@
 [
- 
   {
-    "id": "41",
+    "id": "44",
     "categoryId": "cooperation-scientific",
-    "title": "Bệnh viện quân y 4 phối hợp tổ chức tuyên truyền về phòng, chống tác hại của thuốc lá",
-    "slug": "hoi-nghi-tong-ket-cong-tac-dang-2024",
-    "excerpt": "Ngày 20/12/2024,tổ chức Hội nghị tổng kết công tác Đảng năm 2024 và triển khai phương hướng nhiệm vụ năm 2025. Hội nghị đánh giá những thành tựu đạt được trong năm qua và đề ra các giải pháp cụ thể để tiếp tục nâng cao chất lượng công tác Đảng...",
+    "title": "Tổng quan lâm sàng và hướng dẫn sử dụng chế phẩm Albumin",
+    "slug": "che-pham-albumin-tong-quan-lam-sang",
+    "hideCoverImage": true,
+    "excerpt": "Albumin (HSA) là protein chủ chốt trong huyết tương, đảm nhiệm vai trò duy trì áp lực keo và vận chuyển. Bài viết tổng hợp đại cương, chỉ định - liều dùng theo y học chứng cứ và hướng dẫn thực hành lâm sàng khi sử dụng chế phẩm Albumin.",
     "content": "Nội dung đầy đủ của bài viết sẽ được cập nhật...",
-    "image": "anh11.jpg",
-    "date": "2024-12-20",
-    "author": "Ban Tổ chức Đảng",
-    "views": 350,
-    "tags": ["công tác Đảng", "hội nghị", "tổng kết"]
+    "image": "anhduoc1.jpg",
+    "date": "2026-06-25",
+    "author": "Khoa Dược - Bệnh viện Quân y 4",
+    "views": 0,
+    "tags": ["Dược lâm sàng", "Albumin", "Hướng dẫn sử dụng thuốc"]
   },
   {
     "id": "42",
@@ -25,20 +25,8 @@
     "author": "Báo Quân khu 4",
     "views": 351,
     "tags": ["Công tác Đảng", "Chăm sóc ", "tình nguyện"]
-  },
-  {
-    "id": "43",
-    "categoryId": "cooperation-partners",
-    "title": " Bệnh viện Quân y 4, Cục Hậu cần Quân khu 4 thành lập",
-    "slug": "ngay-thanh-lap-benh-vien-quan-y-4",
-    "excerpt": "Bệnh viện Quân y 4 được thành lập trên cơ sở sáp nhập 3 đơn vị điều trị: Bệnh viện K43, Bệnh xá Hồ Chí Minh và Đội điều trị 7",
-    "content": "Nội dung đầy đủ của bài viết sẽ được cập nhật...",
-    "image": "anh65nam.jpg",
-    "date": "2024-9-18",
-    "author": "Báo Quân đội nhân dân Việt Nam",
-    "views": 351,
-    "tags": ["Công tác Đảng", "Kỷ niệm ", "Thành lập"]
   }
+  
   
   
 

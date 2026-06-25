@@ -230,6 +230,54 @@
   border-radius: 8px;
 }
 
+/* Bảng trong bài viết */
+.article-body .article-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-body .article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+  min-width: 640px;
+}
+
+.article-body .article-table th,
+.article-body .article-table td {
+  border: 1px solid #d9e1ec;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-body .article-table thead th {
+  background-color: #1a5276;
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.article-body .article-table tbody tr:nth-child(even) {
+  background-color: #f5f8fb;
+}
+
+.article-body .article-table tbody tr:hover {
+  background-color: #eef4fa;
+}
+
+.article-body blockquote {
+  margin: 20px 0;
+  padding: 12px 18px;
+  background-color: #fff8e1;
+  border-left: 4px solid #f1c40f;
+  border-radius: 4px;
+  color: #5d4a00;
+}
+
 .article-body div[style*="text-align: center"] {
   margin: 20px 0;
 }

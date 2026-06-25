@@ -19,7 +19,7 @@ import './ArticleCard.css'
 const ArticleCard = ({ article }) => {
   if (!article) return null
 
-  const articleUrl = `/nghiencuu-hoptac/${article.slug || article.id}`
+  const articleUrl = `/duoc-pham-suc-khoe/${article.slug || article.id}`
 
   const imageSrc = mapImagePath(article.image)
 

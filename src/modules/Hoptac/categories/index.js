@@ -5,14 +5,14 @@
 export const PARTY_CATEGORIES = {
   PARTY_WORK: {
     id: 'cooperation-scientific',
-    displayName: 'Hợp tác khoa học',
+    displayName: 'Dược lâm sàng',
     apiEndpoint: '/api/cooperation/scientific',
     slug: 'hop-tac-khoa-hoc',
     icon: '🤝',
   },
   POLITICS: {
     id: 'cooperation-competitions',
-    displayName: 'Các cuộc thi',
+    displayName: 'Hướng dẫn sử dụng thuốc',
     apiEndpoint: '/api/cooperation/competitions',
     slug: 'cac-cuoc-thi',
     icon: '🏆',
