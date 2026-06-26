@@ -33,8 +33,25 @@ export default {
     {
       name: 'category',
       title: 'Danh mục',
-      type: 'reference',
-      to: [{type: 'category'}],
+      type: 'string',
+      description: 'Chọn danh mục đúng với Module đã chọn ở trên.',
+      options: {
+        list: [
+          // Module: Tin tức
+          {title: 'Tin tức • Tin tức hoạt động bệnh viện', value: 'hospital-activities'},
+          {title: 'Tin tức • Tin tức y học trong nước', value: 'domestic-medical'},
+          {title: 'Tin tức • Tin tức y học thế giới', value: 'world-medical'},
+          {title: 'Tin tức • Bài viết chuyên môn', value: 'professional-articles'},
+          // Module: Đảng - Chính trị
+          {title: 'Đảng - Chính trị • Công tác Đảng', value: 'party-work'},
+          {title: 'Đảng - Chính trị • Hoạt động kỷ niệm, tổ chức', value: 'politics'},
+          {title: 'Đảng - Chính trị • Lịch sử đổi mới', value: 'youth-union'},
+          // Module: Dược phẩm - Sức khoẻ
+          {title: 'Dược phẩm - Sức khoẻ • Dược lâm sàng', value: 'cooperation-scientific'},
+          {title: 'Dược phẩm - Sức khoẻ • Hướng dẫn sử dụng thuốc', value: 'cooperation-competitions'},
+          {title: 'Dược phẩm - Sức khoẻ • Đơn vị đồng hành', value: 'cooperation-partners'},
+        ],
+      },
       validation: (Rule) => Rule.required(),
     },
     {
