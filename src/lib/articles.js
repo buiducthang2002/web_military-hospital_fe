@@ -5,7 +5,7 @@ const ARTICLE_FIELDS = `
   title,
   "slug": slug.current,
   module,
-  "categoryId": category,
+  "categoryId": coalesce(category->categoryId, category),
   thumbnail,
   excerpt,
   content,
