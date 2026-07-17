@@ -372,16 +372,27 @@
 .title-vi {
   color: #d11f1f;
   font-weight: 700;
-  letter-spacing: 4px;
-  font-size: 28px;
+  letter-spacing: 0.06em;
+  font-size: clamp(16px, calc(2.34vw - 13px), 28px);
 }
 
 .title-en {
   color: #069242;
   font-weight: 700;
-  letter-spacing: 2px;
-  font-size: 20px;
+  letter-spacing: 0.06em;
+  font-size: clamp(13px, calc(1.67vw - 9.3px), 20px);
   margin-top: 4px;
+}
+
+/* Force the title onto one line only where the middle column is wide enough.
+   That column is ~557px narrower than the viewport (logo + search are fixed
+   width), so below ~1200px a single line would shrink the text past legibility
+   -- there we let it wrap instead. */
+@media (min-width: 1200px) {
+  .title-vi,
+  .title-en {
+    white-space: nowrap;
+  }
 }
 
 /* Actions area (search + maybe buttons) */
