@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 import Home from './Pages/Home';
 import CallCenter from './Dangkykhamchuabenh/Tongdai/CallCenter';
 import BookAppointment from './Dangkykhamchuabenh/dichvukcb/BookAppointment';
@@ -23,6 +24,7 @@ import GioithieuBV from './Thongtinchung/GioithieuBV/GioithieuBV';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/organization" element={<Organization />} />
