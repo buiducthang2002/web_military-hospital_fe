@@ -8,7 +8,10 @@
       "Bash(npm install *)",
       "Bash(node scripts/verify.mjs)",
       "Bash(npm start *)",
-      "Bash(npx sanity *)"
+      "Bash(npx sanity *)",
+      "Bash(node check-title.js)",
+      "Bash(BROWSER=none PORT=3000 npx react-scripts start)",
+      "Bash(node check-final.js)"
     ],
     "additionalDirectories": [
       "C:\\Users\\HH\\Downloads"
