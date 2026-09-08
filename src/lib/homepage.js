@@ -50,15 +50,15 @@ const mapAnnouncement = (a) => {
   }
 }
 
-export const getAnnouncements = async (limit = 10) => {
+export const getAnnouncements = async () => {
   const query = `*[_type == "announcement" && status == "published"]
-    | order(order asc, publishedAt desc)[0...$limit]{
+    | order(order asc, publishedAt desc){
       _id,
       text,
       publishedAt,
       link,
       "attachmentUrl": attachment.asset->url
     }`
-  const data = await sanityClient.fetch(query, {limit})
+  const data = await sanityClient.fetch(query)
   return data.map(mapAnnouncement)
 }

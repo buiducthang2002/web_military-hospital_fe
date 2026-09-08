@@ -105,7 +105,7 @@ const STATIC_IMAGE_BY_SLUG = {
 
 const NewsBoard = () => {
   const { featured: sanityFeatured } = useFeaturedArticles(4)
-  const { announcements: sanityAnnouncements } = useAnnouncements(10)
+  const { announcements: sanityAnnouncements } = useAnnouncements()
 
   // Build featured list: ưu tiên Sanity (kèm fallback ảnh static), fallback toàn bộ về hardcoded
   const featuredList = sanityFeatured.length > 0

@@ -23,13 +23,13 @@ export const useFeaturedArticles = (limit = 4) => {
   return {featured, loading}
 }
 
-export const useAnnouncements = (limit = 10) => {
+export const useAnnouncements = () => {
   const [announcements, setAnnouncements] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     let cancelled = false
-    getAnnouncements(limit)
+    getAnnouncements()
       .then((data) => {
         if (!cancelled) setAnnouncements(data)
       })
@@ -40,7 +40,7 @@ export const useAnnouncements = (limit = 10) => {
     return () => {
       cancelled = true
     }
-  }, [limit])
+  }, [])
 
   return {announcements, loading}
 }
