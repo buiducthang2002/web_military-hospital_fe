@@ -48,7 +48,6 @@
   align-items: flex-start;
   gap: 16px;
   padding: 22px 0;
-  border-bottom: 1px solid #e4e0da;
   cursor: pointer;
   transition: all 0.3s ease;
 }
