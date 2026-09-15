@@ -1,5 +1,26 @@
+:root {
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Lora', serif;
+}
+
 * {
   box-sizing: border-box;
+  font-family: var(--font-body) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[class*='title' i],
+[class*='heading' i] {
+  font-family: var(--font-heading) !important;
+}
+
+.why-title {
+  font-family: var(--font-heading) !important;
 }
 
 html {
@@ -14,7 +35,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden !important;
@@ -36,9 +56,4 @@ body {
 section {
   margin: 0;
   padding: 0;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }

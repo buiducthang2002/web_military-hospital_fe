@@ -227,7 +227,10 @@ const NewsEvents = () => {
     <div className="news-events-section">
       <div className="news-events-container">
         <div className="section-main-header">
-          <p className="section-main-title">Tin tức & Sự kiện</p>
+          <p className="section-main-title">
+            <span className="section-main-bar" />
+            Tin tức & Sự kiện
+          </p>
         </div>
 
         {/* Render mỗi category thành một hàng riêng */}

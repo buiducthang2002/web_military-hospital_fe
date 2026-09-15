@@ -446,11 +446,21 @@ const Navbar = () => {
           </div>
 
           <div className="title-wrap">
-            <div className="title-vi">BỆNH VIỆN QUÂN Y 4 - CỤC HẬU CẦN KỸ THUẬT QUÂN KHU 4</div>
+            <div className="title-vi">
+              BỆNH VIỆN QUÂN Y 4<span className="title-separator"> - </span>CỤC HẬU CẦN KỸ THUẬT QUÂN KHU 4
+            </div>
             <div className="title-en">Military Central Hospital 4</div>
           </div>
 
           <div className="actions-wrap">
+            <div className="flags-slot" aria-label="Cờ Đảng và cờ Tổ quốc">
+              <span className="header-flag party-flag" role="img" aria-label="Cờ Đảng">
+                <span aria-hidden="true">☭</span>
+              </span>
+              <span className="header-flag national-flag" role="img" aria-label="Cờ Tổ quốc Việt Nam">
+                <span aria-hidden="true">★</span>
+              </span>
+            </div>
             <div className="search-box" ref={searchRef}>
               <input
                 placeholder="Tìm kiếm............"

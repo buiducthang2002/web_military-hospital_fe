@@ -17,11 +17,23 @@
 }
 
 .section-main-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 18px;
   font-weight: 700;
   color: #109832;
   margin: 0;
+  line-height: 1.2;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.section-main-bar {
+  width: 6px;
+  height: 1.2em;
+  background: #109832;
+  border-radius: 1px;
+  flex-shrink: 0;
 }
 
 /* Category Section */
@@ -40,7 +52,6 @@
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #28a745;
 }
 
 .category-title-wrapper {
@@ -220,11 +231,11 @@
 
 @media (max-width: 768px) {
   .news-events-section {
-    padding: 20px 15px;
+    padding: 10px 15px;
   }
 
   .section-main-header {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
   .section-main-title {

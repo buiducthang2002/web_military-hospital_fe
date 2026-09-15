@@ -14,7 +14,7 @@ const GioithieuBV = () => {
       icon: '🏥'
     },
     {
-      number: '500+',
+      number: '600+',
       label: 'Giường bệnh',
       icon: '🛏️'
     },
@@ -24,7 +24,7 @@ const GioithieuBV = () => {
       icon: '👨‍⚕️'
     },
     {
-      number: '30+',
+      number: '16+',
       label: 'Chuyên khoa',
       icon: '⚕️'
     }

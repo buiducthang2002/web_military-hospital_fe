@@ -32,7 +32,7 @@ const Features = () => {
 
   return (
     <div className="features-section">
-    
+
       <div className="features-container">
         {features.map((feature, index) => (
           <div key={index} className="features-panel" onClick={() => {
@@ -60,4 +60,3 @@ const Features = () => {
 }
 
 export default Features
-

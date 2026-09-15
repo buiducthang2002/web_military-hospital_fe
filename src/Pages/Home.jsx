@@ -5,7 +5,6 @@ import Banner from '../Components/Banner/Banner'
 import NewsBoard from '../Components/NewsBoard/NewsBoard'
 import Doctors from '../Components/Doctors/Doctors'
 import Services from '../Components/Services/Services'
-import Features from '../Components/Features/Features'
 
 import NewsEvents from '../Components/NewsEvents/NewsEvents'
 
@@ -23,11 +22,10 @@ const Home = () => {
       </div>
  
       <NewsBoard />
-      
-      <Services />
-      <Doctors />
-      <Features />
 
+      <Doctors />
+
+      <Services />
       <NewsEvents />
 
       <Video />

@@ -44,7 +44,7 @@ const newsData = {
 
 const announcements = [
    {
-    text: 'Thông báo:Thư mời báo giá Camera',
+    text: 'Thông báo: Thư mời báo giá Camera',
     time: '22/05/2026',
     link: '/thu-moi-bao-gia-camera.pdf'
   },
@@ -54,43 +54,28 @@ const announcements = [
     link: ''
   },
   {
-    text: 'Thông báo Kế hoạch Tổ chức đào tạo hướng dẫn thực hành khám bệnh, chữa bệnh 12/2025',
+    text: 'Thông báo: Kế hoạch Tổ chức đào tạo hướng dẫn thực hành khám bệnh, chữa bệnh 12/2025',
     time: '05/12/2025',
     link: ''
   },
   {
-    text: 'Thông báo về việc thu hút nhân lực chất lượng cao tham gia triển khai, tổ chức và điều phối hoạt động chuyên môn tại các khoa, trung tâm trực thuộc BV',
+    text: 'Thông báo: Về việc thu hút nhân lực chất lượng cao tham gia triển khai, tổ chức và điều phối hoạt động chuyên môn tại các khoa, trung tâm trực thuộc BV',
     time: '28/11/2025',
     link: ''
   },
   {
-    text: 'Thông báo về việc trúng tuyển và nhập học nghiên cứu sinh đợt II năm 2025',
+    text: 'Thông báo: Về việc trúng tuyển và nhập học nghiên cứu sinh đợt II năm 2025',
     time: '21/11/2025',
     link: ''
   },
   {
-    text: 'CƠ HỘI HỌC BỔNG TIẾN SĨ TOÀN PHẦN TẠI ĐỨC CHUYÊN NGÀNH TRUYỀN NHIỄM, DỊCH TỄ HỌC VÀ Y TẾ TOÀN CẦU',
+    text: 'Thông báo: Cơ hội học bổng toàn phần tại Đức chuyên ngành Truyền nhiễm, Dịch tễ học và Y tế toàn cầu',
     time: '16/10/2025',
     link: ''
   },
   {
-    text: 'Một số cập nhật quỹ Nafosted (Quỹ phát triển Khoa học và Công nghệ quốc gia) - Hội đồng ứng dụng',
+    text: 'Thông báo: Một số cập nhật quỹ Nafosted (Quỹ phát triển Khoa học và Công nghệ quốc gia) - Hội đồng ứng dụng',
     time: '23/08/2025',
-    link: ''
-  },
-  {
-    text: 'CƠ HỘI HỌC BỔNG TIẾN SĨ TOÀN PHẦN TẠI ĐỨC CHUYÊN NGÀNH TRUYỀN NHIỄM, DỊCH TỄ HỌC VÀ Y TẾ TOÀN CẦU',
-    time: '16/10/2025',
-    link: ''
-  },
-  {
-    text: 'CƠ HỘI HỌC BỔNG TIẾN SĨ TOÀN PHẦN TẠI ĐỨC CHUYÊN NGÀNH TRUYỀN NHIỄM, DỊCH TỄ HỌC VÀ Y TẾ TOÀN CẦU',
-    time: '16/10/2025',
-    link: ''
-  },
-  {
-    text: 'CƠ HỘI HỌC BỔNG TIẾN SĨ TOÀN PHẦN TẠI ĐỨC CHUYÊN NGÀNH TRUYỀN NHIỄM, DỊCH TỄ HỌC VÀ Y TẾ TOÀN CẦU',
-    time: '16/10/2025',
     link: ''
   }
 ]
