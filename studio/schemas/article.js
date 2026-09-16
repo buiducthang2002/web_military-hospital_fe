@@ -86,10 +86,16 @@ export default {
     },
     {
       name: 'content',
-      title: 'Nội dung bài viết',
+      title: 'Nội dung bài viết (HTML - cũ)',
+      type: 'text',
+      rows: 30,
+      description: 'Field cũ - dùng cho bài viết cũ (HTML format)',
+    },
+    {
+      name: 'portableContent',
+      title: 'Nội dung bài viết (Portable Text - mới)',
       type: 'blockContent',
-      description: 'Soạn thảo nội dung bài viết. Bạn có thể chèn ảnh trực tiếp bằng cách click "Insert" > "Image".',
-      validation: (Rule) => Rule.required(),
+      description: 'Soạn thảo nội dung bài viết với editor WYSIWYG. Chèn ảnh: click "Insert" > "Image".',
     },
     {
       name: 'contentImages',

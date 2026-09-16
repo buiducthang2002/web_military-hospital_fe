@@ -2,15 +2,17 @@ import React from 'react'
 import { PortableText } from '@portabletext/react'
 import { urlFor } from '../../lib/sanity'
 
-const PortableTextContent = ({ content }) => {
-  if (!content) {
+const PortableTextContent = ({ content, portableContent }) => {
+  const contentToRender = portableContent || content
+
+  if (!contentToRender) {
     return <p>Nội dung bài viết đang được cập nhật...</p>
   }
 
-  const isPortableText = Array.isArray(content)
+  const isPortableText = Array.isArray(contentToRender)
 
   if (!isPortableText) {
-    return <div dangerouslySetInnerHTML={{ __html: content }} />
+    return <div dangerouslySetInnerHTML={{ __html: contentToRender }} />
   }
 
   const components = {
@@ -63,7 +65,7 @@ const PortableTextContent = ({ content }) => {
     },
   }
 
-  return <PortableText value={content} components={components} />
+  return <PortableText value={contentToRender} components={components} />
 }
 
 export default PortableTextContent

@@ -185,7 +185,7 @@ const ArticleDetailPage = () => {
           {/* Article Content */}
           <div className="article-detail-content">
             <div className="article-body">
-              <PortableTextContent content={article.content} />
+              <PortableTextContent content={article.content} portableContent={article.portableContent} />
             </div>
 
             {/* Tags */}
