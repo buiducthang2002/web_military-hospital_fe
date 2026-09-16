@@ -86,26 +86,10 @@ export default {
     },
     {
       name: 'content',
-      title: 'Nội dung bài viết (HTML)',
-      type: 'text',
-      rows: 30,
-      description:
-        'Nội dung HTML. Dùng thẻ <p>, <h2>, <strong>, <em>... Để chèn ảnh: upload ảnh ở mục "Ảnh dùng trong nội dung" bên dưới, rồi viết <img src="{{IMG1}}" style="max-width:100%" /> — {{IMG1}} là ảnh thứ 1, {{IMG2}} là ảnh thứ 2...',
+      title: 'Nội dung bài viết',
+      type: 'blockContent',
+      description: 'Soạn thảo nội dung bài viết. Bạn có thể chèn ảnh trực tiếp bằng cách click "Insert" > "Image".',
       validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'contentImages',
-      title: 'Ảnh dùng trong nội dung',
-      type: 'array',
-      description:
-        'Upload ảnh theo thứ tự. Ảnh đầu tiên = {{IMG1}}, ảnh thứ hai = {{IMG2}}... Chèn vào ô "Nội dung bài viết (HTML)" bằng <img src="{{IMG1}}" />.',
-      of: [
-        {
-          type: 'image',
-          options: {hotspot: true},
-          fields: [{name: 'caption', type: 'string', title: 'Chú thích'}],
-        },
-      ],
     },
     {
       name: 'author',
