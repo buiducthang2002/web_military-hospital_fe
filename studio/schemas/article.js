@@ -68,9 +68,10 @@ export default {
         },
         {
           name: 'alt',
-          title: 'Nội dung ảnh (alt text)',
-          type: 'string',
-          description: 'Mô tả nội dung ảnh để hỗ trợ SEO và accessibility',
+          title: 'Nội dung ảnh (mô tả chi tiết)',
+          type: 'text',
+          rows: 5,
+          description: 'Mô tả chi tiết nội dung ảnh để hỗ trợ SEO và accessibility',
           validation: (Rule) => Rule.required(),
         },
       ],
