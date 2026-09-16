@@ -1,6 +1,6 @@
 import React from 'react'
 import { PortableText } from '@portabletext/react'
-import { getImageUrl } from '../../lib/sanity'
+import { urlFor } from '../../lib/sanity'
 
 const PortableTextContent = ({ content }) => {
   if (!content) {
@@ -16,7 +16,7 @@ const PortableTextContent = ({ content }) => {
   const components = {
     types: {
       image: ({ value }) => {
-        const imageUrl = getImageUrl(value.asset._ref).url()
+        const imageUrl = urlFor(value.asset).url()
         return (
           <figure className="portable-text-image">
             <img
