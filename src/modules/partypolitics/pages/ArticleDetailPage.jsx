@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import Navbar from '../../../Components/Navbar/Navbar'
 import Footer from '../../../Components/Footer/Footer'
-import PortableTextContent from '../../../Components/PortableTextContent/PortableTextContent'
 import { formatDate } from '../utils/formatDate'
 import { getPartyCategoryById } from '../categories'
 import { mapArticlesImages, mapImagePath } from '../utils/imageMapper'
@@ -185,7 +184,11 @@ const ArticleDetailPage = () => {
           {/* Article Content */}
           <div className="article-detail-content">
             <div className="article-body">
-              <PortableTextContent content={article.content} />
+              {article.content ? (
+                <div dangerouslySetInnerHTML={{ __html: article.content }} />
+              ) : (
+                <p>Nội dung bài viết đang được cập nhật...</p>
+              )}
             </div>
 
             {/* Tags */}
