@@ -92,6 +92,19 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'contentImages',
+      title: 'Ảnh dùng trong nội dung (cũ)',
+      type: 'array',
+      description: 'Field cũ - chỉ để compatibility với bài viết cũ',
+      of: [
+        {
+          type: 'image',
+          options: {hotspot: true},
+          fields: [{name: 'caption', type: 'string', title: 'Chú thích'}],
+        },
+      ],
+    },
+    {
       name: 'author',
       title: 'Tác giả',
       type: 'string',
