@@ -57,25 +57,16 @@ export default {
     {
       name: 'thumbnail',
       title: 'Ảnh đại diện',
-      type: 'object',
-      fields: [
-        {
-          name: 'image',
-          title: 'Ảnh',
-          type: 'image',
-          options: {hotspot: true},
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: 'alt',
-          title: 'Nội dung ảnh (mô tả chi tiết)',
-          type: 'text',
-          rows: 5,
-          description: 'Mô tả chi tiết nội dung ảnh để hỗ trợ SEO và accessibility',
-          validation: (Rule) => Rule.required(),
-        },
-      ],
+      type: 'image',
+      options: {hotspot: true},
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'thumbnailAlt',
+      title: 'Nội dung ảnh đại diện (mô tả chi tiết)',
+      type: 'text',
+      rows: 5,
+      description: 'Mô tả chi tiết nội dung ảnh để hỗ trợ SEO và accessibility',
     },
     {
       name: 'excerpt',
@@ -173,7 +164,7 @@ export default {
     },
   ],
   preview: {
-    select: {title: 'title', subtitle: 'module', media: 'thumbnail.image'},
+    select: {title: 'title', subtitle: 'module', media: 'thumbnail'},
     prepare({title, subtitle, media}) {
       return {title, subtitle: `Module: ${subtitle}`, media}
     },
