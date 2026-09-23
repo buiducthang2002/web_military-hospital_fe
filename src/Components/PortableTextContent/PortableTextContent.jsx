@@ -1,6 +1,7 @@
 import React from 'react'
 import { PortableText } from '@portabletext/react'
 import { urlFor } from '../../lib/sanity'
+import './PortableTextContent.css'
 
 const PortableTextContent = ({ content, portableContent }) => {
   const contentToRender = portableContent || content
