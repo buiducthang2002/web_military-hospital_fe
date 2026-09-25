@@ -381,7 +381,7 @@
 
 .title-separator {
   display: inline-block;
-  font-family: var(--font-heading) !important;
+  font-family: 'Times New Roman', Times, serif !important;
   font-weight: 400;
   font-variant-numeric: normal;
   vertical-align: baseline;
