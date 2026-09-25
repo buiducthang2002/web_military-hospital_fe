@@ -5,8 +5,6 @@ import './Navbar.css'
 import Logo from '../Assets/Logo.jpg'
 import { FiMinus, FiPlus } from 'react-icons/fi'
 import SearchResults from './SearchResults'
-import { getAllSearchableData } from '../../utils/searchData'
-import { searchAndSort } from '../../utils/globalSearch'
 
 const SCROLL_TO_TOP_PATHS = new Set([
   '/',
@@ -38,6 +36,7 @@ const Navbar = () => {
   const [showSearchResults, setShowSearchResults] = useState(false)
   const navbarRef = useRef(null)
   const searchRef = useRef(null)
+  const latestSearchRef = useRef('')
   const location = useLocation()
 
   const menuItems = [
@@ -144,15 +143,15 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (navbarRef.current) {
-        const navbarBottom = navbarRef.current.getBoundingClientRect().bottom
-        setIsScrolled(navbarBottom < 0)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    // Dùng IntersectionObserver thay cho scroll + getBoundingClientRect
+    // để tránh forced reflow mỗi lần cuộn trang
+    const el = navbarRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsScrolled(!entry.isIntersecting && entry.boundingClientRect.bottom < 0)
+    })
+    observer.observe(el)
+    return () => observer.disconnect()
   }, [])
 
 
@@ -233,16 +232,21 @@ const Navbar = () => {
   const handleSearchChange = (e) => {
     const value = e.target.value
     setSearchTerm(value)
+    latestSearchRef.current = value
 
     if (value.trim().length >= 2) {
-      // Lấy tất cả dữ liệu có thể tìm kiếm
-      const allData = getAllSearchableData()
-
-      // Tìm kiếm và sắp xếp theo độ liên quan
-      const results = searchAndSort(allData, value, 5)
-
-      setSearchResults(results)
-      setShowSearchResults(true)
+      // Tải dữ liệu tìm kiếm theo yêu cầu (tách khỏi bundle chính)
+      Promise.all([
+        import('../../utils/searchData'),
+        import('../../utils/globalSearch')
+      ]).then(([{ getAllSearchableData }, { searchAndSort }]) => {
+        // Bỏ qua nếu người dùng đã gõ tiếp
+        if (latestSearchRef.current !== value) return
+        const allData = getAllSearchableData()
+        const results = searchAndSort(allData, value, 5)
+        setSearchResults(results)
+        setShowSearchResults(true)
+      })
     } else {
       setSearchResults([])
       setShowSearchResults(false)
@@ -296,6 +300,7 @@ const Navbar = () => {
           <BootstrapNavbar.Brand as={Link} to="/">
             <img
               src={Logo}
+              width="63"
               height="50"
               className="d-inline-block align-top"
               alt="Logo"
@@ -303,7 +308,6 @@ const Navbar = () => {
           </BootstrapNavbar.Brand>
           <div className="position-absolute start-50 translate-middle-x d-flex flex-column justify-content-center align-items-center text-center text-success">
             <span className="fw-bold" style={{ fontSize: '13px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>BỆNH VIỆN QUÂN Y 4</span>
-            <span style={{ fontSize: '13px', lineHeight: '1.2', whiteSpace: 'nowrap' }}>MILITARY CENTREL HOSPITAL </span>
           </div>
           <BootstrapNavbar.Toggle
             aria-label="Open menu"
@@ -441,7 +445,7 @@ const Navbar = () => {
         <div className="navbar-top">
           <div className="logo-wrap">
             <Link to="/">
-              <img src={Logo} alt="Logo" />
+              <img src={Logo} alt="Logo" width="404" height="320" />
             </Link>
           </div>
 
